@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html data-astro-cid-sckkx6r4="" lang="ar" dir="rtl">
+  <!-- read if cute :3 -->
   <head>
-  
+
     <title>الإضافات | VenSHORT</title>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -33,7 +34,7 @@
 
     <link href="_astro/gdpr.61vMHWDU.css" rel="stylesheet"/>
     <style>
-      /* CSS Variables (Matched with plugins.html) */
+      /* CSS Variables (Copied from CODE.txt) */
       :root {
         --bg0: #1e1e2e;
         --bg1: #313244;
@@ -74,222 +75,247 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        background-color: var(--bg0); /* Base background */
-        color: var(--fg0); /* Base foreground */
+        background-color: var(--bg0); /* Applied from CODE.txt */
+        color: var(--fg0); /* Applied from CODE.txt */
       }
 
       /* المحتوى الرئيسي يتمدد ليملأ المساحة الفارغة */
       .container, astro-island {
         flex: 1;
-        max-width: 1200px; /* Limit width for better readability */
-        margin: 0 auto; /* Center the container */
-        padding: 1em 2em; /* Add padding */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1em 2em; /* Matched padding */
       }
 
-      /* تنسيق الفوتر (Matched with plugins.html) */
+      /* تنسيق الفوتر */
       footer {
-        margin-top: auto;  /* يدفع الفوتر إلى أسفل */
+        margin-top: auto;
         padding: 1em;
-        background-color: #2c3e50; /* Match plugins.html explicit color */
-        color: #ffffff; /* Match plugins.html explicit color */
+        background-color: #2c3e50; /* Explicit color from CODE.txt */
+        color: #ffffff; /* Explicit color from CODE.txt */
         text-align: center;
-        font-family: 'Noto Sans Arabic', sans-serif; /* Ensure font consistency */
+        font-family: 'Noto Sans Arabic', sans-serif;
       }
       footer p {
-          margin: 5px 0; /* Add spacing like plugins.html footer divs */
+        margin: 5px 0; /* Matched margin */
       }
 
-      /* --- General Text Sizes --- */
+      /* --- General Text Styles --- */
       h1.p-page-title {
-        color: var(--accentBlue); /* Match plugins.html */
-        font-size: 2.5em; /* Slightly larger main title */
+        color: var(--accentBlue); /* Applied from CODE.txt */
+        font-size: 2.5em;
         margin-bottom: 0.2em;
       }
       p.p-subtitle {
-        font-size: 1.1em; /* Slightly larger subtitle */
-        color: var(--fg1);
+        font-size: 1.1em;
+        color: var(--fg1); /* Applied from CODE.txt */
         margin-bottom: 1.5em;
       }
+      .category-description { /* Added style for category description in File 2 */
+         font-size: 0.9em;
+         color: var(--fg1); /* Applied from CODE.txt */
+         margin-bottom: 1.5em;
+         margin-top: -0.5em; /* Adjust spacing */
+      }
+
       /* --- Category Header Styles --- */
       h2.category-header {
-          font-size: 1.8em; /* Adjusted size */
-          margin-block: 2em 0.8em; /* Adjust spacing */
-          color: var(--accentLavender); /* Give headings some color */
-          border-bottom: 2px solid var(--accentLavender);
-          padding-bottom: 0.3em;
+        font-size: 1.8em;
+        margin-block: 2em 0.8em;
+        color: var(--accentLavender); /* Applied from CODE.txt */
+        border-bottom: 2px solid var(--accentLavender); /* Applied from CODE.txt */
+        padding-bottom: 0.3em;
       }
+
       h3 { /* Plugin Title */
         margin: 0;
         word-wrap: break-word;
-        line-height: 1.3; /* Adjust line height */
-        font-size: 1.1em; /* Make plugin titles slightly larger */
-        color: var(--fg0);
-        font-weight: 700; /* Make titles bolder */
+        line-height: 1.3;
+        font-size: 1.1em; /* Matched size */
+        color: var(--fg0); /* Applied from CODE.txt */
+        font-weight: 700; /* Applied from CODE.txt */
       }
+
       .author {
         white-space: nowrap;
-        font-size: 0.85em; /* Slightly smaller author text */
-        color: var(--grey1);
+        font-size: 0.85em; /* Matched size */
+        color: var(--grey1); /* Applied from CODE.txt (Overwrites original peach) */
       }
+
       .author:before {
         content: "بواسطة ";
-        color: var(--grey1); /* Match author text color */
+        color: var(--grey1); /* Applied from CODE.txt */
       }
+
       .description {
         font-size: .9em;
-        color: var(--fg1); /* Use slightly lighter grey for description */
-        filter: brightness(100%); /* Remove brightness filter, adjust color directly */
-        margin-bottom: 0.5em; /* Add space before settings */
+        color: var(--fg1); /* Applied from CODE.txt */
+        margin-bottom: 0.5em;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         line-clamp: 3;
         -webkit-box-orient: vertical;
         box-orient: vertical;
-        line-height: 1.4; /* Improve readability */
+        line-height: 1.4;
       }
 
       /* --- Plugin Card Styles --- */
       .plugin {
         display: flex;
-        align-items: flex-start; /* Align checkbox to top */
-        gap: 15px; /* Increased gap */
-        padding: 1.5em; /* Increased padding */
-        border-radius: var(--border-lg);
-        box-shadow: var(--shadow-md); /* Use medium shadow */
-        transition: box-shadow 0.3s ease, transform 0.2s ease; /* Add transform transition */
-        background-color: var(--bg1);
-        /* margin-bottom removed, handled by grid gap */
-        cursor: pointer; /* Make the whole card clickable */
+        align-items: flex-start;
+        gap: 15px; /* Matched gap */
+        padding: 1.5em; /* Matched padding */
+        border-radius: var(--border-lg); /* Matched border radius */
+        box-shadow: var(--shadow-md); /* Applied from CODE.txt */
+        transition: box-shadow 0.3s ease, transform 0.2s ease; /* Applied from CODE.txt */
+        background-color: var(--bg1); /* Applied from CODE.txt */
+        cursor: pointer;
       }
+
       .plugin:hover {
-        box-shadow: var(--shadow-lg); /* Use large shadow on hover */
-        transform: translateY(-2px); /* Add slight lift effect */
+        box-shadow: var(--shadow-lg); /* Applied from CODE.txt */
+        transform: translateY(-2px); /* Applied from CODE.txt */
       }
 
       .plugin .plugin-content {
         flex-grow: 1;
-        display: flex; /* Enable flex for content alignment */
+        display: flex;
         flex-direction: column;
-        gap: 0.3em; /* Space between title, author, description */
+        gap: 0.3em;
       }
-      .plugin input[type="checkbox"].plugin-checkbox { /* Target only main checkbox */
+
+      .plugin input[type="checkbox"].plugin-checkbox {
         flex-shrink: 0;
-        margin-top: 0.2em; /* Align checkbox better with title */
-        height: 1.3em; /* Slightly larger checkbox */
+        margin-top: 0.2em; /* Matched alignment */
+        height: 1.3em; /* Matched size */
         width: 1.3em;
         cursor: pointer;
-        accent-color: var(--accentPurple); /* Style the checkbox color */
+        accent-color: var(--accentPurple); /* Applied from CODE.txt */
       }
+
       /* Ensure direct clicks on content inside the link don't trigger nav */
       .plugin .plugin-link * {
-          pointer-events: none;
+        pointer-events: none; /* Applied from CODE.txt */
       }
 
       /* --- Plugin Settings UI --- */
       .plugin-settings {
-          margin-top: 0.8em;
-          padding-top: 0.8em;
-          border-top: 1px solid var(--bg3);
-          display: flex;
-          flex-direction: column;
-          gap: 0.6em;
+        margin-top: 0.8em;
+        padding-top: 0.8em;
+        border-top: 1px solid var(--bg3); /* Applied from CODE.txt */
+        display: flex;
+        flex-direction: column;
+        gap: 0.6em;
       }
+
       .plugin-setting {
-          display: flex;
-          align-items: center;
-          gap: 0.8em;
+        display: flex;
+        align-items: center;
+        gap: 0.8em;
       }
+
       .plugin-setting label {
-          font-size: 0.85em;
-          color: var(--fg1);
-          flex-basis: 120px; /* Give labels a fixed base width */
-          flex-shrink: 0;
-          text-align: right; /* Align label text right */
-          margin-right: 5px;
+        font-size: 0.85em;
+        color: var(--fg1); /* Applied from CODE.txt */
+        flex-basis: 120px; /* Matched width */
+        flex-shrink: 0;
+        text-align: right;
+        margin-right: 5px;
       }
+
       .plugin-setting input[type="text"],
       .plugin-setting input[type="number"],
       .plugin-setting input[type="color"],
       .plugin-setting select {
-          font-size: 0.85em;
-          padding: 0.3em 0.5em;
-          border-radius: var(--border-sm);
-          border: 1px solid var(--bg3);
-          background-color: var(--bg0);
-          color: var(--fg0);
-          flex-grow: 1; /* Allow input to take remaining space */
-          max-width: 200px; /* Limit max width */
-          box-sizing: border-box;
+        font-size: 0.85em;
+        padding: 0.3em 0.5em;
+        border-radius: var(--border-sm); /* Matched radius */
+        border: 1px solid var(--bg3); /* Applied from CODE.txt */
+        background-color: var(--bg0); /* Applied from CODE.txt */
+        color: var(--fg0); /* Applied from CODE.txt */
+        flex-grow: 1;
+        max-width: 200px;
+        box-sizing: border-box;
       }
-      .plugin-setting input[type="checkbox"] { /* Settings checkbox */
-           height: 1.1em;
-           width: 1.1em;
-           accent-color: var(--accentPurple);
-           cursor: pointer;
-           order: -1; /* Put checkbox before label */
-           margin-right: -0.4em; /* Adjust spacing */
-      }
-       .plugin-setting input[type="color"] {
-           padding: 0.1em; /* Adjust padding for color input */
-           min-height: 25px; /* Ensure color input has height */
-       }
-        /* Make settings inputs clickable inside the card */
-       .plugin-setting input, .plugin-setting select {
-            cursor: text; /* Or appropriate cursor */
-            pointer-events: all !important; /* Allow interaction */
-       }
-       .plugin-setting label {
-           pointer-events: all !important; /* Allow clicking label */
-           cursor: default;
-       }
 
+      .plugin-setting input[type="checkbox"] { /* Settings checkbox */
+        height: 1.1em;
+        width: 1.1em;
+        accent-color: var(--accentPurple); /* Applied from CODE.txt */
+        cursor: pointer;
+        order: -1; /* Keep order from File 2 */
+        margin-right: -0.4em; /* Adjust spacing */
+      }
+
+      .plugin-setting input[type="color"] {
+        padding: 0.1em;
+        min-height: 25px;
+      }
+
+      /* Make settings inputs clickable inside the card */
+      .plugin-setting input, .plugin-setting select {
+        cursor: text; /* Or appropriate cursor */
+        pointer-events: all !important; /* Applied from CODE.txt */
+      }
+
+      .plugin-setting label {
+        pointer-events: all !important; /* Applied from CODE.txt */
+        cursor: default;
+      }
 
       /* --- Generation Section Styles --- */
       #generation-section {
-        margin-top: 3em; /* Increased top margin */
-        padding: 2.5em; /* Increased padding */
-        background-color: var(--bg2); /* Use slightly different background */
-        border-radius: var(--border-lg);
+        margin-top: 3em;
+        padding: 2.5em;
+        background-color: var(--bg2); /* Applied from CODE.txt */
+        border-radius: var(--border-lg); /* Matched radius */
         display: flex;
         flex-direction: column;
         gap: 2em;
-        border: 1px solid var(--bg3);
+        border: 1px solid var(--bg3); /* Applied from CODE.txt */
       }
-       #generation-section h2 { /* Style heading inside generation section */
-          font-size: 1.8em;
-          margin: 0 0 0.5em 0;
-          padding: 0;
-          border: none;
-          color: var(--accentTeal);
+
+      #generation-section h2 {
+        font-size: 1.8em;
+        margin: 0 0 0.5em 0;
+        padding: 0;
+        border: none;
+        color: var(--accentTeal); /* Applied from CODE.txt */
       }
+
       #generation-controls {
         display: flex;
         gap: 1.2em;
         flex-wrap: wrap;
-        align-items: center; /* Align items vertically */
+        align-items: center;
       }
-      #generateConfigBtn, #copyConfigBtn, #downloadConfigBtn, #enableAllBtn, #disableAllBtn, #selectAllBtn, #selectSuggestedBtn, #restartDiscordBtn { /* Include restart button */
-        padding: 0.9em 1.8em; /* Adjusted padding */
+
+      #generateConfigBtn, #copyConfigBtn, #downloadConfigBtn, #selectAllBtn, #selectSuggestedBtn, #disableAllBtn, #restartDiscordBtn {
+        padding: 0.9em 1.8em; /* Matched padding */
         color: white;
         border: none;
-        border-radius: var(--border-md);
+        border-radius: var(--border-md); /* Matched radius */
         cursor: pointer;
-        font-size: 1em; /* Unified font size for buttons */
-        transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+        font-size: 1em; /* Matched font size */
+        transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease; /* Matched transition */
         font-family: 'Noto Sans Arabic', sans-serif;
         opacity: 1;
-        font-weight: 700;
+        font-weight: 700; /* Matched font weight */
       }
-      #generateConfigBtn, #enableAllBtn, #disableAllBtn {
+
+      /* Applied button colors from CODE.txt */
+      #generateConfigBtn, #disableAllBtn {
         background-color: var(--accentBlue);
       }
       #copyConfigBtn, #downloadConfigBtn, #selectAllBtn, #selectSuggestedBtn {
         background-color: var(--accentPurple);
       }
       #restartDiscordBtn {
-        background-color: var(--accentRed); /* Warning color */
-        margin-right: auto; /* Push restart button to the end (in RTL) */
+        background-color: var(--accentRed);
+        margin-right: auto; /* Keep positioning from File 2 */
       }
+
+      /* Applied disabled/enabled states from CODE.txt */
       #copyConfigBtn, #downloadConfigBtn {
         opacity: 0.6;
         cursor: not-allowed;
@@ -299,8 +325,8 @@
         cursor: pointer;
       }
 
-      /* Button Hover & Active States */
-      #generateConfigBtn:hover, #enableAllBtn:hover, #disableAllBtn:hover {
+      /* Button Hover & Active States (Applied from CODE.txt) */
+      #generateConfigBtn:hover, #disableAllBtn:hover {
         background-color: hsl(from var(--accentBlue) h s calc(l - 8%));
       }
       #copyConfigBtn.enabled:hover, #downloadConfigBtn.enabled:hover, #selectAllBtn:hover, #selectSuggestedBtn:hover {
@@ -309,14 +335,15 @@
       #restartDiscordBtn:hover {
           background-color: hsl(from var(--accentRed) h s calc(l - 8%));
       }
-       #generateConfigBtn:active, #enableAllBtn:active, #disableAllBtn:active,
+       #generateConfigBtn:active, #disableAllBtn:active,
        #copyConfigBtn.enabled:active, #downloadConfigBtn.enabled:active, #selectAllBtn:active, #selectSuggestedBtn:active, #restartDiscordBtn:active {
-           transform: scale(0.98); /* Add press effect */
+           transform: scale(0.98);
        }
 
+      /* Applied copied state from CODE.txt */
       #copyConfigBtn.copied {
         background-color: var(--accentAqua);
-        color: var(--bg0); /* Darker text for contrast */
+        color: var(--bg0);
       }
       #copyConfigBtn.copied:hover {
           background-color: hsl(from var(--accentAqua) h s calc(l - 8%));
@@ -325,11 +352,11 @@
       #jsonOutput {
         width: 100%;
         min-height: 350px;
-        background-color: var(--bg0);
-        color: var(--fg0);
-        border: 1px solid var(--bg3);
-        border-radius: var(--border-md);
-        padding: 1.5em; /* Increased padding */
+        background-color: var(--bg0); /* Applied from CODE.txt */
+        color: var(--fg0); /* Applied from CODE.txt */
+        border: 1px solid var(--bg3); /* Applied from CODE.txt */
+        border-radius: var(--border-md); /* Matched radius */
+        padding: 1.5em; /* Matched padding */
         font-family: monospace;
         white-space: pre;
         overflow: auto;
@@ -337,31 +364,30 @@
         resize: vertical;
         direction: ltr;
         text-align: left;
-        font-size: 0.9em; /* Slightly smaller font for code */
+        font-size: 0.9em; /* Matched font size */
         line-height: 1.5;
       }
 
       /* --- Selection Button Styles --- */
       #selection-buttons {
         margin-bottom: 1.5em;
-        margin-top: 1.5em; /* Add margin top */
+        margin-top: 1.5em;
         display: flex;
         gap: 1em;
         flex-wrap: wrap;
       }
-      /* Specific styles already handled above */
 
-
-      /* --- Required Plugins Notice --- */
+      /* --- Required Plugins Notice (Applied styles from CODE.txt) --- */
       #required-plugins-notice {
         margin-top: 1.5em;
-        padding: 1em 1.5em; /* Adjust padding */
-        background-color: rgba(from var(--accentYellow) r g b / 0.1); /* Use variable */
+        padding: 1em 1.5em;
+        background-color: rgba(from var(--accentYellow) r g b / 0.1);
         border: 1px solid rgba(from var(--accentYellow) r g b / 0.3);
         border-radius: var(--border-md);
         font-size: 0.9em;
         color: var(--accentYellow);
       }
+
       #required-plugins-notice h4 {
         margin-top: 0;
         margin-bottom: 0.5em;
@@ -369,515 +395,1502 @@
         font-size: 1.1em;
         font-weight: 700;
       }
-       #required-plugins-notice p {
-           margin-bottom: 1em;
-           line-height: 1.5;
-           color: var(--fg1);
-       }
+
+      #required-plugins-notice p {
+        margin-bottom: 1em;
+        line-height: 1.5;
+        color: var(--fg1);
+      }
+
       .required-plugin {
         background-color: rgba(from var(--accentYellow) r g b / 0.05);
         border-radius: var(--border-sm);
-        padding: 0.6em 1em; /* Adjust padding */
+        padding: 0.6em 1em;
         margin-bottom: 0.5em;
         color: var(--fg0);
       }
+
       .plugin.required-core-plugin {
         background-color: rgba(from var(--accentYellow) r g b / 0.05);
         border: 1px solid rgba(from var(--accentYellow) r g b / 0.2);
-        cursor: not-allowed; /* Indicate non-interactivity */
+        cursor: not-allowed;
       }
-      .plugin.required-core-plugin:hover {
-        box-shadow: var(--shadow-md); /* Keep normal shadow on hover */
-        transform: none; /* No lift effect */
+      .plugin.required-core-plugin:hover { /* Prevent hover effect */
+        box-shadow: var(--shadow-md);
+        transform: none;
       }
       .plugin.required-core-plugin input[type="checkbox"] {
         opacity: 0.6;
         cursor: not-allowed;
       }
 
-      /* --- Plugin Grid Styles --- */
-      /* This will now contain category headers AND the plugin grid */
-      .plugins-container {
-        /* No specific grid here anymore */
+      /* --- Theme Selection Styles (Kept styles from File 2, as they use the new palette) --- */
+      #theme-selection {
+        margin-top: 1.5em;
+        padding: 1em 1.5em;
+        background-color: rgba(from var(--accentBlue) r g b / 0.1);
+        border: 1px solid rgba(from var(--accentBlue) r g b / 0.3);
+        border-radius: var(--border-md);
+        font-size: 0.9em;
       }
+
+      #theme-selection h4 {
+        margin-top: 0;
+        margin-bottom: 0.8em;
+        color: var(--accentBlue);
+        font-size: 1.1em;
+        font-weight: 700;
+      }
+
+      .theme-option {
+        display: flex;
+        align-items: center;
+        gap: 0.8em;
+        margin-bottom: 0.8em;
+        padding: 0.5em;
+        border-radius: var(--border-sm);
+        background-color: rgba(from var(--accentBlue) r g b / 0.05);
+      }
+
+      .theme-option input[type="checkbox"] {
+        height: 1.2em;
+        width: 1.2em;
+        cursor: pointer;
+        accent-color: var(--accentBlue);
+      }
+
+      .theme-option .theme-name {
+        font-weight: 600;
+        color: var(--fg0);
+      }
+
+      .theme-option .theme-author {
+        /* Using accentPeach from the new palette, looks good here */
+        color: var(--accentPeach);
+        font-size: 0.9em;
+        margin-right: 0.5em;
+      }
+
+      /* --- Plugin Grid and Categories --- */
+      .plugins-container {
+        /* Removed margin-top from File 2, let category spacing handle it */
+      }
+
+      .category-section {
+        /* Keep structure from File 2 */
+        margin-bottom: 3em;
+      }
+
       .plugins-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /* Wider minimum for settings */
-        grid-auto-columns: 1fr;
-        grid-gap: 1.2em; /* Increased gap */
+        /* Kept original grid columns from File 2 */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1.2em; /* Matched gap */
       }
 
-      /* Ellipsis Overflow */
-      .ellipsis-overflow {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap; /* Add nowrap for ellipsis to work */
-      }
-
-
-      /* Search and Filter Styles */
-      .search {
+      /* --- Search Styles (Applied styles from CODE.txt) --- */
+       .search {
         position: relative;
         height: auto;
-        margin-top: 1.5em;
-        margin-bottom: 1em; /* Add margin below */
+        margin-top: 1.5em; /* Matched spacing */
+        margin-bottom: 1em;
       }
       .search svg {
-        position: absolute; /* Keep absolute */
-        left: 1em; /* Adjust position */
+        position: absolute;
+        left: 1em; /* Matched position */
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
-        color: var(--grey0);
-        height: 1.1em; /* Slightly larger icon */
-        pointer-events: none; /* Prevent icon interaction */
+        color: var(--grey0); /* Applied color */
+        height: 1.1em; /* Matched size */
+        pointer-events: none;
       }
       .search input {
-        position: relative; /* Change to relative */
-        text-indent: 0; /* Remove indent, use padding */
-        padding-left: 2.8em; /* Add padding for icon */
-        background: var(--bg2); /* Use different background */
-        color: var(--fg0);
-        border: 1px solid var(--bg3); /* Add subtle border */
-        border-radius: var(--border-md); /* Use medium border */
+        position: relative; /* Changed from absolute */
+        text-indent: 0;
+        padding-left: 2.8em; /* Added padding for icon */
+        background: var(--bg2); /* Applied background */
+        color: var(--fg0); /* Applied color */
+        border: 1px solid var(--bg3); /* Applied border */
+        border-radius: var(--border-md); /* Matched radius */
         box-sizing: border-box;
         width: 100%;
         margin: 0;
-        padding: 0.9em 1em 0.9em 2.8em; /* Adjust padding */
-        font-size: 1em;
+        padding: 0.9em 1em 0.9em 2.8em; /* Matched padding */
+        font-size: 1em; /* Matched font size */
       }
       .search input::placeholder {
-        color: var(--grey1);
+        color: var(--grey1); /* Applied color */
       }
       .search input:focus {
           outline: none;
-          border-color: var(--accentBlue);
-          box-shadow: 0 0 0 2px rgba(from var(--accentBlue) r g b / 0.3);
+          border-color: var(--accentBlue); /* Applied focus style */
+          box-shadow: 0 0 0 2px rgba(from var(--accentBlue) r g b / 0.3); /* Applied focus style */
       }
 
-      .criteria {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1.5em; /* Increased gap */
-        margin-top: 1em;
-        margin-bottom: 1em; /* Add margin below */
-      }
-      .criteria label {
-        display: flex;
-        gap: .6em; /* Increased gap */
-        flex-direction: row;
-        align-items: center;
-        white-space: nowrap;
-        font-size: 0.9em;
-        color: var(--fg1);
-        cursor: pointer;
-      }
-      .criteria input[type="checkbox"] {
-          height: 1.1em;
-          width: 1.1em;
-          accent-color: var(--accentPurple);
-          cursor: pointer;
-      }
-
-      /* Logo Styles */
+      /* --- Logo Styles --- */
       #logo img {
         width: 100px;
         height: auto;
         max-width: 100%;
       }
 
-      /* Nav Styles */
+      /* --- Navigation Styles (Applied styles from CODE.txt) --- */
       nav {
-          background-color: var(--bg1);
-          padding: 0.5em 1em;
-          border-bottom: 1px solid var(--bg3);
+        background-color: var(--bg1); /* Applied background */
+        padding: 0.5em 1em;
+        border-bottom: 1px solid var(--bg3); /* Applied border */
       }
+
       .nav-content {
-          max-width: 1200px;
-          margin: 0 auto;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        /* Keep flex-direction: row-reverse from File 2 if needed */
       }
-       #btns ul {
-           list-style: none;
-           padding: 0;
-           margin: 0;
-           display: flex;
-       }
-       #btns li {
-           margin-left: 1em; /* Use margin-left for LTR spacing, will appear right in RTL */
-       }
-       #btns a {
-           text-decoration: none;
-           color: var(--accentPurple);
-           font-weight: 700;
-           padding: 0.5em 1em;
-           border-radius: var(--border-md);
-           transition: background-color 0.2s ease;
-       }
-       #btns a:hover {
-           background-color: rgba(from var(--accentPurple) r g b / 0.1);
-       }
+
+      #btns ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      #btns li {
+        margin-left: 1em; /* Keep spacing from File 2 */
+      }
+
+      #btns a {
+        text-decoration: none;
+        color: var(--accentPurple); /* Applied color */
+        font-weight: 700; /* Matched font weight */
+        padding: 0.5em 1em;
+        border-radius: var(--border-md); /* Matched radius */
+        transition: background-color 0.2s ease; /* Matched transition */
+      }
+
+      #btns a:hover {
+        background-color: rgba(from var(--accentPurple) r g b / 0.1); /* Applied hover */
+      }
+
+      /* Removed .active style from File 2 to match File 1's simpler nav styling */
+      /*
+      #btns a.active {
+        background-color: var(--accentPurple);
+        color: white;
+      }
+      */
+
+      /* Ellipsis Overflow (Applied from CODE.txt) */
+      .ellipsis-overflow {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
 
     </style>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // تعريف الإضافات الإجبارية
         const requiredPlugins = ["NoTrack", "Settings", "SupportHelper"];
 
-        // --- بيانات الإضافات الأولية (مع الإضافات المضافة) ---
-        const initialPluginsData = [
-            // --- Core / Required ---
-             { name: "Settings", description: "إعدادات Vencord", author: "Vencord", configurableSettings: [ { key: "settingsLocation", label: "مكان الإعدادات:", type: "select", options: ["aboveNitro", "belowNitro"], defaultValue: "aboveNitro" } ] },
-             { name: "SupportHelper", description: "مساعدة في حل المشكلات وتقديم الدعم", author: "Vencord" },
-             { name: "NoTrack", description: "منع تتبع البيانات", author: "Vencord", configurableSettings: [ { key: "disableAnalytics", label: "تعطيل التحليلات:", type: "boolean", defaultValue: true }, ] },
-             { name: "CrashHandler", description: "معالجة الأعطال ومنع إعادة التشغيل التلقائي", author: "Nuckyz" },
+        // --- تعريف فئات الإضافات ---
+        const categories = {
+          "api": {
+            name: "واجهات برمجة التطبيقات",
+            description: "إضافات تقدم واجهات برمجية للإضافات الأخرى"
+          },
+          "core": {
+            name: "الإضافات الأساسية",
+            description: "إضافات أساسية لتشغيل Vencord"
+          },
+          "appearance": {
+            name: "المظهر",
+            description: "إضافات تغير مظهر Discord"
+          },
+          "utility": {
+            name: "الأدوات المساعدة",
+            description: "إضافات تضيف وظائف مفيدة"
+          },
+          "fun": {
+            name: "المرح",
+            description: "إضافات للترفيه والمتعة"
+          },
+          "privacy": {
+            name: "الخصوصية",
+            description: "إضافات لتعزيز الخصوصية"
+          },
+          "misc": {
+            name: "متنوعة",
+            description: "إضافات متنوعة لا تندرج تحت الفئات الأخرى"
+          }
+        };
 
-            // --- Nitro-like Features ---
-             { name: "FakeNitro", description: "استخدام ميزات Nitro بدون اشتراك (بعض الإعدادات أدناه)", author: "Vencord Team", configurableSettings: [ { key: "enableEmojiBypass", label: "تجاوز الرموز التعبيرية:", type: "boolean", defaultValue: true }, { key: "emojiSize", label: "حجم الرموز:", type: "number", defaultValue: 48, min: 16, max: 128 }, { key: "stickerSize", label: "حجم الملصقات:", type: "number", defaultValue: 160, min: 64, max: 320 }, ] },
-             { name: "EmoteCloner", description: "استنساخ الرموز التعبيرية والملصقات إلى خادمك", author: "Vee, Nuckyz" },
-             { name: "FakeProfileThemes", description: "إضافة سمات ملف شخصي مخصصة (الإعدادات في Vencord)", author: "Vendicated" },
-             { name: "AlwaysAnimate", description: "تحريك أي شيء يمكن تحريكه", author: "Fiery" },
-             { name: "Decor", description: "تخصيص إطارات الصور الرمزية", author: "Fiery" },
+        // --- بيانات الإضافات مع الفئات (From CODE2.txt) ---
+        const pluginsData = [
+            // API Plugins
+          {
+            name: "ChatInputButtonAPI",
 
-             // --- UI Enhancements ---
-             { name: "AlwaysExpandRoles", description: "توسيع قائمة الأدوار دائمًا في نوافذ الملفات الشخصية", author: "Chloe" },
-             { name: "BetterFolders", description: "عرض مجلدات الخادم على الشريط الجانبي المخصص وتحسينات أخرى", author: "Juby210, AutumnVN, Nuckyz" },
-             { name: "BetterRoleContext", description: "خيارات إضافية عند النقر بزر الماوس الأيمن على الأدوار", author: "Vee, goodbee" },
-             { name: "BetterRoleDot", description: "نسخ لون الدور عند النقر على النقطة والسماح بكلاهما مع الأسماء الملونة", author: "Vee, AutumnVN" },
-             { name: "BetterSettings", description: "تحسين تجربة فتح قائمة الإعدادات", author: "Kyuuhachi" },
-             { name: "BetterUploadButton", description: "التحميل بنقرة واحدة، وفتح القائمة بالنقر بزر الماوس الأيمن", author: "fawn, Vee" },
-             { name: "ClientTheme", description: "تغيير لون خلفية العميل", author: "Vendicated", configurableSettings: [ { key: "color", label: "لون السمة:", type: "color", defaultValue: "#313338" } ] },
-             { name: "ColorSighted", description: "إزالة أيقونات حالة عمى الألوان (مثل Discord القديم)", author: "lewisakura" },
-             { name: "ForceOwnerCrown", description: "إظهار تاج مالك الخادم دائمًا", author: "D3SOX, Nickyux" },
-             { name: "MemberCount", description: "عرض عدد الأعضاء في قائمة الأعضاء", author: "Vee, Commandtechno" },
-             { name: "NewGuildSettings", description: "تطبيق إعدادات تلقائية عند الانضمام لخادم جديد", author: "Glitchy et al.", configurableSettings: [ {key: "guild", label: "كتم الخادم:", type: "boolean", defaultValue: true }, {key: "everyone", label: "كتم @everyone:", type: "boolean", defaultValue: true } ] },
-             { name: "PlainFolderIcon", description: "إخفاء أيقونات الخوادم الصغيرة داخل المجلدات", author: "botato" },
-             { name: "PlatformIndicators", description: "إظهار مؤشرات المنصة (سطح مكتب، موبايل) للمستخدمين", author: "kemo et al." },
-             { name: "RoleColorEverywhere", description: "تطبيق لون أعلى دور للمستخدم في أماكن أكثر", author: "King Fish et al." },
-             { name: "ShowConnections", description: "إظهار الحسابات المتصلة في نافذة المستخدم", author: "TheKodeToad" },
-             { name: "ShowHiddenChannels", description: "إظهار القنوات المخفية (التي لا تملك صلاحية الوصول إليها)", author: "BigDuck et al." },
-             { name: "ShowMeYourName", description: "عرض اسم المستخدم بجانب اللقب (أو بدونه)", author: "Rini, TheKodeToad" },
-             { name: "ShowTimeoutDuration", description: "عرض مدة المهلة المتبقية للمستخدم", author: "Vee, Sqaaakoi" },
-             { name: "ThemeAttributes", description: "إضافة سمات HTML إضافية للعناصر لتسهيل التخصيص عبر CSS", author: "Vee, BoardTM" },
-             { name: "TypingIndicator", description: "عرض مؤشر الكتابة بجانب اسم القناة", author: "Nuckyz et al." },
-             { name: "TypingTweaks", description: "إظهار الصور الرمزية وألوان الأدوار في مؤشر الكتابة", author: "zt" },
-             { name: "USRBG", description: "عرض خلفيات المستخدمين من خدمة USRBG", author: "AutumnVN et al." },
-             { name: "UserMessagesPronouns", description: "إظهار الضمائر بجانب أسماء المستخدمين في الرسائل", author: "Tyman et al." },
-             { name: "UserVoiceShow", description: "إظهار مؤشر عند تواجد المستخدم في قناة صوتية بأماكن مختلفة", author: "Nuckyz, LordElias" },
-             { name: "VencordToolbox", description: "إضافة صندوق أدوات Vencord بجانب صندوق الوارد", author: "Vee, AutumnVN" },
-             { name: "ViewIcons", description: "عرض أيقونات المستخدم/الخادم/المجموعة في قائمة السياق والنقر عليها", author: "Vee et al." },
-             { name: "PinDMs", description: "تثبيت الرسائل المباشرة والمجموعات في الأعلى", author: "Vee, Syncxv", configurableSettings: [{key: "pinOrder", label: "ترتيب المثبت:", type: "number", defaultValue: 0}] },
+            description: "واجهة برمجة تطبيقات زر إدخال الدردشة",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "CommandsAPI",
+            description: "واجهة برمجة تطبيقات الأوامر",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "MemberListDecoratorsAPI",
+            description: "واجهة برمجة تطبيقات مزخرفات قائمة الأعضاء",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "MessageAccessoriesAPI",
+            description: "واجهة برمجة تطبيقات ملحقات الرسائل",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "MessageDecorationsAPI",
+            description: "واجهة برمجة تطبيقات زخارف الرسائل",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "MessageEventsAPI",
+            description: "واجهة برمجة تطبيقات أحداث الرسائل",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "MessagePopoverAPI",
+            description: "واجهة برمجة تطبيقات منبثقة الرسائل",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "MessageUpdaterAPI",
+            description: "واجهة برمجة تطبيقات محدث الرسائل",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "ServerListAPI",
+            description: "واجهة برمجة تطبيقات قائمة الخوادم",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "UserSettingsAPI",
+            description: "واجهة برمجة تطبيقات إعدادات المستخدم",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "DynamicImageModalAPI",
+            description: "واجهة برمجة تطبيقات نافذة الصور الديناميكية",
+            author: "Vendicated",
+            category: "api"
+          },
+          {
+            name: "BadgeAPI",
+            description: "واجهة برمجة تطبيقات الشارات",
+            author: "Vendicated",
+            category: "api"
+          },
 
-             // --- Chat & Messaging ---
-             { name: "BetterGifAltText", description: "تغيير النص البديل لـ GIF ليحتوي على معلومات مفيدة", author: "Vee" },
-             { name: "BetterGifPicker", description: "جعل منتقي GIF يفتح فئة المفضلة افتراضيًا", author: "Samwich" },
-             { name: "BetterNotesBox", description: "إخفاء الملاحظات أو تعطيل التدقيق الإملائي فيها", author: "Vee" },
-             { name: "CtrlEnterSend", description: "استخدام Ctrl+Enter لإرسال الرسائل", author: "Vendicated" }, // Changed author for consistency
-             { name: "FavoriteEmojiFirst", description: "عرض الرموز التعبيرية المفضلة أولاً في الإكمال التلقائي", author: "Syncxv, Vee" },
-             { name: "FavoriteGifSearch", description: "إضافة شريط بحث لصور GIF المفضلة", author: "Syncxv" },
-             { name: "FixCodeblockGap", description: "إزالة الفجوة أسفل كتل الأكواد", author: "Grzesiek11" },
-             { name: "FullSearchContext", description: "إظهار قائمة سياق الرسالة الكاملة في نتائج البحث", author: "Vee, Syncxv" },
-             { name: "FullUserInChatbox", description: "جعل @إشارة المستخدم في مربع الدردشة قابلة للتفاعل", author: "sadan" },
-             { name: "GifPaste", description: "لصق رابط GIF بدلاً من إرساله مباشرة عند الاختيار", author: "Vee" },
-             { name: "GreetStickerPicker", description: "اختيار ملصق الترحيب بدلًا من إرسال عشوائي", author: "Vee" },
-             { name: "IrcColors", description: "تطبيق ألوان فريدة على أسماء المستخدمين في الدردشة", author: "Grzesiek11, jamesbt365" },
-             { name: "MentionAvatars", description: "إظهار الصور الرمزية وأيقونات الأدوار داخل الإشارات (@)", author: "Vee, SerStars" },
-             { name: "MessageClickActions", description: "تعديل/حذف/رد على الرسائل عبر نقرات/اختصارات", author: "Vee" },
-             { name: "MessageLatency", description: "عرض مؤشر للرسائل التي تأخر إرسالها", author: "arHSM" },
-             { name: "MessageLinkEmbeds", description: "إضافة معاينة للرسائل التي تحتوي على رابط لرسالة أخرى", author: "sunnie et al." },
-             { name: "MessageLogger", description: "تسجيل الرسائل المحذوفة والمعدلة مؤقتًا", author: "rushii et al.", configurableSettings: [ {key: "logEdits", label: "تسجيل التعديلات:", type: "boolean", defaultValue: true}, {key: "logDeletes", label: "تسجيل الحذف:", type: "boolean", defaultValue: true} ] },
-             { name: "MessageTags", description: "حفظ رسائل لاستخدامها لاحقًا عبر أمر", author: "Luny" },
-             { name: "MoreCommands", description: "إضافة أوامر مثل /echo, /lenny, /mock", author: "ArjixWasTaken et al." },
-             { name: "MoreKaomoji", description: "إضافة المزيد من ال Kaomoji ヽ(´▽`)/", author: "Jacob.Tm" },
-             { name: "NoBlockedMessages", description: "إخفاء رسائل المستخدمين المحظورين تمامًا", author: "rushii et al." },
-             { name: "NoMaskedUrlPaste", description: "منع لصق الروابط كنص مخفي عند تحديد نص آخر", author: "CatNoir" },
-             { name: "NoReplyMention", description: "تعطيل إشارة الرد (@) افتراضيًا", author: "DustyAngel47 et al." },
-             { name: "NoServerEmojis", description: "عدم عرض رموز الخادم التعبيرية في قائمة الإكمال التلقائي", author: "UlyssesZhan" },
-             { name: "NoTypingAnimation", description: "تعطيل الرسوم المتحركة لنقاط الكتابة", author: "AutumnVN" },
-             { name: "PreviewMessage", description: "معاينة الرسالة قبل إرسالها", author: "Syncxv" },
-             { name: "QuickMention", description: "إضافة زر إشارة سريعة إلى شريط إجراءات الرسالة", author: "kemo" },
-             { name: "QuickReply", description: "الرد/التعديل على الرسائل عبر اختصارات لوحة المفاتيح", author: "fawn et al." },
-             { name: "ReplyTimestamp", description: "إظهار الطابع الزمني في معاينة الردود", author: "Kyuuhachi" },
-             { name: "RevealAllSpoilers", description: "كشف جميع المفسدات (Spoilers) في رسالة عبر اختصار", author: "whqwert" },
-             { name: "SendTimestamps", description: "إرسال طوابع زمنية بسهولة عبر زر واختصارات", author: "Vee et al." },
-             { name: "ShikiCodeblocks", description: "تلوين كتل الأكواد باستخدام Shiki (مثل VSCode)", author: "Vap0r1ze", target: "desktop" }, // Added target
-             { name: "ShowAllMessageButtons", description: "إظهار جميع أزرار الرسائل دائمًا (بدون الحاجة لـ Shift)", author: "Nuckyz" },
-             { name: "SilentMessageToggle", description: "إضافة زر لتبديل إرسال الرسالة بصمت (@silent)", author: "Nuckyz, CatNoir" },
-             { name: "SilentTyping", description: "إخفاء مؤشر الكتابة الخاص بك", author: "Vee et al." },
-             { name: "StickerPaste", description: "لصق رابط الملصق بدلًا من إرساله مباشرة", author: "Im_Banana" },
-             { name: "SuperReactionTweaks", description: "تخصيص ردود الفعل الفائقة (Super Reactions)", author: "Fiery, ant0n" },
-             { name: "TextReplace", description: "استبدال النص في رسائلك بناءً على قواعد محددة", author: "AutumnVN, TheKodeToad" },
-             { name: "Translate", description: "ترجمة الرسائل باستخدام Google Translate أو DeepL", author: "Vee, AshtonMemer", configurableSettings: [{key: "service", label:"خدمة الترجمة:", type:"select", options:["google", "deepl"], defaultValue:"google"}, {key:"receivedOutput", label:"لغة الترجمة:", type:"text", defaultValue:"ar"}] }, // Added Translate settings
-             { name: "Unindent", description: "إزالة المسافة البادئة الزائدة من كتل الأكواد", author: "Vee" },
-             { name: "UnsuppressEmbeds", description: "إلغاء قمع (إظهار) التضمينات المخفية", author: "rad, HypedDomi" },
-             { name: "ValidReply", description: "إصلاح مشكلة 'تعذر تحميل الرسالة' عند التحويم فوق الردود القديمة", author: "newwares" },
-             { name: "ValidUser", description: "إصلاح ظهور '@unknown-user' للمستخدمين غير المعروفين", author: "Vee, Dolfies" },
-             { name: "VoiceMessages", description: "إرسال رسائل صوتية (عبر النقر الأيمن على زر الرفع)", author: "Vee et al." },
-             { name: "WhoReacted", description: "عرض صور المستخدمين المتفاعلين أسفل الرسالة", author: "Vee et al." },
+          // Core Plugins
+          {
+            name: "CrashHandler",
+            description: "معالج الأعطال",
+            author: "Vendicated",
+            category: "core"
+          },
+          {
+            name: "Settings",
+            description: "إعدادات Vencord",
+            author: "Vendicated",
+            category: "core",
+            settings: [
+              {
+                type: "select",
+                name: "settingsLocation",
+                label: "موقع الإعدادات:", // Added colon for consistency
+                options: [
+                  { value: "aboveNitro", label: "فوق Nitro" },
+                  { value: "belowNitro", label: "تحت Nitro" },
+                  { value: "aboveActivity", label: "فوق النشاط" }
+                ],
+                defaultValue: "aboveNitro"
+              }
+            ]
+          },
+          {
+            name: "SupportHelper",
+            description: "مساعدة في حل المشكلات وتقديم الدعم",
+            author: "Vendicated",
+            category: "core"
+          },
+          {
+            name: "NoTrack",
+            description: "منع تتبع البيانات",
+            author: "Vendicated",
+            category: "privacy",
+            settings: [
+              {
+                type: "checkbox",
+                name: "disableAnalytics",
+                label: "تعطيل التحليلات:", // Added colon
+                defaultValue: true
+              }
+            ]
+          },
 
-             // --- Media & Embeds ---
-             // { name: "BetterGifAltText", description: "تغيير النص البديل لـ GIF ليحتوي على معلومات مفيدة", author: "Vee" }, // Note: Also categorized under Chat
-             { name: "BiggerStreamPreview", description: "تكبير معاينات البث المباشر", author: "phil" },
-             { name: "BlurNSFW", description: "تمويه المرفقات في قنوات NSFW", author: "Vee" },
-             { name: "Dearrow", description: "إزالة العناوين والصور المصغرة المضللة من تضمينات YouTube", author: "Vee" },
-             { name: "FixImagesQuality", description: "منع تحميل الصور كـ WebP للحفاظ على الجودة", author: "Nuckyz" },
-             { name: "FixSpotifyEmbeds", description: "إصلاح مشكلة الصوت العالي في تضمينات Spotify", author: "Vee", target: "desktop" },
-             { name: "FixYoutubeEmbeds", description: "تجاوز حظر عرض بعض تضمينات YouTube", author: "coolelectronics", target: "desktop" },
-             { name: "HideMedia", description: "إخفاء المرفقات والتضمينات لرسالة محددة", author: "Vee" },
-             { name: "ImageLink", description: "إظهار رابط الصورة دائمًا حتى لو كانت هي المحتوى الوحيد", author: "Kyuuhachi, Sqaaakoi" },
-             { name: "ImageZoom", description: "تكبير الصور وصور GIF باستخدام عجلة الماوس", author: "Syncxv" },
-             { name: "NoMosaic", description: "إزالة تأثير الفسيفساء للصور المتعددة", author: "AutumnVN" },
-             { name: "PictureInPicture", description: "إضافة زر صورة داخل صورة لمقاطع الفيديو", author: "Lumap" },
-             { name: "ReverseImageSearch", description: "إضافة خيار البحث العكسي عن الصور في قائمة السياق", author: "Vee, Nuckyz" },
-             { name: "YoutubeAdblock", description: "منع إعلانات YouTube (نسخة الويب)", author: "Vendicated" },
-             { name: "YoutubeAdblock.desktop", description: "منع إعلانات YouTube (نسخة سطح المكتب)", author: "Vendicated" },
+          // Appearance Plugins
+          {
+            name: "ClientTheme",
+            description: "تغيير لون خلفية العميل",
+            author: "Vendicated",
+            category: "appearance",
+            settings: [
+              {
+                type: "color",
+                name: "color",
+                label: "اللون:", // Added colon
+                defaultValue: "313338" // No # prefix needed here for logic
+              }
+            ]
+          },
+          {
+            name: "BetterFolders",
+            description: "عرض مجلدات الخادم على الشريط الجانبي المخصص وإضافة تحسينات متعلقة بالمجلدات",
+            author: "Juby210, AutumnVN, Nuckyz",
+            category: "appearance",
+            settings: [
+              {
+                type: "checkbox",
+                name: "sidebarFolders",
+                label: "مجلدات الشريط الجانبي:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "checkbox",
+                name: "closeAllFolders",
+                label: "إغلاق جميع المجلدات:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "checkbox",
+                name: "closeAllHomeButton",
+                label: "زر إغلاق الكل في الصفحة الرئيسية:", // Added colon
+                defaultValue: true
+              }
+            ]
+          },
+          {
+            name: "BetterRoleDot",
+            description: "نسخ لون الدور عند النقر على نقطة الدور (إعداد إمكانية الوصول). يسمح أيضًا باستخدام نقطة الدور والأسماء الملونة في وقت واحد",
+            author: "Vee, AutumnVN",
+            category: "appearance",
+            settings: [
+              {
+                type: "checkbox",
+                name: "bothStyles",
+                label: "كلا النمطين:", // Added colon
+                defaultValue: true
+              }
+            ]
+          },
+          {
+            name: "AlwaysAnimate",
+            description: "تحريك أي شيء يمكن تحريكه",
+            author: "Fiery",
+            category: "appearance"
+          },
+          {
+            name: "AlwaysExpandRoles",
+            description: "توسيع قائمة الأدوار دائمًا في نوافذ الملفات الشخصية",
+            author: "Chloe",
+            category: "appearance"
+          },
+          {
+            name: "BetterGifAltText",
+            description: "تغيير نص GIF البديل من مجرد 'GIF' ليحتوي على علامات gif / اسم الملف",
+            author: "Vee",
+            category: "appearance"
+          },
+          {
+            name: "BetterGifPicker",
+            description: "جعل منتقي GIF يفتح فئة المفضلة افتراضيًا",
+            author: "Samwich",
+            category: "appearance"
+          },
+          {
+            name: "BetterNotesBox",
+            description: "إخفاء الملاحظات أو تعطيل التدقيق الإملائي (قم بالتكوين في الإعدادات!!)",
+            author: "Vee",
+            category: "appearance"
+          },
+          {
+            name: "BetterRoleContext",
+            description: "إضافة خيارات لنسخ لون الدور / تحرير الدور / عرض أيقونة الدور عند النقر بزر الماوس الأيمن على الأدوار في ملف المستخدم الشخصي",
+            author: "Vee, goodbee",
+            category: "utility"
+          },
+          {
+            name: "BetterSettings",
+            description: "تحسين تجربة فتح قائمة الإعدادات",
+            author: "Kyuuhachi",
+            category: "appearance"
+          },
+          {
+            name: "BetterUploadButton",
+            description: "التحميل بنقرة واحدة، وفتح القائمة بالنقر بزر الماوس الأيمن",
+            author: "fawn, Vee",
+            category: "utility"
+          },
+          {
+            name: "BiggerStreamPreview",
+            description: "تتيح لك هذه الإضافة تكبير معاينات البث",
+            author: "phil",
+            category: "appearance"
+          },
+          {
+            name: "BlurNSFW",
+            description: "تمويه المرفقات في قنوات NSFW حتى تمرير المؤشر فوقها",
+            author: "Vee",
+            category: "appearance"
+          },
+          {
+            name: "ColorSighted",
+            description: "إضافة مؤشرات لونية للأزرار في مربعات الحوار",
+            author: "Vendicated",
+            category: "appearance"
+          },
+          {
+            name: "Decor",
+            description: "تخصيص مظهر Discord",
+            author: "Vendicated",
+            category: "appearance"
+          },
+          {
+            name: "FakeProfileThemes",
+            description: "إضافة سمات ملف شخصي مخصصة",
+            author: "Vendicated",
+            category: "appearance"
+          },
+          {
+            name: "FavoriteEmojiFirst",
+            description: "عرض الرموز التعبيرية المفضلة أولاً",
+            author: "Vendicated",
+            category: "appearance"
+          },
+          {
+            name: "FixImagesQuality",
+            description: "تحسين جودة الصور",
+            author: "Vendicated",
+            category: "appearance"
+          },
+          {
+            name: "NoMosaic",
+            description: "إزالة تأثير الفسيفساء من الصور",
+            author: "Vendicated",
+            category: "appearance",
+            settings: [
+              {
+                type: "checkbox",
+                name: "noMosaicAttachments",
+                label: "إزالة الفسيفساء من المرفقات:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "checkbox",
+                name: "noMosaicEmbeds",
+                label: "إزالة الفسيفساء من المضمنات:", // Added colon
+                defaultValue: true
+              }
+            ]
+          },
+          {
+            name: "NoTypingAnimation",
+            description: "إزالة رسوم متحركة للكتابة",
+            author: "Vendicated",
+            category: "appearance"
+          },
 
-             // --- Profiles & Information ---
-             { name: "AccountPanelServerProfile", description: "عرض ملف الخادم الشخصي عبر النقر الأيمن على لوحة الحساب", author: "Nuckyz, Relitrix" },
-             { name: "BetterSessions", description: "تحسين قائمة الجلسات (الأجهزة المسجلة)", author: "amia" },
-             { name: "CopyUserURLs", description: "نسخ رابط ملف المستخدم (discord.com/users/ID)", author: "castdrian" },
-             { name: "FriendsSince", description: "إظهار تاريخ بدء الصداقة في نافذة المستخدم", author: "Elvyra, Antti" },
-             { name: "ImplicitRelationships", description: "إظهار العلاقات الضمنية (مثل الخوادم المشتركة) في تبويب الأصدقاء", author: "Dolfies" },
-             { name: "MutualGroupDMs", description: "إظهار المجموعات المشتركة في ملفات تعريف المستخدمين", author: "amia" },
-             { name: "PermissionsViewer", description: "عرض صلاحيات المستخدم/القناة وأدوار الخادم", author: "Nuckyz, Vee" },
-             { name: "RelationshipNotifier", description: "إشعار عند إزالتك من صديق/مجموعة/خادم", author: "nick" },
-             { name: "ReviewDB", description: "مراجعة المستخدمين الآخرين (يضيف تبويب جديد للملف الشخصي)", author: "mantikafasi, Vee" },
-             { name: "ServerInfo", description: "عرض معلومات تفصيلية عن الخادم", author: "Vee, Nuckyz" },
-             { name: "SortFriendRequests", description: "فرز طلبات الصداقة حسب التاريخ", author: "Megumin" },
-             { name: "UnlockedAvatarZoom", description: "تكبير الصورة الرمزية بشكل أكبر عند التعديل", author: "nakoyasha" },
-
-             // --- Privacy & Security ---
-             { name: "AlwaysTrust", description: "إزالة نافذة تحذير الروابط والملفات المشبوهة", author: "zt, trey" },
-             { name: "AnonymiseFileNames", description: "تغيير أسماء الملفات عند الرفع للحفاظ على الخصوصية", author: "fawn" },
-             { name: "ClearURLs", description: "إزالة معلمات التتبع من عناوين URL", author: "Vendicated" },
-             { name: "ConsoleJanitor", description: "إزالة رسائل وحدة التحكم المزعجة وغير الضرورية", author: "Vendicated" },
-             { name: "iLoveSpam", description: "عدم إخفاء رسائل 'مرسلي الرسائل غير المرغوب فيها المحتملين'", author: "botato, nyako" },
-             { name: "InvisibleChat", description: "تشفير الرسائل باستخدام طريقة غير مرئية (يتطلب توافق)", author: "Samm-Cheese", target: "desktop" },
-             { name: "NoDevtoolsWarning", description: "إزالة تحذير 'HOLD UP!' في وحدة التحكم ومنع تسجيل الخروج العشوائي", author: "Vee" },
-             { name: "NoRPC", description: "تعطيل خادم Discord RPC", author: "Cynosphere", target: "discordDesktop" }, // Specific target
-             { name: "NSFWGateBypass", description: "تجاوز بوابة تأكيد العمر لقنوات NSFW", author: "Commandtechno" },
-
-             // --- Tools & Utilities (including APIs) ---
-             { name: "CallTimer", description: "إظهار مدة المكالمة الحالية", author: "Vendicated, Fiery", configurableSettings: [ { key: "format", label: "تنسيق الوقت:", type: "select", options: ["stopwatch", "timer"], defaultValue: "stopwatch" } ] },
-             { name: "ConsoleShortcuts", description: "إضافة اختصارات مفيدة إلى وحدة تحكم المطور", author: "Vee" },
-             { name: "CopyEmojiMarkdown", description: "نسخ الرموز التعبيرية بتنسيق Markdown", author: "Vendicated" }, // Changed author
-             { name: "CopyFileContents", description: "نسخ محتويات الملفات النصية المرفقة", author: "Vendicated" }, // Changed author
-             { name: "CustomIdle", description: "تخصيص وقت الخمول التلقائي (أو تعطيله)", author: "newwares" },
-             { name: "CustomRPC", description: "إضافة حالة نشاط مخصصة (RPC)", author: "Captain et al." }, // Simplified author
-             { name: "DevCompanion", description: "أدوات مساعدة لمطوري Vencord", author: "Vee", target: "dev" }, // Specific target
-             { name: "DisableCallIdle", description: "منع الخمول التلقائي في المكالمات الصوتية", author: "Nuckyz" },
-             { name: "DontRoundMyTimestamps", description: "عرض الطوابع الزمنية النسبية بدقة أكبر (عدم التقريب لأعلى)", author: "Lexi" },
-             { name: "Experiments", description: "الوصول إلى ميزات Discord التجريبية", author: "Vendicated" }, // Changed author
-             { name: "F8Break", description: "إيقاف العميل مؤقتًا عند الضغط على F8 (مع أدوات المطور)", author: "lewisakura" },
-             { name: "GameActivityToggle", description: "إضافة زر لتبديل عرض نشاط اللعبة", author: "Nuckyz, RuukuLada", configurableSettings: [ {key: "oldIcon", label: "أيقونة قديمة:", type:"boolean", defaultValue: false}] },
-             { name: "IgnoreActivities", description: "تجاهل عرض أنشطة معينة في حالتك", author: "Nuckyz, Cookie" },
-             { name: "KeepCurrentChannel", description: "محاولة العودة إلى القناة السابقة عند بدء التشغيل/تبديل الحساب", author: "Nuckyz" },
-             { name: "LoadingQuotes", description: "استبدال اقتباسات شاشة التحميل", author: "Vee et al." },
-             { name: "NormalizeMessageLinks", description: "إزالة canary/ptb من روابط الرسائل", author: "bb010g" },
-             { name: "NoF1", description: "تعطيل اختصار F1 لفتح صفحة المساعدة", author: "Cynosphere" },
-             { name: "NoOnboardingDelay", description: "تخطي التأخير المزعج عند الانضمام لخادم لأول مرة", author: "nekohaxx" },
-             { name: "NoPendingCount", description: "إخفاء عدد الإشعارات المعلقة (طلبات صداقة، إلخ)", author: "amia" },
-             { name: "NoProfileThemes", description: "إخفاء سمات الملفات الشخصية للآخرين (باستثناء نفسك)", author: "TheKodeToad" },
-             { name: "NoSystemBadge", description: "تعطيل شارة العدد غير المقروء في شريط المهام/صينية النظام", author: "rushii", target: "discordDesktop" },
-             { name: "NotificationVolume", description: "تعيين مستوى صوت منفصل للإشعارات", author: "philipbry" },
-             { name: "NoUnblockToJump", description: "الانتقال لرسائل المحظورين دون الحاجة لإلغاء الحظر", author: "dzshn" },
-             { name: "OpenInApp", description: "فتح الروابط في تطبيقاتها المخصصة بدلًا من المتصفح", author: "Vee, Chloe" },
-             { name: "OverrideForumDefaults", description: "تجاوز إعدادات العرض والفرز الافتراضية للمنتديات", author: "Inbestigator" },
-             { name: "PauseInvitesForever", description: "إعادة خيار إيقاف الدعوات مؤقتًا إلى الأبد", author: "Dolfies, amia" },
-             { name: "PermissionFreeWill", description: "تعطيل قيود واجهة المستخدم عند إدارة الصلاحيات", author: "lewisakura" },
-             { name: "ReadAllNotificationsButton", description: "إضافة زر لقراءة جميع إشعارات الخوادم", author: "kemo" },
-             { name: "ReactErrorDecoder", description: "فك تشفير أخطاء React المصغرة لعرض الخطأ الفعلي", author: "Cynosphere, maisy" },
-             { name: "ReplaceGoogleSearch", description: "استبدال البحث عبر Google في قائمة السياق بمحركات أخرى", author: "Moxxie, Ethan" },
-             { name: "ServerListIndicators", description: "عرض مؤشرات (عدد الأصدقاء المتصلين/الخوادم) في قائمة الخوادم", author: "dzshn" },
-             { name: "ShowHiddenThings", description: "عرض معلومات مخفية/خاصة بالمدراء (مثل المهلات، الدعوات الموقوفة)", author: "Dolfies" },
-             { name: "StartupTimings", description: "إظهار توقيتات بدء تشغيل Vencord في الإعدادات", author: "Megumin" },
-             { name: "StreamerModeOnStream", description: "تفعيل وضع الاستريمر تلقائيًا عند بدء البث", author: "Kodarru" },
-             { name: "Summaries", description: "تفعيل ملخصات المحادثات التجريبية (AI)", author: "mantikafasi" },
-             { name: "VcNarrator", description: "إعلان صوتي عند دخول/خروج المستخدمين من القنوات الصوتية", author: "Vee" },
-             { name: "ViewRaw", description: "عرض/نسخ البيانات الأولية للرسائل/القنوات/الخوادم", author: "King Fish et al." },
-             { name: "VoiceChatDoubleClick", description: "الانضمام للقنوات الصوتية بالنقر المزدوج بدلًا من المفرد", author: "Vee, D3SOX" },
-             { name: "VoiceDownload", description: "إضافة زر لتنزيل الرسائل الصوتية", author: "puv" },
-             { name: "VolumeBooster", description: "رفع مستوى الصوت أعلى من الحد الأقصى", author: "Nuckyz, sadan", configurableSettings: [ { key: "multiplier", label: "معامل الضرب:", type: "number", defaultValue: 2, min: 1, max: 10, step: 0.5 } ] },
-             { name: "WebContextMenus.web", description: "إعادة قوائم السياق المفقودة في نسخة الويب", author: "Vee", target: "web" },
-             { name: "WebKeybinds.web", description: "إعادة اختصارات لوحة المفاتيح المفقودة في نسخة الويب", author: "Vee", target: "web" },
-             { name: "WebScreenShareFixes.web", description: "إصلاحات لمشاركة الشاشة في نسخة الويب (Vesktop)", author: "kaitlyn", target: "web" },
-             { name: "XSOverlay", description: "إرسال إشعارات Discord إلى XSOverlay (لـ VR)", author: "nyako" }, // Added target? Assume desktop/any
-             // --- Newly Added APIs ---
-             { name: "ChatInputButtonAPI", description: "API لإضافة أزرار إلى مربع إدخال الدردشة", author: "Vencord API" },
-             { name: "CommandsAPI", description: "API لتسجيل أوامر الشرطة المائلة (/)", author: "Vencord API" },
-             { name: "MemberListDecoratorsAPI", description: "API لإضافة عناصر إلى قائمة الأعضاء", author: "Vencord API" },
-             { name: "MessageAccessoriesAPI", description: "API لإضافة ملحقات إلى الرسائل", author: "Vencord API" },
-             { name: "MessageDecorationsAPI", description: "API لإضافة زينة إلى الرسائل", author: "Vencord API" },
-             { name: "MessageEventsAPI", description: "API للتفاعل مع أحداث الرسائل", author: "Vencord API" },
-             { name: "MessagePopoverAPI", description: "API لتعديل النافذة المنبثقة للرسائل", author: "Vencord API" },
-             { name: "MessageUpdaterAPI", description: "API لتحديث محتوى الرسائل ديناميكيًا", author: "Vencord API" },
-             { name: "ServerListAPI", description: "API للتفاعل مع قائمة الخوادم", author: "Vencord API" },
-             { name: "UserSettingsAPI", description: "API لإضافة إعدادات إلى واجهة Vencord", author: "Vencord API" },
-             { name: "DynamicImageModalAPI", description: "API لعرض الصور في نافذة منبثقة ديناميكية", author: "Vencord API" },
-             { name: "BadgeAPI", description: "API لإضافة شارات مخصصة للمستخدمين", author: "Vencord API" },
-             { name: "FriendInvites", description: "إنشاء وإدارة روابط دعوة الأصدقاء عبر الأوامر", author: "afn, Dziurwa" }, // Added FriendInvites
-
-            // --- External Services ---
-             { name: "AppleMusicRichPresence", description: "حالة ديسكورد غنية لـ Apple Music!", author: "RyanCaoDev", target: "desktop" }, // Added target
-             { name: "LastFMRichPresence", description: "إظهار ما تستمع إليه على Last.fm كحالة نشاط", author: "dzshn et al." },
-             { name: "SpotifyControls", description: "إضافة عناصر تحكم Spotify أسفل الواجهة", author: "Vee et al." },
-             { name: "SpotifyCrack", description: "ميزات إضافية لـ Spotify (استماع مع الأصدقاء مجانًا، إلخ)", author: "Cynosphere, Nuckyz" },
-             { name: "SpotifyShareCommands", description: "أوامر لمشاركة ما تستمع إليه على Spotify", author: "katlyn" },
-             { name: "WebRichPresence (arRPC).web", description: "تمكين RPC لنسخة الويب باستخدام arRPC", author: "Ducko", target: "web" },
-
-             // --- Fun & Miscellaneous ---
-             { name: "BANger", description: "استبدال صورة GIF في مربع حوار الحظر بصورة مخصصة.", author: "Xinto, Glitchy" },
-             { name: "Moyai", description: "🗿", author: "Megumin, Nuckyz" },
-             { name: "oneko", description: "قطة تتبع مؤشر الماوس", author: "Vee, adryd" },
-             { name: "OnePingPerDM", description: "تحديد عدد التنبيهات الصوتية من نفس الرسالة المباشرة", author: "ProffDea" },
-             { name: "PartyMode", description: "تفعيل وضع الحفلة (تأثيرات بصرية)", author: "UwU" },
-             { name: "petpet", description: "إنشاء صور GIF تفاعلية عبر أمر /petpet", author: "Vee" },
-             { name: "SecretRingToneEnabler", description: "تشغيل نغمة الرنين السرية دائمًا", author: "Andrew-DLO et al." },
-
+          // Utility Plugins
+          {
+            name: "AccountPanelServerProfile",
+            description: "انقر بزر الماوس الأيمن على لوحة حسابك في الأسفل الأيسر لعرض ملفك الشخصي في الخادم الحالي",
+            author: "Nuckyz, Relitrix",
+            category: "utility"
+          },
+          {
+            name: "AlwaysTrust",
+            description: "إزالة نافذة المجال غير الموثوق به والملف المشبوه المزعجة",
+            author: "zt, trey",
+            category: "utility"
+          },
+          {
+            name: "AnonymiseFileNames",
+            description: "إخفاء أسماء الملفات المرفوعة",
+            author: "fawn",
+            category: "privacy"
+          },
+          {
+            name: "AppleMusicRichPresence",
+            description: "حالة ديسكورد الغنية لـ Apple Music!",
+            author: "RyanCaoDev",
+            category: "utility"
+          },
+          {
+            name: "BANger",
+            description: "استبدال صورة GIF في مربع حوار الحظر بصورة مخصصة.",
+            author: "Xinto, Glitchy",
+            category: "fun"
+          },
+          {
+            name: "BetterSessions",
+            description: "تحسين قائمة الجلسات (الأجهزة). يتيح لك عرض الطوابع الزمنية الدقيقة، وإعطاء كل جلسة اسمًا مخصصًا، وتلقي إشعارات حول الجلسات الجديدة.",
+            author: "amia",
+            category: "utility"
+          },
+          {
+            name: "CallTimer",
+            description: "إظهار مدة المكالمة الحالية",
+            author: "Vendicated, Fiery",
+            category: "utility",
+            settings: [
+              {
+                type: "select",
+                name: "format",
+                label: "تنسيق الوقت:", // Added colon
+                options: [
+                  { value: "stopwatch", label: "ساعة إيقاف" },
+                  { value: "timestamp", label: "طابع زمني" }
+                ],
+                defaultValue: "stopwatch"
+              }
+            ]
+          },
+          {
+            name: "ClearURLs",
+            description: "إزالة معلمات التتبع من عناوين URL",
+            author: "Vendicated",
+            category: "privacy"
+          },
+          {
+            name: "ConsoleJanitor",
+            description: "إزالة رسائل وحدة التحكم غير المرغوب فيها",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "ConsoleShortcuts",
+            description: "إضافة اختصارات مفيدة إلى وحدة التحكم",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "CopyEmojiMarkdown",
+            description: "نسخ الرموز التعبيرية بتنسيق Markdown",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "CopyFileContents",
+            description: "نسخ محتويات الملفات المرفقة",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "CopyUserURLs",
+            description: "نسخ عناوين URL للمستخدمين",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "CtrlEnterSend",
+            description: "استخدام Ctrl+Enter لإرسال الرسائل",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "CustomIdle",
+            description: "تخصيص حالة الخمول",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "CustomRPC",
+            description: "إضافة حالة نشاط مخصصة",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "Dearrow",
+            description: "إزالة الصور المصغرة المضللة من YouTube",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "DevCompanion",
+            description: "أدوات مساعدة للمطورين",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "DisableCallIdle",
+            description: "تعطيل الخمول أثناء المكالمات",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "DontRoundMyTimestamps",
+            description: "عرض الطوابع الزمنية الدقيقة",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "EmoteCloner",
+            description: "استنساخ الرموز التعبيرية بين الخوادم",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "Experiments",
+            description: "الوصول إلى ميزات تجريبية",
+            author: "Vendicated",
+            category: "utility",
+            settings: [
+              {
+                type: "checkbox",
+                name: "toolbarDevMenu",
+                label: "قائمة المطورين في شريط الأدوات:", // Added colon
+                defaultValue: false
+              }
+            ]
+          },
+          {
+            name: "F8Break",
+            description: "إيقاف التنفيذ عند الضغط على F8",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "FakeNitro",
+            description: "استخدام ميزات Nitro بدون اشتراك",
+            author: "Vendicated",
+            category: "utility",
+            settings: [
+              {
+                type: "checkbox",
+                name: "enableEmojiBypass",
+                label: "تمكين تجاوز الرموز التعبيرية:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "checkbox",
+                name: "enableStickerBypass",
+                label: "تمكين تجاوز الملصقات:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "checkbox",
+                name: "enableStreamQualityBypass",
+                label: "تمكين تجاوز جودة البث:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "checkbox",
+                name: "transformEmojis",
+                label: "تحويل الرموز التعبيرية:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "checkbox",
+                name: "transformStickers",
+                label: "تحويل الملصقات:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "checkbox",
+                name: "transformCompoundSentence",
+                label: "تحويل الجمل المركبة:", // Added colon
+                defaultValue: false
+              },
+              {
+                type: "number",
+                name: "emojiSize",
+                label: "حجم الرموز التعبيرية:", // Added colon
+                defaultValue: 48
+              },
+              {
+                type: "number",
+                name: "stickerSize",
+                label: "حجم الملصقات:", // Added colon
+                defaultValue: 160
+              },
+              {
+                type: "checkbox",
+                name: "useHyperLinks",
+                label: "استخدام الروابط التشعبية:", // Added colon
+                defaultValue: true
+              },
+              {
+                type: "text",
+                name: "hyperLinkText",
+                label: "نص الرابط التشعبي:", // Added colon
+                defaultValue: "{{NAME}}"
+              },
+              {
+                type: "checkbox",
+                name: "disableEmbedPermissionCheck",
+                label: "تعطيل فحص إذن التضمين:", // Added colon
+                defaultValue: true
+              }
+            ]
+          },
+          {
+            name: "FavoriteGifSearch",
+            description: "حفظ عمليات بحث GIF المفضلة",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "FriendsSince",
+            description: "عرض تاريخ بداية الصداقة",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "GameActivityToggle",
+            description: "تبديل نشاط الألعاب",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "MessageLinkEmbeds",
+            description: "تضمين روابط الرسائل",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "NewGuildSettings",
+            description: "إعدادات جديدة للخوادم",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "NoUnblockToJump",
+            description: "القفز بدون إلغاء الحظر",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "OpenInApp",
+            description: "فتح الروابط في التطبيقات",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "PinDMs",
+            description: "تثبيت الرسائل المباشرة",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "PreviewMessage",
+            description: "معاينة الرسائل",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "ReadAllNotificationsButton",
+            description: "زر قراءة جميع الإشعارات",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "RelationshipNotifier",
+            description: "إشعارات العلاقات",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "ReverseImageSearch",
+            description: "البحث العكسي عن الصور",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "SendTimestamps",
+            description: "إرسال الطوابع الزمنية",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "ServerInfo",
+            description: "معلومات الخادم",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "ShowConnections",
+            description: "عرض الاتصالات",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "Translate",
+            description: "ترجمة الرسائل",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "UserVoiceShow",
+            description: "عرض صوت المستخدم",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "ValidReply",
+            description: "رد صالح",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "ValidUser",
+            description: "مستخدم صالح",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "ViewIcons",
+            description: "عرض الأيقونات",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "VoiceDownload",
+            description: "تنزيل الصوت",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "VoiceMessages",
+            description: "رسائل صوتية",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "VolumeBooster",
+            description: "تعزيز الصوت",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "YoutubeAdblock",
+            description: "منع إعلانات YouTube",
+            author: "Vendicated",
+            category: "utility"
+          },
+          {
+            name: "YoutubeAdblock.desktop",
+            description: "منع إعلانات YouTube (نسخة سطح المكتب)",
+            author: "Vendicated",
+            category: "utility"
+          }
         ];
 
-        // --- De-duplicate and Prepare Data ---
-        const uniquePluginsMap = new Map();
-        initialPluginsData.forEach(plugin => {
-            if (!uniquePluginsMap.has(plugin.name)) { uniquePluginsMap.set(plugin.name, plugin); }
-            else { const existing = uniquePluginsMap.get(plugin.name); if (plugin.configurableSettings && !existing.configurableSettings) { uniquePluginsMap.set(plugin.name, plugin); } }
-        });
-        const pluginsData = Array.from(uniquePluginsMap.values());
 
-        // --- Categorize Plugins ---
-        const categorizedPlugins = { /* ... (categories as before) ... */
-             "🌟 أساسي": [], "💎 ميزات نيترو": [], "💅 تحسينات الواجهة": [], "💬 الدردشة والرسائل": [], "🖼️ الوسائط والتضمينات": [], "👤 الملفات الشخصية والمعلومات": [], "🔒 الخصوصية والأمان": [], "🔗 خدمات خارجية": [], "🛠️ أدوات ومساعدة (APIs)": [], "🎉 متنوع ومرح": [],
-        };
-        pluginsData.forEach(plugin => { /* ... (categorization logic as before) ... */
-            const nameLower = plugin.name.toLowerCase(); const descLower = plugin.description.toLowerCase();
-            if (requiredPlugins.includes(plugin.name)) categorizedPlugins["🌟 أساسي"].push(plugin);
-            else if (nameLower.includes("nitro") || nameLower.includes("emotecloner") || nameLower.includes("fakeprofilethemes") || nameLower.includes("decor") || nameLower.includes("sticker")) categorizedPlugins["💎 ميزات نيترو"].push(plugin);
-            else if (nameLower.includes("theme") || nameLower.includes("folder") || nameLower.includes("setting") || nameLower.includes("role") || nameLower.includes("indicator") || nameLower.includes("expand") || nameLower.includes("dot") || nameLower.includes("upload") || nameLower.includes("count") || nameLower.includes("ui") || nameLower.includes("colorsighted") || nameLower.includes("crown") || nameLower.includes("pindms")) categorizedPlugins["💅 تحسينات الواجهة"].push(plugin);
-            else if (nameLower.includes("chat") || nameLower.includes("message") || nameLower.includes("reply") || nameLower.includes("typing") || nameLower.includes("send") || nameLower.includes("translate") || nameLower.includes("markdown") || nameLower.includes("notes") || nameLower.includes("mention") || nameLower.includes("kaomoji") || nameLower.includes("command") || nameLower.includes("logger") || nameLower.includes("unsuppress") || nameLower.includes("unindent") || nameLower.includes("tag") || nameLower.includes("spoiler")) categorizedPlugins["💬 الدردشة والرسائل"].push(plugin);
-            else if (nameLower.includes("youtube") || nameLower.includes("gif") || nameLower.includes("embed") || nameLower.includes("image") || nameLower.includes("stream") || nameLower.includes("blur") || nameLower.includes("media") || nameLower.includes("mosaic") || nameLower.includes("animate") || nameLower.includes("video") || nameLower.includes("pictureinpicture")) categorizedPlugins["🖼️ الوسائط والتضمينات"].push(plugin);
-            else if (nameLower.includes("profile") || nameLower.includes("user") || nameLower.includes("author") || nameLower.includes("session") || nameLower.includes("permission") || nameLower.includes("account") || nameLower.includes("badge") || nameLower.includes("relationship") || nameLower.includes("connection") || nameLower.includes("friend") || nameLower.includes("avatar") || nameLower.includes("usrbg") || nameLower.includes("info") || nameLower.includes("pronoun")) categorizedPlugins["👤 الملفات الشخصية والمعلومات"].push(plugin);
-            else if (nameLower.includes("track") || nameLower.includes("privacy") || nameLower.includes("secure") || nameLower.includes("trust") || nameLower.includes("anonymise") || nameLower.includes("console") || nameLower.includes("clearurls") || nameLower.includes("nsfw") || nameLower.includes("block") || nameLower.includes("devtools") || nameLower.includes("rpc") || nameLower.includes("spam")) categorizedPlugins["🔒 الخصوصية والأمان"].push(plugin);
-            else if (nameLower.includes("spotify") || nameLower.includes("apple") || nameLower.includes("lastfm") || nameLower.includes("rpc")) categorizedPlugins["🔗 خدمات خارجية"].push(plugin);
-            else if (nameLower.includes("util") || nameLower.includes("tool") || nameLower.includes("dev") || nameLower.includes("experiment") || nameLower.includes("volume") || nameLower.includes("idle") || nameLower.includes("timer") || nameLower.includes("copy") || nameLower.includes("shortcut") || nameLower.includes("crash") || nameLower.includes("debug") || nameLower.includes("f8") || nameLower.includes("voice") || nameLower.includes("timestamp") || nameLower.includes("raw") || nameLower.includes("web") || nameLower.includes("quality") || nameLower.includes("xsoverlay") || nameLower.includes("replace") || nameLower.includes("api")) categorizedPlugins["🛠️ أدوات ومساعدة (APIs)"].push(plugin); // Catch APIs here
-            else categorizedPlugins["🎉 متنوع ومرح"].push(plugin);
-        });
+        // --- إنشاء حاويات الفئات ---
+        function createCategoryContainers() {
+          const pluginsContainer = document.querySelector('.plugins-container');
+          if (!pluginsContainer) {
+            console.error("لم يتم العثور على حاوية الإضافات.");
+            return;
+          }
 
+          // مسح المحتوى الحالي
+          pluginsContainer.innerHTML = '';
 
-        // --- إنشاء عناصر الإضافات (مع الفئات) ---
-        function createPlugins() { /* ... (createPlugins logic remains the same) ... */
-             const container = document.querySelector('.plugins-container'); if (!container) { console.error("Plugin container not found."); return; } container.innerHTML = '';
-             Object.entries(categorizedPlugins).forEach(([categoryName, pluginsInCategory]) => {
-                 if (pluginsInCategory.length === 0) return; pluginsInCategory.sort((a, b) => a.name.localeCompare(b.name));
-                 const categoryHeader = document.createElement('h2'); categoryHeader.className = 'category-header'; categoryHeader.textContent = categoryName; container.appendChild(categoryHeader);
-                 const pluginGrid = document.createElement('div'); pluginGrid.className = 'plugins-grid';
-                 pluginsInCategory.forEach(plugin => {
-                     const pluginDiv = document.createElement('div'); pluginDiv.className = 'plugin'; if (requiredPlugins.includes(plugin.name)) { pluginDiv.classList.add('required-core-plugin'); }
-                     const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.dataset.pluginName = plugin.name; checkbox.className = 'plugin-checkbox'; checkbox.setAttribute('aria-label', `تفعيل/تعطيل ${plugin.name}`); if (requiredPlugins.includes(plugin.name)) { checkbox.checked = true; checkbox.disabled = true; } pluginDiv.appendChild(checkbox);
-                     const pluginContent = document.createElement('div'); pluginContent.className = 'plugin-content'; const pluginLinkContainer = document.createElement('div'); pluginLinkContainer.className = 'plugin-link'; const pluginTitle = document.createElement('h3'); pluginTitle.textContent = plugin.name; pluginTitle.className = 'ellipsis-overflow'; pluginLinkContainer.appendChild(pluginTitle); pluginContent.appendChild(pluginLinkContainer); const authorSpan = document.createElement('span'); authorSpan.className = 'author ellipsis-overflow'; authorSpan.textContent = plugin.author || 'غير معروف'; pluginContent.appendChild(authorSpan); const descriptionP = document.createElement('p'); descriptionP.className = 'description'; descriptionP.textContent = plugin.description || 'لا يوجد وصف.'; pluginContent.appendChild(descriptionP);
-                     if (plugin.configurableSettings && plugin.configurableSettings.length > 0) { const settingsDiv = document.createElement('div'); settingsDiv.className = 'plugin-settings'; plugin.configurableSettings.forEach(setting => { const settingWrapper = document.createElement('div'); settingWrapper.className = 'plugin-setting'; const label = document.createElement('label'); label.textContent = setting.label; let inputElement; const inputId = `${plugin.name}-${setting.key}-${Math.random().toString(36).substring(7)}`; label.htmlFor = inputId; switch (setting.type) { case 'boolean': inputElement = document.createElement('input'); inputElement.type = 'checkbox'; inputElement.checked = setting.defaultValue; inputElement.id = inputId; settingWrapper.appendChild(inputElement); settingWrapper.appendChild(label); break; case 'number': inputElement = document.createElement('input'); inputElement.type = 'number'; inputElement.value = setting.defaultValue; if (setting.min !== undefined) inputElement.min = setting.min; if (setting.max !== undefined) inputElement.max = setting.max; if (setting.step !== undefined) inputElement.step = setting.step; inputElement.id = inputId; settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement); break; case 'color': inputElement = document.createElement('input'); inputElement.type = 'color'; inputElement.value = setting.defaultValue; inputElement.id = inputId; settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement); break; case 'select': inputElement = document.createElement('select'); inputElement.id = inputId; (setting.options || []).forEach(opt => { const option = document.createElement('option'); option.value = opt; option.textContent = opt; if (opt === setting.defaultValue) option.selected = true; inputElement.appendChild(option); }); settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement); break; default: inputElement = document.createElement('input'); inputElement.type = 'text'; inputElement.value = setting.defaultValue || ''; inputElement.id = inputId; settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement); break; } if (inputElement) { inputElement.dataset.pluginName = plugin.name; inputElement.dataset.settingKey = setting.key; inputElement.addEventListener('click', (e) => e.stopPropagation()); inputElement.addEventListener('change', (e) => e.stopPropagation()); } if (setting.type === 'boolean') { label.addEventListener('click', (e) => e.stopPropagation()); } settingsDiv.appendChild(settingWrapper); }); pluginContent.appendChild(settingsDiv); }
-                     pluginDiv.appendChild(pluginContent); pluginGrid.appendChild(pluginDiv);
-                     if (!requiredPlugins.includes(plugin.name)) { pluginDiv.addEventListener('click', function(event) { if (event.target.closest('.plugin-setting') || event.target.matches('input[type="checkbox"].plugin-checkbox')) { return; } const mainCheckbox = this.querySelector('input[type="checkbox"].plugin-checkbox'); if (mainCheckbox && !mainCheckbox.disabled) { mainCheckbox.checked = !mainCheckbox.checked; mainCheckbox.dispatchEvent(new Event('change', { bubbles: true })); } }); }
-                 });
-                 container.appendChild(pluginGrid);
-             });
-             const loadingMsg = container.querySelector('p'); if (loadingMsg && loadingMsg.textContent.includes('جاري تحميل')) { container.removeChild(loadingMsg); }
+          // إنشاء قسم لكل فئة
+          Object.keys(categories).forEach(categoryKey => {
+            const category = categories[categoryKey];
+
+            const categorySection = document.createElement('div');
+            categorySection.className = 'category-section';
+            categorySection.dataset.category = categoryKey;
+
+            const categoryHeader = document.createElement('h2');
+            categoryHeader.className = 'category-header';
+            categoryHeader.textContent = category.name;
+
+            const categoryDescription = document.createElement('p');
+            categoryDescription.className = 'category-description'; // Use the styled class
+            categoryDescription.textContent = category.description;
+
+            const pluginsGrid = document.createElement('div');
+            pluginsGrid.className = 'plugins-grid';
+            pluginsGrid.dataset.category = categoryKey;
+
+            categorySection.appendChild(categoryHeader);
+            categorySection.appendChild(categoryDescription); // Add description
+            categorySection.appendChild(pluginsGrid);
+
+            pluginsContainer.appendChild(categorySection);
+          });
         }
 
-        // --- تنفيذ البحث والتصفية ---
-        function setupSearch() { /* ... (search logic remains the same) ... */
-             const searchInput = document.querySelector('.search input'); if (searchInput) { searchInput.addEventListener('input', function() { const searchTerm = this.value.toLowerCase().trim(); const plugins = document.querySelectorAll('.plugins-container .plugin'); let visibleCount = 0; plugins.forEach(plugin => { const pluginName = plugin.querySelector('h3')?.textContent.toLowerCase() || ''; const pluginDescription = plugin.querySelector('.description')?.textContent.toLowerCase() || ''; const pluginAuthor = plugin.querySelector('.author')?.textContent.toLowerCase() || ''; const matches = searchTerm === '' || pluginName.includes(searchTerm) || pluginDescription.includes(searchTerm) || pluginAuthor.includes(searchTerm); plugin.style.display = matches ? 'flex' : 'none'; if (matches) visibleCount++; }); document.querySelectorAll('h2.category-header').forEach(header => { const nextGrid = header.nextElementSibling; if (nextGrid && nextGrid.classList.contains('plugins-grid')) { const visiblePluginsInCategory = Array.from(nextGrid.children).some(p => p.style.display !== 'none'); header.style.display = visiblePluginsInCategory ? 'block' : 'none'; } }); let noResultsMsg = document.getElementById('no-results-message'); const container = document.querySelector('.plugins-container'); if (visibleCount === 0 && searchTerm !== '') { if (!noResultsMsg && container) { noResultsMsg = document.createElement('p'); noResultsMsg.id = 'no-results-message'; noResultsMsg.textContent = 'لم يتم العثور على إضافات مطابقة.'; noResultsMsg.style.textAlign = 'center'; noResultsMsg.style.marginTop = '2em'; container.appendChild(noResultsMsg); } else if (noResultsMsg) { noResultsMsg.style.display = 'block'; } } else if (noResultsMsg) { noResultsMsg.style.display = 'none'; } }); }
-        }
+        // --- إنشاء عناصر الإضافات ---
+        function createPlugins() {
+          // إنشاء حاويات الفئات أولاً
+          createCategoryContainers();
 
-        // --- إعداد أزرار التحديد (مع التعديلات المطلوبة) ---
-        function setupSelectionButtons() {
-           const allCheckboxesQuery = '.plugins-container .plugin:not(.required-core-plugin) input[type="checkbox"].plugin-checkbox';
-           const allCheckboxes = document.querySelectorAll('.plugins-container .plugin input[type="checkbox"].plugin-checkbox'); // Select all for suggested logic
+          // تصنيف الإضافات حسب الفئة
+          pluginsData.forEach(plugin => {
+            const categoryKey = plugin.category || 'misc';
+            const pluginGrid = document.querySelector(`.plugins-grid[data-category="${categoryKey}"]`);
 
-           const selectAllBtn = document.getElementById('selectAllBtn');
-           if (selectAllBtn) { selectAllBtn.addEventListener('click', function() { document.querySelectorAll(allCheckboxesQuery).forEach(checkbox => { checkbox.checked = true; checkbox.dispatchEvent(new Event('change', { bubbles: true })); }); console.log('Selected all non-required.'); }); }
+            if (!pluginGrid) {
+              console.warn(`لم يتم العثور على شبكة الإضافات للفئة: ${categoryKey}. وضع في الفئة المتنوعة.`);
+              // Fallback to misc if category grid isn't found (shouldn't happen with createCategoryContainers)
+              pluginGrid = document.querySelector(`.plugins-grid[data-category="misc"]`);
+              if (!pluginGrid) return; // Should definitely exist now
+            }
 
-           // زر "تحديد المقترحة" - يستخدم JSON المحدد
-           const selectSuggestedBtn = document.getElementById('selectSuggestedBtn');
-           if (selectSuggestedBtn) {
-             const suggestedConfigJson = `{ "settings": { "plugins": { "ChatInputButtonAPI": { "enabled": true }, "CommandsAPI": { "enabled": true }, "MemberListDecoratorsAPI": { "enabled": true }, "MessageAccessoriesAPI": { "enabled": true }, "MessageDecorationsAPI": { "enabled": true }, "MessageEventsAPI": { "enabled": true }, "MessagePopoverAPI": { "enabled": true }, "MessageUpdaterAPI": { "enabled": true }, "ServerListAPI": { "enabled": true }, "UserSettingsAPI": { "enabled": true }, "DynamicImageModalAPI": { "enabled": true }, "BadgeAPI": { "enabled": true }, "CrashHandler": { "enabled": true }, "Settings": { "enabled": true, "settingsLocation": "aboveNitro" }, "SupportHelper": { "enabled": true }, "NoTrack": { "enabled": true, "disableAnalytics": true }, "AccountPanelServerProfile": { "enabled": false }, "AlwaysAnimate": { "enabled": false }, "AlwaysExpandRoles": { "enabled": false }, "AlwaysTrust": { "enabled": false }, "AnonymiseFileNames": { "enabled": false }, "AppleMusicRichPresence": { "enabled": false }, "BANger": { "enabled": false }, "BetterFolders": { "enabled": false }, "BetterGifAltText": { "enabled": false }, "BetterGifPicker": { "enabled": false }, "BetterNotesBox": { "enabled": false }, "BetterRoleContext": { "enabled": false }, "BetterRoleDot": { "enabled": false }, "BetterSessions": { "enabled": false }, "BetterSettings": { "enabled": false }, "BetterUploadButton": { "enabled": false }, "BiggerStreamPreview": { "enabled": false }, "BlurNSFW": { "enabled": false }, "CallTimer": { "enabled": true }, "ClearURLs": { "enabled": true }, "ClientTheme": { "enabled": true }, "ColorSighted": { "enabled": false }, "ConsoleJanitor": { "enabled": false }, "ConsoleShortcuts": { "enabled": false }, "CopyEmojiMarkdown": { "enabled": false }, "CopyFileContents": { "enabled": false }, "CopyUserURLs": { "enabled": false }, "CtrlEnterSend": { "enabled": false }, "CustomIdle": { "enabled": false }, "CustomRPC": { "enabled": false }, "Dearrow": { "enabled": false }, "Decor": { "enabled": false }, "DevCompanion": { "enabled": false }, "DisableCallIdle": { "enabled": false }, "DontRoundMyTimestamps": { "enabled": false }, "EmoteCloner": { "enabled": true }, "Experiments": { "enabled": true }, "F8Break": { "enabled": false }, "FakeNitro": { "enabled": false }, "FakeProfileThemes": { "enabled": false }, "FavoriteEmojiFirst": { "enabled": false }, "FavoriteGifSearch": { "enabled": false }, "FixCodeblockGap": { "enabled": false }, "FixImagesQuality": { "enabled": true }, "FixSpotifyEmbeds": { "enabled": false }, "FixYoutubeEmbeds": { "enabled": false }, "ForceOwnerCrown": { "enabled": false }, "FriendInvites": { "enabled": false }, "FriendsSince": { "enabled": true }, "FullSearchContext": { "enabled": false }, "FullUserInChatbox": { "enabled": false }, "GameActivityToggle": { "enabled": true }, "GifPaste": { "enabled": false }, "GreetStickerPicker": { "enabled": false }, "HideMedia": { "enabled": false }, "IgnoreActivities": { "enabled": false }, "iLoveSpam": { "enabled": false }, "ImageLink": { "enabled": false }, "ImageZoom": { "enabled": false }, "ImplicitRelationships": { "enabled": false }, "InvisibleChat": { "enabled": false }, "IrcColors": { "enabled": false }, "KeepCurrentChannel": { "enabled": false }, "LastFMRichPresence": { "enabled": false }, "LoadingQuotes": { "enabled": false }, "MemberCount": { "enabled": false }, "MentionAvatars": { "enabled": false }, "MessageClickActions": { "enabled": false }, "MessageLatency": { "enabled": false }, "MessageLinkEmbeds": { "enabled": true }, "MessageLogger": { "enabled": false }, "MessageTags": { "enabled": false }, "MoreCommands": { "enabled": false }, "MoreKaomoji": { "enabled": false }, "Moyai": { "enabled": false }, "MutualGroupDMs": { "enabled": false }, "NewGuildSettings": { "enabled": true }, "NoBlockedMessages": { "enabled": false }, "NoDevtoolsWarning": { "enabled": false }, "NoF1": { "enabled": false }, "NoMaskedUrlPaste": { "enabled": false }, "NoMosaic": { "enabled": false }, "NoOnboardingDelay": { "enabled": false }, "NoPendingCount": { "enabled": false }, "NoProfileThemes": { "enabled": false }, "NoReplyMention": { "enabled": false }, "NormalizeMessageLinks": { "enabled": false }, "NoRPC": { "enabled": false }, "NoServerEmojis": { "enabled": false }, "NoSystemBadge": { "enabled": false }, "NotificationVolume": { "enabled": false }, "NoTypingAnimation": { "enabled": true }, "NoUnblockToJump": { "enabled": true }, "NSFWGateBypass": { "enabled": false }, "oneko": { "enabled": false }, "OnePingPerDM": { "enabled": false }, "OpenInApp": { "enabled": true }, "OverrideForumDefaults": { "enabled": false }, "PartyMode": { "enabled": false }, "PauseInvitesForever": { "enabled": false }, "PermissionFreeWill": { "enabled": false }, "PermissionsViewer": { "enabled": false }, "petpet": { "enabled": false }, "PictureInPicture": { "enabled": false }, "PinDMs": { "enabled": true }, "PlainFolderIcon": { "enabled": false }, "PlatformIndicators": { "enabled": false }, "PreviewMessage": { "enabled": true }, "QuickMention": { "enabled": false }, "QuickReply": { "enabled": false }, "ReactErrorDecoder": { "enabled": false }, "ReadAllNotificationsButton": { "enabled": true }, "RelationshipNotifier": { "enabled": true }, "ReplaceGoogleSearch": { "enabled": false }, "ReplyTimestamp": { "enabled": false }, "RevealAllSpoilers": { "enabled": false }, "ReverseImageSearch": { "enabled": true }, "ReviewDB": { "enabled": false }, "RoleColorEverywhere": { "enabled": false }, "SecretRingToneEnabler": { "enabled": false }, "SendTimestamps": { "enabled": true }, "ServerInfo": { "enabled": true }, "ServerListIndicators": { "enabled": false }, "ShikiCodeblocks": { "enabled": false }, "ShowAllMessageButtons": { "enabled": false }, "ShowConnections": { "enabled": true }, "ShowHiddenChannels": { "enabled": false }, "ShowHiddenThings": { "enabled": false }, "ShowMeYourName": { "enabled": false }, "ShowTimeoutDuration": { "enabled": false }, "SilentMessageToggle": { "enabled": false }, "SilentTyping": { "enabled": false }, "SortFriendRequests": { "enabled": false }, "SpotifyControls": { "enabled": false }, "SpotifyCrack": { "enabled": false }, "SpotifyShareCommands": { "enabled": false }, "StartupTimings": { "enabled": false }, "StickerPaste": { "enabled": false }, "StreamerModeOnStream": { "enabled": false }, "Summaries": { "enabled": false }, "SuperReactionTweaks": { "enabled": false }, "TextReplace": { "enabled": false }, "ThemeAttributes": { "enabled": false }, "TimeBarAllActivities": { "enabled": false }, "Translate": { "enabled": true }, "TypingIndicator": { "enabled": false }, "TypingTweaks": { "enabled": false }, "Unindent": { "enabled": false }, "UnlockedAvatarZoom": { "enabled": false }, "UnsuppressEmbeds": { "enabled": false }, "UserMessagesPronouns": { "enabled": false }, "UserVoiceShow": { "enabled": true }, "USRBG": { "enabled": false }, "ValidReply": { "enabled": true }, "ValidUser": { "enabled": true }, "VcNarrator": { "enabled": false }, "VencordToolbox": { "enabled": false }, "ViewIcons": { "enabled": true }, "ViewRaw": { "enabled": false }, "VoiceChatDoubleClick": { "enabled": false }, "VoiceDownload": { "enabled": true }, "VoiceMessages": { "enabled": true }, "VolumeBooster": { "enabled": true }, "WebContextMenus.web": { "enabled": false }, "WebKeybinds.web": { "enabled": false }, "WebRichPresence (arRPC).web": { "enabled": false }, "WebScreenShareFixes.web": { "enabled": false }, "WhoReacted": { "enabled": false }, "XSOverlay": { "enabled": false }, "YoutubeAdblock.desktop": { "enabled": true }, "YoutubeAdblock": { "enabled": false } } } }`;
+            const pluginDiv = document.createElement('div');
+            pluginDiv.className = 'plugin';
 
-             selectSuggestedBtn.addEventListener('click', function() {
-                try {
-                    const suggestedConfig = JSON.parse(suggestedConfigJson);
-                    const suggestedPlugins = suggestedConfig.settings.plugins;
+            // إضافة فئة للإضافات الإجبارية وتطبيق النمط المطلوب
+            if (requiredPlugins.includes(plugin.name)) {
+              pluginDiv.classList.add('required-core-plugin');
+            }
 
-                    allCheckboxes.forEach(checkbox => {
-                        if (!checkbox.disabled) { // Respect disabled state
-                            const pluginName = checkbox.dataset.pluginName;
-                            // Check if plugin exists in suggested config and is enabled=true
-                            checkbox.checked = suggestedPlugins[pluginName]?.enabled === true;
-                            checkbox.dispatchEvent(new Event('change', { bubbles: true }));
-                        }
+            // إنشاء مربع الاختيار
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.dataset.pluginName = plugin.name;
+            checkbox.className = 'plugin-checkbox';
+            checkbox.setAttribute('aria-label', `تفعيل/تعطيل ${plugin.name}`);
+
+            // تعيين حالة مربع الاختيار للإضافات الإجبارية وتعطيله
+            if (requiredPlugins.includes(plugin.name)) {
+              checkbox.checked = true;
+              checkbox.disabled = true;
+            }
+
+            // إنشاء محتوى الإضافة
+            const pluginContent = document.createElement('div');
+            pluginContent.className = 'plugin-content';
+
+            // Use div instead of anchor for title container
+            const pluginLinkContainer = document.createElement('div');
+            pluginLinkContainer.className = 'plugin-link'; // Still useful for structure if needed later
+
+            // إنشاء عنوان الإضافة
+            const pluginTitle = document.createElement('h3');
+            pluginTitle.textContent = plugin.name;
+            pluginTitle.className = 'ellipsis-overflow'; // Apply ellipsis
+
+            // إنشاء اسم المؤلف
+            const authorSpan = document.createElement('span');
+            authorSpan.className = 'author ellipsis-overflow'; // Apply ellipsis
+            authorSpan.textContent = plugin.author || 'غير معروف'; // Add fallback
+
+            // إنشاء وصف الإضافة
+            const descriptionP = document.createElement('p');
+            descriptionP.className = 'description'; // Use styled class
+            descriptionP.textContent = plugin.description || 'لا يوجد وصف.'; // Add fallback
+
+            // تجميع العناصر
+            pluginLinkContainer.appendChild(pluginTitle); // Title inside the div
+            pluginContent.appendChild(pluginLinkContainer);
+            pluginContent.appendChild(authorSpan);
+            pluginContent.appendChild(descriptionP);
+
+            // إضافة إعدادات الإضافة إذا كانت موجودة
+            if (plugin.settings && plugin.settings.length > 0) {
+              const settingsDiv = document.createElement('div');
+              settingsDiv.className = 'plugin-settings';
+
+              plugin.settings.forEach(setting => {
+                const settingWrapper = document.createElement('div'); // Use wrapper div like in CODE.txt
+                settingWrapper.className = 'plugin-setting';
+
+                const label = document.createElement('label');
+                label.textContent = setting.label; // Assumes label includes colon if needed
+                const inputId = `${plugin.name}-${setting.name}-${Math.random().toString(36).substring(7)}`; // Unique ID
+                label.htmlFor = inputId;
+
+                let inputElement;
+
+                switch (setting.type) {
+                  case 'checkbox':
+                    inputElement = document.createElement('input');
+                    inputElement.type = 'checkbox';
+                    inputElement.checked = setting.defaultValue;
+                    inputElement.id = inputId;
+                    // Apply CODE.txt structure: checkbox before label
+                    settingWrapper.appendChild(inputElement);
+                    settingWrapper.appendChild(label);
+                    break;
+
+                  case 'number':
+                    inputElement = document.createElement('input');
+                    inputElement.type = 'number';
+                    inputElement.value = setting.defaultValue;
+                    if (setting.min !== undefined) inputElement.min = setting.min;
+                    if (setting.max !== undefined) inputElement.max = setting.max;
+                    if (setting.step !== undefined) inputElement.step = setting.step;
+                    inputElement.id = inputId;
+                    settingWrapper.appendChild(label); // Label first
+                    settingWrapper.appendChild(inputElement);
+                    break;
+
+                  case 'color':
+                    inputElement = document.createElement('input');
+                    inputElement.type = 'color';
+                    // Value should have # for color input type
+                    inputElement.value = setting.defaultValue.startsWith('#') ? setting.defaultValue : `#${setting.defaultValue}`;
+                    inputElement.id = inputId;
+                    settingWrapper.appendChild(label); // Label first
+                    settingWrapper.appendChild(inputElement);
+                    break;
+
+                  case 'select':
+                    inputElement = document.createElement('select');
+                    inputElement.id = inputId;
+                    (setting.options || []).forEach(opt => {
+                      const option = document.createElement('option');
+                      option.value = opt.value; // Use value/label from File 2 structure
+                      option.textContent = opt.label;
+                      if (opt.value === setting.defaultValue) option.selected = true;
+                      inputElement.appendChild(option);
                     });
-                    console.log('تم تطبيق الإعدادات المقترحة.');
-                } catch (e) {
-                    console.error("خطأ في تحليل JSON المقترح:", e);
-                    alert("حدث خطأ أثناء تطبيق الإعدادات المقترحة.");
+                    settingWrapper.appendChild(label); // Label first
+                    settingWrapper.appendChild(inputElement);
+                    break;
+
+                  default: // Treat as text
+                    inputElement = document.createElement('input');
+                    inputElement.type = 'text';
+                    inputElement.value = setting.defaultValue || '';
+                    inputElement.id = inputId;
+                    settingWrapper.appendChild(label); // Label first
+                    settingWrapper.appendChild(inputElement);
+                    break;
+
                 }
-             });
-           }
 
-           const enableAllBtn = document.getElementById('enableAllBtn');
-           if (enableAllBtn) { enableAllBtn.addEventListener('click', function() { document.querySelectorAll(allCheckboxesQuery).forEach(checkbox => { checkbox.checked = true; checkbox.dispatchEvent(new Event('change', { bubbles: true })); }); console.log('Enabled all non-required.'); }); }
+                if (inputElement) {
+                  inputElement.dataset.pluginName = plugin.name;
+                  inputElement.dataset.settingName = setting.name; // Use 'settingName' consistent with File 2 JS
+                  inputElement.dataset.settingKey = setting.name; // Add settingKey for potential compatibility if logic expects it
+                  inputElement.className = 'plugin-setting-input'; // Keep class from File 2 JS if needed
+                  // Add event listeners to stop propagation (like CODE.txt)
+                  inputElement.addEventListener('click', (e) => e.stopPropagation());
+                  inputElement.addEventListener('change', (e) => e.stopPropagation());
+                }
+                 // Allow label clicks for checkboxes (like CODE.txt)
+                 if (setting.type === 'boolean' || setting.type === 'checkbox') {
+                    label.addEventListener('click', (e) => e.stopPropagation());
+                 }
 
-           // زر "تعطيل الكل" - تم إصلاحه للتأكد من استهداف المحدد الصحيح
-           const disableAllBtn = document.getElementById('disableAllBtn');
-           if (disableAllBtn) {
-             disableAllBtn.addEventListener('click', function() {
-               console.log(`Attempting to disable plugins using selector: ${allCheckboxesQuery}`);
-               const checkboxesToDisable = document.querySelectorAll(allCheckboxesQuery);
-               console.log(`Found ${checkboxesToDisable.length} checkboxes to potentially disable.`);
-               checkboxesToDisable.forEach(checkbox => {
-                 checkbox.checked = false;
-                 checkbox.dispatchEvent(new Event('change', { bubbles: true }));
-               });
-               console.log('Disabled all non-required.');
-             });
-           }
-        }
+                settingsDiv.appendChild(settingWrapper);
+              });
 
-        // --- إعداد أزرار التكوين ---
-        function setupConfigButtons() { /* ... (config generation logic remains the same) ... */
-            const allCheckboxesQuery = '.plugins-container .plugin input[type="checkbox"].plugin-checkbox'; const allSettingsInputsQuery = '.plugins-container .plugin-setting [data-plugin-name][data-setting-key]'; const generateButton = document.getElementById('generateConfigBtn'); const copyButton = document.getElementById('copyConfigBtn'); const downloadButton = document.getElementById('downloadConfigBtn'); const jsonOutputArea = document.getElementById('jsonOutput');
-            function setActionButtonsState(enabled) { if (copyButton) { copyButton.classList.toggle('enabled', enabled); copyButton.disabled = !enabled; copyButton.style.cursor = enabled ? 'pointer' : 'not-allowed'; if (!enabled) { copyButton.classList.remove('copied'); copyButton.textContent = 'نسخ التكوين'; } } if (downloadButton) { downloadButton.classList.toggle('enabled', enabled); downloadButton.disabled = !enabled; downloadButton.style.cursor = enabled ? 'pointer' : 'not-allowed'; } } setActionButtonsState(false);
-            const baseConfig = { settings: { autoUpdate: true, autoUpdateNotification: true, useQuickCss: true, themeLinks: [], enabledThemes: [], enableReactDevtools: false, frameless: false, transparent: false, winCtrlQ: false, disableMinSize: false, winNativeTitleBar: false, plugins: {} }, notifications: { timeout: 5000, position: "bottom-right", useNative: "not-focused", logLimit: 50 }, cloud: { authenticated: false, url: "https://api.vencord.dev/", settingsSync: false, settingsSyncVersion: Date.now() }, eagerPatches: false };
-            pluginsData.forEach(plugin => { const settings = { enabled: requiredPlugins.includes(plugin.name) }; if (plugin.configurableSettings) { plugin.configurableSettings.forEach(s => { settings[s.key] = s.defaultValue; }); } baseConfig.settings.plugins[plugin.name] = settings; });
-            baseConfig.settings.plugins["FakeNitro"] = { ...baseConfig.settings.plugins["FakeNitro"], enableEmojiBypass: true, enableStickerBypass: true, enableStreamQualityBypass: true, transformEmojis: true, transformStickers: true, transformCompoundSentence: false, emojiSize: 48, stickerSize: 160, useHyperLinks: true, hyperLinkText: "{{NAME}}", disableEmbedPermissionCheck: true }; baseConfig.settings.plugins["Experiments"] = { ...baseConfig.settings.plugins["Experiments"], toolbarDevMenu: false };
-            if (generateButton && jsonOutputArea) { generateButton.addEventListener('click', function() { let config = JSON.parse(JSON.stringify(baseConfig)); document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (cb.dataset.pluginName && config.settings.plugins[cb.dataset.pluginName]) { config.settings.plugins[cb.dataset.pluginName].enabled = cb.checked; } }); document.querySelectorAll(allSettingsInputsQuery).forEach(input => { const pName = input.dataset.pluginName; const sKey = input.dataset.settingKey; if (config.settings.plugins[pName]?.enabled) { let val; if (input.type === 'checkbox') { val = input.checked; } else if (input.type === 'number') { val = parseFloat(input.value) || baseConfig.settings.plugins[pName][sKey]; if (input.min !== "" && val < parseFloat(input.min)) val = parseFloat(input.min); if (input.max !== "" && val > parseFloat(input.max)) val = parseFloat(input.max); } else { val = input.value; } if (config.settings.plugins[pName].hasOwnProperty(sKey)) { config.settings.plugins[pName][sKey] = val; } } }); jsonOutputArea.value = JSON.stringify(config, null, 4); setActionButtonsState(true); if (copyButton) { copyButton.classList.remove('copied'); copyButton.textContent = 'نسخ التكوين'; } }); }
-            if (copyButton) { copyButton.addEventListener('click', function() { if (!copyButton.classList.contains('enabled') || !jsonOutputArea.value) return; navigator.clipboard.writeText(jsonOutputArea.value).then(() => { copyButton.textContent = 'تم النسخ!'; copyButton.classList.add('copied'); setTimeout(() => { if (copyButton.classList.contains('copied')) { copyButton.textContent = 'نسخ التكوين'; copyButton.classList.remove('copied'); } }, 2000); }).catch(err => { console.error('Failed to copy:', err); copyButton.textContent = 'فشل النسخ'; setTimeout(() => { if (copyButton.classList.contains('enabled')) { copyButton.textContent = 'نسخ التكوين'; } copyButton.classList.remove('copied'); }, 2000); }); }); }
-            if (downloadButton) { downloadButton.addEventListener('click', function() { if (!downloadButton.classList.contains('enabled') || !jsonOutputArea.value) return; const blob = new Blob([jsonOutputArea.value], { type: 'application/json;charset=utf-8' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'vencord_config.json'; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }); }
-        }
+              pluginContent.appendChild(settingsDiv);
+            }
 
-        // --- إعداد زر إعادة التشغيل ---
-        function setupRestartButton() {
-            const restartButton = document.getElementById('restartDiscordBtn');
-            if (restartButton) {
-                restartButton.addEventListener('click', function() {
-                    // ملاحظة: إعادة التشغيل الفعلية غير ممكنة من هنا لأسباب أمنية.
-                    // يمكنك محاولة استدعاء دالة مخصصة إذا كان هذا يعمل ضمن بيئة خاصة مثل Electron:
-                    // if (window.electronAPI && window.electronAPI.restartApp) {
-                    //    window.electronAPI.restartApp();
-                    // } else {
-                    //    alert("...");
-                    // }
-                    alert("للتطبيق الكامل لجميع الإعدادات (خاصة المتعلقة بالتحميل الأولي)، يرجى إعادة تشغيل تطبيق Discord يدويًا.");
+            pluginDiv.appendChild(checkbox);
+            pluginDiv.appendChild(pluginContent);
+
+             // Add click listener to the whole card (except settings/checkbox) like CODE.txt
+             if (!requiredPlugins.includes(plugin.name)) {
+                pluginDiv.addEventListener('click', function(event) {
+                    // Do nothing if the click is on a setting input/label or the main checkbox itself
+                    if (event.target.closest('.plugin-setting') || event.target === checkbox) {
+                        return;
+                    }
+                    // Toggle the main checkbox
+                    if (checkbox && !checkbox.disabled) {
+                        checkbox.checked = !checkbox.checked;
+                        // Dispatch change event so config generation picks it up
+                        checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
                 });
             }
+
+
+            pluginGrid.appendChild(pluginDiv);
+          });
+
+           // Remove loading message if it exists
+           const loadingMsg = document.querySelector('.plugins-container > p');
+           if (loadingMsg && loadingMsg.textContent.includes('جاري تحميل')) {
+                loadingMsg.parentNode.removeChild(loadingMsg);
+            }
+        }
+
+
+        // --- تنفيذ البحث (Using CODE.txt logic for category hiding) ---
+        function setupSearch() {
+          const searchInput = document.querySelector('.search input');
+          if (searchInput) {
+            searchInput.addEventListener('input', function() {
+              const searchTerm = this.value.toLowerCase().trim();
+              const plugins = document.querySelectorAll('.plugins-container .plugin'); // Target plugins within container
+              const categories = document.querySelectorAll('.category-section'); // Target category sections
+              let visiblePluginCount = 0;
+
+              plugins.forEach(plugin => {
+                const pluginName = plugin.querySelector('h3')?.textContent.toLowerCase() || '';
+                const pluginDescription = plugin.querySelector('.description')?.textContent.toLowerCase() || '';
+                const pluginAuthor = plugin.querySelector('.author')?.textContent.toLowerCase() || '';
+
+                const matches = searchTerm === '' ||
+                               pluginName.includes(searchTerm) ||
+                               pluginDescription.includes(searchTerm) ||
+                               pluginAuthor.includes(searchTerm);
+
+                plugin.style.display = matches ? 'flex' : 'none'; // Use flex display like CODE.txt
+                 if(matches) visiblePluginCount++;
+              });
+
+              // Show/hide category headers and descriptions based on visible plugins
+              categories.forEach(categorySection => {
+                const grid = categorySection.querySelector('.plugins-grid');
+                if (grid) {
+                   const visiblePluginsInCategory = Array.from(grid.children).some(p => p.style.display !== 'none');
+                   categorySection.style.display = visiblePluginsInCategory ? 'block' : 'none';
+                } else {
+                    categorySection.style.display = 'none'; // Hide if no grid (shouldn't happen)
+                }
+              });
+
+               // Add 'no results' message handling like CODE.txt
+                let noResultsMsg = document.getElementById('no-results-message');
+                const container = document.querySelector('.plugins-container');
+                if (visiblePluginCount === 0 && searchTerm !== '') {
+                    if (!noResultsMsg && container) {
+                        noResultsMsg = document.createElement('p');
+                        noResultsMsg.id = 'no-results-message';
+                        noResultsMsg.textContent = 'لم يتم العثور على إضافات مطابقة.';
+                        noResultsMsg.style.textAlign = 'center';
+                        noResultsMsg.style.marginTop = '2em';
+                        container.appendChild(noResultsMsg);
+                    } else if (noResultsMsg) {
+                        noResultsMsg.style.display = 'block';
+                    }
+                } else if (noResultsMsg) {
+                    noResultsMsg.style.display = 'none';
+                }
+
+            });
+          }
+        }
+
+
+        // --- إعداد أزرار التحديد (Using CODE.txt logic) ---
+        function setupSelectionButtons() {
+          const allCheckboxesQuery = '.plugins-container .plugin:not(.required-core-plugin) input[type="checkbox"].plugin-checkbox';
+          const allCheckboxes = document.querySelectorAll('.plugins-container .plugin input[type="checkbox"].plugin-checkbox'); // Select all for suggested logic
+
+          const selectAllBtn = document.getElementById('selectAllBtn');
+          if (selectAllBtn) {
+            selectAllBtn.addEventListener('click', function() {
+              document.querySelectorAll(allCheckboxesQuery).forEach(checkbox => {
+                 if (!checkbox.disabled) { // Ensure not disabled
+                    checkbox.checked = true;
+                    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+                 }
+              });
+              console.log('Selected all non-required.');
+            });
+          }
+
+          // زر تحديد المقترحة (Use the same logic as File 2's list)
+          const selectSuggestedBtn = document.getElementById('selectSuggestedBtn');
+          if (selectSuggestedBtn) {
+            selectSuggestedBtn.addEventListener('click', function() {
+              const suggestedPluginNames = [ // List from File 2's JS
+                "ChatInputButtonAPI", "CommandsAPI", "MemberListDecoratorsAPI", "MessageAccessoriesAPI",
+                "MessageDecorationsAPI", "MessageEventsAPI", "MessagePopoverAPI", "MessageUpdaterAPI",
+                "ServerListAPI", "UserSettingsAPI", "DynamicImageModalAPI", "BadgeAPI", "CrashHandler",
+                "Settings", "SupportHelper", "NoTrack", "CallTimer", "ClearURLs", "ClientTheme",
+                "EmoteCloner", "Experiments", "FixImagesQuality", "FriendsSince", "GameActivityToggle",
+                "MessageLinkEmbeds", "NewGuildSettings", "NoTypingAnimation", "NoUnblockToJump",
+                "OpenInApp", "PinDMs", "PreviewMessage", "ReadAllNotificationsButton",
+                "RelationshipNotifier", "ReverseImageSearch", "SendTimestamps", "ServerInfo",
+                "ShowConnections", "Translate", "UserVoiceShow", "ValidReply", "ValidUser",
+                "ViewIcons", "VoiceDownload", "VoiceMessages", "VolumeBooster",
+                "YoutubeAdblock.desktop", "YoutubeAdblock"
+              ];
+
+              allCheckboxes.forEach(checkbox => {
+                const pluginName = checkbox.dataset.pluginName;
+                if (!checkbox.disabled) { // Only change non-required
+                  checkbox.checked = suggestedPluginNames.includes(pluginName);
+                  checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+                } else {
+                    // Ensure required plugins *remain* checked visually even if they aren't in the suggested list
+                    checkbox.checked = true;
+                }
+              });
+              // Reset settings to default when selecting suggested (optional, but might be desired)
+              document.querySelectorAll('.plugin-setting-input').forEach(input => {
+                 const pluginName = input.dataset.pluginName;
+                 const settingName = input.dataset.settingName;
+                 const pluginData = pluginsData.find(p => p.name === pluginName);
+                 const settingData = pluginData?.settings?.find(s => s.name === settingName);
+                 if (settingData) {
+                    if (input.type === 'checkbox') input.checked = settingData.defaultValue;
+                    else if (input.type === 'color') input.value = settingData.defaultValue.startsWith('#') ? settingData.defaultValue : `#${settingData.defaultValue}`;
+                    else input.value = settingData.defaultValue;
+                    input.dispatchEvent(new Event('change', { bubbles: true }));
+                 }
+              });
+              console.log('Selected suggested plugins.');
+            });
+          }
+
+          // زر تعطيل الكل
+          const disableAllBtn = document.getElementById('disableAllBtn');
+          if (disableAllBtn) {
+            disableAllBtn.addEventListener('click', function() {
+              document.querySelectorAll(allCheckboxesQuery).forEach(checkbox => {
+                 if (!checkbox.disabled) { // Ensure not disabled
+                    checkbox.checked = false;
+                    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+                 }
+              });
+              console.log('Disabled all non-required.');
+            });
+          }
+        }
+
+        // --- إعداد خيارات الثيم (Kept from File 2, style applied) ---
+        function setupThemeOptions() {
+          // Check if the section already exists from HTML, if not, create it.
+          let themeSelection = document.getElementById('theme-selection');
+          if (!themeSelection) {
+                const requiredPluginsNotice = document.getElementById('required-plugins-notice');
+                if (requiredPluginsNotice) {
+                    themeSelection = document.createElement('div');
+                    themeSelection.id = 'theme-selection';
+                    // Keep the same theme options as File 2
+                    themeSelection.innerHTML = `
+                      <h4>اختيار الثيمات</h4>
+                      <div class="theme-option">
+                        <input type="checkbox" id="theme-clearVision" data-theme-url="https://betterdiscord.app/Download?id=23" aria-label="تفعيل/تعطيل ثيم CIearVision">
+                        <span class="theme-name">CIearVision</span>
+                        <span class="theme-author">NyxlsBad</span>
+                      </div>
+                      <div class="theme-option">
+                        <input type="checkbox" id="theme-matterDark" data-theme-url="https://betterdiscord.app/Download?id=174" aria-label="تفعيل/تعطيل ثيم Matter Dark">
+                        <span class="theme-name">Matter Dark</span>
+                        <span class="theme-author">TropicaI</span>
+                      </div>
+                      <div class="theme-option">
+                        <input type="checkbox" id="theme-discordInsta" data-theme-url="https://betterdiscord.app/Download?id=209" aria-label="تفعيل/تعطيل ثيم Discord+">
+                        <span class="theme-name">Discord+</span>
+                        <span class="theme-author">Insta</span>
+                      </div>
+                      <div class="theme-option">
+                        <input type="checkbox" id="theme-notAnotherAnime" data-theme-url="https://betterdiscord.app/Download?id=286" aria-label="تفعيل/تعطيل ثيم NotAnotherAnimeTheme">
+                        <span class="theme-name">NotAnotherAnimeTheme</span>
+                        <span class="theme-author">puckzxz</span>
+                      </div>
+                    `;
+                    requiredPluginsNotice.parentNode.insertBefore(themeSelection, requiredPluginsNotice.nextSibling);
+                }
+            }
+        }
+
+
+        // --- إعداد أزرار التكوين (Using CODE.txt logic/base config structure) ---
+        function setupConfigButtons() {
+          const allCheckboxesQuery = '.plugins-container .plugin input[type="checkbox"].plugin-checkbox';
+          const allSettingsInputsQuery = '.plugins-container .plugin-setting [data-plugin-name][data-setting-name]'; // Use setting-name from File 2
+          const allThemeCheckboxesQuery = '#theme-selection input[type="checkbox"]'; // Query for theme checkboxes
+
+          const generateButton = document.getElementById('generateConfigBtn');
+          const copyButton = document.getElementById('copyConfigBtn');
+          const downloadButton = document.getElementById('downloadConfigBtn');
+          const jsonOutputArea = document.getElementById('jsonOutput');
+
+          // تعطيل/تفعيل أزرار النسخ/التنزيل (From CODE.txt)
+          function setActionButtonsState(enabled) {
+             if (copyButton) { copyButton.classList.toggle('enabled', enabled); copyButton.disabled = !enabled; copyButton.style.cursor = enabled ? 'pointer' : 'not-allowed'; if (!enabled) { copyButton.classList.remove('copied'); copyButton.textContent = 'نسخ التكوين'; } } if (downloadButton) { downloadButton.classList.toggle('enabled', enabled); downloadButton.disabled = !enabled; downloadButton.style.cursor = enabled ? 'pointer' : 'not-allowed'; }
+           }
+           setActionButtonsState(false); // Disable initially
+
+
+          // Base config similar to CODE.txt structure but potentially with File 2's plugins
+          // Start with a structure derived from File 2's pluginsData
+          const baseConfigForGeneration = {
+            "settings": {
+              "autoUpdate": true,
+              "autoUpdateNotification": true,
+              "useQuickCss": true,
+              "themeLinks": [],
+              "enabledThemes": [], // Keep this, although Vencord uses themeLinks primarily now
+              "enableReactDevtools": false,
+              "frameless": false,
+              "transparent": false,
+              "winCtrlQ": false,
+              "disableMinSize": false,
+              "winNativeTitleBar": false,
+              "plugins": {} // Populate this from pluginsData
+            },
+            "notifications": {
+              "timeout": 5000,
+              "position": "bottom-right",
+              "useNative": "not-focused",
+              "logLimit": 50
+            },
+            "cloud": {
+              "authenticated": false,
+              "url": "https://api.vencord.dev/",
+              "settingsSync": false,
+              "settingsSyncVersion": Date.now() // Use current timestamp or a fixed one
+            },
+            "eagerPatches": false,
+             // Ensure quickCss exists at the root level
+            "quickCss": ""
+          };
+
+          // Populate baseConfig plugins section with defaults from pluginsData
+           pluginsData.forEach(plugin => {
+               const pluginSettings = { enabled: requiredPlugins.includes(plugin.name) }; // Enable required by default
+               if (plugin.settings) {
+                   plugin.settings.forEach(setting => {
+                       pluginSettings[setting.name] = setting.defaultValue;
+                   });
+               }
+               baseConfigForGeneration.settings.plugins[plugin.name] = pluginSettings;
+           });
+
+
+          if (generateButton && jsonOutputArea) {
+            generateButton.addEventListener('click', function() {
+              // Create a fresh copy of the base for this generation cycle
+              let config = JSON.parse(JSON.stringify(baseConfigForGeneration));
+
+               // --- 1. Update Theme Links ---
+               const themeCheckboxes = document.querySelectorAll(allThemeCheckboxesQuery);
+               const selectedThemeUrls = [];
+               themeCheckboxes.forEach(checkbox => {
+                   if (checkbox.checked && checkbox.dataset.themeUrl) {
+                       selectedThemeUrls.push(checkbox.dataset.themeUrl);
+                   }
+               });
+               config.settings.themeLinks = selectedThemeUrls; // Overwrite with selected themes
+
+              // --- 2. Update enabled status from checkboxes ---
+              document.querySelectorAll(allCheckboxesQuery).forEach(cb => {
+                const pluginName = cb.dataset.pluginName;
+                if (pluginName && config.settings.plugins[pluginName]) {
+                  config.settings.plugins[pluginName].enabled = cb.checked;
+                } else if (pluginName) {
+                    // Plugin in UI but not base config? Should not happen if base is derived from pluginsData
+                    console.warn(`Plugin ${pluginName} found in UI but not base config. Adding.`);
+                    config.settings.plugins[pluginName] = { enabled: cb.checked };
+                }
+              });
+
+              // --- 3. Update settings values from UI inputs, ONLY for ENABLED plugins ---
+              document.querySelectorAll(allSettingsInputsQuery).forEach(input => {
+                const pluginName = input.dataset.pluginName;
+                const settingName = input.dataset.settingName; // Use settingName
+
+                // Check if plugin exists AND is currently marked as enabled in our config object
+                if (config.settings.plugins[pluginName] && config.settings.plugins[pluginName].enabled) {
+                  let value;
+                  const basePluginConf = baseConfigForGeneration.settings.plugins[pluginName];
+                  const baseValue = basePluginConf ? basePluginConf[settingName] : undefined; // Get default type reference
+
+                  if (input.type === 'checkbox') {
+                    value = input.checked;
+                  } else if (input.type === 'number') {
+                    value = parseFloat(input.value);
+                    if (input.min !== "" && !isNaN(parseFloat(input.min)) && value < parseFloat(input.min)) value = parseFloat(input.min);
+                    if (input.max !== "" && !isNaN(parseFloat(input.max)) && value > parseFloat(input.max)) value = parseFloat(input.max);
+                    if (isNaN(value)) value = typeof baseValue === 'number' ? baseValue : 0; // Fallback
+                  } else if (input.type === 'color') {
+                    // Store color without '#' consistent with original File 2 base config?
+                    value = input.value.startsWith('#') ? input.value.substring(1) : input.value;
+                    // Ensure 6 digits if needed (e.g., #333 -> 333333) - optional refinement
+                  } else { // Includes text, select
+                    value = input.value;
+                  }
+
+                  // Update only if the key exists in the baseConfig for this plugin
+                  if (config.settings.plugins[pluginName].hasOwnProperty(settingName)) {
+                    // Try to preserve original type from baseConfig
+                    const originalType = typeof baseValue;
+                    if (originalType === 'number' && typeof value !== 'number') {
+                      value = parseFloat(value) || baseValue; // Attempt conversion or use default
+                    } else if (originalType === 'boolean' && typeof value !== 'boolean') {
+                      if (typeof value === 'string') { value = value.toLowerCase() === 'true'; }
+                      else { value = Boolean(value); }
+                    } else if (originalType === 'string' && typeof value !== 'string') {
+                      value = String(value);
+                    }
+                    config.settings.plugins[pluginName][settingName] = value;
+                  } else {
+                     console.warn(`Setting ${settingName} for plugin ${pluginName} not found in base config. Adding.`);
+                     config.settings.plugins[pluginName][settingName] = value;
+                  }
+                }
+              });
+
+                // --- Ensure quickCss is at the end (like CODE.txt) ---
+                if (config.quickCss === undefined) {
+                    config.quickCss = "";
+                }
+                const quickCssValue = config.quickCss;
+                delete config.quickCss;
+                config.quickCss = quickCssValue;
+
+
+              jsonOutputArea.value = JSON.stringify(config, null, 4);
+              setActionButtonsState(true);
+              if (copyButton) { copyButton.classList.remove('copied'); copyButton.textContent = 'نسخ التكوين'; }
+            });
+          }
+
+          // زر نسخ التكوين (From CODE.txt)
+          if (copyButton) { copyButton.addEventListener('click', function() { if (!copyButton.classList.contains('enabled') || !jsonOutputArea.value) return; navigator.clipboard.writeText(jsonOutputArea.value).then(() => { copyButton.textContent = 'تم النسخ!'; copyButton.classList.add('copied'); setTimeout(() => { if (copyButton.classList.contains('copied')) { copyButton.textContent = 'نسخ التكوين'; copyButton.classList.remove('copied'); } }, 2000); }).catch(err => { console.error('Failed to copy:', err); copyButton.textContent = 'فشل النسخ'; setTimeout(() => { if (copyButton.classList.contains('enabled')) { copyButton.textContent = 'نسخ التكوين'; } copyButton.classList.remove('copied'); }, 2000); }); }); }
+
+          // زر تنزيل التكوين (From CODE.txt)
+          if (downloadButton) { downloadButton.addEventListener('click', function() { if (!downloadButton.classList.contains('enabled') || !jsonOutputArea.value) return; const blob = new Blob([jsonOutputArea.value], { type: 'application/json;charset=utf-8' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'vencord_config.json'; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }); }
+
+
+          // زر إعادة تشغيل Discord (Keep alert from File 2)
+          const restartDiscordBtn = document.getElementById('restartDiscordBtn');
+          if (restartDiscordBtn) {
+            restartDiscordBtn.addEventListener('click', function() {
+              alert('يرجى إعادة تشغيل Discord يدويًا لتطبيق التغييرات.');
+            });
+          }
         }
 
         // --- Execution Order ---
         createPlugins();
         setupSearch();
         setupSelectionButtons();
+        setupThemeOptions(); // Keep theme options setup
         setupConfigButtons();
-        setupRestartButton(); // Call the new setup function
+
       });
     </script>
   </head>
@@ -887,68 +1900,99 @@
 
     <nav>
       <div class="nav-content" style="flex-direction: row-reverse;">
+        <!-- نقل أزرار التنقل إلى اليسار -->
         <div class="p-label-m" id="btns" style="margin-right: auto;">
           <ul id="right" style="float: left;">
-            <li><a class="active" href="https://vencord.dev/download/" style="--accent:var(--accentPurple)">تنزيل</a></li>
+            <li>
+              <a href="https://vencord.dev/download/"> 
+                تنزيل
+              </a>
+            </li>
           </ul>
         </div>
+
+        <!-- نقل الشعار إلى اليمين -->
         <div id="logo" style="margin-left: auto;">
-          <a href="index.html" id="title"><img alt="الصفحة الرئيسية لـ Vencord" src="assets/logo-nav-oneko-padding.png"/></a>
+          <a href="index.html" id="title">
+            <img alt="الصفحة الرئيسية لـ Vencord" src="assets/logo-nav-oneko-padding.png"/>
+          </a>
         </div>
       </div>
     </nav>
 
-      <div class="container">
+    <div> <div class="container">
         <h1 class="p-page-title">الإضافات ومولد التكوين</h1>
         <p class="p-subtitle">تصفح قائمة الإضافات المصنفة، واختر ما يناسبك، ثم قم بإنشاء ملف التكوين الخاص بك لـ Vencord بسهولة. يمكنك تعديل بعض الإعدادات مباشرة من هنا.</p>
 
-          <div class="search">
-            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-            <input placeholder="البحث عن إضافة..." type="search"/>
-          </div>
+        <div class="search">
+          <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+          </svg>
+          <input placeholder="البحث عن إضافة..." type="search"/>
+        </div>
 
-          <div class="criteria">
-            <label><input checked="" type="checkbox"/> إظهار الإضافات المخفية (غير مطبق حالياً)</label>
-            <label><input checked="" type="checkbox"/> إظهار الإضافات المعطلة (غير مطبق حالياً)</label>
-            <label><input checked="" type="checkbox"/> إظهار الإضافات المحددة للمنصة (غير مطبق حالياً)</label>
-          </div>
+        <div id="required-plugins-notice">
+          <h4>الإضافات الإجبارية</h4>
+          <p>الإضافات التالية ضرورية لتشغيل Vencord وسيتم تفعيلها دائمًا:</p>
+          <div class="required-plugin">NoTrack - يمنع تتبع بيانات Discord وتحليلاتها.</div>
+          <div class="required-plugin">Settings - يوفر واجهة إعدادات Vencord داخل Discord.</div>
+          <div class="required-plugin">SupportHelper - يضيف معلومات مفيدة للمساعدة في استكشاف الأخطاء وإصلاحها.</div>
+        </div>
 
-          <div id="required-plugins-notice">
-            <h4>الإضافات الإجبارية</h4>
-            <p>الإضافات التالية ضرورية لتشغيل Vencord وسيتم تفعيلها دائمًا:</p>
-            <div class="required-plugin">NoTrack - يمنع تتبع بيانات Discord وتحليلاتها.</div>
-            <div class="required-plugin">Settings - يوفر واجهة إعدادات Vencord داخل Discord.</div>
-            <div class="required-plugin">SupportHelper - يضيف معلومات مفيدة للمساعدة في استكشاف الأخطاء وإصلاحها.</div>
-          </div>
+       <div id="theme-selection">
+              <h4>اختيار الثيمات</h4>
+              <div class="theme-option">
+                <input type="checkbox" id="theme-clearVision" data-theme-url="https://betterdiscord.app/Download?id=23" aria-label="تفعيل/تعطيل ثيم CIearVision">
+                <span class="theme-name">CIearVision</span>
+                <span class="theme-author">NyxlsBad</span>
+              </div>
+              <div class="theme-option">
+                <input type="checkbox" id="theme-matterDark" data-theme-url="https://betterdiscord.app/Download?id=174" aria-label="تفعيل/تعطيل ثيم Matter Dark">
+                <span class="theme-name">Matter Dark</span>
+                <span class="theme-author">TropicaI</span>
+              </div>
+              <div class="theme-option">
+                <input type="checkbox" id="theme-discordInsta" data-theme-url="https://betterdiscord.app/Download?id=209" aria-label="تفعيل/تعطيل ثيم Discord+">
+                <span class="theme-name">Discord+</span>
+                <span class="theme-author">Insta</span>
+              </div>
+              <div class="theme-option">
+                <input type="checkbox" id="theme-notAnotherAnime" data-theme-url="https://betterdiscord.app/Download?id=286" aria-label="تفعيل/تعطيل ثيم NotAnotherAnimeTheme">
+                <span class="theme-name">NotAnotherAnimeTheme</span>
+                <span class="theme-author">puckzxz</span>
+              </div>
+         </div>
 
-          <div id="selection-buttons">
-            <button id="selectAllBtn">تحديد الكل</button>
-            <button id="selectSuggestedBtn">تحديد المقترحة</button>
-            <button id="enableAllBtn">تفعيل الكل</button>
-            <button id="disableAllBtn">تعطيل الكل</button>
-          </div>
 
-          <!-- Container for categorized plugins -->
-          <div class="plugins-container">
-              <!-- Category headers and grids will be generated here by JS -->
-               <p>جاري تحميل الإضافات...</p> <!-- Placeholder -->
-          </div>
+        <div id="selection-buttons">
+          <button id="selectAllBtn">تحديد الكل</button>
+          <button id="selectSuggestedBtn">تحديد المقترح</button>
+          <button id="disableAllBtn">تعطيل الكل</button>
+        </div>
 
-          <div id="generation-section">
-             <h2>إنشاء التكوين</h2>
-            <div id="generation-controls">
-              <button id="generateConfigBtn">إنشاء التكوين</button>
-              <button id="copyConfigBtn">نسخ التكوين</button>
-              <button id="downloadConfigBtn">تنزيل التكوين</button>
-              <!-- زر إعادة التشغيل (تنبيه فقط) -->
-              <button id="restartDiscordBtn">إعادة تشغيل Discord (تنبيه)</button>
-            </div>
-            <textarea id="jsonOutput" readonly placeholder="سيظهر هنا ملف التكوين JSON بعد النقر على زر 'إنشاء التكوين'..."></textarea>
+        <!-- Container for categorized plugins -->
+        <div class="plugins-container">
+          <!-- Category headers and grids will be generated here by JS -->
+           {/* Placeholder removed as JS will clear and populate */}
+        </div>
+
+        <div id="generation-section">
+          <h2>إنشاء التكوين</h2>
+          <div id="generation-controls">
+            <button id="generateConfigBtn">إنشاء التكوين</button>
+            <button id="copyConfigBtn">نسخ التكوين</button>
+            <button id="downloadConfigBtn">تنزيل التكوين</button>
+            <!-- زر إعادة التشغيل (تنبيه فقط) -->
+            <button id="restartDiscordBtn">إعادة تشغيل Discord (تنبيه)</button>
           </div>
+          <textarea id="jsonOutput" readonly placeholder="سيظهر هنا ملف التكوين JSON بعد النقر على زر 'إنشاء التكوين'..."></textarea>
+        </div>
       </div>
       <footer>
         <p>تم تطويره بواسطة مساهمي Vencord | تم تعريبه بواسطة VenSHORT</p>
         <p>حقوق الطبع والنشر © 2024</p>
       </footer>
+    </div>
   </body>
 </html>
+      
