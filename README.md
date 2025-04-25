@@ -1,7 +1,9 @@
 # ✨ VenSHORT | فينشورت ✨
 
 <p align="center">
-  <img src="assets/logo-nav-oneko-padding.png" alt="شعار VenSHORT" width="150">
+  <a href="https://nvkq.github.io/venshort/">
+    <img src="assets/logo-nav-oneko-padding.png" alt="شعار VenSHORT" width="150">
+  </a>
 </p>
 
 <h2 align="center">تعديل Vencord الأجمل والأسهل للديسكورد - بالعربية!</h2>
