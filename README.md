@@ -38,7 +38,13 @@
 
 ## 🚀 كيف أستخدمه؟
 
-[![وصف الصورة المصغرة](https://img.youtube.com/vi/_GjGLfaqWa0/0.jpg)](https://youtu.be/_GjGLfaqWa0)
+ <p align="center">انقر للمشاهدة (توجه المشاهد إلى YouTube)</p>
+
+<div align="center">
+  <a href="https://youtu.be/_GjGLfaqWa0" target="_blank">
+    <img src="https://img.youtube.com/vi/_GjGLfaqWa0/0.jpg" alt="وصف الصورة المصغرة">
+  </a>
+</div>
 
 VenSHORT ليس تثبيتًا مستقلاً لـ Vencord، بل هو **أداة لتوليد ملف التكوين (`vencord_config.json`)** لواجهة عربية محسنة.
 
