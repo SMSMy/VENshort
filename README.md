@@ -40,7 +40,7 @@
 
 ## 🚀 كيف أستخدمه؟
 
- <p align="center">انقر للمشاهدة (توجه المشاهد إلى YouTube)</p>
+ <p align="center">انقر على الصورة للمشاهدة (توجه المشاهد إلى YouTube)</p>
 
 <div align="center">
   <a href="https://youtu.be/_GjGLfaqWa0" target="_blank">
