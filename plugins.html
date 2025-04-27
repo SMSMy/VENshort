@@ -36,614 +36,118 @@
     <style>
       /* CSS Variables (Catppuccin Mocha) */
       :root {
-        --bg0: #1e1e2e; /* Base */
-        --bg1: #313244; /* Surface 0 */
-        --bg2: #45475a; /* Surface 1 */
-        --bg3: #585b70; /* Surface 2 */
-        --bg4: #6c7086; /* Overlay 0 */
-        --fg0: #cdd6f4; /* Text */
-        --fg1: #bac2de; /* Subtext 1 */
-        --grey0: #9399b2; /* Subtext 0 */
-        --grey1: #7f849c; /* Overlay 2 */
-        --grey2: #6c7086; /* Overlay 1 (same as bg4) */
-        --accentBlue: #89b4fa; /* Blue */
-        --accentLavender: #b4befe; /* Lavender */
-        --accentSapphire: #74c7ec; /* Sapphire */
-        --accentSky: #89dceb; /* Sky */
-        --accentTeal: #94e2d5; /* Teal */
-        --accentGreen: #a6e3a1; /* Green */
-        --accentYellow: #f9e2af; /* Yellow */
-        --accentPeach: #fab387; /* Peach */
-        --accentMaroon: #eba0ac; /* Maroon */
-        --accentRed: #f38ba8; /* Red */
-        --accentMauve: #cba6f7; /* Mauve */
-        --accentPink: #f5c2e7; /* Pink */
-        --accentFlamingo: #f2cdcd; /* Flamingo */
-        --accentRosewater: #f5e0dc; /* Rosewater */
-        --accentPurple: #b4befe; /* Main accent for buttons (Lavender) */
-        --accentAqua: #94e2d5; /* Used for copy feedback (Teal) */
+        --bg0: #1e1e2e; --bg1: #313244; --bg2: #45475a; --bg3: #585b70; --bg4: #6c7086;
+        --fg0: #cdd6f4; --fg1: #bac2de; --grey0: #9399b2; --grey1: #7f849c; --grey2: #6c7086;
+        --accentBlue: #89b4fa; --accentLavender: #b4befe; --accentSapphire: #74c7ec;
+        --accentSky: #89dceb; --accentTeal: #94e2d5; --accentGreen: #a6e3a1;
+        --accentYellow: #f9e2af; --accentPeach: #fab387; --accentMaroon: #eba0ac;
+        --accentRed: #f38ba8; --accentMauve: #cba6f7; --accentPink: #f5c2e7;
+        --accentFlamingo: #f2cdcd; --accentRosewater: #f5e0dc;
+        --accentPurple: #b4befe; --accentAqua: #94e2d5;
         --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        --border-sm: 0.125rem;
-        --border-md: 0.25rem;
-        --border-lg: 0.5rem;
+        --border-sm: 0.125rem; --border-md: 0.25rem; --border-lg: 0.5rem;
       }
-
-      /* اجعل الجسم عموديًا ويأخذ كامل ارتفاع الشاشة */
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background-color: var(--bg0);
-        color: var(--fg0);
-      }
-
-      /* المحتوى الرئيسي يتمدد ليملأ المساحة الفارغة */
-      .container, astro-island { /* astro-island may not be relevant */
-        flex: 1;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 1em 2em;
-      }
-
-      /* تنسيق الفوتر */
-      footer {
-        margin-top: auto; /* Push footer to bottom */
-        padding: 1em;
-        background-color: var(--bg1); /* Use theme color */
-        color: var(--fg1); /* Use theme color */
-        text-align: center;
-        font-family: 'Noto Sans Arabic', sans-serif;
-        border-top: 1px solid var(--bg3); /* Add subtle separator */
-      }
-      footer p {
-        margin: 5px 0;
-      }
-
-      /* --- General Text Styles --- */
-      h1.p-page-title {
-        color: var(--accentBlue);
-        font-size: 2.5em;
-        margin-bottom: 0.2em;
-      }
-      p.p-subtitle {
-        font-size: 1.1em;
-        color: var(--fg1);
-        margin-bottom: 1.5em;
-      }
-      .category-description {
-         font-size: 0.95em; /* Slightly larger for readability */
-         color: var(--fg1);
-         margin-bottom: 1.5em;
-         margin-top: -0.5em; /* Adjust spacing */
-         line-height: 1.5;
-      }
-
-      /* --- Category Header Styles --- */
-      h2.category-header {
-        font-size: 1.8em;
-        margin-block: 2em 0.8em;
-        color: var(--accentLavender);
-        border-bottom: 2px solid var(--accentLavender);
-        padding-bottom: 0.3em;
-      }
-
-      h3 { /* Plugin Title */
-        margin: 0;
-        word-wrap: break-word;
-        line-height: 1.3;
-        font-size: 1.1em;
-        color: var(--fg0);
-        font-weight: 700;
-      }
-
-      .author {
-        white-space: nowrap;
-        font-size: 0.85em;
-        color: var(--grey1);
-      }
-
-      .author:before {
-        content: "بواسطة ";
-        color: var(--grey1);
-      }
-
-      .description {
-        font-size: .9em;
-        color: var(--fg1);
-        margin-bottom: 0.5em;
-        line-height: 1.4;
-      }
-
-      /* --- Plugin Card Styles --- */
-      .plugin {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        padding: 1.5em;
-        border-radius: var(--border-lg);
-        box-shadow: var(--shadow-md);
-        transition: box-shadow 0.3s ease, transform 0.2s ease;
-        background-color: var(--bg1);
-        cursor: pointer; /* Make whole card clickable */
-      }
-
-      .plugin:hover {
-        box-shadow: var(--shadow-lg);
-        transform: translateY(-2px);
-      }
-
-      .plugin .plugin-content {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 0.3em;
-      }
-
-      .plugin input[type="checkbox"].plugin-checkbox {
-        flex-shrink: 0;
-        margin-top: 0.2em;
-        height: 1.3em;
-        width: 1.3em;
-        cursor: pointer;
-        accent-color: var(--accentPurple);
-        /* Make checkbox clickable directly */
-        pointer-events: all !important;
-      }
-
-      /* --- Plugin Settings UI --- */
-      .plugin-settings {
-        margin-top: 0.8em;
-        padding-top: 0.8em;
-        border-top: 1px solid var(--bg3);
-        display: flex;
-        flex-direction: column;
-        gap: 0.6em;
-      }
-
-      .plugin-setting {
-        display: flex;
-        align-items: center;
-        gap: 0.8em;
-      }
-
-      .plugin-setting label {
-        font-size: 0.85em;
-        color: var(--fg1);
-        flex-basis: 120px;
-        flex-shrink: 0;
-        text-align: right;
-        margin-right: 5px;
-        /* Allow label clicks for settings */
-        pointer-events: all !important;
-        cursor: default; /* Or appropriate cursor for label type */
-      }
-
-      .plugin-setting input[type="text"],
-      .plugin-setting input[type="number"],
-      .plugin-setting input[type="color"],
-      .plugin-setting select {
-        font-size: 0.85em;
-        padding: 0.3em 0.5em;
-        border-radius: var(--border-sm);
-        border: 1px solid var(--bg3);
-        background-color: var(--bg0);
-        color: var(--fg0);
-        flex-grow: 1;
-        max-width: 200px;
-        box-sizing: border-box;
-        /* Make inputs clickable */
-        pointer-events: all !important;
-        cursor: text; /* Or appropriate cursor */
-      }
-
-      .plugin-setting input[type="checkbox"] { /* Settings checkbox */
-        height: 1.1em;
-        width: 1.1em;
-        accent-color: var(--accentPurple);
-        cursor: pointer;
-        order: -1; /* Checkbox first */
-        margin-right: -0.4em; /* Adjust spacing */
-        /* Make checkbox clickable */
-        pointer-events: all !important;
-      }
-
-      .plugin-setting input[type="color"] {
-        padding: 0.1em;
-        min-height: 25px;
-        cursor: pointer;
-      }
-      .plugin-setting select {
-        cursor: pointer;
-      }
-
-
-      /* --- Generation Section Styles --- */
-      #generation-section {
-        margin-top: 3em;
-        padding: 2.5em;
-        background-color: var(--bg2);
-        border-radius: var(--border-lg);
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em; /* Reduced gap */
-        border: 1px solid var(--bg3);
-      }
-
-      #generation-section h2 {
-        font-size: 1.8em;
-        margin: 0 0 0.5em 0;
-        padding: 0;
-        border: none;
-        color: var(--accentTeal);
-      }
-
-      #generation-controls {
-        display: flex;
-        gap: 1em; /* Reduced gap */
-        flex-wrap: wrap;
-        align-items: center;
-      }
-
-      #generateConfigBtn, #copyConfigBtn, #downloadConfigBtn, #selectAllBtn, #selectSuggestedBtn, #disableAllBtn, #restartDiscordBtn {
-        padding: 0.8em 1.6em; /* Slightly reduced padding */
-        color: var(--bg0); /* Dark text on light buttons */
-        border: none;
-        border-radius: var(--border-md);
-        cursor: pointer;
-        font-size: 0.95em; /* Slightly reduced size */
-        transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
-        font-family: 'Noto Sans Arabic', sans-serif;
-        opacity: 1;
-        font-weight: 700;
-      }
-      #copyConfigBtn, #downloadConfigBtn {
-          color: rgba(0,0,0, 0.6); /* Dimmer text when disabled */
-      }
-      #copyConfigBtn.enabled, #downloadConfigBtn.enabled {
-         color: var(--bg0);
-      }
-
-
-      /* Button colors */
+      body { display: flex; flex-direction: column; min-height: 100vh; background-color: var(--bg0); color: var(--fg0); }
+      .container, astro-island { flex: 1; max-width: 1200px; margin: 0 auto; padding: 1em 2em; }
+      footer { margin-top: auto; padding: 1em; background-color: var(--bg1); color: var(--fg1); text-align: center; font-family: 'Noto Sans Arabic', sans-serif; border-top: 1px solid var(--bg3); }
+      footer p { margin: 5px 0; }
+      h1.p-page-title { color: var(--accentBlue); font-size: 2.5em; margin-bottom: 0.2em; }
+      p.p-subtitle { font-size: 1.1em; color: var(--fg1); margin-bottom: 1.5em; }
+      .category-description { font-size: 0.95em; color: var(--fg1); margin-bottom: 1.5em; margin-top: -0.5em; line-height: 1.5; }
+      h2.category-header { font-size: 1.8em; margin-block: 2em 0.8em; color: var(--accentLavender); border-bottom: 2px solid var(--accentLavender); padding-bottom: 0.3em; }
+      h3 { margin: 0; word-wrap: break-word; line-height: 1.3; font-size: 1.1em; color: var(--fg0); font-weight: 700; }
+      .author { white-space: nowrap; font-size: 0.85em; color: var(--grey1); }
+      .author:before { content: "بواسطة "; color: var(--grey1); }
+      .description { font-size: .9em; color: var(--fg1); margin-bottom: 0.5em; line-height: 1.4; }
+      .plugin { display: flex; align-items: flex-start; gap: 15px; padding: 1.5em; border-radius: var(--border-lg); box-shadow: var(--shadow-md); transition: box-shadow 0.3s ease, transform 0.2s ease; background-color: var(--bg1); cursor: pointer; }
+      .plugin:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+      .plugin .plugin-content { flex-grow: 1; display: flex; flex-direction: column; gap: 0.3em; }
+      .plugin input[type="checkbox"].plugin-checkbox { flex-shrink: 0; margin-top: 0.2em; height: 1.3em; width: 1.3em; cursor: pointer; accent-color: var(--accentPurple); pointer-events: all !important; }
+      .plugin-settings { margin-top: 0.8em; padding-top: 0.8em; border-top: 1px solid var(--bg3); display: flex; flex-direction: column; gap: 0.6em; }
+      .plugin-setting { display: flex; align-items: center; gap: 0.8em; }
+      .plugin-setting label { font-size: 0.85em; color: var(--fg1); flex-basis: 120px; flex-shrink: 0; text-align: right; margin-right: 5px; pointer-events: all !important; cursor: default; }
+      .plugin-setting input[type="text"], .plugin-setting input[type="number"], .plugin-setting input[type="color"], .plugin-setting select { font-size: 0.85em; padding: 0.3em 0.5em; border-radius: var(--border-sm); border: 1px solid var(--bg3); background-color: var(--bg0); color: var(--fg0); flex-grow: 1; max-width: 200px; box-sizing: border-box; pointer-events: all !important; cursor: text; }
+      .plugin-setting input[type="checkbox"] { height: 1.1em; width: 1.1em; accent-color: var(--accentPurple); cursor: pointer; order: -1; margin-right: -0.4em; pointer-events: all !important; }
+      .plugin-setting input[type="color"] { padding: 0.1em; min-height: 25px; cursor: pointer; }
+      .plugin-setting select { cursor: pointer; }
+      #generation-section { margin-top: 3em; padding: 2.5em; background-color: var(--bg2); border-radius: var(--border-lg); display: flex; flex-direction: column; gap: 1.5em; border: 1px solid var(--bg3); }
+      #generation-section h2 { font-size: 1.8em; margin: 0 0 0.5em 0; padding: 0; border: none; color: var(--accentTeal); }
+      #generation-controls { display: flex; gap: 1em; flex-wrap: wrap; align-items: center; }
+      #generateConfigBtn, #copyConfigBtn, #downloadConfigBtn, #selectAllBtn, #selectSuggestedBtn, #disableAllBtn, #restartDiscordBtn { padding: 0.8em 1.6em; color: var(--bg0); border: none; border-radius: var(--border-md); cursor: pointer; font-size: 0.95em; transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease; font-family: 'Noto Sans Arabic', sans-serif; opacity: 1; font-weight: 700; }
+      #copyConfigBtn, #downloadConfigBtn { color: rgba(0,0,0, 0.6); }
+      #copyConfigBtn.enabled, #downloadConfigBtn.enabled { color: var(--bg0); }
       #generateConfigBtn { background-color: var(--accentBlue); }
       #copyConfigBtn, #downloadConfigBtn, #selectAllBtn, #selectSuggestedBtn, #disableAllBtn { background-color: var(--accentPurple); }
       #restartDiscordBtn { background-color: var(--accentRed); margin-right: auto; }
-
-
-      /* Disabled/enabled states */
-      #copyConfigBtn, #downloadConfigBtn {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-      #copyConfigBtn.enabled, #downloadConfigBtn.enabled {
-        opacity: 1;
-        cursor: pointer;
-      }
-
-      /* Button Hover & Active States */
+      #copyConfigBtn, #downloadConfigBtn { opacity: 0.6; cursor: not-allowed; }
+      #copyConfigBtn.enabled, #downloadConfigBtn.enabled { opacity: 1; cursor: pointer; }
       #generateConfigBtn:hover { background-color: hsl(from var(--accentBlue) h s calc(l + 5%)); }
       #copyConfigBtn.enabled:hover, #downloadConfigBtn.enabled:hover, #selectAllBtn:hover, #selectSuggestedBtn:hover, #disableAllBtn:hover { background-color: hsl(from var(--accentPurple) h s calc(l + 5%)); }
       #restartDiscordBtn:hover { background-color: hsl(from var(--accentRed) h s calc(l + 5%)); }
-
-      #generateConfigBtn:active, #disableAllBtn:active,
-      #copyConfigBtn.enabled:active, #downloadConfigBtn.enabled:active, #selectAllBtn:active, #selectSuggestedBtn:active, #restartDiscordBtn:active {
-           transform: scale(0.98);
-       }
-
-      /* Copied state */
-      #copyConfigBtn.copied {
-        background-color: var(--accentAqua); /* Teal */
-        color: var(--bg0);
-      }
-      #copyConfigBtn.copied:hover {
-          background-color: hsl(from var(--accentAqua) h s calc(l + 5%));
-      }
-
-      #jsonOutput {
-        width: 100%;
-        min-height: 350px;
-        background-color: var(--bg0);
-        color: var(--fg0);
-        border: 1px solid var(--bg3);
-        border-radius: var(--border-md);
-        padding: 1.5em;
-        font-family: monospace;
-        white-space: pre;
-        overflow: auto;
-        box-sizing: border-box;
-        resize: vertical;
-        direction: ltr; /* Keep LTR for code */
-        text-align: left; /* Keep LTR for code */
-        font-size: 0.9em;
-        line-height: 1.5;
-      }
-
-      /* --- Selection Button Styles --- */
-      #selection-buttons {
-        margin-bottom: 1.5em;
-        margin-top: 1.5em;
-        display: flex;
-        gap: 1em;
-        flex-wrap: wrap;
-      }
-      #selection-buttons button { /* Use same style as config buttons */
-         padding: 0.8em 1.6em; color: var(--bg0); border: none; border-radius: var(--border-md); cursor: pointer; font-size: 0.95em; transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease; font-family: 'Noto Sans Arabic', sans-serif; opacity: 1; font-weight: 700; background-color: var(--accentPink); /* Use Pink for selection buttons */
-      }
+      #generateConfigBtn:active, #disableAllBtn:active, #copyConfigBtn.enabled:active, #downloadConfigBtn.enabled:active, #selectAllBtn:active, #selectSuggestedBtn:active, #restartDiscordBtn:active { transform: scale(0.98); }
+      #copyConfigBtn.copied { background-color: var(--accentAqua); color: var(--bg0); }
+      #copyConfigBtn.copied:hover { background-color: hsl(from var(--accentAqua) h s calc(l + 5%)); }
+      #jsonOutput { width: 100%; min-height: 350px; background-color: var(--bg0); color: var(--fg0); border: 1px solid var(--bg3); border-radius: var(--border-md); padding: 1.5em; font-family: monospace; white-space: pre; overflow: auto; box-sizing: border-box; resize: vertical; direction: ltr; text-align: left; font-size: 0.9em; line-height: 1.5; }
+      #selection-buttons { margin-bottom: 1.5em; margin-top: 1.5em; display: flex; gap: 1em; flex-wrap: wrap; }
+      #selection-buttons button { padding: 0.8em 1.6em; color: var(--bg0); border: none; border-radius: var(--border-md); cursor: pointer; font-size: 0.95em; transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease; font-family: 'Noto Sans Arabic', sans-serif; opacity: 1; font-weight: 700; background-color: var(--accentPink); }
       #selection-buttons button:hover { background-color: hsl(from var(--accentPink) h s calc(l + 5%)); }
       #selection-buttons button:active { transform: scale(0.98); }
-
-
-      /* --- Required Plugins Notice --- */
-      #required-plugins-notice {
-        margin-top: 1.5em;
-        padding: 1em 1.5em;
-        background-color: rgba(from var(--accentYellow) r g b / 0.1);
-        border: 1px solid rgba(from var(--accentYellow) r g b / 0.3);
-        border-radius: var(--border-md);
-        font-size: 0.9em;
-        color: var(--accentYellow);
-      }
-
-      #required-plugins-notice h4 {
-        margin-top: 0;
-        margin-bottom: 0.5em;
-        color: var(--accentYellow);
-        font-size: 1.1em;
-        font-weight: 700;
-      }
-
-      #required-plugins-notice p {
-        margin-bottom: 1em;
-        line-height: 1.5;
-        color: var(--fg1);
-      }
-
-      .required-plugin {
-        background-color: rgba(from var(--accentYellow) r g b / 0.05);
-        border-radius: var(--border-sm);
-        padding: 0.6em 1em;
-        margin-bottom: 0.5em;
-        color: var(--fg0);
-        display: block; /* Ensure it takes full width */
-      }
-
-      .plugin.required-core-plugin {
-        background-color: rgba(from var(--accentYellow) r g b / 0.05);
-        border: 1px solid rgba(from var(--accentYellow) r g b / 0.2);
-        cursor: not-allowed;
-      }
-      .plugin.required-core-plugin:hover { /* Prevent hover effect */
-        box-shadow: var(--shadow-md);
-        transform: none;
-      }
-      .plugin.required-core-plugin input[type="checkbox"] {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-
-      /* --- Theme Selection Styles --- */
-      #theme-selection {
-        margin-top: 1.5em;
-        padding: 1em 1.5em;
-        background-color: rgba(from var(--accentSky) r g b / 0.1); /* Use Sky */
-        border: 1px solid rgba(from var(--accentSky) r g b / 0.3);
-        border-radius: var(--border-md);
-        font-size: 0.9em;
-      }
-
-      #theme-selection h4 {
-        margin-top: 0;
-        margin-bottom: 0.8em;
-        color: var(--accentSky); /* Use Sky */
-        font-size: 1.1em;
-        font-weight: 700;
-      }
-
-      /* --- Theme Grid Styling --- */
-      .theme-options-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        gap: 0.8em; /* Reduced gap slightly */
-      }
-
-      .theme-option {
-        display: flex; /* Keep flex for alignment inside the grid item */
-        align-items: center;
-        gap: 0.6em; /* Reduced gap */
-        padding: 0.6em; /* Adjusted padding */
-        border-radius: var(--border-sm);
-        background-color: rgba(from var(--accentSky) r g b / 0.05); /* Use Sky */
-      }
-
-      .theme-option input[type="checkbox"] {
-        height: 1.2em;
-        width: 1.2em;
-        cursor: pointer;
-        accent-color: var(--accentSky); /* Use Sky */
-        flex-shrink: 0; /* Prevent checkbox shrinking */
-        pointer-events: all; /* Ensure checkbox is clickable */
-      }
-
-       .theme-option label { /* Style label for better clicking */
-          display: flex;
-          align-items: center;
-          gap: 0.6em;
-          flex-grow: 1;
-          cursor: pointer; /* Make label clickable */
-          overflow: hidden; /* Prevent content overflow */
-       }
-
-      .theme-option .theme-name {
-        font-weight: 600;
-        color: var(--fg0);
-        /* flex-grow: 1; Allow name to take space */
-        overflow: hidden; /* Prevent overflow */
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .theme-option .theme-author {
-        color: var(--accentPeach);
-        font-size: 0.9em;
-        margin-right: 0.5em; /* Keep spacing before preview link */
-        white-space: nowrap; /* Prevent author from wrapping */
-        flex-shrink: 0; /* Prevent shrinking */
-      }
-       .theme-option .theme-author::before {
-         content: "بواسطة ";
-         color: var(--grey1);
-       }
-
-       .theme-preview-link {
-         margin-right: auto; /* Push link to the end (left in RTL) */
-         margin-left: 0.5em; /* Spacing from author */
-         font-size: 0.85em;
-         color: var(--accentTeal); /* Use Teal for links */
-         text-decoration: none;
-         white-space: nowrap;
-         flex-shrink: 0;
-         display: inline-flex; /* Align icon and text */
-         align-items: center;
-         gap: 0.3em;
-         pointer-events: all; /* Ensure link is clickable */
-       }
-       .theme-preview-link:hover {
-         color: hsl(from var(--accentTeal) h s calc(l + 10%));
-         text-decoration: underline;
-       }
-       .theme-preview-link svg { /* Style for potential icon */
-          width: 1em;
-          height: 1em;
-          vertical-align: middle;
-       }
-
-
-      /* --- Plugin Grid and Categories --- */
+      #required-plugins-notice { margin-top: 1.5em; padding: 1em 1.5em; background-color: rgba(from var(--accentYellow) r g b / 0.1); border: 1px solid rgba(from var(--accentYellow) r g b / 0.3); border-radius: var(--border-md); font-size: 0.9em; color: var(--accentYellow); }
+      #required-plugins-notice h4 { margin-top: 0; margin-bottom: 0.5em; color: var(--accentYellow); font-size: 1.1em; font-weight: 700; }
+      #required-plugins-notice p { margin-bottom: 1em; line-height: 1.5; color: var(--fg1); }
+      .required-plugin { background-color: rgba(from var(--accentYellow) r g b / 0.05); border-radius: var(--border-sm); padding: 0.6em 1em; margin-bottom: 0.5em; color: var(--fg0); display: block; }
+      .plugin.required-core-plugin { background-color: rgba(from var(--accentYellow) r g b / 0.05); border: 1px solid rgba(from var(--accentYellow) r g b / 0.2); cursor: not-allowed; }
+      .plugin.required-core-plugin:hover { box-shadow: var(--shadow-md); transform: none; }
+      .plugin.required-core-plugin input[type="checkbox"] { opacity: 0.6; cursor: not-allowed; }
+      #theme-selection { margin-top: 1.5em; padding: 1em 1.5em; background-color: rgba(from var(--accentSky) r g b / 0.1); border: 1px solid rgba(from var(--accentSky) r g b / 0.3); border-radius: var(--border-md); font-size: 0.9em; }
+      #theme-selection h4 { margin-top: 0; margin-bottom: 0.8em; color: var(--accentSky); font-size: 1.1em; font-weight: 700; }
+      .theme-options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8em; }
+      .theme-option { display: flex; align-items: center; padding: 0.6em; border-radius: var(--border-sm); background-color: rgba(from var(--accentSky) r g b / 0.05); }
+      .theme-option input[type="checkbox"] { height: 1.2em; width: 1.2em; cursor: pointer; accent-color: var(--accentSky); flex-shrink: 0; pointer-events: all; margin-left: 0.6em; }
+      .theme-option label { display: flex; align-items: center; gap: 0.6em; flex-grow: 1; cursor: pointer; overflow: hidden; }
+      .theme-option .theme-name { font-weight: 600; color: var(--fg0); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .theme-option .theme-author { color: var(--accentPeach); font-size: 0.9em; margin-right: 0.5em; white-space: nowrap; flex-shrink: 0; }
+      .theme-option .theme-author::before { content: "بواسطة "; color: var(--grey1); }
+      .theme-preview-link { margin-right: auto; margin-left: 0.5em; font-size: 0.85em; color: var(--accentTeal); text-decoration: none; white-space: nowrap; flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.3em; pointer-events: all; }
+      .theme-preview-link:hover { color: hsl(from var(--accentTeal) h s calc(l + 10%)); text-decoration: underline; }
+      .theme-preview-link svg { width: 1em; height: 1em; vertical-align: middle; }
       .plugins-container { }
-
-      .category-section {
-        margin-bottom: 3em;
-      }
-
-      .plugins-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-gap: 1.2em;
-      }
-
-      /* --- Search Styles --- */
-       .search {
-        position: relative;
-        height: auto;
-        margin-top: 1.5em;
-        margin-bottom: 1em;
-      }
-      .search svg {
-        position: absolute;
-        right: 1em; left: auto;
-        top: 50%; transform: translateY(-50%);
-        z-index: 2; color: var(--grey0);
-        height: 1.1em; pointer-events: none;
-      }
-      .search input {
-        position: relative; text-indent: 0;
-        padding-right: 2.8em; padding-left: 1em;
-        background: var(--bg2); color: var(--fg0);
-        border: 1px solid var(--bg3); border-radius: var(--border-md);
-        box-sizing: border-box; width: 100%;
-        margin: 0; padding-top: 0.9em; padding-bottom: 0.9em;
-        font-size: 1em;
-      }
+      .category-section { margin-bottom: 3em; }
+      .plugins-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 1.2em; }
+      .search { position: relative; height: auto; margin-top: 1.5em; margin-bottom: 1em; }
+      .search svg { position: absolute; right: 1em; left: auto; top: 50%; transform: translateY(-50%); z-index: 2; color: var(--grey0); height: 1.1em; pointer-events: none; }
+      .search input { position: relative; text-indent: 0; padding-right: 2.8em; padding-left: 1em; background: var(--bg2); color: var(--fg0); border: 1px solid var(--bg3); border-radius: var(--border-md); box-sizing: border-box; width: 100%; margin: 0; padding-top: 0.9em; padding-bottom: 0.9em; font-size: 1em; }
       .search input::placeholder { color: var(--grey1); }
-      .search input:focus {
-          outline: none; border-color: var(--accentBlue);
-          box-shadow: 0 0 0 2px rgba(from var(--accentBlue) r g b / 0.3);
-      }
-      #no-results-message {
-        text-align: center; margin-top: 2em;
-        color: var(--grey0); font-style: italic;
-      }
-
-      /* --- Logo Styles --- */
-      #logo img {
-        width: 100px; height: auto; max-width: 100%;
-        vertical-align: middle;
-      }
-
-      /* --- Navigation Styles --- */
-      nav {
-        background-color: var(--bg1); padding: 0.5em 1em;
-        border-bottom: 1px solid var(--bg3);
-      }
-      .nav-content {
-        display: flex; align-items: center;
-        justify-content: space-between;
-        max-width: 1200px; margin: 0 auto;
-      }
-      #btns ul {
-        list-style: none; padding: 0; margin: 0;
-        display: flex; gap: 1em;
-      }
-      #btns a {
-        text-decoration: none; color: var(--accentPurple);
-        font-weight: 700; padding: 0.5em 1em;
-        border-radius: var(--border-md);
-        transition: background-color 0.2s ease, color 0.2s ease;
-        display: block; /* Ensure padding is applied correctly */
-      }
+      .search input:focus { outline: none; border-color: var(--accentBlue); box-shadow: 0 0 0 2px rgba(from var(--accentBlue) r g b / 0.3); }
+      #no-results-message { text-align: center; margin-top: 2em; color: var(--grey0); font-style: italic; }
+      #logo img { width: 100px; height: auto; max-width: 100%; vertical-align: middle; }
+      nav { background-color: var(--bg1); padding: 0.5em 1em; border-bottom: 1px solid var(--bg3); }
+      .nav-content { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
+      #btns ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1em; }
+      #btns a { text-decoration: none; color: var(--accentPurple); font-weight: 700; padding: 0.5em 1em; border-radius: var(--border-md); transition: background-color 0.2s ease, color 0.2s ease; display: block; }
       #btns a:hover { background-color: rgba(from var(--accentPurple) r g b / 0.1); }
-      #btns a.active-page {
-          background-color: rgba(from var(--accentPurple) r g b / 0.2);
-          color: var(--accentRosewater);
-      }
-
-      /* Ellipsis Overflow */
-      .ellipsis-overflow {
-        overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-      }
-
+      #btns a.active-page { background-color: rgba(from var(--accentPurple) r g b / 0.2); color: var(--accentRosewater); }
+      .ellipsis-overflow { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     </style>
     <script>
       // تعريف الإضافات الإجبارية
       const requiredPlugins = ["NoTrack", "Settings", "SupportHelper", "CrashHandler"];
 
-      // --- تعريف فئات الإضافات (تم تحسين الأوصاف) ---
+      // --- تعريف فئات الإضافات ---
       const categories = {
-        "api": {
-          name: "واجهات برمجة التطبيقات (API)",
-          description: "توفر هذه الإضافات وظائف برمجية للمطورين الآخرين لبناء إضافاتهم الخاصة أو للتفاعل مع Vencord و Discord بشكل أعمق. لا تحتاج لتفعيلها إلا إذا طُلِب منك ذلك من إضافة أخرى."
-        },
-        "core": {
-          name: "الإضافات الأساسية",
-          description: "إضافات ضرورية لعمل Vencord بشكل صحيح، مثل نظام الإعدادات ومعالج الأخطاء. يتم تفعيلها دائمًا ولا يمكن تعطيلها."
-        },
-        "appearance": {
-          name: "المظهر والتخصيص",
-          description: "إضافات لتغيير شكل ومظهر واجهة Discord، مثل تعديل الألوان، تحسين عرض العناصر، أو إضافة تأثيرات بصرية."
-        },
-        "utility": {
-          name: "الأدوات المساعدة",
-          description: "إضافات تضيف وظائف وأدوات عملية لتحسين الإنتاجية أو إضافة ميزات مفيدة غير موجودة في Discord افتراضيًا."
-        },
-        "fun": {
-          name: "المرح والترفيه",
-          description: "إضافات تضيف لمسة من المرح والتسلية، مثل استبدال صور GIF أو تخصيصات طريفة أخرى."
-        },
-        "privacy": {
-          name: "الخصوصية والأمان",
-          description: "إضافات تركز على حماية خصوصيتك عن طريق منع التتبع، إخفاء المعلومات، أو تنظيف الروابط."
-        },
-        "misc": {
-          name: "متنوعة",
-          description: "إضافات لا تندرج بوضوح تحت الفئات الأخرى أو تؤدي وظائف متخصصة جدًا."
-        }
+        "api": { name: "واجهات برمجة التطبيقات (API)", description: "توفر هذه الإضافات وظائف برمجية للمطورين الآخرين لبناء إضافاتهم الخاصة أو للتفاعل مع Vencord و Discord بشكل أعمق. لا تحتاج لتفعيلها إلا إذا طُلِب منك ذلك من إضافة أخرى." },
+        "core": { name: "الإضافات الأساسية", description: "إضافات ضرورية لعمل Vencord بشكل صحيح، مثل نظام الإعدادات ومعالج الأخطاء. يتم تفعيلها دائمًا ولا يمكن تعطيلها." },
+        "appearance": { name: "المظهر والتخصيص", description: "إضافات لتغيير شكل ومظهر واجهة Discord، مثل تعديل الألوان، تحسين عرض العناصر، أو إضافة تأثيرات بصرية." },
+        "utility": { name: "الأدوات المساعدة", description: "إضافات تضيف وظائف وأدوات عملية لتحسين الإنتاجية أو إضافة ميزات مفيدة غير موجودة في Discord افتراضيًا." },
+        "fun": { name: "المرح والترفيه", description: "إضافات تضيف لمسة من المرح والتسلية، مثل استبدال صور GIF أو تخصيصات طريفة أخرى." },
+        "privacy": { name: "الخصوصية والأمان", description: "إضافات تركز على حماية خصوصيتك عن طريق منع التتبع، إخفاء المعلومات، أو تنظيف الروابط." },
+        "misc": { name: "متنوعة", description: "إضافات لا تندرج بوضوح تحت الفئات الأخرى أو تؤدي وظائف متخصصة جدًا." }
       };
 
-      // --- بيانات الإضافات مع الفئات (تم تحسين الأوصاف والتصنيفات) ---
+      // --- بيانات الإضافات ---
       const pluginsData = [
-          // API Plugins
         { name: "ChatInputButtonAPI", description: "للمطورين: تتيح إضافة أزرار مخصصة إلى شريط إدخال الدردشة.", author: "Vendicated", category: "api" },
         { name: "CommandsAPI", description: "للمطورين: تسمح بإنشاء وتسجيل أوامر سلاش (/) مخصصة.", author: "Vendicated", category: "api" },
         { name: "MemberListDecoratorsAPI", description: "للمطورين: تتيح إضافة أيقونات أو زخارف بجانب أسماء المستخدمين في قائمة الأعضاء.", author: "Vendicated", category: "api" },
@@ -656,18 +160,12 @@
         { name: "UserSettingsAPI", description: "للمطورين: تسمح بإضافة أقسام وإعدادات مخصصة إلى قائمة إعدادات المستخدم.", author: "Vendicated", category: "api" },
         { name: "DynamicImageModalAPI", description: "للمطورين: تتيح عرض الصور في نافذة منبثقة ديناميكية.", author: "Vendicated", category: "api" },
         { name: "BadgeAPI", description: "للمطورين: تسمح بإضافة شارات مخصصة إلى ملفات تعريف المستخدمين.", author: "Vendicated", category: "api" },
-
-        // Core Plugins
         { name: "CrashHandler", description: "أساسي: يعالج الأعطال غير المتوقعة في Vencord ويساعد في تشخيص المشاكل.", author: "Vendicated", category: "core" },
         { name: "Settings", description: "أساسي: يضيف لوحة تحكم Vencord ضمن إعدادات Discord لإدارة الإضافات والميزات.", author: "Vendicated", category: "core", settings: [ { type: "select", name: "settingsLocation", label: "موقع الإعدادات:", options: [ { value: "aboveNitro", label: "فوق Nitro" }, { value: "belowNitro", label: "تحت Nitro" }, { value: "aboveActivity", label: "فوق الأعدادات" } ], defaultValue: "aboveNitro" } ] },
         { name: "SupportHelper", description: "أساسي: يوفر أدوات ومعلومات للمساعدة في تشخيص المشكلات وطلب الدعم.", author: "Vendicated", category: "core" },
-
-        // Privacy Plugins
         { name: "NoTrack", description: "أساسي/خصوصية: يمنع Discord من جمع بيانات الاستخدام والتحليلات عنك.", author: "Vendicated", category: "privacy", settings: [ { type: "checkbox", name: "disableAnalytics", label: "تعطيل التحليلات:", defaultValue: true } ] },
         { name: "ClearURLs", description: "خصوصية: يزيل تلقائيًا معلمات التتبع (مثل utm_source) من الروابط.", author: "Vendicated", category: "privacy" },
         { name: "AnonymiseFileNames", description: "خصوصية: يغير أسماء الملفات التي ترفعها إلى أسماء عامة (مثل 'file.png') قبل الإرسال.", author: "fawn", category: "privacy" },
-
-        // Appearance Plugins
         { name: "ClientTheme", description: "مظهر: يتيح لك تغيير لون الخلفية الرئيسي لواجهة Discord.", author: "Vendicated", category: "appearance", settings: [ { type: "color", name: "color", label: "اللون:", defaultValue: "313338" } ] },
         { name: "BetterFolders", description: "مظهر: يحسن عرض مجلدات الخوادم مع خيار للشريط الجانبي وزر لإغلاق الكل.", author: "Juby210, AutumnVN, Nuckyz", category: "appearance", settings: [ { type: "checkbox", name: "sidebarFolders", label: "مجلدات الشريط الجانبي:", defaultValue: true }, { type: "checkbox", name: "closeAllFolders", label: "زر إغلاق الكل (في المجلدات):", defaultValue: true }, { type: "checkbox", name: "closeAllHomeButton", label: "زر إغلاق الكل (في زر الصفحة الرئيسية):", defaultValue: true } ] },
         { name: "BetterRoleDot", description: "مظهر: يسمح بنسخ لون الدور عند النقر على النقطة، ويتيح الجمع بين النقطة والاسم الملون.", author: "Vee, AutumnVN", category: "appearance", settings: [ { type: "checkbox", name: "bothStyles", label: "عرض النقطة والاسم الملون معًا:", defaultValue: true } ] },
@@ -686,8 +184,6 @@
         { name: "FixImagesQuality", description: "مظهر: يحاول منع Discord من ضغط جودة الصور المعروضة.", author: "Vendicated", category: "appearance" },
         { name: "NoMosaic", description: "مظهر: يمنع عرض مجموعات الصور المتعددة بشكل فسيفساء.", author: "Vendicated", category: "appearance", settings: [ { type: "checkbox", name: "noMosaicAttachments", label: "إزالة الفسيفساء من المرفقات:", defaultValue: true }, { type: "checkbox", name: "noMosaicEmbeds", label: "إزالة الفسيفساء من المضمنات:", defaultValue: true } ] },
         { name: "NoTypingAnimation", description: "مظهر: يزيل مؤشر (...) الذي يظهر عندما يكتب شخص ما.", author: "Vendicated", category: "appearance" },
-
-         // Utility Plugins
         { name: "BetterRoleContext", description: "أداة: يضيف خيارات مفيدة (نسخ اللون، تعديل) لقائمة الأدوار في الملف الشخصي.", author: "Vee, goodbee", category: "utility" },
         { name: "BetterUploadButton", description: "أداة: يغير سلوك زر الرفع (نقرة للاختيار، يمين للقائمة).", author: "fawn, Vee", category: "utility" },
         { name: "AccountPanelServerProfile", description: "أداة: يتيح فتح ملفك الشخصي للخادم الحالي بالنقر اليمين على لوحة حسابك.", author: "Nuckyz, Relitrix", category: "utility" },
@@ -736,8 +232,6 @@
         { name: "VolumeBooster", description: "أداة: يسمح بزيادة مستوى صوت المستخدمين في المكالمات فوق 200% (حتى 400%).", author: "Vendicated", category: "utility" },
         { name: "YoutubeAdblock", description: "أداة: يحاول منع إعلانات مقاطع YouTube المضمنة داخل Discord.", author: "Vendicated", category: "utility" },
         { name: "YoutubeAdblock.desktop", description: "أداة: نسخة مخصصة من مانع إعلانات YouTube لتطبيق Discord لسطح المكتب.", author: "Vendicated", category: "utility" },
-
-          // Fun Plugins
         { name: "BANger", description: "مرح: يتيح استبدال صورة GIF في نافذة تأكيد الحظر بصورة من اختيارك.", author: "Xinto, Glitchy", category: "fun" },
       ];
 
@@ -748,7 +242,7 @@
         function createCategoryContainers() {
           const pluginsContainer = document.querySelector('.plugins-container');
           if (!pluginsContainer) { console.error("خطأ: لم يتم العثور على حاوية الإضافات '.plugins-container'."); return; }
-          pluginsContainer.innerHTML = '';
+          pluginsContainer.innerHTML = ''; // مسح المحتوى قبل إعادة الإنشاء
           Object.keys(categories).forEach(categoryKey => {
             const category = categories[categoryKey];
             const categorySection = document.createElement('div');
@@ -762,7 +256,7 @@
             categoryDescription.textContent = category.description;
             const pluginsGrid = document.createElement('div');
             pluginsGrid.className = 'plugins-grid';
-            pluginsGrid.dataset.categoryGrid = categoryKey;
+            pluginsGrid.dataset.categoryGrid = categoryKey; // استخدام data-category-grid
             categorySection.appendChild(categoryHeader);
             categorySection.appendChild(categoryDescription);
             categorySection.appendChild(pluginsGrid);
@@ -772,15 +266,23 @@
 
         // --- إنشاء عناصر الإضافات ---
         function createPlugins() {
-          createCategoryContainers();
+          createCategoryContainers(); // إنشاء الحاويات أولاً
+          const pluginsContainer = document.querySelector('.plugins-container'); // الحاوية الرئيسية
+          if (!pluginsContainer) return; // الخروج إذا لم توجد الحاوية
+
           pluginsData.forEach(plugin => {
             const categoryKey = plugin.category || 'misc';
-            let pluginGrid = document.querySelector(`.plugins-grid[data-category-grid="${categoryKey}"]`);
+            // البحث عن الشبكة الصحيحة داخل الحاوية
+            let pluginGrid = pluginsContainer.querySelector(`.plugins-grid[data-category-grid="${categoryKey}"]`);
+
+            // التأكد من وجود الشبكة وإلا استخدم الشبكة المتنوعة
             if (!pluginGrid) {
               console.warn(`لم يتم العثور على شبكة للفئة: ${categoryKey}. محاولة الوضع في 'متنوعة'.`);
-              pluginGrid = document.querySelector(`.plugins-grid[data-category-grid="misc"]`);
+              pluginGrid = pluginsContainer.querySelector(`.plugins-grid[data-category-grid="misc"]`);
               if (!pluginGrid) { console.error("خطأ فادح: لم يتم العثور على شبكة الفئة المتنوعة."); return; }
             }
+
+            // --- باقي كود إنشاء بطاقة الإضافة (كما هو من الكود السابق) ---
             const pluginDiv = document.createElement('div');
             pluginDiv.className = 'plugin';
             pluginDiv.dataset.pluginName = plugin.name;
@@ -875,8 +377,14 @@
                     checkbox.dispatchEvent(new Event('change', { bubbles: true }));
                 });
             }
-            pluginGrid.appendChild(pluginDiv);
+            pluginGrid.appendChild(pluginDiv); // إضافة البطاقة للشبكة الصحيحة
           });
+
+          // إزالة رسالة التحميل إذا كانت موجودة
+          const loadingMsg = pluginsContainer.querySelector('p');
+          if (loadingMsg && loadingMsg.textContent.includes('جاري تحميل')) {
+              loadingMsg.remove();
+          }
         }
 
         // --- تنفيذ البحث ---
@@ -900,7 +408,7 @@
               });
               allCategories.forEach(categorySection => {
                 const grid = categorySection.querySelector('.plugins-grid');
-                const hasVisiblePlugins = Array.from(grid.children).some(p => p.style.display !== 'none');
+                const hasVisiblePlugins = grid && Array.from(grid.children).some(p => p.style.display !== 'none');
                 categorySection.style.display = hasVisiblePlugins ? 'block' : 'none';
               });
               if (visiblePluginCount === 0 && searchTerm !== '') {
@@ -921,6 +429,7 @@
         function setupSelectionButtons() {
           const allCheckboxesQuery = '.plugins-container .plugin:not(.required-core-plugin) input[type="checkbox"].plugin-checkbox';
           const allCheckboxes = document.querySelectorAll('.plugins-container .plugin input[type="checkbox"].plugin-checkbox');
+          const allThemeCheckboxes = document.querySelectorAll('#theme-selection input[type="checkbox"]');
 
           const selectAllBtn = document.getElementById('selectAllBtn');
           if (selectAllBtn) { selectAllBtn.addEventListener('click', () => { document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (!cb.disabled) cb.checked = true; }); }); }
@@ -928,29 +437,23 @@
           const selectSuggestedBtn = document.getElementById('selectSuggestedBtn');
           if (selectSuggestedBtn) {
             selectSuggestedBtn.addEventListener('click', () => {
-              // --- قائمة الإضافات المقترحة المحدثة ---
+              // القائمة المقترحة المحدثة
               const suggestedPluginNames = [
-                // أساسي
-                "CrashHandler", "Settings", "SupportHelper", "NoTrack",
-                // أدوات شائعة ومفيدة
                 "CallTimer", "ClearURLs", "FriendsSince", "GameActivityToggle",
                 "MessageLinkEmbeds", "PinDMs", "PreviewMessage", "ReadAllNotificationsButton",
                 "ReverseImageSearch", "SendTimestamps", "ServerInfo", "ShowConnections",
                 "Translate", "UserVoiceShow", "ValidReply", "ValidUser", "ViewIcons",
-                "VolumeBooster", "YoutubeAdblock.desktop", // أو YoutubeAdblock إذا كان المستخدم لا يستخدم سطح المكتب بشكل أساسي
-                // مظهر شائع
-                "YoutubeAdblock", "BetterFolders", "BetterRoleDot", "FixImagesQuality", "NoTypingAnimation",
-                // ميزات "Nitro" الوهمية (شائعة جدًا)
-                "FakeNitro",
-                // أدوات أخرى قد تكون مفيدة
-                "BetterUploadButton", "CopyUserURLs", "BetterSessions"
+                "VolumeBooster", "YoutubeAdblock", "YoutubeAdblock.desktop",
+                "FakeNitro", "BetterUploadButton", "CopyUserURLs", "BetterSessions", "EmoteCloner",
+                "BetterFolders", "BetterRoleDot", "FixImagesQuality", "NoTypingAnimation",
+                "AlwaysAnimate", "FavoriteEmojiFirst",
               ];
               allCheckboxes.forEach(cb => {
                 const pluginName = cb.dataset.pluginName;
                 if (!cb.disabled) { cb.checked = suggestedPluginNames.includes(pluginName); }
                 else { cb.checked = true; }
               });
-              // إعادة تعيين الإعدادات اختياريًا
+              allThemeCheckboxes.forEach(themeCb => { themeCb.checked = (themeCb.id === 'theme-ClearVision'); }); // تحديد ClearVision
               document.querySelectorAll('.plugin-setting [data-plugin-name][data-setting-name]').forEach(input => {
                  const pluginName = input.dataset.pluginName; const settingName = input.dataset.settingName;
                  const pluginData = pluginsData.find(p => p.name === pluginName);
@@ -968,60 +471,63 @@
           if (disableAllBtn) { disableAllBtn.addEventListener('click', () => { document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (!cb.disabled) cb.checked = false; }); }); }
         }
 
-        // --- إعداد تفاعل الثيمات (اختيار واحد + روابط معاينة) ---
+        // --- إعداد تفاعل الثيمات ---
         function setupThemeInteraction() {
             const themeOptionsContainer = document.querySelector('.theme-options-grid');
-            if (!themeOptionsContainer) return;
-
+            if (!themeOptionsContainer) { console.error("Error: Theme options container '.theme-options-grid' not found."); return; }
             const themeCheckboxes = themeOptionsContainer.querySelectorAll('input[type="checkbox"]');
 
             themeCheckboxes.forEach(checkbox => {
-                // 1. إضافة رابط المعاينة
                 const themeOptionDiv = checkbox.closest('.theme-option');
-                if (themeOptionDiv && checkbox.dataset.themeUrl) {
-                    const previewLink = document.createElement('a');
-                    previewLink.href = checkbox.dataset.themeUrl;
-                    previewLink.target = "_blank";
-                    previewLink.rel = "noopener noreferrer";
-                    previewLink.className = "theme-preview-link";
-                    previewLink.setAttribute("aria-label", `معاينة ثيم ${checkbox.id.replace('theme-', '')}`);
-                    // استخدام SVG بسيط كأيقونة (اختياري) أو نص
-                    previewLink.innerHTML = `
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="1em" height="1em">
-                          <path fill-rule="evenodd" d="M8.25 10a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V11.16l-3.22 3.22a.75.75 0 11-1.06-1.06l3.22-3.22H3a.75.75 0 010-1.5h3.75a.75.75 0 01.75.75z" clip-rule="evenodd" />
-                          <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 11-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06z" clip-rule="evenodd" />
-                        </svg>
-                        معاينة`;
-                    previewLink.addEventListener('click', e => e.stopPropagation()); // منع النقر على الرابط من تحديد المربع
+                if (!themeOptionDiv) { console.warn(`Could not find parent '.theme-option' for checkbox ${checkbox.id}`); return; }
 
-                    // إضافة الرابط بجانب المؤلف أو في نهاية العنصر
-                    const authorSpan = themeOptionDiv.querySelector('.theme-author');
-                    if(authorSpan) {
-                        authorSpan.insertAdjacentElement('afterend', previewLink);
-                    } else {
-                        themeOptionDiv.appendChild(previewLink);
-                    }
+                // 1. إضافة رابط المعاينة
+                const previewUrl = checkbox.dataset.themeUrl; // رابط المعاينة
+                const themeName = themeOptionDiv.querySelector('.theme-name')?.textContent || checkbox.id.replace('theme-', '');
 
-                    // ربط الـ label بالمربع لتسهيل النقر
-                    const label = document.createElement('label');
-                    label.htmlFor = checkbox.id;
-                    // نقل العناصر الموجودة داخل الـ label
-                    while(themeOptionDiv.firstChild && themeOptionDiv.firstChild !== checkbox) {
-                         if(themeOptionDiv.firstChild !== previewLink) { // لا تنقل رابط المعاينة داخل الـ label
-                            label.appendChild(themeOptionDiv.firstChild);
-                         } else {
-                             themeOptionDiv.removeChild(themeOptionDiv.firstChild); // إزالة الرابط مؤقتًا لإعادة إضافته
-                         }
+                if (previewUrl && previewUrl.startsWith('http')) {
+                    let previewLink = themeOptionDiv.querySelector('.theme-preview-link'); // تحقق مما إذا كان الرابط موجودًا بالفعل
+                    if (!previewLink) {
+                         previewLink = document.createElement('a');
+                         previewLink.href = previewUrl;
+                         previewLink.target = "_blank";
+                         previewLink.rel = "noopener noreferrer";
+                         previewLink.className = "theme-preview-link";
+                         previewLink.setAttribute("aria-label", `معاينة ثيم ${themeName}`);
+                         previewLink.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="1em" height="1em" aria-hidden="true"><path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.665l3-3z"></path><path d="M8.603 17.03a4 4 0 005.656-5.656l-1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a2.5 2.5 0 01-3.536-3.536l3-3a2.5 2.5 0 013.536 3.536.75.75 0 001.138.977 4 4 0 00-5.865-.225l-3 3a4 4 0 005.656 5.656z"></path></svg> معاينة`;
+                         previewLink.addEventListener('click', e => e.stopPropagation());
+                         // الإضافة في نهاية العنصر لتجنب مشاكل الترتيب
+                         themeOptionDiv.appendChild(previewLink);
                     }
-                    checkbox.insertAdjacentElement('afterend', label); // إضافة الـ label بعد المربع
-                    themeOptionDiv.appendChild(previewLink); // إعادة إضافة الرابط في النهاية
-                     label.addEventListener('click', e => e.stopPropagation()); // منع النقر المزدوج
                 }
 
-                // 2. منطق اختيار ثيم واحد فقط
+                // 2. ربط الـ Label بالمربع
+                let label = themeOptionDiv.querySelector(`label[for="${checkbox.id}"]`);
+                if (!label) {
+                    label = document.createElement('label');
+                    label.htmlFor = checkbox.id;
+                    // نقل الاسم والمؤلف والرابط (إذا وجد) إلى الـ Label
+                    const nameSpan = themeOptionDiv.querySelector('.theme-name');
+                    const authorSpan = themeOptionDiv.querySelector('.theme-author');
+                    const existingPreviewLink = themeOptionDiv.querySelector('.theme-preview-link'); // ابحث عنه مرة أخرى
+
+                    if (nameSpan) label.appendChild(nameSpan);
+                    if (authorSpan) label.appendChild(authorSpan);
+                    if (existingPreviewLink) label.appendChild(existingPreviewLink); // نقله داخل الـ Label
+
+                    checkbox.insertAdjacentElement('afterend', label);
+                    label.addEventListener('click', e => {
+                        // منع النقر على الـ Label من إلغاء تفعيل المربع إذا كان النقر على الرابط
+                        if (e.target.closest('.theme-preview-link')) {
+                            e.preventDefault(); // منع سلوك الـ Label الافتراضي
+                        }
+                        e.stopPropagation();
+                    });
+                }
+
+                // 3. منطق اختيار ثيم واحد فقط
                 checkbox.addEventListener('change', (event) => {
                     if (event.target.checked) {
-                        // إذا تم تحديد هذا المربع، قم بإلغاء تحديد جميع المربعات الأخرى
                         themeCheckboxes.forEach(otherCheckbox => {
                             if (otherCheckbox !== event.target) {
                                 otherCheckbox.checked = false;
@@ -1031,7 +537,6 @@
                 });
             });
         }
-
 
         // --- إعداد أزرار التكوين ---
         function setupConfigButtons() {
@@ -1045,8 +550,8 @@
           const jsonOutputArea = document.getElementById('jsonOutput');
 
           function setActionButtonsState(enabled) {
-            const buttons = [copyButton, downloadButton];
-            buttons.forEach(btn => { if (btn) { btn.classList.toggle('enabled', enabled); btn.disabled = !enabled; if (!enabled && btn.id === 'copyConfigBtn') { btn.classList.remove('copied'); btn.textContent = 'نسخ التكوين'; } } });
+             const buttons = [copyButton, downloadButton];
+             buttons.forEach(btn => { if (btn) { btn.classList.toggle('enabled', enabled); btn.disabled = !enabled; if (!enabled && btn.id === 'copyConfigBtn') { btn.classList.remove('copied'); btn.textContent = 'نسخ التكوين'; } } });
           }
           setActionButtonsState(false);
 
@@ -1059,9 +564,21 @@
           if (generateButton && jsonOutputArea) {
             generateButton.addEventListener('click', function() {
               let config = buildBaseConfig();
-              const selectedThemeUrls = [];
-              document.querySelectorAll(allThemeCheckboxesQuery).forEach(cb => { if (cb.checked && cb.dataset.themeUrl) { selectedThemeUrls.push(cb.dataset.themeUrl); } });
-              config.settings.themeLinks = selectedThemeUrls; // سيحتوي على رابط واحد أو لا شيء
+
+              // --- تعديل: استخدام data-download-url للروابط في التكوين ---
+              const selectedThemeDownloadUrls = [];
+              document.querySelectorAll(allThemeCheckboxesQuery).forEach(cb => {
+                // استخدام رابط التنزيل هنا
+                if (cb.checked && cb.dataset.downloadUrl) {
+                  selectedThemeDownloadUrls.push(cb.dataset.downloadUrl);
+                } else if (cb.checked && cb.dataset.themeUrl && !cb.dataset.downloadUrl) {
+                    // كحل احتياطي، استخدم themeUrl إذا لم يتوفر downloadUrl
+                    console.warn(`Theme ${cb.id} is missing data-download-url, using data-theme-url as fallback.`);
+                    selectedThemeDownloadUrls.push(cb.dataset.themeUrl);
+                }
+              });
+              config.settings.themeLinks = selectedThemeDownloadUrls; // إضافة رابط التنزيل (أو لا شيء)
+
               document.querySelectorAll(allCheckboxesQuery).forEach(cb => { const pluginName = cb.dataset.pluginName; if (pluginName && config.settings.plugins[pluginName]) { config.settings.plugins[pluginName].enabled = cb.checked; } });
               document.querySelectorAll(allSettingsInputsQuery).forEach(input => {
                 const pluginName = input.dataset.pluginName; const settingName = input.dataset.settingName;
@@ -1091,9 +608,7 @@
           if (downloadButton) { downloadButton.addEventListener('click', function() { if (!downloadButton.disabled) { const blob = new Blob([jsonOutputArea.value], { type: 'application/json;charset=utf-8' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'vencord_config.json'; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); } }); }
 
           const restartDiscordBtn = document.getElementById('restartDiscordBtn');
-          if (restartDiscordBtn) {
-            restartDiscordBtn.addEventListener('click', () => {
-              alert(
+          if (restartDiscordBtn) { restartDiscordBtn.addEventListener('click', () => { alert(
                 "لاستيراد إعدادات Vencord، يمكنك اتباع أحد الخيارين التاليين:\n\n" +
                 "الخيار الأول (مستحسن):\n" +
                 "1. من قائمة Vencord داخل Discord، انتقل إلى Settings.\n" +
@@ -1108,17 +623,17 @@
                 "4. احفظ الملف باسم 'vencord_config.txt'.\n" +
                 "5. قم بتغيير امتداد الملف من '.txt' إلى '.json' ليصبح 'vencord_config.json'.\n" +
                 "6. اتبع الآن الخطوات نفسها المذكورة في الخيار الأول (Import Settings -> إعادة تشغيل Discord)."
-              );
-            });
-          }
+              ); }); }
         }
 
         // --- ترتيب التنفيذ ---
         createPlugins();           // 1. إنشاء بطاقات الإضافات
         setupSearch();             // 2. تفعيل البحث
         setupSelectionButtons();   // 3. تفعيل أزرار التحديد
-        setupThemeInteraction();   // 4. تفعيل منطق الثيمات (اختيار واحد + معاينة)
+        setupThemeInteraction();   // 4. تفعيل منطق الثيمات
         setupConfigButtons();      // 5. تفعيل أزرار إنشاء/نسخ/تنزيل التكوين
+
+        console.log("Vencord Configurator Initialized Successfully."); // رسالة تأكيد في الكونسول
 
       }); // نهاية DOMContentLoaded
     </script>
@@ -1128,122 +643,118 @@
      <script> /* RTL script */ document.documentElement.setAttribute('dir', 'rtl'); document.documentElement.setAttribute('lang', 'ar'); </script>
 
     <nav>
-      <div class="nav-content">
-        <!-- الشعار على اليمين -->
-        <div id="logo">
-          <a href="index.html" id="title" aria-label="الصفحة الرئيسية لـ Vencord">
-            <img alt="شعار Vencord" src="assets/logo-nav-oneko-padding.png"/>
-          </a>
+        <div class="nav-content">
+            <div id="logo"><a href="index.html" id="title" aria-label="الصفحة الرئيسية لـ Vencord"><img alt="شعار Vencord" src="assets/logo-nav-oneko-padding.png"/></a></div>
+            <div class="p-label-m" id="btns"><ul><li><a href="https://vencord.dev/download/">تنزيل Vencord</a></li><li><a href="plugins.html" class="active-page">الإضافات</a></li></ul></div>
         </div>
-        <!-- الأزرار على اليسار -->
-        <div class="p-label-m" id="btns">
-          <ul>
-            <li>
-              <a href="https://vencord.dev/download/">
-                تنزيل Vencord
-              </a>
-            </li>
-             <li>
-              <a href="plugins.html" class="active-page"> <!-- تمييز الصفحة الحالية -->
-                الإضافات
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </nav>
 
-    <main> <div class="container"> <!-- استخدام main للدلالة -->
+    <main> <div class="container">
         <h1 class="p-page-title">الإضافات ومولد التكوين</h1>
         <p class="p-subtitle">تصفح قائمة إضافات Vencord المصنفة، واختر ما يناسبك، ثم قم بإنشاء ملف التكوين الخاص بك بسهولة. يمكنك تعديل إعدادات بعض الإضافات مباشرة من هنا.</p>
-
         <div class="search">
-          <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <!-- أيقونة للزينة -->
-            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-          </svg>
-          <input placeholder="البحث عن إضافة بالاسم، الوصف، أو المؤلف..." type="search" aria-label="البحث في الإضافات"/>
+            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+            <input placeholder="البحث عن إضافة بالاسم، الوصف، أو المؤلف..." type="search" aria-label="البحث في الإضافات"/>
         </div>
-
         <div id="required-plugins-notice">
-          <h4>الإضافات الأساسية (إجبارية)</h4>
-          <p>الإضافات التالية ضرورية لعمل Vencord وسيتم تفعيلها دائمًا في ملف التكوين:</p>
-          <span class="required-plugin">Settings - يوفر واجهة إعدادات Vencord.</span>
-          <span class="required-plugin">SupportHelper - يساعد في استكشاف الأخطاء وإصلاحها.</span>
-          <span class="required-plugin">NoTrack - يمنع تتبع بيانات Discord.</span>
-          <span class="required-plugin">CrashHandler - يعالج الأعطال غير المتوقعة.</span>
+            <h4>الإضافات الأساسية (إجبارية)</h4>
+            <p>الإضافات التالية ضرورية لعمل Vencord وسيتم تفعيلها دائمًا في ملف التكوين:</p>
+            <span class="required-plugin">Settings - يوفر واجهة إعدادات Vencord.</span>
+            <span class="required-plugin">SupportHelper - يساعد في استكشاف الأخطاء وإصلاحها.</span>
+            <span class="required-plugin">NoTrack - يمنع تتبع بيانات Discord.</span>
+            <span class="required-plugin">CrashHandler - يعالج الأعطال غير المتوقعة.</span>
         </div>
 
         <div id="theme-selection">
             <h4>اختيار ثيم (اختياري - حد أقصى واحد)</h4>
-            <div class="theme-options-grid"> <!-- Grid Container -->
+            <div class="theme-options-grid">
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-clearVision" data-theme-url="https://betterdiscord.app/theme/ClearVision" aria-label="تفعيل/تعطيل ثيم ClearVision">
-                    <!-- Label and Preview link will be added by JS -->
+                    <input type="checkbox" id="theme-ClearVision"
+                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/ClearVision/ClearVision-v6/master/ClearVision_v6.theme.css"
+                           data-download-url="https://betterdiscord.app/Download?id=23"
+                           aria-label="تفعيل/تعطيل ثيم ClearVision">
+                    <!-- JS adds label + preview -->
                     <span class="theme-name">ClearVision</span>
-                    <span class="theme-author">Nyxls</span> <!-- Updated Author -->
+                    <span class="theme-author">Nyxls</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-matterDark" data-theme-url="https://betterdiscord.app/theme/Discord%20Matter" aria-label="تفعيل/تعطيل ثيم Discord Matter">
-                    <span class="theme-name">Discord Matter</span> <!-- Updated Name -->
+                    <input type="checkbox" id="theme-DiscordMatter"
+                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/Tropix126/Discord-Matter/main/Discord%20Matter.theme.css"
+                           data-download-url="https://betterdiscord.app/Download?id=174"
+                           aria-label="تفعيل/تعطيل ثيم Discord Matter">
+                    <span class="theme-name">Discord Matter</span>
                     <span class="theme-author">TropicaI</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-discordPlus" data-theme-url="https://betterdiscord.app/theme/Discord%2B" aria-label="تفعيل/تعطيل ثيم Discord+">
-                    <span class="theme-name">Discord+</span> <!-- Updated Name -->
+                    <input type="checkbox" id="theme-Discord+"
+                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/InstaCodeClient/DiscordPlus/main/DiscordPlus.theme.css"
+                           data-download-url="https://betterdiscord.app/Download?id=209"
+                           aria-label="تفعيل/تعطيل ثيم Discord+">
+                    <span class="theme-name">Discord+</span>
                     <span class="theme-author">Insta</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-notAnotherAnime" data-theme-url="https://betterdiscord.app/theme/NotAnotherAnimeTheme" aria-label="تفعيل/تعطيل ثيم NotAnotherAnimeTheme">
+                    <input type="checkbox" id="theme-NotAnotherAnimeTheme"
+                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/puckzxz/NotAnotherAnimeTheme/main/NotAnotherAnimeTheme.theme.css"
+                           data-download-url="https://betterdiscord.app/Download?id=286"
+                           aria-label="تفعيل/تعطيل ثيم NotAnotherAnimeTheme">
                     <span class="theme-name">NotAnotherAnimeTheme</span>
                     <span class="theme-author">puckzxz</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-frostedGlass" data-theme-url="https://betterdiscord.app/theme/Frosted%20Glass" aria-label="تفعيل/تعطيل ثيم Frosted Glass">
+                    <input type="checkbox" id="theme-FrostedGlass"
+                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://cdn.jsdelivr.net/gh/DiscordStyles/FrostedGlass@c87ce3498268bdb3757f20858365c1f4f505cec3/dist/FrostedGlass.theme.css"
+                           data-download-url="https://betterdiscord.app/Download?id=2"
+                           aria-label="تفعيل/تعطيل ثيم Frosted Glass">
                     <span class="theme-name">Frosted Glass</span>
                     <span class="theme-author">Gibbu</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-tokyoNight" data-theme-url="https://betterdiscord.app/theme/Tokyo%20Night" aria-label="تفعيل/تعطيل ثيم Tokyo Night">
+                    <input type="checkbox" id="theme-TokyoNight"
+                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/Dyzean/Tokyo-Night-Discord/main/tokyonight.theme.css"
+                           data-download-url="https://betterdiscord.app/Download?id=280"
+                           aria-label="تفعيل/تعطيل ثيم Tokyo Night">
                     <span class="theme-name">Tokyo Night</span>
                     <span class="theme-author">ENNUI</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-catppuccin" data-theme-url="https://betterdiscord.app/theme/Catppuccin" aria-label="تفعيل/تعطيل ثيم Catppuccin Mocha">
-                    <span class="theme-name">Catppuccin</span> <!-- Simplified Name -->
+                    <input type="checkbox" id="theme-Catppuccin"
+                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/catppuccin/discord/main/themes/mocha.theme.css"
+                           data-download-url="https://betterdiscord.app/Download?id=379"
+                           aria-label="تفعيل/تعطيل ثيم Catppuccin">
+                    <span class="theme-name">Catppuccin</span>
                     <span class="theme-author">Catppuccin</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-fluent" data-theme-url="https://betterdiscord.app/theme/Fluent" aria-label="تفعيل/تعطيل ثيم Fluent">
+                    <input type="checkbox" id="theme-Fluent"
+                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/DiscordStyles/Fluent/main/Fluent.theme.css"
+                           data-download-url="https://betterdiscord.app/Download?id=290"
+                           aria-label="تفعيل/تعطيل ثيم Fluent">
                     <span class="theme-name">Fluent</span>
                     <span class="theme-author">DiscordStyles</span>
                 </div>
             </div>
         </div>
 
-
         <div id="selection-buttons">
-          <button id="selectAllBtn">تحديد الكل </button>
+          <button id="selectAllBtn">تحديد الكل</button>
           <button id="selectSuggestedBtn">تحديد المقترح</button>
-          <button id="disableAllBtn">إلغاء تحديد الكل </button>
+          <button id="disableAllBtn">إلغاء تحديد الكل</button>
         </div>
-
-        <!-- حاوية الإضافات المصنفة -->
         <div class="plugins-container">
-          <!-- سيتم ملء هذا القسم بواسطة JavaScript -->
-          <p style="text-align: center; padding: 2em; color: var(--grey0);">جاري تحميل الإضافات...</p>
+            <p style="text-align: center; padding: 2em; color: var(--grey0);">جاري تحميل الإضافات...</p>
         </div>
-
         <div id="generation-section">
-          <h2>إنشاء وتصدير التكوين</h2>
-          <div id="generation-controls">
-            <button id="generateConfigBtn">إنشاء التكوين</button>
-            <button id="copyConfigBtn" disabled>نسخ التكوين</button>
-            <button id="downloadConfigBtn" disabled>تنزيل التكوين</button>
-            <button id="restartDiscordBtn">كيفية تطبيق التكوين؟</button>
-          </div>
-          <textarea id="jsonOutput" readonly placeholder="سيظهر هنا ملف التكوين بتنسيق JSON بعد النقر على زر 'إنشاء التكوين'... تأكد من تحديد الإضافات التي تريدها أولاً." aria-label="مخرج التكوين بصيغة JSON"></textarea>
+            <h2>إنشاء وتصدير التكوين</h2>
+            <div id="generation-controls">
+                <button id="generateConfigBtn">إنشاء التكوين</button>
+                <button id="copyConfigBtn" disabled>نسخ التكوين</button>
+                <button id="downloadConfigBtn" disabled>تنزيل التكوين</button>
+                <button id="restartDiscordBtn">كيفية تطبيق التكوين؟</button>
+            </div>
+            <textarea id="jsonOutput" readonly placeholder="سيظهر هنا ملف التكوين بتنسيق JSON بعد النقر على زر 'إنشاء التكوين'... تأكد من تحديد الإضافات التي تريدها أولاً." aria-label="مخرج التكوين بصيغة JSON"></textarea>
         </div>
-      </div> </main> <!-- نهاية main -->
+      </div> </main>
       <footer>
         <p>تم تطويره بواسطة مساهمي Vencord | تم تعريبه وتحسينه بواسطة VenSHORT</p>
         <p>حقوق الطبع والنشر © 2024</p>
