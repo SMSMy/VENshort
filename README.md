@@ -1,7 +1,7 @@
 # ✨ VenSHORT | فينشورت ✨
 
 <p align="center">
-  <a href="https://nvkq.github.io/venshort/">
+  <a href="https://nvkq.github.io/VENshort/">
     <img src="assets/logo-nav-oneko-padding.png" alt="شعار VenSHORT" width="150">
   </a>
 </p>
