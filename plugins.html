@@ -153,12 +153,6 @@
         font-size: .9em;
         color: var(--fg1);
         margin-bottom: 0.5em;
-        /* Allow wrapping */
-        /* display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-        box-orient: vertical; */
         line-height: 1.4;
       }
 
@@ -451,15 +445,14 @@
       .theme-options-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        gap: 1em; /* Gap between grid items */
+        gap: 0.8em; /* Reduced gap slightly */
       }
 
       .theme-option {
         display: flex; /* Keep flex for alignment inside the grid item */
         align-items: center;
-        gap: 0.8em;
-        /* Removed margin-bottom as grid gap handles spacing */
-        padding: 0.5em;
+        gap: 0.6em; /* Reduced gap */
+        padding: 0.6em; /* Adjusted padding */
         border-radius: var(--border-sm);
         background-color: rgba(from var(--accentSky) r g b / 0.05); /* Use Sky */
       }
@@ -469,12 +462,23 @@
         width: 1.2em;
         cursor: pointer;
         accent-color: var(--accentSky); /* Use Sky */
+        flex-shrink: 0; /* Prevent checkbox shrinking */
+        pointer-events: all; /* Ensure checkbox is clickable */
       }
+
+       .theme-option label { /* Style label for better clicking */
+          display: flex;
+          align-items: center;
+          gap: 0.6em;
+          flex-grow: 1;
+          cursor: pointer; /* Make label clickable */
+          overflow: hidden; /* Prevent content overflow */
+       }
 
       .theme-option .theme-name {
         font-weight: 600;
         color: var(--fg0);
-        flex-grow: 1; /* Allow name to take space */
+        /* flex-grow: 1; Allow name to take space */
         overflow: hidden; /* Prevent overflow */
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -483,18 +487,41 @@
       .theme-option .theme-author {
         color: var(--accentPeach);
         font-size: 0.9em;
-        margin-right: 0.5em;
+        margin-right: 0.5em; /* Keep spacing before preview link */
         white-space: nowrap; /* Prevent author from wrapping */
+        flex-shrink: 0; /* Prevent shrinking */
       }
        .theme-option .theme-author::before {
          content: "بواسطة ";
          color: var(--grey1);
        }
 
+       .theme-preview-link {
+         margin-right: auto; /* Push link to the end (left in RTL) */
+         margin-left: 0.5em; /* Spacing from author */
+         font-size: 0.85em;
+         color: var(--accentTeal); /* Use Teal for links */
+         text-decoration: none;
+         white-space: nowrap;
+         flex-shrink: 0;
+         display: inline-flex; /* Align icon and text */
+         align-items: center;
+         gap: 0.3em;
+         pointer-events: all; /* Ensure link is clickable */
+       }
+       .theme-preview-link:hover {
+         color: hsl(from var(--accentTeal) h s calc(l + 10%));
+         text-decoration: underline;
+       }
+       .theme-preview-link svg { /* Style for potential icon */
+          width: 1em;
+          height: 1em;
+          vertical-align: middle;
+       }
+
+
       /* --- Plugin Grid and Categories --- */
-      .plugins-container {
-        /* No specific styles needed here, relies on children */
-      }
+      .plugins-container { }
 
       .category-section {
         margin-bottom: 3em;
@@ -515,107 +542,67 @@
       }
       .search svg {
         position: absolute;
-        /* Adjust for RTL */
-        right: 1em;
-        left: auto;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-        color: var(--grey0);
-        height: 1.1em;
-        pointer-events: none;
+        right: 1em; left: auto;
+        top: 50%; transform: translateY(-50%);
+        z-index: 2; color: var(--grey0);
+        height: 1.1em; pointer-events: none;
       }
       .search input {
-        position: relative;
-        text-indent: 0;
-        /* Adjust padding for RTL */
-        padding-right: 2.8em;
-        padding-left: 1em;
-        background: var(--bg2);
-        color: var(--fg0);
-        border: 1px solid var(--bg3);
-        border-radius: var(--border-md);
-        box-sizing: border-box;
-        width: 100%;
-        margin: 0;
-        padding-top: 0.9em; /* Maintain vertical padding */
-        padding-bottom: 0.9em;
+        position: relative; text-indent: 0;
+        padding-right: 2.8em; padding-left: 1em;
+        background: var(--bg2); color: var(--fg0);
+        border: 1px solid var(--bg3); border-radius: var(--border-md);
+        box-sizing: border-box; width: 100%;
+        margin: 0; padding-top: 0.9em; padding-bottom: 0.9em;
         font-size: 1em;
       }
-      .search input::placeholder {
-        color: var(--grey1);
-      }
+      .search input::placeholder { color: var(--grey1); }
       .search input:focus {
-          outline: none;
-          border-color: var(--accentBlue);
+          outline: none; border-color: var(--accentBlue);
           box-shadow: 0 0 0 2px rgba(from var(--accentBlue) r g b / 0.3);
       }
-      #no-results-message { /* Style for the no results message */
-        text-align: center;
-        margin-top: 2em;
-        color: var(--grey0);
-        font-style: italic;
+      #no-results-message {
+        text-align: center; margin-top: 2em;
+        color: var(--grey0); font-style: italic;
       }
 
       /* --- Logo Styles --- */
       #logo img {
-        width: 100px; /* Adjust as needed */
-        height: auto;
-        max-width: 100%;
-        vertical-align: middle; /* Align better with text */
+        width: 100px; height: auto; max-width: 100%;
+        vertical-align: middle;
       }
 
       /* --- Navigation Styles --- */
       nav {
-        background-color: var(--bg1);
-        padding: 0.5em 1em;
+        background-color: var(--bg1); padding: 0.5em 1em;
         border-bottom: 1px solid var(--bg3);
       }
-
       .nav-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Space out logo and links */
-        max-width: 1200px;
-        margin: 0 auto;
+        display: flex; align-items: center;
+        justify-content: space-between;
+        max-width: 1200px; margin: 0 auto;
       }
-
       #btns ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 1em; /* Use gap for spacing */
+        list-style: none; padding: 0; margin: 0;
+        display: flex; gap: 1em;
       }
-
-      #btns li {
-        /* No margin needed if using gap */
-      }
-
       #btns a {
-        text-decoration: none;
-        color: var(--accentPurple);
-        font-weight: 700;
-        padding: 0.5em 1em;
+        text-decoration: none; color: var(--accentPurple);
+        font-weight: 700; padding: 0.5em 1em;
         border-radius: var(--border-md);
         transition: background-color 0.2s ease, color 0.2s ease;
+        display: block; /* Ensure padding is applied correctly */
       }
-
-      #btns a:hover {
-        background-color: rgba(from var(--accentPurple) r g b / 0.1);
-      }
-      #btns a.active-page { /* Style for the active page link */
+      #btns a:hover { background-color: rgba(from var(--accentPurple) r g b / 0.1); }
+      #btns a.active-page {
           background-color: rgba(from var(--accentPurple) r g b / 0.2);
           color: var(--accentRosewater);
       }
 
       /* Ellipsis Overflow */
       .ellipsis-overflow {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
       }
-
 
     </style>
     <script>
@@ -657,566 +644,101 @@
       // --- بيانات الإضافات مع الفئات (تم تحسين الأوصاف والتصنيفات) ---
       const pluginsData = [
           // API Plugins
-        {
-          name: "ChatInputButtonAPI",
-          description: "للمطورين: تتيح إضافة أزرار مخصصة إلى شريط إدخال الدردشة.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "CommandsAPI",
-          description: "للمطورين: تسمح بإنشاء وتسجيل أوامر سلاش (/) مخصصة.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "MemberListDecoratorsAPI",
-          description: "للمطورين: تتيح إضافة أيقونات أو زخارف بجانب أسماء المستخدمين في قائمة الأعضاء.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "MessageAccessoriesAPI",
-          description: "للمطورين: تسمح بإضافة عناصر إضافية (مثل أزرار) أسفل الرسائل.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "MessageDecorationsAPI",
-          description: "للمطورين: تتيح إضافة عناصر مرئية (زخارف) حول أو داخل الرسائل.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "MessageEventsAPI",
-          description: "للمطورين: تسمح بالتفاعل مع أحداث الرسائل (الإرسال، التعديل، الحذف).",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "MessagePopoverAPI",
-          description: "للمطورين: تتيح إضافة خيارات مخصصة لقائمة الرسالة المنبثقة.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "MessageUpdaterAPI",
-          description: "للمطورين: تسمح بتعديل محتوى الرسائل ديناميكيًا بعد إرسالها.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "ServerListAPI",
-          description: "للمطورين: تتيح التفاعل مع قائمة الخوادم وتخصيصها.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "UserSettingsAPI",
-          description: "للمطورين: تسمح بإضافة أقسام وإعدادات مخصصة إلى قائمة إعدادات المستخدم.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "DynamicImageModalAPI",
-          description: "للمطورين: تتيح عرض الصور في نافذة منبثقة ديناميكية.",
-          author: "Vendicated",
-          category: "api"
-        },
-        {
-          name: "BadgeAPI",
-          description: "للمطورين: تسمح بإضافة شارات مخصصة إلى ملفات تعريف المستخدمين.",
-          author: "Vendicated",
-          category: "api"
-        },
+        { name: "ChatInputButtonAPI", description: "للمطورين: تتيح إضافة أزرار مخصصة إلى شريط إدخال الدردشة.", author: "Vendicated", category: "api" },
+        { name: "CommandsAPI", description: "للمطورين: تسمح بإنشاء وتسجيل أوامر سلاش (/) مخصصة.", author: "Vendicated", category: "api" },
+        { name: "MemberListDecoratorsAPI", description: "للمطورين: تتيح إضافة أيقونات أو زخارف بجانب أسماء المستخدمين في قائمة الأعضاء.", author: "Vendicated", category: "api" },
+        { name: "MessageAccessoriesAPI", description: "للمطورين: تسمح بإضافة عناصر إضافية (مثل أزرار) أسفل الرسائل.", author: "Vendicated", category: "api" },
+        { name: "MessageDecorationsAPI", description: "للمطورين: تتيح إضافة عناصر مرئية (زخارف) حول أو داخل الرسائل.", author: "Vendicated", category: "api" },
+        { name: "MessageEventsAPI", description: "للمطورين: تسمح بالتفاعل مع أحداث الرسائل (الإرسال، التعديل، الحذف).", author: "Vendicated", category: "api" },
+        { name: "MessagePopoverAPI", description: "للمطورين: تتيح إضافة خيارات مخصصة لقائمة الرسالة المنبثقة.", author: "Vendicated", category: "api" },
+        { name: "MessageUpdaterAPI", description: "للمطورين: تسمح بتعديل محتوى الرسائل ديناميكيًا بعد إرسالها.", author: "Vendicated", category: "api" },
+        { name: "ServerListAPI", description: "للمطورين: تتيح التفاعل مع قائمة الخوادم وتخصيصها.", author: "Vendicated", category: "api" },
+        { name: "UserSettingsAPI", description: "للمطورين: تسمح بإضافة أقسام وإعدادات مخصصة إلى قائمة إعدادات المستخدم.", author: "Vendicated", category: "api" },
+        { name: "DynamicImageModalAPI", description: "للمطورين: تتيح عرض الصور في نافذة منبثقة ديناميكية.", author: "Vendicated", category: "api" },
+        { name: "BadgeAPI", description: "للمطورين: تسمح بإضافة شارات مخصصة إلى ملفات تعريف المستخدمين.", author: "Vendicated", category: "api" },
 
         // Core Plugins
-        {
-          name: "CrashHandler",
-          description: "أساسي: يعالج الأعطال غير المتوقعة في Vencord ويساعد في تشخيص المشاكل.",
-          author: "Vendicated",
-          category: "core"
-        },
-        {
-          name: "Settings",
-          description: "أساسي: يضيف لوحة تحكم Vencord ضمن إعدادات Discord لإدارة الإضافات والميزات.",
-          author: "Vendicated",
-          category: "core",
-          settings: [
-            { type: "select", name: "settingsLocation", label: "موقع الإعدادات:", options: [ { value: "aboveNitro", label: "فوق Nitro" }, { value: "belowNitro", label: "تحت Nitro" }, { value: "aboveActivity", label: "فوق النشاط" } ], defaultValue: "aboveNitro" }
-          ]
-        },
-        {
-          name: "SupportHelper",
-          description: "أساسي: يوفر أدوات ومعلومات للمساعدة في تشخيص المشكلات وطلب الدعم.",
-          author: "Vendicated",
-          category: "core"
-        },
+        { name: "CrashHandler", description: "أساسي: يعالج الأعطال غير المتوقعة في Vencord ويساعد في تشخيص المشاكل.", author: "Vendicated", category: "core" },
+        { name: "Settings", description: "أساسي: يضيف لوحة تحكم Vencord ضمن إعدادات Discord لإدارة الإضافات والميزات.", author: "Vendicated", category: "core", settings: [ { type: "select", name: "settingsLocation", label: "موقع الإعدادات:", options: [ { value: "aboveNitro", label: "فوق Nitro" }, { value: "belowNitro", label: "تحت Nitro" }, { value: "aboveActivity", label: "فوق الأعدادات" } ], defaultValue: "aboveNitro" } ] },
+        { name: "SupportHelper", description: "أساسي: يوفر أدوات ومعلومات للمساعدة في تشخيص المشكلات وطلب الدعم.", author: "Vendicated", category: "core" },
 
         // Privacy Plugins
-        {
-          name: "NoTrack",
-          description: "أساسي/خصوصية: يمنع Discord من جمع بيانات الاستخدام والتحليلات عنك.",
-          author: "Vendicated",
-          category: "privacy", // Also Core functionally
-          settings: [
-            { type: "checkbox", name: "disableAnalytics", label: "تعطيل التحليلات:", defaultValue: true }
-          ]
-        },
-        {
-          name: "ClearURLs",
-          description: "خصوصية: يزيل تلقائيًا معلمات التتبع (مثل utm_source) من الروابط.",
-          author: "Vendicated",
-          category: "privacy"
-        },
-        {
-          name: "AnonymiseFileNames",
-          description: "خصوصية: يغير أسماء الملفات التي ترفعها إلى أسماء عامة (مثل 'file.png') قبل الإرسال.",
-          author: "fawn",
-          category: "privacy"
-        },
+        { name: "NoTrack", description: "أساسي/خصوصية: يمنع Discord من جمع بيانات الاستخدام والتحليلات عنك.", author: "Vendicated", category: "privacy", settings: [ { type: "checkbox", name: "disableAnalytics", label: "تعطيل التحليلات:", defaultValue: true } ] },
+        { name: "ClearURLs", description: "خصوصية: يزيل تلقائيًا معلمات التتبع (مثل utm_source) من الروابط.", author: "Vendicated", category: "privacy" },
+        { name: "AnonymiseFileNames", description: "خصوصية: يغير أسماء الملفات التي ترفعها إلى أسماء عامة (مثل 'file.png') قبل الإرسال.", author: "fawn", category: "privacy" },
 
         // Appearance Plugins
-        {
-          name: "ClientTheme",
-          description: "مظهر: يتيح لك تغيير لون الخلفية الرئيسي لواجهة Discord.",
-          author: "Vendicated",
-          category: "appearance",
-          settings: [
-            { type: "color", name: "color", label: "اللون:", defaultValue: "313338" }
-          ]
-        },
-        {
-          name: "BetterFolders",
-          description: "مظهر: يحسن عرض مجلدات الخوادم مع خيار للشريط الجانبي وزر لإغلاق الكل.",
-          author: "Juby210, AutumnVN, Nuckyz",
-          category: "appearance",
-          settings: [
-            { type: "checkbox", name: "sidebarFolders", label: "مجلدات الشريط الجانبي:", defaultValue: true },
-            { type: "checkbox", name: "closeAllFolders", label: "زر إغلاق الكل (في المجلدات):", defaultValue: true },
-            { type: "checkbox", name: "closeAllHomeButton", label: "زر إغلاق الكل (في زر الصفحة الرئيسية):", defaultValue: true }
-          ]
-        },
-        {
-          name: "BetterRoleDot",
-          description: "مظهر: يسمح بنسخ لون الدور عند النقر على النقطة، ويتيح الجمع بين النقطة والاسم الملون.",
-          author: "Vee, AutumnVN",
-          category: "appearance",
-          settings: [
-            { type: "checkbox", name: "bothStyles", label: "عرض النقطة والاسم الملون معًا:", defaultValue: true }
-          ]
-        },
-        {
-          name: "AlwaysAnimate",
-          description: "مظهر: يجبر الصور الرمزية والبانرات والرموز التعبيرية المتحركة على التحرك دائمًا.",
-          author: "Fiery",
-          category: "appearance"
-        },
-        {
-          name: "AlwaysExpandRoles",
-          description: "مظهر: يعرض قائمة الأدوار موسعة بالكامل دائمًا عند فتح ملف شخصي.",
-          author: "Chloe",
-          category: "appearance"
-        },
-        {
-          name: "BetterGifAltText",
-          description: "مظهر: يجعل النص البديل لصور GIF أكثر فائدة (باستخدام علامات أو اسم الملف).",
-          author: "Vee",
-          category: "appearance"
-        },
-        {
-          name: "BetterGifPicker",
-          description: "مظهر/أداة: يجعل نافذة اختيار GIF تفتح قسم 'المفضلة' تلقائيًا.",
-          author: "Samwich",
-          category: "appearance" // Primarily appearance tweak
-        },
-        {
-          name: "BetterNotesBox",
-          description: "مظهر/أداة: يتيح إخفاء صندوق الملاحظات في الملف الشخصي أو تعطيل التدقيق الإملائي فيه.",
-          author: "Vee",
-          category: "appearance"
-        },
-         {
-          name: "BetterSettings",
-          description: "مظهر/أداء: يحسن سلاسة وسرعة فتح قائمة إعدادات Discord.",
-          author: "Kyuuhachi",
-          category: "appearance"
-        },
-        {
-          name: "BiggerStreamPreview",
-          description: "مظهر: يكبر نافذة معاينة البث المباشر عند المرور عليها بالفأرة.",
-          author: "phil",
-          category: "appearance"
-        },
-        {
-          name: "BlurNSFW",
-          description: "مظهر/خصوصية: يموه الصور والمرفقات في قنوات NSFW حتى تمرير الفأرة فوقها.",
-          author: "Vee",
-          category: "appearance"
-        },
-        {
-          name: "ColorSighted",
-          description: "مظهر: يضيف تلوينًا للأزرار في مربعات الحوار لتسهيل التمييز (مفيد لعمى الألوان).",
-          author: "Vendicated",
-          category: "appearance"
-        },
-        {
-          name: "Decor",
-          description: "مظهر: يتيح تخصيصات مرئية متنوعة (مثل إخفاء عناصر) عبر CSS مخصص.",
-          author: "Vendicated",
-          category: "appearance"
-        },
-        {
-          name: "FakeProfileThemes",
-          description: "مظهر: يطبق سمات ملف شخصي مخصصة مرئية لمستخدمي Vencord الآخرين.",
-          author: "Vendicated",
-          category: "appearance"
-        },
-        {
-          name: "FavoriteEmojiFirst",
-          description: "مظهر/أداة: يعرض الرموز التعبيرية المفضلة في بداية قائمة الاختيار.",
-          author: "Vendicated",
-          category: "appearance"
-        },
-        {
-          name: "FixImagesQuality",
-          description: "مظهر: يحاول منع Discord من ضغط جودة الصور المعروضة.",
-          author: "Vendicated",
-          category: "appearance"
-        },
-        {
-          name: "NoMosaic",
-          description: "مظهر: يمنع عرض مجموعات الصور المتعددة بشكل فسيفساء.",
-          author: "Vendicated",
-          category: "appearance",
-          settings: [
-            { type: "checkbox", name: "noMosaicAttachments", label: "إزالة الفسيفساء من المرفقات:", defaultValue: true },
-            { type: "checkbox", name: "noMosaicEmbeds", label: "إزالة الفسيفساء من المضمنات:", defaultValue: true }
-          ]
-        },
-        {
-          name: "NoTypingAnimation",
-          description: "مظهر: يزيل مؤشر (...) الذي يظهر عندما يكتب شخص ما.",
-          author: "Vendicated",
-          category: "appearance"
-        },
+        { name: "ClientTheme", description: "مظهر: يتيح لك تغيير لون الخلفية الرئيسي لواجهة Discord.", author: "Vendicated", category: "appearance", settings: [ { type: "color", name: "color", label: "اللون:", defaultValue: "313338" } ] },
+        { name: "BetterFolders", description: "مظهر: يحسن عرض مجلدات الخوادم مع خيار للشريط الجانبي وزر لإغلاق الكل.", author: "Juby210, AutumnVN, Nuckyz", category: "appearance", settings: [ { type: "checkbox", name: "sidebarFolders", label: "مجلدات الشريط الجانبي:", defaultValue: true }, { type: "checkbox", name: "closeAllFolders", label: "زر إغلاق الكل (في المجلدات):", defaultValue: true }, { type: "checkbox", name: "closeAllHomeButton", label: "زر إغلاق الكل (في زر الصفحة الرئيسية):", defaultValue: true } ] },
+        { name: "BetterRoleDot", description: "مظهر: يسمح بنسخ لون الدور عند النقر على النقطة، ويتيح الجمع بين النقطة والاسم الملون.", author: "Vee, AutumnVN", category: "appearance", settings: [ { type: "checkbox", name: "bothStyles", label: "عرض النقطة والاسم الملون معًا:", defaultValue: true } ] },
+        { name: "AlwaysAnimate", description: "مظهر: يجبر الصور الرمزية والبانرات والرموز التعبيرية المتحركة على التحرك دائمًا.", author: "Fiery", category: "appearance" },
+        { name: "AlwaysExpandRoles", description: "مظهر: يعرض قائمة الأدوار موسعة بالكامل دائمًا عند فتح ملف شخصي.", author: "Chloe", category: "appearance" },
+        { name: "BetterGifAltText", description: "مظهر: يجعل النص البديل لصور GIF أكثر فائدة (باستخدام علامات أو اسم الملف).", author: "Vee", category: "appearance" },
+        { name: "BetterGifPicker", description: "مظهر/أداة: يجعل نافذة اختيار GIF تفتح قسم 'المفضلة' تلقائيًا.", author: "Samwich", category: "appearance" },
+        { name: "BetterNotesBox", description: "مظهر/أداة: يتيح إخفاء صندوق الملاحظات في الملف الشخصي أو تعطيل التدقيق الإملائي فيه.", author: "Vee", category: "appearance" },
+        { name: "BetterSettings", description: "مظهر/أداء: يحسن سلاسة وسرعة فتح قائمة إعدادات Discord.", author: "Kyuuhachi", category: "appearance" },
+        { name: "BiggerStreamPreview", description: "مظهر: يكبر نافذة معاينة البث المباشر عند المرور عليها بالفأرة.", author: "phil", category: "appearance" },
+        { name: "BlurNSFW", description: "مظهر/خصوصية: يموه الصور والمرفقات في قنوات NSFW حتى تمرير الفأرة فوقها.", author: "Vee", category: "appearance" },
+        { name: "ColorSighted", description: "مظهر: يضيف تلوينًا للأزرار في مربعات الحوار لتسهيل التمييز (مفيد لعمى الألوان).", author: "Vendicated", category: "appearance" },
+        { name: "Decor", description: "مظهر: يتيح تخصيصات مرئية متنوعة (مثل إخفاء عناصر) عبر CSS مخصص.", author: "Vendicated", category: "appearance" },
+        { name: "FakeProfileThemes", description: "مظهر: يطبق سمات ملف شخصي مخصصة مرئية لمستخدمي Vencord الآخرين.", author: "Vendicated", category: "appearance" },
+        { name: "FavoriteEmojiFirst", description: "مظهر/أداة: يعرض الرموز التعبيرية المفضلة في بداية قائمة الاختيار.", author: "Vendicated", category: "appearance" },
+        { name: "FixImagesQuality", description: "مظهر: يحاول منع Discord من ضغط جودة الصور المعروضة.", author: "Vendicated", category: "appearance" },
+        { name: "NoMosaic", description: "مظهر: يمنع عرض مجموعات الصور المتعددة بشكل فسيفساء.", author: "Vendicated", category: "appearance", settings: [ { type: "checkbox", name: "noMosaicAttachments", label: "إزالة الفسيفساء من المرفقات:", defaultValue: true }, { type: "checkbox", name: "noMosaicEmbeds", label: "إزالة الفسيفساء من المضمنات:", defaultValue: true } ] },
+        { name: "NoTypingAnimation", description: "مظهر: يزيل مؤشر (...) الذي يظهر عندما يكتب شخص ما.", author: "Vendicated", category: "appearance" },
 
          // Utility Plugins
-        {
-          name: "BetterRoleContext",
-          description: "أداة: يضيف خيارات مفيدة (نسخ اللون، تعديل) لقائمة الأدوار في الملف الشخصي.",
-          author: "Vee, goodbee",
-          category: "utility"
-        },
-        {
-          name: "BetterUploadButton",
-          description: "أداة: يغير سلوك زر الرفع (نقرة للاختيار، يمين للقائمة).",
-          author: "fawn, Vee",
-          category: "utility"
-        },
-        {
-          name: "AccountPanelServerProfile",
-          description: "أداة: يتيح فتح ملفك الشخصي للخادم الحالي بالنقر اليمين على لوحة حسابك.",
-          author: "Nuckyz, Relitrix",
-          category: "utility"
-        },
-        {
-          name: "AlwaysTrust",
-          description: "أداة/أمان: يتجاوز تلقائيًا تحذيرات الروابط والملفات 'غير الموثوقة'. (استخدم بحذر!)",
-          author: "zt, trey",
-          category: "utility"
-        },
-        {
-          name: "AppleMusicRichPresence",
-          description: "أداة: يعرض ما تستمع إليه على Apple Music كحالة نشاط Discord.",
-          author: "RyanCaoDev",
-          category: "utility"
-        },
-        {
-          name: "BetterSessions",
-          description: "أداة/أمان: يحسن صفحة 'الجلسات' بمعلومات دقيقة وإشعارات تسجيل الدخول.",
-          author: "amia",
-          category: "utility"
-        },
-        {
-          name: "CallTimer",
-          description: "أداة: يعرض مؤقتًا للمدة المنقضية في المكالمة الحالية.",
-          author: "Vendicated, Fiery",
-          category: "utility",
-          settings: [
-            { type: "select", name: "format", label: "تنسيق الوقت:", options: [ { value: "stopwatch", label: "ساعة إيقاف (00:00:00)" }, { value: "timestamp", label: "طابع زمني (HH:MM:SS)" } ], defaultValue: "stopwatch" }
-          ]
-        },
-        {
-          name: "ConsoleJanitor",
-          description: "أداة (للمطورين): ينظف وحدة التحكم من الرسائل غير المرغوب فيها.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "ConsoleShortcuts",
-          description: "أداة (للمطورين): يضيف اختصارات مفيدة لوحدة تحكم المطور.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "CopyEmojiMarkdown",
-          description: "أداة: يضيف خيارًا لنسخ الرمز التعبيري بتنسيق Markdown.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "CopyFileContents",
-          description: "أداة: يضيف خيارًا لنسخ المحتوى النصي للملفات المرفقة.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "CopyUserURLs",
-          description: "أداة: يضيف خيارًا لنسخ رابط الملف الشخصي للمستخدم أو صورته الرمزية.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "CtrlEnterSend",
-          description: "أداة: يغير سلوك الإرسال (Ctrl+Enter للإرسال، Enter لسطر جديد).",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "CustomIdle",
-          description: "أداة/مظهر: يسمح بتعيين حالة 'خامل' مخصصة.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "CustomRPC",
-          description: "أداة: يتيح إنشاء وعرض حالة نشاط مخصصة (Rich Presence).",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "Dearrow",
-          description: "أداة/مظهر: يحاول إزالة الأسهم المضللة من صور YouTube المصغرة.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "DevCompanion",
-          description: "أداة (للمطورين): يوفر أدوات مساعدة لمطوري الإضافات.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "DisableCallIdle",
-          description: "أداة: يمنع تغيير حالتك إلى 'خامل' تلقائيًا أثناء المكالمات.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "DontRoundMyTimestamps",
-          description: "أداة/مظهر: يعرض الطوابع الزمنية بدقة أكبر (مع الثواني).",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "EmoteCloner",
-          description: "أداة: يسهل نسخ الرموز التعبيرية بين الخوادم (إذا كنت تملك الصلاحيات).",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "Experiments",
-          description: "أداة: يتيح الوصول إلى علامة تبويب 'Experiments' المخفية في الإعدادات.",
-          author: "Vendicated",
-          category: "utility",
-          settings: [
-            { type: "checkbox", name: "toolbarDevMenu", label: "قائمة المطورين في شريط الأدوات:", defaultValue: false }
-          ]
-        },
-        {
-          name: "F8Break",
-          description: "أداة (للمطورين): يوقف التنفيذ عند الضغط على F8 في وحدة التحكم.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "FakeNitro",
-          description: "أداة: يتيح استخدام بعض مزايا Nitro محليًا (إرسال الرموز كروابط، جودة بث أعلى، إلخ).",
-          author: "Vendicated",
-          category: "utility",
-          settings: [
-            { type: "checkbox", name: "enableEmojiBypass", label: "تجاوز الرموز التعبيرية (إرسال كرابط):", defaultValue: true },
-            { type: "checkbox", name: "enableStickerBypass", label: "تجاوز الملصقات (إرسال كرابط):", defaultValue: true },
-            { type: "checkbox", name: "enableStreamQualityBypass", label: "تجاوز جودة البث (أعلى من 720p):", defaultValue: true },
-            { type: "checkbox", name: "transformEmojis", label: "تحويل الرموز (عرض الروابط كصور):", defaultValue: true },
-            { type: "checkbox", name: "transformStickers", label: "تحويل الملصقات (عرض الروابط كصور):", defaultValue: true },
-            { type: "checkbox", name: "transformCompoundSentence", label: "تحويل الجمل المركبة (متعددة):", defaultValue: false },
-            { type: "number", name: "emojiSize", label: "حجم الرموز (بكسل):", defaultValue: 48 },
-            { type: "number", name: "stickerSize", label: "حجم الملصقات (بكسل):", defaultValue: 160 },
-            { type: "checkbox", name: "useHyperLinks", label: "استخدام الروابط التشعبية:", defaultValue: true },
-            { type: "text", name: "hyperLinkText", label: "نص الرابط ({{NAME}} للاسم):", defaultValue: "{{NAME}}" },
-            { type: "checkbox", name: "disableEmbedPermissionCheck", label: "تعطيل فحص إذن التضمين:", defaultValue: true }
-          ]
-        },
-        {
-          name: "FavoriteGifSearch",
-          description: "أداة: يسمح بحفظ مصطلحات البحث المتكررة في منتقي GIF.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "FriendsSince",
-          description: "أداة/مظهر: يعرض تاريخ إضافة المستخدم كصديق في ملفه الشخصي.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "GameActivityToggle",
-          description: "أداة: يضيف زرًا لتبديل عرض/إخفاء حالة نشاط اللعبة بسرعة.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "MessageLinkEmbeds",
-          description: "أداة: يضمن تضمين محتوى الرسائل عند لصق روابطها (إذا كانت متاحة).",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "NewGuildSettings",
-          description: "أداة/مظهر: يستبدل واجهة إعدادات الخادم القديمة بالواجهة الأحدث.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "NoUnblockToJump",
-          description: "أداة: يسمح بالانتقال لرسالة من مستخدم محظور دون الحاجة لفك الحظر.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "OpenInApp",
-          description: "أداة: يضيف خيارًا لفتح روابط معينة (Spotify، Steam) في تطبيقاتها الأصلية.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "PinDMs",
-          description: "أداة: يسمح بتثبيت الرسائل المباشرة المهمة في أعلى القائمة.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "PreviewMessage",
-          description: "أداة/مظهر: يعرض معاينة للرسالة التي ترد عليها فوق شريط الإدخال.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "ReadAllNotificationsButton",
-          description: "أداة: يضيف زرًا لوضع علامة 'مقروء' على جميع إشعارات الخوادم دفعة واحدة.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "RelationshipNotifier",
-          description: "أداة: يرسل إشعارًا عند تغييرات الصداقة أو الحظر (قد لا يكون دقيقًا دائمًا).",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "ReverseImageSearch",
-          description: "أداة: يضيف خيارًا للبحث عن الصور باستخدام محركات البحث العكسي.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "SendTimestamps",
-          description: "أداة: يضيف زرًا (🔢) لإنشاء وإرسال طوابع زمنية ديناميكية.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "ServerInfo",
-          description: "أداة: يضيف خيار 'معلومات الخادم' لعرض تفاصيل مثل تاريخ الإنشاء والمعرف.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "ShowConnections",
-          description: "أداة/مظهر: يعرض اتصالات المستخدم (Steam، Spotify) في أماكن أكثر.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "Translate",
-          description: "أداة: يضيف خيارًا لترجمة الرسائل باستخدام خدمات خارجية.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "UserVoiceShow",
-          description: "أداة/مظهر: يعرض أيقونة (🔊) بجانب المستخدمين المتصلين بقنوات صوتية.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "ValidReply",
-          description: "أداة: يحاول إصلاح مشكلة عدم تحميل الرسائل المقتبسة في الردود.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "ValidUser",
-          description: "أداة: يتيح لصق معرف المستخدم (ID) لاسترداد معلوماته.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "ViewIcons",
-          description: "أداة: يجعل الصور الرمزية والبانرات والأيقونات قابلة للنقر لعرضها كاملة.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "VoiceDownload",
-          description: "أداة: يضيف زرًا لتنزيل الرسائل الصوتية المستلمة.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "VoiceMessages",
-          description: "أداة: يتيح تسجيل وإرسال رسائل صوتية (إذا لم تكن متاحة رسميًا).",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "VolumeBooster",
-          description: "أداة: يسمح بزيادة مستوى صوت المستخدمين في المكالمات فوق 200% (حتى 400%).",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "YoutubeAdblock",
-          description: "أداة: يحاول منع إعلانات مقاطع YouTube المضمنة داخل Discord.",
-          author: "Vendicated",
-          category: "utility"
-        },
-        {
-          name: "YoutubeAdblock.desktop",
-          description: "أداة: نسخة مخصصة من مانع إعلانات YouTube لتطبيق Discord لسطح المكتب.",
-          author: "Vendicated",
-          category: "utility"
-        },
+        { name: "BetterRoleContext", description: "أداة: يضيف خيارات مفيدة (نسخ اللون، تعديل) لقائمة الأدوار في الملف الشخصي.", author: "Vee, goodbee", category: "utility" },
+        { name: "BetterUploadButton", description: "أداة: يغير سلوك زر الرفع (نقرة للاختيار، يمين للقائمة).", author: "fawn, Vee", category: "utility" },
+        { name: "AccountPanelServerProfile", description: "أداة: يتيح فتح ملفك الشخصي للخادم الحالي بالنقر اليمين على لوحة حسابك.", author: "Nuckyz, Relitrix", category: "utility" },
+        { name: "AlwaysTrust", description: "أداة/أمان: يتجاوز تلقائيًا تحذيرات الروابط والملفات 'غير الموثوقة'. (استخدم بحذر!)", author: "zt, trey", category: "utility" },
+        { name: "AppleMusicRichPresence", description: "أداة: يعرض ما تستمع إليه على Apple Music كحالة نشاط Discord.", author: "RyanCaoDev", category: "utility" },
+        { name: "BetterSessions", description: "أداة/أمان: يحسن صفحة 'الجلسات' بمعلومات دقيقة وإشعارات تسجيل الدخول.", author: "amia", category: "utility" },
+        { name: "CallTimer", description: "أداة: يعرض مؤقتًا للمدة المنقضية في المكالمة الحالية.", author: "Vendicated, Fiery", category: "utility", settings: [ { type: "select", name: "format", label: "تنسيق الوقت:", options: [ { value: "stopwatch", label: "ساعة إيقاف (00:00:00)" }, { value: "timestamp", label: "طابع زمني (HH:MM:SS)" } ], defaultValue: "stopwatch" } ] },
+        { name: "ConsoleJanitor", description: "أداة (للمطورين): ينظف وحدة التحكم من الرسائل غير المرغوب فيها.", author: "Vendicated", category: "utility" },
+        { name: "ConsoleShortcuts", description: "أداة (للمطورين): يضيف اختصارات مفيدة لوحدة تحكم المطور.", author: "Vendicated", category: "utility" },
+        { name: "CopyEmojiMarkdown", description: "أداة: يضيف خيارًا لنسخ الرمز التعبيري بتنسيق Markdown.", author: "Vendicated", category: "utility" },
+        { name: "CopyFileContents", description: "أداة: يضيف خيارًا لنسخ المحتوى النصي للملفات المرفقة.", author: "Vendicated", category: "utility" },
+        { name: "CopyUserURLs", description: "أداة: يضيف خيارًا لنسخ رابط الملف الشخصي للمستخدم أو صورته الرمزية.", author: "Vendicated", category: "utility" },
+        { name: "CtrlEnterSend", description: "أداة: يغير سلوك الإرسال (Ctrl+Enter للإرسال، Enter لسطر جديد).", author: "Vendicated", category: "utility" },
+        { name: "CustomIdle", description: "أداة/مظهر: يسمح بتعيين حالة 'خامل' مخصصة.", author: "Vendicated", category: "utility" },
+        { name: "CustomRPC", description: "أداة: يتيح إنشاء وعرض حالة نشاط مخصصة (Rich Presence).", author: "Vendicated", category: "utility" },
+        { name: "Dearrow", description: "أداة/مظهر: يحاول إزالة الأسهم المضللة من صور YouTube المصغرة.", author: "Vendicated", category: "utility" },
+        { name: "DevCompanion", description: "أداة (للمطورين): يوفر أدوات مساعدة لمطوري الإضافات.", author: "Vendicated", category: "utility" },
+        { name: "DisableCallIdle", description: "أداة: يمنع تغيير حالتك إلى 'خامل' تلقائيًا أثناء المكالمات.", author: "Vendicated", category: "utility" },
+        { name: "DontRoundMyTimestamps", description: "أداة/مظهر: يعرض الطوابع الزمنية بدقة أكبر (مع الثواني).", author: "Vendicated", category: "utility" },
+        { name: "EmoteCloner", description: "أداة: يسهل نسخ الرموز التعبيرية بين الخوادم (إذا كنت تملك الصلاحيات).", author: "Vendicated", category: "utility" },
+        { name: "Experiments", description: "أداة: يتيح الوصول إلى علامة تبويب 'Experiments' المخفية في الإعدادات.", author: "Vendicated", category: "utility", settings: [ { type: "checkbox", name: "toolbarDevMenu", label: "قائمة المطورين في شريط الأدوات:", defaultValue: false } ] },
+        { name: "F8Break", description: "أداة (للمطورين): يوقف التنفيذ عند الضغط على F8 في وحدة التحكم.", author: "Vendicated", category: "utility" },
+        { name: "FakeNitro", description: "أداة: يتيح استخدام بعض مزايا Nitro محليًا (إرسال الرموز كروابط، جودة بث أعلى، إلخ).", author: "Vendicated", category: "utility", settings: [ { type: "checkbox", name: "enableEmojiBypass", label: "تجاوز الرموز التعبيرية (إرسال كرابط):", defaultValue: true }, { type: "checkbox", name: "enableStickerBypass", label: "تجاوز الملصقات (إرسال كرابط):", defaultValue: true }, { type: "checkbox", name: "enableStreamQualityBypass", label: "تجاوز جودة البث (أعلى من 720p):", defaultValue: true }, { type: "checkbox", name: "transformEmojis", label: "تحويل الرموز (عرض الروابط كصور):", defaultValue: true }, { type: "checkbox", name: "transformStickers", label: "تحويل الملصقات (عرض الروابط كصور):", defaultValue: true }, { type: "checkbox", name: "transformCompoundSentence", label: "تحويل الجمل المركبة (متعددة):", defaultValue: false }, { type: "number", name: "emojiSize", label: "حجم الرموز (بكسل):", defaultValue: 48 }, { type: "number", name: "stickerSize", label: "حجم الملصقات (بكسل):", defaultValue: 160 }, { type: "checkbox", name: "useHyperLinks", label: "استخدام الروابط التشعبية:", defaultValue: true }, { type: "text", name: "hyperLinkText", label: "نص الرابط ({{NAME}} للاسم):", defaultValue: "{{NAME}}" }, { type: "checkbox", name: "disableEmbedPermissionCheck", label: "تعطيل فحص إذن التضمين:", defaultValue: true } ] },
+        { name: "FavoriteGifSearch", description: "أداة: يسمح بحفظ مصطلحات البحث المتكررة في منتقي GIF.", author: "Vendicated", category: "utility" },
+        { name: "FriendsSince", description: "أداة/مظهر: يعرض تاريخ إضافة المستخدم كصديق في ملفه الشخصي.", author: "Vendicated", category: "utility" },
+        { name: "GameActivityToggle", description: "أداة: يضيف زرًا لتبديل عرض/إخفاء حالة نشاط اللعبة بسرعة.", author: "Vendicated", category: "utility" },
+        { name: "MessageLinkEmbeds", description: "أداة: يضمن تضمين محتوى الرسائل عند لصق روابطها (إذا كانت متاحة).", author: "Vendicated", category: "utility" },
+        { name: "NewGuildSettings", description: "أداة/مظهر: يستبدل واجهة إعدادات الخادم القديمة بالواجهة الأحدث.", author: "Vendicated", category: "utility" },
+        { name: "NoUnblockToJump", description: "أداة: يسمح بالانتقال لرسالة من مستخدم محظور دون الحاجة لفك الحظر.", author: "Vendicated", category: "utility" },
+        { name: "OpenInApp", description: "أداة: يضيف خيارًا لفتح روابط معينة (Spotify، Steam) في تطبيقاتها الأصلية.", author: "Vendicated", category: "utility" },
+        { name: "PinDMs", description: "أداة: يسمح بتثبيت الرسائل المباشرة المهمة في أعلى القائمة.", author: "Vendicated", category: "utility" },
+        { name: "PreviewMessage", description: "أداة/مظهر: يعرض معاينة للرسالة التي ترد عليها فوق شريط الإدخال.", author: "Vendicated", category: "utility" },
+        { name: "ReadAllNotificationsButton", description: "أداة: يضيف زرًا لوضع علامة 'مقروء' على جميع إشعارات الخوادم دفعة واحدة.", author: "Vendicated", category: "utility" },
+        { name: "RelationshipNotifier", description: "أداة: يرسل إشعارًا عند تغييرات الصداقة أو الحظر (قد لا يكون دقيقًا دائمًا).", author: "Vendicated", category: "utility" },
+        { name: "ReverseImageSearch", description: "أداة: يضيف خيارًا للبحث عن الصور باستخدام محركات البحث العكسي.", author: "Vendicated", category: "utility" },
+        { name: "SendTimestamps", description: "أداة: يضيف زرًا (🔢) لإنشاء وإرسال طوابع زمنية ديناميكية.", author: "Vendicated", category: "utility" },
+        { name: "ServerInfo", description: "أداة: يضيف خيار 'معلومات الخادم' لعرض تفاصيل مثل تاريخ الإنشاء والمعرف.", author: "Vendicated", category: "utility" },
+        { name: "ShowConnections", description: "أداة/مظهر: يعرض اتصالات المستخدم (Steam، Spotify) في أماكن أكثر.", author: "Vendicated", category: "utility" },
+        { name: "Translate", description: "أداة: يضيف خيارًا لترجمة الرسائل باستخدام خدمات خارجية.", author: "Vendicated", category: "utility" },
+        { name: "UserVoiceShow", description: "أداة/مظهر: يعرض أيقونة (🔊) بجانب المستخدمين المتصلين بقنوات صوتية.", author: "Vendicated", category: "utility" },
+        { name: "ValidReply", description: "أداة: يحاول إصلاح مشكلة عدم تحميل الرسائل المقتبسة في الردود.", author: "Vendicated", category: "utility" },
+        { name: "ValidUser", description: "أداة: يتيح لصق معرف المستخدم (ID) لاسترداد معلوماته.", author: "Vendicated", category: "utility" },
+        { name: "ViewIcons", description: "أداة: يجعل الصور الرمزية والبانرات والأيقونات قابلة للنقر لعرضها كاملة.", author: "Vendicated", category: "utility" },
+        { name: "VoiceDownload", description: "أداة: يضيف زرًا لتنزيل الرسائل الصوتية المستلمة.", author: "Vendicated", category: "utility" },
+        { name: "VoiceMessages", description: "أداة: يتيح تسجيل وإرسال رسائل صوتية (إذا لم تكن متاحة رسميًا).", author: "Vendicated", category: "utility" },
+        { name: "VolumeBooster", description: "أداة: يسمح بزيادة مستوى صوت المستخدمين في المكالمات فوق 200% (حتى 400%).", author: "Vendicated", category: "utility" },
+        { name: "YoutubeAdblock", description: "أداة: يحاول منع إعلانات مقاطع YouTube المضمنة داخل Discord.", author: "Vendicated", category: "utility" },
+        { name: "YoutubeAdblock.desktop", description: "أداة: نسخة مخصصة من مانع إعلانات YouTube لتطبيق Discord لسطح المكتب.", author: "Vendicated", category: "utility" },
 
           // Fun Plugins
-        {
-          name: "BANger",
-          description: "مرح: يتيح استبدال صورة GIF في نافذة تأكيد الحظر بصورة من اختيارك.",
-          author: "Xinto, Glitchy",
-          category: "fun"
-        },
+        { name: "BANger", description: "مرح: يتيح استبدال صورة GIF في نافذة تأكيد الحظر بصورة من اختيارك.", author: "Xinto, Glitchy", category: "fun" },
       ];
 
       // --- بداية تنفيذ الكود بعد تحميل الصفحة ---
@@ -1225,30 +747,22 @@
         // --- إنشاء حاويات الفئات ---
         function createCategoryContainers() {
           const pluginsContainer = document.querySelector('.plugins-container');
-          if (!pluginsContainer) {
-            console.error("خطأ: لم يتم العثور على حاوية الإضافات '.plugins-container'.");
-            return;
-          }
-          pluginsContainer.innerHTML = ''; // مسح أي محتوى سابق
-
+          if (!pluginsContainer) { console.error("خطأ: لم يتم العثور على حاوية الإضافات '.plugins-container'."); return; }
+          pluginsContainer.innerHTML = '';
           Object.keys(categories).forEach(categoryKey => {
             const category = categories[categoryKey];
             const categorySection = document.createElement('div');
             categorySection.className = 'category-section';
-            categorySection.dataset.category = categoryKey; // لسهولة الاستهداف
-
+            categorySection.dataset.category = categoryKey;
             const categoryHeader = document.createElement('h2');
             categoryHeader.className = 'category-header';
             categoryHeader.textContent = category.name;
-
             const categoryDescription = document.createElement('p');
             categoryDescription.className = 'category-description';
             categoryDescription.textContent = category.description;
-
             const pluginsGrid = document.createElement('div');
             pluginsGrid.className = 'plugins-grid';
-            pluginsGrid.dataset.categoryGrid = categoryKey; // لسهولة الاستهداف
-
+            pluginsGrid.dataset.categoryGrid = categoryKey;
             categorySection.appendChild(categoryHeader);
             categorySection.appendChild(categoryDescription);
             categorySection.appendChild(pluginsGrid);
@@ -1258,267 +772,187 @@
 
         // --- إنشاء عناصر الإضافات ---
         function createPlugins() {
-          createCategoryContainers(); // تأكد من إنشاء الحاويات أولاً
-
+          createCategoryContainers();
           pluginsData.forEach(plugin => {
-            const categoryKey = plugin.category || 'misc'; // افتراض إلى 'متنوعة' إذا لم تحدد
-            let pluginGrid = document.querySelector(`.plugins-grid[data-category-grid="${categoryKey}"]`); // Changed selector slightly for clarity
-
+            const categoryKey = plugin.category || 'misc';
+            let pluginGrid = document.querySelector(`.plugins-grid[data-category-grid="${categoryKey}"]`);
             if (!pluginGrid) {
               console.warn(`لم يتم العثور على شبكة للفئة: ${categoryKey}. محاولة الوضع في 'متنوعة'.`);
-              const miscGrid = document.querySelector(`.plugins-grid[data-category-grid="misc"]`);
-              if (!miscGrid) {
-                  console.error("خطأ فادح: لم يتم العثور على شبكة الفئة المتنوعة.");
-                  return; // لا يمكن المتابعة
-              }
-              pluginGrid = miscGrid;
+              pluginGrid = document.querySelector(`.plugins-grid[data-category-grid="misc"]`);
+              if (!pluginGrid) { console.error("خطأ فادح: لم يتم العثور على شبكة الفئة المتنوعة."); return; }
             }
-
             const pluginDiv = document.createElement('div');
             pluginDiv.className = 'plugin';
-            pluginDiv.dataset.pluginName = plugin.name; // لسهولة البحث
-
+            pluginDiv.dataset.pluginName = plugin.name;
             const isRequired = requiredPlugins.includes(plugin.name);
-            if (isRequired) {
-              pluginDiv.classList.add('required-core-plugin');
-            }
-
+            if (isRequired) { pluginDiv.classList.add('required-core-plugin'); }
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.dataset.pluginName = plugin.name;
             checkbox.className = 'plugin-checkbox';
             checkbox.setAttribute('aria-label', `تفعيل/تعطيل ${plugin.name}`);
-            if (isRequired) {
-              checkbox.checked = true;
-              checkbox.disabled = true;
-            }
-
+            if (isRequired) { checkbox.checked = true; checkbox.disabled = true; }
             const pluginContent = document.createElement('div');
             pluginContent.className = 'plugin-content';
-
-            const pluginTitleContainer = document.createElement('div'); // حاوية للعنوان والمؤلف
-
+            const pluginTitleContainer = document.createElement('div');
             const pluginTitle = document.createElement('h3');
             pluginTitle.textContent = plugin.name;
-            pluginTitle.className = 'ellipsis-overflow'; // قص النص الطويل
-
+            pluginTitle.className = 'ellipsis-overflow';
             const authorSpan = document.createElement('span');
             authorSpan.className = 'author ellipsis-overflow';
             authorSpan.textContent = plugin.author || 'غير معروف';
-
             pluginTitleContainer.appendChild(pluginTitle);
-            pluginTitleContainer.appendChild(authorSpan); // المؤلف بجانب العنوان
-
+            pluginTitleContainer.appendChild(authorSpan);
             const descriptionP = document.createElement('p');
             descriptionP.className = 'description';
             descriptionP.textContent = plugin.description || 'لا يوجد وصف متاح.';
-
             pluginContent.appendChild(pluginTitleContainer);
             pluginContent.appendChild(descriptionP);
-
-            // --- إضافة إعدادات الإضافة ---
             if (plugin.settings && plugin.settings.length > 0) {
               const settingsDiv = document.createElement('div');
               settingsDiv.className = 'plugin-settings';
-
               plugin.settings.forEach(setting => {
                 const settingWrapper = document.createElement('div');
                 settingWrapper.className = 'plugin-setting';
-
                 const label = document.createElement('label');
-                label.textContent = setting.label; // الوصف يتضمن النقطتين
-                const inputId = `${plugin.name}-${setting.name}-${Math.random().toString(36).substring(2, 9)}`; // ID فريد
+                label.textContent = setting.label;
+                const inputId = `${plugin.name}-${setting.name}-${Math.random().toString(36).substring(2, 9)}`;
                 label.htmlFor = inputId;
-
                 let inputElement;
-
                 switch (setting.type) {
                   case 'checkbox':
-                    inputElement = document.createElement('input');
-                    inputElement.type = 'checkbox';
-                    inputElement.checked = setting.defaultValue;
-                    inputElement.id = inputId;
-                    settingWrapper.appendChild(inputElement); // Checkbox first
-                    settingWrapper.appendChild(label);
+                    inputElement = document.createElement('input'); inputElement.type = 'checkbox';
+                    inputElement.checked = setting.defaultValue; inputElement.id = inputId;
+                    settingWrapper.appendChild(inputElement); settingWrapper.appendChild(label);
                     break;
-
                   case 'number':
-                    inputElement = document.createElement('input');
-                    inputElement.type = 'number';
+                    inputElement = document.createElement('input'); inputElement.type = 'number';
                     inputElement.value = setting.defaultValue;
                     if (setting.min !== undefined) inputElement.min = setting.min;
                     if (setting.max !== undefined) inputElement.max = setting.max;
                     if (setting.step !== undefined) inputElement.step = setting.step;
                     inputElement.id = inputId;
-                    settingWrapper.appendChild(label); // Label first
-                    settingWrapper.appendChild(inputElement);
+                    settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement);
                     break;
-
                   case 'color':
-                    inputElement = document.createElement('input');
-                    inputElement.type = 'color';
-                    // قيمة اللون يجب أن تبدأ بـ #
+                    inputElement = document.createElement('input'); inputElement.type = 'color';
                     inputElement.value = String(setting.defaultValue).startsWith('#') ? setting.defaultValue : `#${setting.defaultValue}`;
                     inputElement.id = inputId;
-                    settingWrapper.appendChild(label); // Label first
-                    settingWrapper.appendChild(inputElement);
+                    settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement);
                     break;
-
                   case 'select':
-                    inputElement = document.createElement('select');
-                    inputElement.id = inputId;
+                    inputElement = document.createElement('select'); inputElement.id = inputId;
                     (setting.options || []).forEach(opt => {
-                      const option = document.createElement('option');
-                      option.value = opt.value;
-                      option.textContent = opt.label;
+                      const option = document.createElement('option'); option.value = opt.value; option.textContent = opt.label;
                       if (opt.value === setting.defaultValue) option.selected = true;
                       inputElement.appendChild(option);
                     });
-                    settingWrapper.appendChild(label); // Label first
-                    settingWrapper.appendChild(inputElement);
+                    settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement);
                     break;
-
-                  default: // الافتراضي هو نص
-                    inputElement = document.createElement('input');
-                    inputElement.type = 'text';
-                    inputElement.value = setting.defaultValue || '';
-                    inputElement.id = inputId;
-                    settingWrapper.appendChild(label); // Label first
-                    settingWrapper.appendChild(inputElement);
+                  default:
+                    inputElement = document.createElement('input'); inputElement.type = 'text';
+                    inputElement.value = setting.defaultValue || ''; inputElement.id = inputId;
+                    settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement);
                     break;
                 }
-
                 if (inputElement) {
-                  inputElement.dataset.pluginName = plugin.name;
-                  inputElement.dataset.settingName = setting.name; // مفتاح الإعداد
-                  // منع النقر على الإعدادات من تفعيل/تعطيل الإضافة كلها
+                  inputElement.dataset.pluginName = plugin.name; inputElement.dataset.settingName = setting.name;
                   inputElement.addEventListener('click', (e) => e.stopPropagation());
                   inputElement.addEventListener('change', (e) => e.stopPropagation());
-                   // السماح بالنقر على الـ label لتغيير الـ checkbox
-                   if (setting.type === 'checkbox') {
-                        label.addEventListener('click', (e) => {
-                            e.stopPropagation(); // منع النقر على البطاقة
-                        });
-                    } else {
-                         label.addEventListener('click', (e) => e.stopPropagation());
-                    }
+                  if (setting.type === 'checkbox') { label.addEventListener('click', (e) => e.stopPropagation()); }
+                  else { label.addEventListener('click', (e) => e.stopPropagation()); }
                 }
                 settingsDiv.appendChild(settingWrapper);
               });
               pluginContent.appendChild(settingsDiv);
             }
-
             pluginDiv.appendChild(checkbox);
             pluginDiv.appendChild(pluginContent);
-
-            // إضافة مستمع النقر للبطاقة (ما عدا الإعدادات ومربع الاختيار)
             if (!isRequired) {
                 pluginDiv.addEventListener('click', function(event) {
-                    // تجاهل النقر إذا كان المصدر هو مربع الاختيار أو أي عنصر داخل الإعدادات
-                    if (event.target === checkbox || event.target.closest('.plugin-setting')) {
-                        return;
-                    }
-                    // تبديل حالة مربع الاختيار
+                    if (event.target === checkbox || event.target.closest('.plugin-setting')) { return; }
                     checkbox.checked = !checkbox.checked;
-                    // إطلاق حدث التغيير يدويًا لتحديث التكوين إذا لزم الأمر
                     checkbox.dispatchEvent(new Event('change', { bubbles: true }));
                 });
             }
-
             pluginGrid.appendChild(pluginDiv);
           });
         }
-
 
         // --- تنفيذ البحث ---
         function setupSearch() {
           const searchInput = document.querySelector('.search input');
           const container = document.querySelector('.plugins-container');
-          let noResultsMsg = document.getElementById('no-results-message'); // عنصر رسالة "لا توجد نتائج"
-
+          let noResultsMsg = document.getElementById('no-results-message');
           if (searchInput && container) {
             searchInput.addEventListener('input', function() {
               const searchTerm = this.value.toLowerCase().trim();
               const allPlugins = container.querySelectorAll('.plugin');
               const allCategories = container.querySelectorAll('.category-section');
               let visiblePluginCount = 0;
-
               allPlugins.forEach(plugin => {
                 const pluginName = plugin.dataset.pluginName?.toLowerCase() || '';
                 const pluginDescription = plugin.querySelector('.description')?.textContent.toLowerCase() || '';
                 const pluginAuthor = plugin.querySelector('.author')?.textContent.toLowerCase().replace('بواسطة ', '') || '';
-
-                const isVisible = searchTerm === '' ||
-                               pluginName.includes(searchTerm) ||
-                               pluginDescription.includes(searchTerm) ||
-                               pluginAuthor.includes(searchTerm);
-
+                const isVisible = searchTerm === '' || pluginName.includes(searchTerm) || pluginDescription.includes(searchTerm) || pluginAuthor.includes(searchTerm);
                 plugin.style.display = isVisible ? 'flex' : 'none';
                 if (isVisible) visiblePluginCount++;
               });
-
-              // إظهار/إخفاء رؤوس الفئات
               allCategories.forEach(categorySection => {
                 const grid = categorySection.querySelector('.plugins-grid');
                 const hasVisiblePlugins = Array.from(grid.children).some(p => p.style.display !== 'none');
                 categorySection.style.display = hasVisiblePlugins ? 'block' : 'none';
               });
-
-              // إظهار/إخفاء رسالة "لا توجد نتائج"
               if (visiblePluginCount === 0 && searchTerm !== '') {
-                if (!noResultsMsg) { // إذا لم تكن الرسالة موجودة، أنشئها
-                  noResultsMsg = document.createElement('p');
-                  noResultsMsg.id = 'no-results-message';
+                if (!noResultsMsg) {
+                  noResultsMsg = document.createElement('p'); noResultsMsg.id = 'no-results-message';
                   noResultsMsg.textContent = 'لم يتم العثور على إضافات مطابقة لبحثك.';
-                  container.appendChild(noResultsMsg); // أضفها إلى الحاوية
+                  container.appendChild(noResultsMsg);
                 }
-                noResultsMsg.style.display = 'block'; // أظهر الرسالة
+                noResultsMsg.style.display = 'block';
               } else if (noResultsMsg) {
-                noResultsMsg.style.display = 'none'; // أخفِ الرسالة إذا كانت هناك نتائج
+                noResultsMsg.style.display = 'none';
               }
             });
           }
         }
 
-
         // --- إعداد أزرار التحديد ---
         function setupSelectionButtons() {
           const allCheckboxesQuery = '.plugins-container .plugin:not(.required-core-plugin) input[type="checkbox"].plugin-checkbox';
-          const allCheckboxes = document.querySelectorAll('.plugins-container .plugin input[type="checkbox"].plugin-checkbox'); // كل مربعات الاختيار
+          const allCheckboxes = document.querySelectorAll('.plugins-container .plugin input[type="checkbox"].plugin-checkbox');
 
           const selectAllBtn = document.getElementById('selectAllBtn');
-          if (selectAllBtn) {
-            selectAllBtn.addEventListener('click', () => {
-              document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (!cb.disabled) cb.checked = true; });
-            });
-          }
+          if (selectAllBtn) { selectAllBtn.addEventListener('click', () => { document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (!cb.disabled) cb.checked = true; }); }); }
 
           const selectSuggestedBtn = document.getElementById('selectSuggestedBtn');
           if (selectSuggestedBtn) {
             selectSuggestedBtn.addEventListener('click', () => {
-              const suggestedPluginNames = [ // القائمة المقترحة
-                "CrashHandler", "Settings", "SupportHelper", "NoTrack", // الأساسية
-                "CallTimer", "ClearURLs", "ClientTheme", "EmoteCloner", "Experiments",
-                "FixImagesQuality", "FriendsSince", "GameActivityToggle", "MessageLinkEmbeds",
-                "NewGuildSettings", "NoTypingAnimation", "NoUnblockToJump", "OpenInApp",
-                "PinDMs", "PreviewMessage", "ReadAllNotificationsButton", "RelationshipNotifier",
+              // --- قائمة الإضافات المقترحة المحدثة ---
+              const suggestedPluginNames = [
+                // أساسي
+                "CrashHandler", "Settings", "SupportHelper", "NoTrack",
+                // أدوات شائعة ومفيدة
+                "CallTimer", "ClearURLs", "FriendsSince", "GameActivityToggle",
+                "MessageLinkEmbeds", "PinDMs", "PreviewMessage", "ReadAllNotificationsButton",
                 "ReverseImageSearch", "SendTimestamps", "ServerInfo", "ShowConnections",
                 "Translate", "UserVoiceShow", "ValidReply", "ValidUser", "ViewIcons",
-                "VoiceDownload", "VoiceMessages", "VolumeBooster", "YoutubeAdblock.desktop",
-                "BetterFolders", "BetterRoleDot", "FakeNitro" // بعض الإضافات الشائعة الأخرى
+                "VolumeBooster", "YoutubeAdblock.desktop", // أو YoutubeAdblock إذا كان المستخدم لا يستخدم سطح المكتب بشكل أساسي
+                // مظهر شائع
+                "ClientTheme", "BetterFolders", "BetterRoleDot", "FixImagesQuality", "NoTypingAnimation",
+                // ميزات "Nitro" الوهمية (شائعة جدًا)
+                "FakeNitro",
+                // أدوات أخرى قد تكون مفيدة
+                "BetterUploadButton", "CopyUserURLs", "BetterSessions"
               ];
               allCheckboxes.forEach(cb => {
                 const pluginName = cb.dataset.pluginName;
-                if (!cb.disabled) { // فقط غير الإجبارية
-                  cb.checked = suggestedPluginNames.includes(pluginName);
-                } else {
-                    cb.checked = true; // تأكد أن الإجبارية تبقى محددة
-                }
+                if (!cb.disabled) { cb.checked = suggestedPluginNames.includes(pluginName); }
+                else { cb.checked = true; }
               });
-              // إعادة تعيين الإعدادات إلى الافتراضي عند تحديد المقترح (اختياري)
+              // إعادة تعيين الإعدادات اختياريًا
               document.querySelectorAll('.plugin-setting [data-plugin-name][data-setting-name]').forEach(input => {
-                 const pluginName = input.dataset.pluginName;
-                 const settingName = input.dataset.settingName;
+                 const pluginName = input.dataset.pluginName; const settingName = input.dataset.settingName;
                  const pluginData = pluginsData.find(p => p.name === pluginName);
                  const settingData = pluginData?.settings?.find(s => s.name === settingName);
                  if (settingData) {
@@ -1531,12 +965,73 @@
           }
 
           const disableAllBtn = document.getElementById('disableAllBtn');
-          if (disableAllBtn) {
-            disableAllBtn.addEventListener('click', () => {
-              document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (!cb.disabled) cb.checked = false; });
-            });
-          }
+          if (disableAllBtn) { disableAllBtn.addEventListener('click', () => { document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (!cb.disabled) cb.checked = false; }); }); }
         }
+
+        // --- إعداد تفاعل الثيمات (اختيار واحد + روابط معاينة) ---
+        function setupThemeInteraction() {
+            const themeOptionsContainer = document.querySelector('.theme-options-grid');
+            if (!themeOptionsContainer) return;
+
+            const themeCheckboxes = themeOptionsContainer.querySelectorAll('input[type="checkbox"]');
+
+            themeCheckboxes.forEach(checkbox => {
+                // 1. إضافة رابط المعاينة
+                const themeOptionDiv = checkbox.closest('.theme-option');
+                if (themeOptionDiv && checkbox.dataset.themeUrl) {
+                    const previewLink = document.createElement('a');
+                    previewLink.href = checkbox.dataset.themeUrl;
+                    previewLink.target = "_blank";
+                    previewLink.rel = "noopener noreferrer";
+                    previewLink.className = "theme-preview-link";
+                    previewLink.setAttribute("aria-label", `معاينة ثيم ${checkbox.id.replace('theme-', '')}`);
+                    // استخدام SVG بسيط كأيقونة (اختياري) أو نص
+                    previewLink.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="1em" height="1em">
+                          <path fill-rule="evenodd" d="M8.25 10a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V11.16l-3.22 3.22a.75.75 0 11-1.06-1.06l3.22-3.22H3a.75.75 0 010-1.5h3.75a.75.75 0 01.75.75z" clip-rule="evenodd" />
+                          <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 11-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                        </svg>
+                        معاينة`;
+                    previewLink.addEventListener('click', e => e.stopPropagation()); // منع النقر على الرابط من تحديد المربع
+
+                    // إضافة الرابط بجانب المؤلف أو في نهاية العنصر
+                    const authorSpan = themeOptionDiv.querySelector('.theme-author');
+                    if(authorSpan) {
+                        authorSpan.insertAdjacentElement('afterend', previewLink);
+                    } else {
+                        themeOptionDiv.appendChild(previewLink);
+                    }
+
+                    // ربط الـ label بالمربع لتسهيل النقر
+                    const label = document.createElement('label');
+                    label.htmlFor = checkbox.id;
+                    // نقل العناصر الموجودة داخل الـ label
+                    while(themeOptionDiv.firstChild && themeOptionDiv.firstChild !== checkbox) {
+                         if(themeOptionDiv.firstChild !== previewLink) { // لا تنقل رابط المعاينة داخل الـ label
+                            label.appendChild(themeOptionDiv.firstChild);
+                         } else {
+                             themeOptionDiv.removeChild(themeOptionDiv.firstChild); // إزالة الرابط مؤقتًا لإعادة إضافته
+                         }
+                    }
+                    checkbox.insertAdjacentElement('afterend', label); // إضافة الـ label بعد المربع
+                    themeOptionDiv.appendChild(previewLink); // إعادة إضافة الرابط في النهاية
+                     label.addEventListener('click', e => e.stopPropagation()); // منع النقر المزدوج
+                }
+
+                // 2. منطق اختيار ثيم واحد فقط
+                checkbox.addEventListener('change', (event) => {
+                    if (event.target.checked) {
+                        // إذا تم تحديد هذا المربع، قم بإلغاء تحديد جميع المربعات الأخرى
+                        themeCheckboxes.forEach(otherCheckbox => {
+                            if (otherCheckbox !== event.target) {
+                                otherCheckbox.checked = false;
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
 
         // --- إعداد أزرار التكوين ---
         function setupConfigButtons() {
@@ -1549,136 +1044,52 @@
           const downloadButton = document.getElementById('downloadConfigBtn');
           const jsonOutputArea = document.getElementById('jsonOutput');
 
-          // تعطيل/تفعيل أزرار النسخ/التنزيل
           function setActionButtonsState(enabled) {
             const buttons = [copyButton, downloadButton];
-            buttons.forEach(btn => {
-              if (btn) {
-                btn.classList.toggle('enabled', enabled);
-                btn.disabled = !enabled;
-                if (!enabled && btn.id === 'copyConfigBtn') {
-                  btn.classList.remove('copied');
-                  btn.textContent = 'نسخ التكوين';
-                }
-              }
-            });
+            buttons.forEach(btn => { if (btn) { btn.classList.toggle('enabled', enabled); btn.disabled = !enabled; if (!enabled && btn.id === 'copyConfigBtn') { btn.classList.remove('copied'); btn.textContent = 'نسخ التكوين'; } } });
           }
-          setActionButtonsState(false); // تعطيل مبدئي
+          setActionButtonsState(false);
 
-          // --- بناء التكوين الأساسي ديناميكيًا ---
           function buildBaseConfig() {
-              const baseConfig = {
-                "settings": {
-                  "autoUpdate": true,
-                  "autoUpdateNotification": true,
-                  "useQuickCss": true,
-                  "themeLinks": [],
-                  "enabledThemes": [], // Legacy, keep for structure
-                  "enableReactDevtools": false,
-                  "frameless": false,
-                  "transparent": false,
-                  "winCtrlQ": false,
-                  "disableMinSize": false,
-                  "winNativeTitleBar": false,
-                  "plugins": {} // سيتم ملؤه أدناه
-                },
-                "notifications": { "timeout": 5000, "position": "bottom-right", "useNative": "not-focused", "logLimit": 50 },
-                "cloud": { "authenticated": false, "url": "https://api.vencord.dev/", "settingsSync": false, "settingsSyncVersion": Date.now() },
-                "eagerPatches": false,
-                "quickCss": ""
-              };
-
-              // ملء قسم الإضافات بالإعدادات الافتراضية
-              pluginsData.forEach(plugin => {
-                  const pluginSettings = { enabled: requiredPlugins.includes(plugin.name) }; // تفعيل الإجباري
-                  if (plugin.settings) {
-                      plugin.settings.forEach(setting => {
-                          pluginSettings[setting.name] = setting.defaultValue;
-                      });
-                  }
-                  baseConfig.settings.plugins[plugin.name] = pluginSettings;
-              });
+              const baseConfig = { settings: { autoUpdate: true, autoUpdateNotification: true, useQuickCss: true, themeLinks: [], enabledThemes: [], enableReactDevtools: false, frameless: false, transparent: false, winCtrlQ: false, disableMinSize: false, winNativeTitleBar: false, plugins: {} }, notifications: { timeout: 5000, position: "bottom-right", useNative: "not-focused", logLimit: 50 }, cloud: { authenticated: false, url: "https://api.vencord.dev/", settingsSync: false, settingsSyncVersion: Date.now() }, eagerPatches: false, quickCss: "" };
+              pluginsData.forEach(plugin => { const pluginSettings = { enabled: requiredPlugins.includes(plugin.name) }; if (plugin.settings) { plugin.settings.forEach(setting => { pluginSettings[setting.name] = setting.defaultValue; }); } baseConfig.settings.plugins[plugin.name] = pluginSettings; });
               return baseConfig;
           }
 
-
           if (generateButton && jsonOutputArea) {
             generateButton.addEventListener('click', function() {
-              let config = buildBaseConfig(); // ابدأ بنسخة جديدة من التكوين الأساسي
-
-              // 1. تحديث روابط الثيمات
+              let config = buildBaseConfig();
               const selectedThemeUrls = [];
-              document.querySelectorAll(allThemeCheckboxesQuery).forEach(cb => {
-                if (cb.checked && cb.dataset.themeUrl) {
-                  selectedThemeUrls.push(cb.dataset.themeUrl);
-                }
-              });
-              config.settings.themeLinks = selectedThemeUrls;
-
-              // 2. تحديث حالة التفعيل للإضافات
-              document.querySelectorAll(allCheckboxesQuery).forEach(cb => {
-                const pluginName = cb.dataset.pluginName;
-                if (pluginName && config.settings.plugins[pluginName]) {
-                  config.settings.plugins[pluginName].enabled = cb.checked;
-                }
-              });
-
-              // 3. تحديث قيم الإعدادات للإضافات المفعلة فقط
+              document.querySelectorAll(allThemeCheckboxesQuery).forEach(cb => { if (cb.checked && cb.dataset.themeUrl) { selectedThemeUrls.push(cb.dataset.themeUrl); } });
+              config.settings.themeLinks = selectedThemeUrls; // سيحتوي على رابط واحد أو لا شيء
+              document.querySelectorAll(allCheckboxesQuery).forEach(cb => { const pluginName = cb.dataset.pluginName; if (pluginName && config.settings.plugins[pluginName]) { config.settings.plugins[pluginName].enabled = cb.checked; } });
               document.querySelectorAll(allSettingsInputsQuery).forEach(input => {
-                const pluginName = input.dataset.pluginName;
-                const settingName = input.dataset.settingName;
-
-                // تحقق من أن الإضافة موجودة ومفعلة في الكائن الحالي
+                const pluginName = input.dataset.pluginName; const settingName = input.dataset.settingName;
                 if (config.settings.plugins[pluginName]?.enabled) {
-                  let value;
-                  const baseValue = buildBaseConfig().settings.plugins[pluginName]?.[settingName]; // القيمة الافتراضية للمقارنة النوعية
-
-                  if (input.type === 'checkbox') {
-                    value = input.checked;
-                  } else if (input.type === 'number') {
-                    value = parseFloat(input.value);
-                    if (isNaN(value)) value = typeof baseValue === 'number' ? baseValue : 0; // قيمة افتراضية إذا كان الإدخال غير صالح
-                  } else if (input.type === 'color') {
-                    // تخزين اللون بدون #
-                    value = input.value.startsWith('#') ? input.value.substring(1) : input.value;
-                  } else { // نص، تحديد، إلخ.
-                    value = input.value;
-                  }
-
-                  // تحديث القيمة مع محاولة الحفاظ على نوع البيانات الأصلي
+                  let value; const baseValue = buildBaseConfig().settings.plugins[pluginName]?.[settingName];
+                  if (input.type === 'checkbox') { value = input.checked; }
+                  else if (input.type === 'number') { value = parseFloat(input.value); if (isNaN(value)) value = typeof baseValue === 'number' ? baseValue : 0; }
+                  else if (input.type === 'color') { value = input.value.startsWith('#') ? input.value.substring(1) : input.value; }
+                  else { value = input.value; }
                   if (config.settings.plugins[pluginName].hasOwnProperty(settingName)) {
                      const originalType = typeof baseValue;
-                      if (originalType === 'number' && typeof value !== 'number') {
-                        value = parseFloat(value) || baseValue;
-                      } else if (originalType === 'boolean' && typeof value !== 'boolean') {
-                        value = typeof value === 'string' ? value.toLowerCase() === 'true' : Boolean(value);
-                      } else if (originalType === 'string' && typeof value !== 'string') {
-                        value = String(value);
-                      }
+                      if (originalType === 'number' && typeof value !== 'number') { value = parseFloat(value) || baseValue; }
+                      else if (originalType === 'boolean' && typeof value !== 'boolean') { value = typeof value === 'string' ? value.toLowerCase() === 'true' : Boolean(value); }
+                      else if (originalType === 'string' && typeof value !== 'string') { value = String(value); }
                       config.settings.plugins[pluginName][settingName] = value;
                   }
                 }
               });
-
-              // تأكد أن quickCss موجودة في النهاية (للتوافق)
-              const quickCssValue = config.quickCss || "";
-              delete config.quickCss;
-              config.quickCss = quickCssValue;
-
-              jsonOutputArea.value = JSON.stringify(config, null, 4); // عرض JSON منسق
-              setActionButtonsState(true); // تفعيل أزرار النسخ/التنزيل
+              const quickCssValue = config.quickCss || ""; delete config.quickCss; config.quickCss = quickCssValue;
+              jsonOutputArea.value = JSON.stringify(config, null, 4);
+              setActionButtonsState(true);
               if (copyButton) { copyButton.classList.remove('copied'); copyButton.textContent = 'نسخ التكوين'; }
             });
           }
 
-          // زر نسخ التكوين
           if (copyButton) { copyButton.addEventListener('click', function() { if (!copyButton.disabled) { navigator.clipboard.writeText(jsonOutputArea.value).then(() => { copyButton.textContent = 'تم النسخ!'; copyButton.classList.add('copied'); setTimeout(() => { if (copyButton.classList.contains('copied')) { copyButton.textContent = 'نسخ التكوين'; copyButton.classList.remove('copied'); } }, 2000); }).catch(err => { console.error('فشل النسخ:', err); alert('فشل نسخ التكوين إلى الحافظة.'); }); } }); }
-
-          // زر تنزيل التكوين
           if (downloadButton) { downloadButton.addEventListener('click', function() { if (!downloadButton.disabled) { const blob = new Blob([jsonOutputArea.value], { type: 'application/json;charset=utf-8' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'vencord_config.json'; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); } }); }
 
-
-          // زر تعليمات تطبيق التكوين (نص محدث)
           const restartDiscordBtn = document.getElementById('restartDiscordBtn');
           if (restartDiscordBtn) {
             restartDiscordBtn.addEventListener('click', () => {
@@ -1688,10 +1099,10 @@
                 "1. من قائمة Vencord داخل Discord، انتقل إلى Settings.\n" +
                 "2. اختر Backup & Restore.\n" +
                 "3. اضغط على زر Import Settings.\n" +
-                "4. حدد ملف 'vencord_config.json' الذي قمت بتنزيله أو إنشائه.\n" +
+                "4. حدد ملف 'vencord_config.json' الذي قمت بتنزيله.\n" +
                 "5. بعد اكتمال الاستيراد بنجاح، أعد تشغيل Discord بالكامل.\n\n" +
                 "الخيار الثاني (يدوي):\n" +
-                "1. انسخ محتوى التكوين من مربع النص أعلاه (إذا نقرت على 'إنشاء التكوين').\n" +
+                "1. انسخ محتوى التكوين من مربع النص أعلاه.\n" +
                 "2. افتح ملفًا نصيًا جديدًا (باستخدام Notepad أو محرر نصوص آخر).\n" +
                 "3. الصق المحتوى المنسوخ في الملف النصي.\n" +
                 "4. احفظ الملف باسم 'vencord_config.txt'.\n" +
@@ -1706,13 +1117,14 @@
         createPlugins();           // 1. إنشاء بطاقات الإضافات
         setupSearch();             // 2. تفعيل البحث
         setupSelectionButtons();   // 3. تفعيل أزرار التحديد
-        setupConfigButtons();      // 4. تفعيل أزرار إنشاء/نسخ/تنزيل التكوين
+        setupThemeInteraction();   // 4. تفعيل منطق الثيمات (اختيار واحد + معاينة)
+        setupConfigButtons();      // 5. تفعيل أزرار إنشاء/نسخ/تنزيل التكوين
 
       }); // نهاية DOMContentLoaded
     </script>
   </head>
   <body>
-     <script> /* Theme script (Keep as is) */ const theme = localStorage.theme?.toLowerCase(); const options = ["light", "dark"]; const osDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; if (options.includes(theme)) { document.documentElement.className = theme; } else if (osDark) { document.documentElement.className = 'dark'; } else { document.documentElement.className = 'light'; } </script>
+     <script> /* Theme script */ const theme = localStorage.theme?.toLowerCase(); const options = ["light", "dark"]; const osDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; if (options.includes(theme)) { document.documentElement.className = theme; } else if (osDark) { document.documentElement.className = 'dark'; } else { document.documentElement.className = 'light'; } </script>
      <script> /* RTL script */ document.documentElement.setAttribute('dir', 'rtl'); document.documentElement.setAttribute('lang', 'ar'); </script>
 
     <nav>
@@ -1755,7 +1167,6 @@
         <div id="required-plugins-notice">
           <h4>الإضافات الأساسية (إجبارية)</h4>
           <p>الإضافات التالية ضرورية لعمل Vencord وسيتم تفعيلها دائمًا في ملف التكوين:</p>
-          <!-- يتم عرض الأسماء هنا للتوضيح، لكن التفعيل إجباري في الكود -->
           <span class="required-plugin">Settings - يوفر واجهة إعدادات Vencord.</span>
           <span class="required-plugin">SupportHelper - يساعد في استكشاف الأخطاء وإصلاحها.</span>
           <span class="required-plugin">NoTrack - يمنع تتبع بيانات Discord.</span>
@@ -1763,46 +1174,46 @@
         </div>
 
         <div id="theme-selection">
-            <h4>اختيار الثيمات (اختياري)</h4>
+            <h4>اختيار ثيم (اختياري - حد أقصى واحد)</h4>
             <div class="theme-options-grid"> <!-- Grid Container -->
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-clearVision" data-theme-url="https://betterdiscord.app/Download?id=23" aria-label="تفعيل/تعطيل ثيم ClearVision">
+                    <input type="checkbox" id="theme-clearVision" data-theme-url="https://betterdiscord.app/theme/ClearVision" aria-label="تفعيل/تعطيل ثيم ClearVision">
+                    <!-- Label and Preview link will be added by JS -->
                     <span class="theme-name">ClearVision</span>
-                    <span class="theme-author">NyxlsBad</span>
+                    <span class="theme-author">Nyxls</span> <!-- Updated Author -->
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-matterDark" data-theme-url="https://betterdiscord.app/Download?id=174" aria-label="تفعيل/تعطيل ثيم Matter Dark">
-                    <span class="theme-name">Matter Dark</span>
+                    <input type="checkbox" id="theme-matterDark" data-theme-url="https://betterdiscord.app/theme/Discord%20Matter" aria-label="تفعيل/تعطيل ثيم Discord Matter">
+                    <span class="theme-name">Discord Matter</span> <!-- Updated Name -->
                     <span class="theme-author">TropicaI</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-discordInsta" data-theme-url="https://betterdiscord.app/Download?id=209" aria-label="تفعيل/تعطيل ثيم Discord+">
-                    <span class="theme-name">Discord+</span>
+                    <input type="checkbox" id="theme-discordPlus" data-theme-url="https://betterdiscord.app/theme/Discord%2B" aria-label="تفعيل/تعطيل ثيم Discord+">
+                    <span class="theme-name">Discord+</span> <!-- Updated Name -->
                     <span class="theme-author">Insta</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-notAnotherAnime" data-theme-url="https://betterdiscord.app/Download?id=286" aria-label="تفعيل/تعطيل ثيم NotAnotherAnimeTheme">
+                    <input type="checkbox" id="theme-notAnotherAnime" data-theme-url="https://betterdiscord.app/theme/NotAnotherAnimeTheme" aria-label="تفعيل/تعطيل ثيم NotAnotherAnimeTheme">
                     <span class="theme-name">NotAnotherAnimeTheme</span>
                     <span class="theme-author">puckzxz</span>
                 </div>
-                <!-- New Themes -->
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-frostedGlass" data-theme-url="https://betterdiscord.app/Download?id=2" aria-label="تفعيل/تعطيل ثيم Frosted Glass">
+                    <input type="checkbox" id="theme-frostedGlass" data-theme-url="https://betterdiscord.app/theme/Frosted%20Glass" aria-label="تفعيل/تعطيل ثيم Frosted Glass">
                     <span class="theme-name">Frosted Glass</span>
                     <span class="theme-author">Gibbu</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-tokyoNight" data-theme-url="https://betterdiscord.app/Download?id=280" aria-label="تفعيل/تعطيل ثيم Tokyo Night">
+                    <input type="checkbox" id="theme-tokyoNight" data-theme-url="https://betterdiscord.app/theme/Tokyo%20Night" aria-label="تفعيل/تعطيل ثيم Tokyo Night">
                     <span class="theme-name">Tokyo Night</span>
                     <span class="theme-author">ENNUI</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-catppuccin" data-theme-url="https://betterdiscord.app/Download?id=379" aria-label="تفعيل/تعطيل ثيم Catppuccin Mocha">
-                    <span class="theme-name">Catppuccin (Mocha)</span>
+                    <input type="checkbox" id="theme-catppuccin" data-theme-url="https://betterdiscord.app/theme/Catppuccin" aria-label="تفعيل/تعطيل ثيم Catppuccin Mocha">
+                    <span class="theme-name">Catppuccin</span> <!-- Simplified Name -->
                     <span class="theme-author">Catppuccin</span>
                 </div>
                 <div class="theme-option">
-                    <input type="checkbox" id="theme-fluent" data-theme-url="https://betterdiscord.app/Download?id=290" aria-label="تفعيل/تعطيل ثيم Fluent">
+                    <input type="checkbox" id="theme-fluent" data-theme-url="https://betterdiscord.app/theme/Fluent" aria-label="تفعيل/تعطيل ثيم Fluent">
                     <span class="theme-name">Fluent</span>
                     <span class="theme-author">DiscordStyles</span>
                 </div>
@@ -1811,9 +1222,9 @@
 
 
         <div id="selection-buttons">
-          <button id="selectAllBtn">تحديد الكل (غير الإجباري)</button>
+          <button id="selectAllBtn">تحديد الكل </button>
           <button id="selectSuggestedBtn">تحديد المقترح</button>
-          <button id="disableAllBtn">إلغاء تحديد الكل (غير الإجباري)</button>
+          <button id="disableAllBtn">إلغاء تحديد الكل </button>
         </div>
 
         <!-- حاوية الإضافات المصنفة -->
@@ -1828,7 +1239,7 @@
             <button id="generateConfigBtn">إنشاء التكوين</button>
             <button id="copyConfigBtn" disabled>نسخ التكوين</button>
             <button id="downloadConfigBtn" disabled>تنزيل التكوين</button>
-            <button id="restartDiscordBtn">كيفية تطبيق التكوين؟</button> <!-- Changed text slightly -->
+            <button id="restartDiscordBtn">كيفية تطبيق التكوين؟</button>
           </div>
           <textarea id="jsonOutput" readonly placeholder="سيظهر هنا ملف التكوين بتنسيق JSON بعد النقر على زر 'إنشاء التكوين'... تأكد من تحديد الإضافات التي تريدها أولاً." aria-label="مخرج التكوين بصيغة JSON"></textarea>
         </div>
