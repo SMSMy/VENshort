@@ -10,6 +10,47 @@
     <meta content="VenSHORT: تعديل Vencord الأجمل والأسهل للديسكورد باللغة العربية." name="description"/>
     <meta content="Vencord Contributors & يزيد" name="author"/>
     <meta content="#dd7878" name="theme-color"/>
+    <meta content="website" name="og:type"/>
+    <meta content="VenSHORT | تعديل Vencord" name="og:title"/>
+    <meta content="VenSHORT: تعديل Vencord الأجمل والأسهل للديسكورد باللغة العربية." name="og:description"/>
+    <meta content="index.html" name="og:url"/>
+    <meta content="assets/favicon.png" name="og:image"/>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "VenSHORT",
+      "alternateName": "Vencord Arabic",
+      "url": "https://nvkq.github.io/VENshort/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://nvkq.github.io/VENshort/plugins.html#{plugin_name}"
+        },
+        "query-input": "required name=plugin_name"
+      }
+    },
+    {
+      "@type": ["WebApplication", "SoftwareApplication"],
+      "name": "Vencord (via VenSHORT)",
+      "operatingSystem": "Windows, macOS, Linux",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
+    }
+  ]
+}
+    </script>
+    <link href="sitemap-index.xml" rel="sitemap"/>
+    <meta name="darkreader-lock"/>
+    <link href="index.html" rel="canonical"/>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     
     <style>
@@ -593,7 +634,7 @@
         <div class="nav-content interactive-element" data-astro-cid-ymhdp2rl="">
             <div data-astro-cid-ymhdp2rl="" id="logo">
                 <a data-astro-cid-ymhdp2rl="" href="index.html" id="title">
-                    <img alt="VenSHORT Home" data-astro-cid-ymhdp2rl="" src="https://via.placeholder.com/65x65/b4befe/1e1e2e?text=VS"/>
+                    <img alt="VenSHORT Home" data-astro-cid-ymhdp2rl="" src="assets/logo-nav-oneko-padding.png"/>
                 </a>
             </div>
             <div class="p-label-m" data-astro-cid-ymhdp2rl="" id="btns">
@@ -613,7 +654,7 @@
         <div class="content-wrapper">
             <header>
                 <div class="logo-container">
-                    <img alt="Vencord cute wordmark" id="cute-logo" src="https://via.placeholder.com/400x300/313244/cdd6f4?text=VenSHORT+Logo"/>
+                    <img alt="Vencord cute wordmark" id="cute-logo" src="assets/cute-logo.avif"/>
                 </div>
 
                 <h1 class="main-title">✨ VenSHORT | فينشورت ✨</h1>
@@ -857,316 +898,4 @@
                     targets: '.btn-primary',
                     boxShadow: [
                         '0 4px 15px rgba(180, 190, 254, 0.3)',
-                        '0 8px 25px rgba(180, 190, 254, 0.5)',
-                        '0 4px 15px rgba(180, 190, 254, 0.3)'
-                    ],
-                    duration: 2000,
-                    easing: 'easeInOutQuad'
-                });
-            }, 5000);
-        }
-
-        // إضافة تأثيرات التمرير
-        function initScrollAnimations() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        
-                        // تحديد نوع الحركة بناءً على العنصر
-                        if (target.classList.contains('btn')) {
-                            anime({
-                                targets: target,
-                                opacity: [0, 1],
-                                translateY: [30, 0],
-                                scale: [0.8, 1],
-                                duration: 600,
-                                easing: 'easeOutQuad'
-                            });
-                        } else {
-                            anime({
-                                targets: target,
-                                opacity: [0, 1],
-                                translateY: [50, 0],
-                                duration: 800,
-                                easing: 'easeOutExpo'
-                            });
-                        }
-                        
-                        observer.unobserve(target);
-                    }
-                });
-            }, { 
-                threshold: 0.1,
-                rootMargin: '50px'
-            });
-
-            // مراقبة العناصر
-            document.querySelectorAll('.btn, footer').forEach(item => {
-                observer.observe(item);
-            });
-        }
-
-        // تأثيرات خاصة للنافيجيشن
-        function initNavAnimations() {
-            const navLinks = document.querySelectorAll('#btns a');
-            const logo = document.querySelector('#logo img');
-
-            // تحريك روابط النافيجيشن عند التحميل
-            anime({
-                targets: navLinks,
-                opacity: [0, 1],
-                translateX: [20, 0],
-                duration: 500,
-                easing: 'easeOutQuad',
-                delay: anime.stagger(100, {start: 300})
-            });
-
-            // تحريك اللوغو في النافيجيشن
-            anime({
-                targets: logo,
-                opacity: [0, 1],
-                scale: [0.8, 1],
-                rotate: ['-10deg', '0deg'],
-                duration: 600,
-                easing: 'easeOutBack',
-                delay: 100
-            });
-
-            // تأثيرات تفاعلية للنافيجيشن
-            navLinks.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    anime({
-                        targets: link,
-                        scale: 1.05,
-                        translateY: -2,
-                        duration: 200,
-                        easing: 'easeOutQuad'
-                    });
-                });
-
-                link.addEventListener('mouseleave', () => {
-                    anime({
-                        targets: link,
-                        scale: 1,
-                        translateY: 0,
-                        duration: 200,
-                        easing: 'easeOutQuad'
-                    });
-                });
-            });
-        }
-
-        // إضافة تأثيرات الكتابة المتحركة
-        function initTypingEffect() {
-            const subtitle = document.querySelector('.subtitle');
-            const originalText = subtitle.textContent;
-            subtitle.textContent = '';
-            subtitle.style.opacity = '1';
-
-            setTimeout(() => {
-                let i = 0;
-                const typeInterval = setInterval(() => {
-                    subtitle.textContent = originalText.slice(0, i + 1);
-                    i++;
-                    
-                    if (i >= originalText.length) {
-                        clearInterval(typeInterval);
-                        
-                        // إضافة تأثير وميض للمؤشر
-                        const cursor = document.createElement('span');
-                        cursor.textContent = '|';
-                        cursor.style.animation = 'blink 1s infinite';
-                        cursor.style.color = 'var(--accentPurple)';
-                        subtitle.appendChild(cursor);
-                        
-                        setTimeout(() => {
-                            cursor.remove();
-                        }, 3000);
-                    }
-                }, 50);
-            }, 1200);
-        }
-
-        // إضافة تأثيرات الضوء المتحرك
-        function createLightRays() {
-            const container = document.querySelector('.content-wrapper');
-            
-            for (let i = 0; i < 3; i++) {
-                const ray = document.createElement('div');
-                ray.style.cssText = `
-                    position: absolute;
-                    top: 0;
-                    left: ${Math.random() * 100}%;
-                    width: 2px;
-                    height: 100%;
-                    background: linear-gradient(to bottom, transparent, var(--accentPurple), transparent);
-                    opacity: 0.1;
-                    animation: lightRay ${8 + Math.random() * 4}s linear infinite;
-                    pointer-events: none;
-                `;
-                container.appendChild(ray);
-            }
-        }
-
-        // تأثيرات الصوت البصرية (محاكاة)
-        function initVisualSoundEffects() {
-            const buttons = document.querySelectorAll('.btn');
-            
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // إنشاء موجات دائرية عند النقر
-                    const rect = button.getBoundingClientRect();
-                    const ripple = document.createElement('div');
-                    
-                    ripple.style.cssText = `
-                        position: fixed;
-                        top: ${rect.top + rect.height / 2}px;
-                        left: ${rect.left + rect.width / 2}px;
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                        background: var(--accentPurple);
-                        opacity: 0.8;
-                        pointer-events: none;
-                        z-index: 1000;
-                        transform: translate(-50%, -50%);
-                    `;
-                    
-                    document.body.appendChild(ripple);
-                    
-                    anime({
-                        targets: ripple,
-                        scale: [0, 8],
-                        opacity: [0.8, 0],
-                        duration: 600,
-                        easing: 'easeOutQuad',
-                        complete: () => ripple.remove()
-                    });
-                });
-            });
-        }
-
-        // تشغيل جميع التأثيرات عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', () => {
-            // إنشاء العناصر التفاعلية
-            createFloatingParticles();
-            createDecorationDots();
-            createLightRays();
-            
-            // تشغيل الحركات
-            setTimeout(() => {
-                initAnimations();
-                initNavAnimations();
-                initButtonInteractions();
-                initLogoInteractions();
-                initMouseEffects();
-                initScrollAnimations();
-                initVisualSoundEffects();
-                
-                // تأثيرات متأخرة
-                setTimeout(() => {
-                    initContinuousAnimations();
-                    initTypingEffect();
-                }, 2000);
-            }, 100);
-        });
-
-        // إضافة الأنماط الإضافية للحركات
-        const additionalStyles = document.createElement('style');
-        additionalStyles.textContent = `
-            @keyframes blink {
-                0%, 50% { opacity: 1; }
-                51%, 100% { opacity: 0; }
-            }
-            
-            @keyframes lightRay {
-                0% { transform: translateX(-100px) skewX(-20deg); opacity: 0; }
-                50% { opacity: 0.1; }
-                100% { transform: translateX(calc(100vw + 100px)) skewX(-20deg); opacity: 0; }
-            }
-            
-            .btn-primary {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .btn-primary::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-                transition: left 0.6s;
-            }
-            
-            .btn-primary:hover::after {
-                left: 100%;
-            }
-            
-            /* تحسينات إضافية للمظهر */
-            .main-title::before {
-                content: '✨';
-                display: inline-block;
-                animation: sparkle 2s ease-in-out infinite;
-                margin-left: 0.5em;
-            }
-            
-            .main-title::after {
-                content: '✨';
-                display: inline-block;
-                animation: sparkle 2s ease-in-out infinite reverse;
-                margin-right: 0.5em;
-            }
-            
-            @keyframes sparkle {
-                0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
-                50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
-            }
-            
-            /* تأثيرات إضافية للخلفية */
-            body::before {
-                content: '';
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: 
-                    radial-gradient(circle at 20% 80%, rgba(180, 190, 254, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(148, 226, 213, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 40%, rgba(245, 194, 231, 0.1) 0%, transparent 50%);
-                pointer-events: none;
-                z-index: -2;
-                animation: backgroundPulse 10s ease-in-out infinite;
-            }
-            
-            @keyframes backgroundPulse {
-                0%, 100% { opacity: 0.5; }
-                50% { opacity: 0.8; }
-            }
-        `;
-        document.head.appendChild(additionalStyles);
-
-        // معالج خاص للأخطاء وتحسين الأداء
-        window.addEventListener('error', (e) => {
-            console.warn('Animation error handled:', e.error);
-        });
-
-        // تحسين الأداء عند تغيير حجم النافذة
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                // إعادة تعيين بعض القيم عند تغيير الحجم
-                const particles = document.querySelectorAll('.floating-particle');
-                particles.forEach(particle => {
-                    particle.style.left = Math.random() * 100 + '%';
-                });
-            }, 250);
-        });
-    </script>
-</body>
-</html>
+                        '0 8px 25px rgba(180, 190, 25
