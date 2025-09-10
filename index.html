@@ -294,21 +294,22 @@
         }
 
         /* العناوين مع تأثيرات */
-        h1.main-title {
-            font-size: clamp(2.5em, 6vw, 4em);
-            line-height: 1.1 !important;
-            margin: 0 0 0.2em 0 !important;
-            text-align: center;
-            background: linear-gradient(135deg, var(--accentPurple), var(--accentTeal), var(--accentPink));
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-            animation: gradientShift 4s ease infinite;
-            opacity: 0;
-            transform: translateY(30px);
-        }
+       h1.main-title {
+    font-size: clamp(2.5em, 6vw, 4em);
+    line-height: 1.1 !important;
+    margin: 0 0 0.2em 0 !important;
+    text-align: center;
+    background: linear-gradient(135deg, var(--accentPurple), var(--accentTeal), var(--accentPink));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important; /* تأكد من هذه */
+    background-clip: text;
+    color: transparent !important; /* وأضف هذه أيضًا للتأكد */
+    font-weight: 700;
+    animation: gradientShift 4s ease infinite;
+    opacity: 0;
+    transform: translateY(30px);
+}
 
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
