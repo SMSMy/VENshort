@@ -10,50 +10,11 @@
     <meta content="VenSHORT: تعديل Vencord الأجمل والأسهل للديسكورد باللغة العربية." name="description"/>
     <meta content="Vencord Contributors & يزيد" name="author"/>
     <meta content="#dd7878" name="theme-color"/>
-    <meta content="website" name="og:type"/>
-    <meta content="VenSHORT | تعديل Vencord" name="og:title"/>
-    <meta content="VenSHORT: تعديل Vencord الأجمل والأسهل للديسكورد باللغة العربية." name="og:description"/>
-    <meta content="index.html" name="og:url"/>
-    <meta content="assets/favicon.png" name="og:image"/>
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "VenSHORT",
-      "alternateName": "Vencord Arabic",
-      "url": "https://nvkq.github.io/VENshort/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://nvkq.github.io/VENshort/plugins.html#{plugin_name}"
-        },
-        "query-input": "required name=plugin_name"
-      }
-    },
-    {
-      "@type": ["WebApplication", "SoftwareApplication"],
-      "name": "Vencord (via VenSHORT)",
-      "operatingSystem": "Windows, macOS, Linux",
-      "applicationCategory": "UtilitiesApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0"
-      }
-    }
-  ]
-}
-</script>
-
-    </script>
-    <link href="sitemap-index.xml" rel="sitemap"/>
-    <meta name="darkreader-lock"/>
-    <link href="index.html" rel="canonical"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
     <style>
-        /* Copied :root variables from fixed_plugins.html */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
+
         :root {
             --bg0: #1e1e2e;
             --bg1: #313244;
@@ -79,8 +40,8 @@
             --accentPink: #f5c2e7;
             --accentFlamingo: #f2cdcd;
             --accentRosewater: #f5e0dc;
-            --accentPurple: #b4befe; /* Main accent for buttons */
-            --accentAqua: #94e2d5; /* Used for copy feedback */
+            --accentPurple: #b4befe;
+            --accentAqua: #94e2d5;
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -88,221 +49,593 @@
             --border-md: 0.25rem;
             --border-lg: 0.5rem;
         }
-         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
 
-        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-        html { line-height: 1.15; -webkit-text-size-adjust: 100%; font-family: 'Noto Sans Arabic', sans-serif; }
-        body { margin: 0; display: flex; flex-direction: column; min-height: 100vh; background-color: var(--bg0); color: var(--fg0); } /* Added styles from fixed_plugins */
-        main { display: block }
-        h1 { font-size: 2em; margin: .67em 0 }
-        hr { box-sizing: content-box; height: 0; overflow: visible }
-        pre { font-family: monospace, monospace; font-size: 1em }
-        a { background-color: transparent; color: var(--accentBlue); text-decoration: none; } /* Base link color */
-        a:hover { text-decoration: underline; }
-        abbr[title] { border-bottom: none; text-decoration: underline; text-decoration: underline dotted }
-        b, strong { font-weight: bolder }
-        code, kbd, samp { font-family: monospace, monospace; font-size: 1em }
-        small { font-size: 80% }
-        sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline }
-        sub { bottom: -.25em } sup { top: -.5em }
-        img { border-style: none; max-width: 100%; height: auto; display: block; } /* Base img styles + display: block */
-        button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0 }
-        button, input { overflow: visible }
-        button, select { text-transform: none }
-        button, [type=button], [type=reset], [type=submit] { -webkit-appearance: button }
-        button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner { border-style: none; padding: 0 }
-        button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring { outline: 1px dotted ButtonText }
-        fieldset { padding: .35em .75em .625em }
-        legend { box-sizing: border-box; color: inherit; display: table; max-width: 100%; padding: 0; white-space: normal }
-        progress { vertical-align: baseline }
-        textarea { overflow: auto }
-        [type=checkbox], [type=radio] { box-sizing: border-box; padding: 0 }
-        [type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button { height: auto }
-        [type=search] { -webkit-appearance: textfield; outline-offset: -2px }
-        [type=search]::-webkit-search-decoration { -webkit-appearance: none }
-        ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit }
-        details { display: block } summary { display: list-item }
-        template { display: none } [hidden] { display: none }
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* --- General Layout & Content --- */
-        .main-container { flex: 1; display: flex; flex-direction: column; }
-        .content-wrapper { max-width: 1100px; margin: 0 auto; padding: 2em 1.5em; text-align: center; }
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
 
-        /* --- Logo & Tagline --- */
-        .logo-container { /* New container for the logo */
-            width: 100%;
-            max-width: 650px; /* Max width of the container */
-            height: 450px;    /* Fixed height of the container */
-            margin: 1em auto 1.5em auto; /* Center container */
+        body {
+            margin: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden; /* Hide parts of image outside container if needed */
-            border: 1px solid var(--bg3); /* Optional: Add border to visualize */
-            border-radius: var(--border-lg); /* Optional: Rounded corners */
-            background-color: var(--bg1); /* Optional: Background for container */
-        }
-        #cute-logo {
-            /* Force image to fit within the container */
-            max-width: 100%;  /* Max width relative to container */
-            max-height: 100%; /* Max height relative to container */
-            width: auto;      /* Let width adjust based on height constraint */
-            height: auto;     /* Let height adjust based on width constraint */
-            object-fit: contain; /* Scale image while preserving aspect ratio */
-            margin: 0; /* Remove margin from image itself */
-        }
-        h1.main-title { font-size: clamp(2.5em, 6vw, 4em); line-height: 1.1 !important; margin: 0 0 0.2em 0 !important; text-align: center; color: var(--accentPurple); font-weight: 700; }
-        h2.subtitle { font-size: clamp(1.2em, 3vw, 1.8em); line-height: 1.3 !important; margin: 0 0 1.5em 0 !important; text-align: center; color: var(--fg1); font-weight: 400; }
-
-        /* --- Button Styles (Adapted from fixed_plugins.html) --- */
-        .button-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 1em; margin-top: 2em; }
-        .btn { display: inline-flex; justify-content: center; align-items: center; text-decoration: none; text-align: center; font-weight: 700; color: var(--fg0); padding: 0.8em 1.8em; border-radius: var(--border-md); transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease; border: 1px solid transparent; cursor: pointer; }
-        .btn-primary { background-color: var(--accentPurple); color: var(--bg0); border-color: var(--accentPurple); }
-        .btn-primary:hover { background-color: hsl(from var(--accentPurple) h s calc(l - 8%)); text-decoration: none; box-shadow: var(--shadow-md); }
-        .btn-secondary { background-color: var(--bg3); color: var(--fg0); border-color: var(--bg4); }
-        .btn-secondary:hover { background-color: var(--bg4); text-decoration: none; box-shadow: var(--shadow-sm); }
-        .btn:active { transform: scale(0.98); }
-        .btn:focus-visible { outline: 2px solid var(--accentBlue); outline-offset: 2px; }
-
-        /* Logo Styles (kept simple) */
-        nav #logo img { /* Target nav logo specifically */
-            width: 65px; /* **REDUCED NAV LOGO SIZE** */
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--bg0) 0%, #2a2a3e 50%, var(--bg1) 100%);
+            color: var(--fg0);
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* --- Navigation Styles (Adapted for RTL) --- */
+        /* عناصر الخلفية المتحركة */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .floating-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--accentPurple);
+            border-radius: 50%;
+            animation: floatUp 20s linear infinite;
+        }
+
+        .floating-particle:nth-child(2n) {
+            background: var(--accentTeal);
+            animation-duration: 25s;
+        }
+
+        .floating-particle:nth-child(3n) {
+            background: var(--accentPink);
+            animation-duration: 18s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        /* النافيجيشن مع تحسينات */
         nav {
-            background-color: var(--bg1);
-            padding: 0.3em 1em; /* **REDUCED NAV PADDING** */
+            background: rgba(49, 50, 68, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 0.3em 1em;
             border-bottom: 1px solid var(--bg3);
+            position: relative;
+            z-index: 100;
         }
+
         .nav-content {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between; /* Space between logo and buttons */
+            justify-content: space-between;
             align-items: center;
         }
-        #logo { /* Nav logo container */
-            /* Appears on the right by default in RTL */
+
+        #logo img {
+            width: 65px;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
-       #btns { /* Nav buttons container */
-            margin-left: auto; /* **Push buttons to the far left** */
-       }
-       #btns ul {
-           list-style: none;
-           padding: 0;
-           margin: 0;
-           display: flex;
-           gap: 0.6em; /* Adjusted gap */
-       }
-       #btns a { /* Nav link styling */
-           text-decoration: none;
-           color: var(--fg1);
-           font-weight: 700;
-           padding: 0.4em 1em; /* **REDUCED NAV BUTTON PADDING** */
-           border-radius: var(--border-md);
-           transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-           font-size: 0.9em; /* Adjusted font size */
-           border: 1px solid transparent;
-           display: inline-block;
-           line-height: 1.2;
-       }
-      #btns a:hover {
-           background-color: var(--bg3); /* Darker hover */
-           color: var(--fg0);
-           text-decoration: none;
-           border-color: var(--bg4); /* Add border on hover */
-       }
-        /* Specific accent colors for nav buttons */
-       #btns a[href="plugins.html"] {
-           color: var(--accentBlue);
-           border-color: var(--accentBlue);
-       }
+
+        #logo:hover img {
+            transform: scale(1.05) rotate(5deg);
+            filter: brightness(1.1);
+        }
+
+        #btns {
+            margin-left: auto;
+        }
+
+        #btns ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 0.6em;
+        }
+
+        #btns a {
+            text-decoration: none;
+            color: var(--fg1);
+            font-weight: 700;
+            padding: 0.4em 1em;
+            border-radius: var(--border-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9em;
+            border: 1px solid transparent;
+            display: inline-block;
+            line-height: 1.2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #btns a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        #btns a:hover::before {
+            left: 100%;
+        }
+
+        #btns a:hover {
+            background-color: var(--bg3);
+            color: var(--fg0);
+            text-decoration: none;
+            border-color: var(--bg4);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        #btns a[href="plugins.html"] {
+            color: var(--accentBlue);
+            border-color: var(--accentBlue);
+        }
+
         #btns a[href="plugins.html"]:hover {
-           background-color: rgba(from var(--accentBlue) r g b / 0.15); /* Use transparent color */
-           color: var(--accentSky);
-           border-color: var(--accentSky);
-       }
-       #btns a[href*="vencord.dev/download"] {
-           color: var(--accentPurple);
-           border-color: var(--accentPurple);
-       }
+            background-color: rgba(137, 180, 250, 0.15);
+            color: var(--accentSky);
+            border-color: var(--accentSky);
+        }
+
+        #btns a[href*="vencord.dev/download"] {
+            color: var(--accentPurple);
+            border-color: var(--accentPurple);
+        }
+
         #btns a[href*="vencord.dev/download"]:hover {
-           background-color: rgba(from var(--accentPurple) r g b / 0.15);
-           color: var(--accentLavender);
-           border-color: var(--accentLavender);
-       }
+            background-color: rgba(180, 190, 254, 0.15);
+            color: var(--accentLavender);
+            border-color: var(--accentLavender);
+        }
 
-        footer { margin-top: auto; padding: 1.5em 1em; background-color: #2c3e50; color: #ffffff; text-align: center; font-family: 'Noto Sans Arabic', sans-serif; line-height: 1.6; }
-        .footer-content { max-width: 800px; margin: 0 auto; }
-        .source-and-disclaimer { font-size: 0.85em; color: rgba(255, 255, 255, 0.8); margin-bottom: 1em; }
-         .source-and-disclaimer a { color: var(--accentAqua); text-decoration: underline; }
-          .source-and-disclaimer a:hover { color: var(--accentTeal); }
-        .divider { margin: 0 0.5em; opacity: 0.6; }
-        .theme-toggle-container { margin-top: 1em; }
-         .theme-toggle-container button { background: none; border: none; color: rgba(255, 255, 255, 0.7); cursor: pointer; padding: 0.5em; border-radius: 50%; transition: background-color 0.2s, color 0.2s; }
-         .theme-toggle-container button:hover { background-color: rgba(255, 255, 255, 0.1); color: white; }
-          .theme-toggle-container button svg { width: 1.5em; height: 1.5em; display: block; }
+        /* المحتوى الرئيسي */
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3em 1.5em;
+            text-align: center;
+            position: relative;
+        }
+
+        /* اللوغو مع تحسينات */
+        .logo-container {
+            width: 100%;
+            max-width: 650px;
+            height: 450px;
+            margin: 1em auto 1.5em auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid var(--bg3);
+            border-radius: var(--border-lg);
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            backdrop-filter: blur(10px);
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(180, 190, 254, 0.1) 50%, 
+                transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        #cute-logo {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            margin: 0;
+            transition: transform 0.5s ease;
+            z-index: 2;
+            position: relative;
+        }
+
+        .logo-container:hover #cute-logo {
+            transform: scale(1.05);
+        }
+
+        /* العناوين مع تأثيرات */
+        h1.main-title {
+            font-size: clamp(2.5em, 6vw, 4em);
+            line-height: 1.1 !important;
+            margin: 0 0 0.2em 0 !important;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accentPurple), var(--accentTeal), var(--accentPink));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            animation: gradientShift 4s ease infinite;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        h2.subtitle {
+            font-size: clamp(1.2em, 3vw, 1.8em);
+            line-height: 1.3 !important;
+            margin: 0 0 1.5em 0 !important;
+            text-align: center;
+            color: var(--fg1);
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* الأزرار مع تحسينات */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+            margin-top: 2em;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            color: var(--fg0);
+            padding: 0.8em 1.8em;
+            border-radius: var(--border-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accentPurple), var(--accentMauve));
+            color: var(--bg0);
+            border-color: var(--accentPurple);
+            box-shadow: 0 4px 15px rgba(180, 190, 254, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accentMauve), var(--accentPurple));
+            text-decoration: none;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(180, 190, 254, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--bg3), var(--bg2));
+            color: var(--fg0);
+            border-color: var(--bg4);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, var(--bg4), var(--bg3));
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--accentBlue);
+            outline-offset: 2px;
+        }
+
+        /* الفوتر */
+        footer {
+            margin-top: auto;
+            padding: 1.5em 1em;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Noto Sans Arabic', sans-serif;
+            line-height: 1.6;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .source-and-disclaimer {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1em;
+        }
+
+        .source-and-disclaimer a {
+            color: var(--accentAqua);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .source-and-disclaimer a:hover {
+            color: var(--accentTeal);
+        }
+
+        .divider {
+            margin: 0 0.5em;
+            opacity: 0.6;
+        }
+
+        /* تأثيرات متحركة إضافية */
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .bounce-animation {
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 2em 1rem;
+            }
+            
+            .button-group {
+                gap: 0.8em;
+            }
+            
+            .btn {
+                padding: 0.7em 1.5em;
+                font-size: 0.9em;
+            }
+
+            .logo-container {
+                height: 350px;
+                max-width: 500px;
+            }
+
+            nav {
+                padding: 0.5em 1em;
+            }
+
+            #btns ul {
+                gap: 0.4em;
+            }
+
+            #btns a {
+                padding: 0.3em 0.8em;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .logo-container {
+                height: 280px;
+            }
+        }
+
+        /* تأثيرات التفاعل مع الماوس */
+        .interactive-element {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .interactive-element:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        /* تأثيرات الشحن */
+        .loading-animation {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* عناصر زخرفية */
+        .decoration-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .decoration-dot {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accentPurple);
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.5); }
+        }
     </style>
-
-    <link href="_astro/gdpr.61vMHWDU.css" rel="stylesheet"/>
 </head>
 
 <body data-astro-cid-sckkx6r4="">
+    <!-- عناصر الخلفية المتحركة -->
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <!-- عناصر زخرفية -->
+    <div class="decoration-dots" id="decorationDots"></div>
 
-<script> /* Theme script (unchanged) */ const theme = localStorage.theme?.toLowerCase(); const options = ["light", "dark"]; const osDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; if (options.includes(theme)) { document.documentElement.className = theme; } else if (osDark) { document.documentElement.className = 'dark'; } else { document.documentElement.className = 'light'; } </script>
+    <script>
+        const theme = localStorage.theme?.toLowerCase();
+        const options = ["light", "dark"];
+        const osDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (options.includes(theme)) {
+            document.documentElement.className = theme;
+        } else if (osDark) {
+            document.documentElement.className = 'dark';
+        } else {
+            document.documentElement.className = 'light';
+        }
+    </script>
 
-<nav data-astro-cid-ymhdp2rl="">
-    <div class="nav-content" data-astro-cid-ymhdp2rl="">
-        <!-- Logo on the Right (because of dir="rtl") -->
-        <div data-astro-cid-ymhdp2rl="" id="logo">
-            <a data-astro-cid-ymhdp2rl="" href="index.html" id="title">
-                <img alt="VenSHORT Home" data-astro-cid-ymhdp2rl="" src="assets/logo-nav-oneko-padding.png"/>
-            </a>
+    <nav data-astro-cid-ymhdp2rl="">
+        <div class="nav-content interactive-element" data-astro-cid-ymhdp2rl="">
+            <div data-astro-cid-ymhdp2rl="" id="logo">
+                <a data-astro-cid-ymhdp2rl="" href="index.html" id="title">
+                    <img alt="VenSHORT Home" data-astro-cid-ymhdp2rl="" src="https://via.placeholder.com/65x65/b4befe/1e1e2e?text=VS"/>
+                </a>
+            </div>
+            <div class="p-label-m" data-astro-cid-ymhdp2rl="" id="btns">
+                <ul data-astro-cid-ymhdp2rl="" id="right">
+                    <li data-astro-cid-ymhdp2rl="">
+                        <a data-astro-cid-ymhdp2rl="" href="plugins.html">الإضافات ⚙️</a>
+                    </li>
+                    <li data-astro-cid-ymhdp2rl="">
+                        <a data-astro-cid-ymhdp2rl="" href="https://vencord.dev/download/">تنزيل Vencord الرسمي</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- Buttons on the Left -->
-        <div class="p-label-m" data-astro-cid-ymhdp2rl="" id="btns">
-            <ul data-astro-cid-ymhdp2rl="" id="right">
-                <li data-astro-cid-ymhdp2rl="">
-                    <a data-astro-cid-ymhdp2rl="" href="plugins.html">الإضافات ⚙️</a>
-                </li>
-                <li data-astro-cid-ymhdp2rl="">
-                    <a data-astro-cid-ymhdp2rl="" href="https://vencord.dev/download/">تنزيل Vencord الرسمي</a>
-                </li>
-            </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="content-wrapper">
+            <header>
+                <div class="logo-container">
+                    <img alt="Vencord cute wordmark" id="cute-logo" src="https://via.placeholder.com/400x300/313244/cdd6f4?text=VenSHORT+Logo"/>
+                </div>
+
+                <h1 class="main-title">✨ VenSHORT | فينشورت ✨</h1>
+                <h2 class="subtitle">تخصيص Vencord الأجمل والأسهل للديسكورد - بالعربية!</h2>
+
+                <div class="button-group">
+                    <a class="btn btn-primary" href="plugins.html">
+                        استعراض وتكوين الإضافات
+                    </a>
+                    <a class="btn btn-secondary" href="https://vencord.dev/download/">
+                        تنزيل Vencord (الرسمي)
+                    </a>
+                    <a class="btn btn-primary" href="https://github.com/nvkq/VENshort">
+                        VenSHORT على GitHub
+                    </a>
+                    <a class="btn btn-secondary" href="https://github.com/Vendicated/Vencord">
+                        Vencord على GitHub
+                    </a>
+                </div>
+            </header>
         </div>
     </div>
-</nav>
-
-<div class="main-container">
-    <div class="content-wrapper">
-        <header>
-            <!-- Logo section with container -->
-            <div class="logo-container">
-                 <img alt="Vencord cute wordmark" id="cute-logo" src="assets/cute-logo.avif"/>
-            </div>
-
-            <!-- Titles -->
-             <h1 class="main-title">✨ VenSHORT | فينشورت ✨</h1>
-             <h2 class="subtitle">تخصيص Vencord الأجمل والأسهل للديسكورد - بالعربية!</h2>
-
-            <!-- Button Group -->
-             <div class="button-group">
-                <a class="btn btn-primary" href="plugins.html">
-                    استعراض وتكوين الإضافات
-                </a>
-                 <a class="btn btn-secondary" href="https://vencord.dev/download/">
-                    تنزيل Vencord (الرسمي)
-                </a>
-                <a class="btn btn-primary" href="https://github.com/nvkq/VENshort">
-                    VenSHORT على GitHub
-                 </a>
-                 <a class="btn btn-secondary" href="https://github.com/Vendicated/Vencord">
-                    Vencord على GitHub
-                </a>
-            </div>
-        </header>
-    </div> <!-- End content-wrapper -->
 
     <footer data-astro-cid-sz7xmlte="">
         <div class="footer-content" data-astro-cid-sz7xmlte="">
@@ -313,6 +646,527 @@
                     <span data-astro-cid-sz7xmlte="">
                         هذه الصفحة هي مشروع عربي يهدف إلى تسهيل استخدام وتخصيص Vencord، مع الحفاظ على جميع الحقوق الأصلية للمطورين الأساسيين. 
                     </span>
-<p>تم تطويره بواسطة مساهمي Vencord | تم تعريبه وتحسينه بواسطة <a href="https://x.com/jnjon0" target="_blank" rel="noopener noreferrer" style="color: var(--accentAqua);">SMSM</a></p>
-  </body>
+                </span>
+                <p>تم تطويره بواسطة مساهمي Vencord | تم تعريبه وتحسينه بواسطة <a href="https://x.com/jnjon0" target="_blank" rel="noopener noreferrer" style="color: var(--accentAqua);">SMSM</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // إنشاء الجسيمات المتحركة في الخلفية
+        function createFloatingParticles() {
+            const container = document.getElementById('floatingElements');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'floating-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // إنشاء النقاط الزخرفية
+        function createDecorationDots() {
+            const container = document.getElementById('decorationDots');
+            for (let i = 0; i < 20; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'decoration-dot';
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.top = Math.random() * 100 + '%';
+                dot.style.animationDelay = Math.random() * 3 + 's';
+                container.appendChild(dot);
+            }
+        }
+
+        // تحريك العناصر عند التحميل
+        function initAnimations() {
+            // تحريك اللوغو
+            anime({
+                targets: '.logo-container',
+                opacity: [0, 1],
+                translateY: [50, 0],
+                scale: [0.8, 1],
+                duration: 1000,
+                easing: 'easeOutExpo',
+                delay: 200
+            });
+
+            // تحريك العنوان الرئيسي
+            anime({
+                targets: '.main-title',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                duration: 800,
+                easing: 'easeOutQuad',
+                delay: 600
+            });
+
+            // تحريك العنوان الفرعي
+            anime({
+                targets: '.subtitle',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 600,
+                easing: 'easeOutQuad',
+                delay: 800
+            });
+
+            // تحريك الأزرار
+            anime({
+                targets: '.btn',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                scale: [0.95, 1],
+                duration: 500,
+                easing: 'easeOutQuad',
+                delay: anime.stagger(100, {start: 1000})
+            });
+
+            // تحريك الفوتر
+            anime({
+                targets: 'footer',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                duration: 600,
+                easing: 'easeOutQuad',
+                delay: 1400
+            });
+        }
+
+        // تأثيرات التفاعل مع الأزرار
+        function initButtonInteractions() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: button,
+                        scale: 1.05,
+                        duration: 200,
+                        easing: 'easeOutQuad'
+                    });
+                });
+
+                button.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: button,
+                        scale: 1,
+                        duration: 200,
+                        easing: 'easeOutQuad'
+                    });
+                });
+
+                button.addEventListener('mousedown', () => {
+                    anime({
+                        targets: button,
+                        scale: 0.98,
+                        duration: 100,
+                        easing: 'easeOutQuad'
+                    });
+                });
+
+                button.addEventListener('mouseup', () => {
+                    anime({
+                        targets: button,
+                        scale: 1.05,
+                        duration: 100,
+                        easing: 'easeOutQuad'
+                    });
+                });
+            });
+        }
+
+        // تأثيرات اللوغو التفاعلية
+        function initLogoInteractions() {
+            const logoContainer = document.querySelector('.logo-container');
+            const cuteLogo = document.getElementById('cute-logo');
+
+            logoContainer.addEventListener('mouseenter', () => {
+                anime({
+                    targets: cuteLogo,
+                    scale: 1.1,
+                    rotate: '5deg',
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+
+            logoContainer.addEventListener('mouseleave', () => {
+                anime({
+                    targets: cuteLogo,
+                    scale: 1,
+                    rotate: '0deg',
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+
+            logoContainer.addEventListener('click', () => {
+                anime({
+                    targets: cuteLogo,
+                    scale: [1.1, 0.95, 1.1],
+                    rotate: ['5deg', '-5deg', '5deg'],
+                    duration: 400,
+                    easing: 'easeInOutQuad'
+                });
+            });
+        }
+
+        // تأثيرات الماوس العامة
+        function initMouseEffects() {
+            document.addEventListener('mousemove', (e) => {
+                const cursor = { x: e.clientX, y: e.clientY };
+                const particles = document.querySelectorAll('.floating-particle');
+                
+                particles.forEach((particle, index) => {
+                    const speed = (index % 3 + 1) * 0.0002;
+                    const x = (cursor.x - window.innerWidth / 2) * speed;
+                    const y = (cursor.y - window.innerHeight / 2) * speed;
+                    
+                    particle.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+        }
+
+        // تحريكات مستمرة للعناصر
+        function initContinuousAnimations() {
+            // تحريك النقاط الزخرفية
+            anime({
+                targets: '.decoration-dot',
+                scale: [1, 1.5, 1],
+                opacity: [0.1, 0.8, 0.1],
+                duration: 3000,
+                easing: 'easeInOutSine',
+                delay: anime.stagger(200),
+                loop: true
+            });
+
+            // تحريك خفيف للعنوان الرئيسي
+            anime({
+                targets: '.main-title',
+                translateY: [0, -5, 0],
+                duration: 4000,
+                easing: 'easeInOutSine',
+                loop: true,
+                delay: 2000
+            });
+
+            // تأثير نبضة للأزرار الأساسية
+            setInterval(() => {
+                anime({
+                    targets: '.btn-primary',
+                    boxShadow: [
+                        '0 4px 15px rgba(180, 190, 254, 0.3)',
+                        '0 8px 25px rgba(180, 190, 254, 0.5)',
+                        '0 4px 15px rgba(180, 190, 254, 0.3)'
+                    ],
+                    duration: 2000,
+                    easing: 'easeInOutQuad'
+                });
+            }, 5000);
+        }
+
+        // إضافة تأثيرات التمرير
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        
+                        // تحديد نوع الحركة بناءً على العنصر
+                        if (target.classList.contains('btn')) {
+                            anime({
+                                targets: target,
+                                opacity: [0, 1],
+                                translateY: [30, 0],
+                                scale: [0.8, 1],
+                                duration: 600,
+                                easing: 'easeOutQuad'
+                            });
+                        } else {
+                            anime({
+                                targets: target,
+                                opacity: [0, 1],
+                                translateY: [50, 0],
+                                duration: 800,
+                                easing: 'easeOutExpo'
+                            });
+                        }
+                        
+                        observer.unobserve(target);
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+
+            // مراقبة العناصر
+            document.querySelectorAll('.btn, footer').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        // تأثيرات خاصة للنافيجيشن
+        function initNavAnimations() {
+            const navLinks = document.querySelectorAll('#btns a');
+            const logo = document.querySelector('#logo img');
+
+            // تحريك روابط النافيجيشن عند التحميل
+            anime({
+                targets: navLinks,
+                opacity: [0, 1],
+                translateX: [20, 0],
+                duration: 500,
+                easing: 'easeOutQuad',
+                delay: anime.stagger(100, {start: 300})
+            });
+
+            // تحريك اللوغو في النافيجيشن
+            anime({
+                targets: logo,
+                opacity: [0, 1],
+                scale: [0.8, 1],
+                rotate: ['-10deg', '0deg'],
+                duration: 600,
+                easing: 'easeOutBack',
+                delay: 100
+            });
+
+            // تأثيرات تفاعلية للنافيجيشن
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: link,
+                        scale: 1.05,
+                        translateY: -2,
+                        duration: 200,
+                        easing: 'easeOutQuad'
+                    });
+                });
+
+                link.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: link,
+                        scale: 1,
+                        translateY: 0,
+                        duration: 200,
+                        easing: 'easeOutQuad'
+                    });
+                });
+            });
+        }
+
+        // إضافة تأثيرات الكتابة المتحركة
+        function initTypingEffect() {
+            const subtitle = document.querySelector('.subtitle');
+            const originalText = subtitle.textContent;
+            subtitle.textContent = '';
+            subtitle.style.opacity = '1';
+
+            setTimeout(() => {
+                let i = 0;
+                const typeInterval = setInterval(() => {
+                    subtitle.textContent = originalText.slice(0, i + 1);
+                    i++;
+                    
+                    if (i >= originalText.length) {
+                        clearInterval(typeInterval);
+                        
+                        // إضافة تأثير وميض للمؤشر
+                        const cursor = document.createElement('span');
+                        cursor.textContent = '|';
+                        cursor.style.animation = 'blink 1s infinite';
+                        cursor.style.color = 'var(--accentPurple)';
+                        subtitle.appendChild(cursor);
+                        
+                        setTimeout(() => {
+                            cursor.remove();
+                        }, 3000);
+                    }
+                }, 50);
+            }, 1200);
+        }
+
+        // إضافة تأثيرات الضوء المتحرك
+        function createLightRays() {
+            const container = document.querySelector('.content-wrapper');
+            
+            for (let i = 0; i < 3; i++) {
+                const ray = document.createElement('div');
+                ray.style.cssText = `
+                    position: absolute;
+                    top: 0;
+                    left: ${Math.random() * 100}%;
+                    width: 2px;
+                    height: 100%;
+                    background: linear-gradient(to bottom, transparent, var(--accentPurple), transparent);
+                    opacity: 0.1;
+                    animation: lightRay ${8 + Math.random() * 4}s linear infinite;
+                    pointer-events: none;
+                `;
+                container.appendChild(ray);
+            }
+        }
+
+        // تأثيرات الصوت البصرية (محاكاة)
+        function initVisualSoundEffects() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // إنشاء موجات دائرية عند النقر
+                    const rect = button.getBoundingClientRect();
+                    const ripple = document.createElement('div');
+                    
+                    ripple.style.cssText = `
+                        position: fixed;
+                        top: ${rect.top + rect.height / 2}px;
+                        left: ${rect.left + rect.width / 2}px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: var(--accentPurple);
+                        opacity: 0.8;
+                        pointer-events: none;
+                        z-index: 1000;
+                        transform: translate(-50%, -50%);
+                    `;
+                    
+                    document.body.appendChild(ripple);
+                    
+                    anime({
+                        targets: ripple,
+                        scale: [0, 8],
+                        opacity: [0.8, 0],
+                        duration: 600,
+                        easing: 'easeOutQuad',
+                        complete: () => ripple.remove()
+                    });
+                });
+            });
+        }
+
+        // تشغيل جميع التأثيرات عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            // إنشاء العناصر التفاعلية
+            createFloatingParticles();
+            createDecorationDots();
+            createLightRays();
+            
+            // تشغيل الحركات
+            setTimeout(() => {
+                initAnimations();
+                initNavAnimations();
+                initButtonInteractions();
+                initLogoInteractions();
+                initMouseEffects();
+                initScrollAnimations();
+                initVisualSoundEffects();
+                
+                // تأثيرات متأخرة
+                setTimeout(() => {
+                    initContinuousAnimations();
+                    initTypingEffect();
+                }, 2000);
+            }, 100);
+        });
+
+        // إضافة الأنماط الإضافية للحركات
+        const additionalStyles = document.createElement('style');
+        additionalStyles.textContent = `
+            @keyframes blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0; }
+            }
+            
+            @keyframes lightRay {
+                0% { transform: translateX(-100px) skewX(-20deg); opacity: 0; }
+                50% { opacity: 0.1; }
+                100% { transform: translateX(calc(100vw + 100px)) skewX(-20deg); opacity: 0; }
+            }
+            
+            .btn-primary {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .btn-primary::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+                transition: left 0.6s;
+            }
+            
+            .btn-primary:hover::after {
+                left: 100%;
+            }
+            
+            /* تحسينات إضافية للمظهر */
+            .main-title::before {
+                content: '✨';
+                display: inline-block;
+                animation: sparkle 2s ease-in-out infinite;
+                margin-left: 0.5em;
+            }
+            
+            .main-title::after {
+                content: '✨';
+                display: inline-block;
+                animation: sparkle 2s ease-in-out infinite reverse;
+                margin-right: 0.5em;
+            }
+            
+            @keyframes sparkle {
+                0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+                50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+            }
+            
+            /* تأثيرات إضافية للخلفية */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: 
+                    radial-gradient(circle at 20% 80%, rgba(180, 190, 254, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(148, 226, 213, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(245, 194, 231, 0.1) 0%, transparent 50%);
+                pointer-events: none;
+                z-index: -2;
+                animation: backgroundPulse 10s ease-in-out infinite;
+            }
+            
+            @keyframes backgroundPulse {
+                0%, 100% { opacity: 0.5; }
+                50% { opacity: 0.8; }
+            }
+        `;
+        document.head.appendChild(additionalStyles);
+
+        // معالج خاص للأخطاء وتحسين الأداء
+        window.addEventListener('error', (e) => {
+            console.warn('Animation error handled:', e.error);
+        });
+
+        // تحسين الأداء عند تغيير حجم النافذة
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // إعادة تعيين بعض القيم عند تغيير الحجم
+                const particles = document.querySelectorAll('.floating-particle');
+                particles.forEach(particle => {
+                    particle.style.left = Math.random() * 100 + '%';
+                });
+            }, 250);
+        });
+    </script>
+</body>
 </html>
