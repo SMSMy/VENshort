@@ -167,6 +167,18 @@
   opacity: 0;
   transform: translateY(20px);
 }
+/* Suggested highlight for themes and plugins */
+.theme-card-detailed.suggested-theme,
+.plugin-card.suggested {
+  border: 2px solid #c7981c;
+  box-shadow: 0 0 16px 2px rgba(199,152,28,0.15);
+  position: relative;
+}
+.theme-card-detailed.suggested-theme:hover,
+.plugin-card.suggested:hover {
+  border-color: #fbbf24;
+  box-shadow: 0 0 24px 4px rgba(251,191,36,0.18);
+}
 .theme-card-detailed {
   /* MODIFIED: Updated colors to match theme */
   border: 2px solid var(--primary-600);
