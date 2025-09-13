@@ -858,30 +858,3 @@
     display: none;
   }
 }
-/* plugins.css */
-
-/* --- Glow Effect for Selected Plugin Cards --- */
-
-/* 
-  This selector targets any .plugin-card that has a .plugin-checkbox which is :checked.
-  It's the modern "parent selector" in CSS.
-*/
-.plugin-card:has(.plugin-checkbox:checked) {
-  /* Use the theme's primary color for the glow */
-  border-color: var(--primary-500);
-  
-  /* Create a multi-layered glow effect using box-shadow */
-  box-shadow: 
-    0 0 15px rgba(124, 174, 163, 0.6), /* Outer glow (from --primary-500 color) */
-    inset 0 0 8px rgba(124, 174, 163, 0.2); /* Subtle inner glow */
-
-  /* Make the card "pop" slightly, matching the hover effect */
-  transform: translateY(-5px);
-}
-
-/* Optional: Make the glow more intense when hovering over a selected card */
-.plugin-card:has(.plugin-checkbox:checked):hover {
-    box-shadow: 
-    0 0 25px rgba(124, 174, 163, 0.7), 
-    inset 0 0 10px rgba(124, 174, 163, 0.3);
-}
