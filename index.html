@@ -1,1173 +1,189 @@
 <!DOCTYPE html>
-<html data-astro-cid-sckkx6r4="" lang="ar" dir="rtl">
-<head>
-    <meta content="text/html;charset=utf-8" http-equiv="content-type"/>
-    <title>VenSHORT فينشورت| تعديل ديسكورد الأجمل</title>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.1" name="viewport"/>
-    <link href="assets/favicon.png" rel="icon"/>
-    <link as="font" crossorigin="" href="fonts/Inter.var-subset.woff2" rel="preload" type="font/woff2"/>
-    <meta content="VenSHORT: تعديل Vencord الأجمل والأسهل للديسكورد باللغة العربية." name="description"/>
-    <meta content="Vencord Contributors & يزيد" name="author"/>
-    <meta content="#dd7878" name="theme-color"/>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VenSHORT فينشورت | تعديل ديسكورد الأجمل</title>
+    <meta
+      name="description"
+      content="VenSHORT: تعديل Vencord الأجمل والأسهل للديسكورد باللغة العربية."
+    />
+    <meta name="theme-color" content="#6366f1" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
-
-        :root {
-            --bg0: #1e1e2e;
-            --bg1: #313244;
-            --bg2: #45475a;
-            --bg3: #585b70;
-            --bg4: #6c7086;
-            --fg0: #cdd6f4;
-            --fg1: #bac2de;
-            --grey0: #9399b2;
-            --grey1: #7f849c;
-            --grey2: #6c7086;
-            --accentBlue: #89b4fa;
-            --accentLavender: #b4befe;
-            --accentSapphire: #74c7ec;
-            --accentSky: #89dceb;
-            --accentTeal: #94e2d5;
-            --accentGreen: #a6e3a1;
-            --accentYellow: #f9e2af;
-            --accentPeach: #fab387;
-            --accentMaroon: #eba0ac;
-            --accentRed: #f38ba8;
-            --accentMauve: #cba6f7;
-            --accentPink: #f5c2e7;
-            --accentFlamingo: #f2cdcd;
-            --accentRosewater: #f5e0dc;
-            --accentPurple: #b4befe;
-            --accentAqua: #94e2d5;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --border-sm: 0.125rem;
-            --border-md: 0.25rem;
-            --border-lg: 0.5rem;
-        }
-
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-            font-family: 'Noto Sans Arabic', sans-serif;
-        }
-
-        body {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background: linear-gradient(135deg, var(--bg0) 0%, #2a2a3e 50%, var(--bg1) 100%);
-            color: var(--fg0);
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* عناصر الخلفية المتحركة */
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
-        .floating-particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: var(--accentPurple);
-            border-radius: 50%;
-            animation: floatUp 20s linear infinite;
-        }
-
-        .floating-particle:nth-child(2n) {
-            background: var(--accentTeal);
-            animation-duration: 25s;
-        }
-
-        .floating-particle:nth-child(3n) {
-            background: var(--accentPink);
-            animation-duration: 18s;
-        }
-
-        @keyframes floatUp {
-            0% {
-                opacity: 0;
-                transform: translateY(100vh) rotate(0deg);
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100px) rotate(360deg);
-            }
-        }
-
-        /* النافيجيشن مع تحسينات */
-        nav {
-            background: rgba(49, 50, 68, 0.85);
-            backdrop-filter: blur(10px);
-            padding: 0.3em 1em;
-            border-bottom: 1px solid var(--bg3);
-            position: relative;
-            z-index: 100;
-        }
-
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #logo img {
-            width: 65px;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        #logo:hover img {
-            transform: scale(1.05) rotate(5deg);
-            filter: brightness(1.1);
-        }
-
-        #btns {
-            margin-left: auto;
-        }
-
-        #btns ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 0.6em;
-        }
-
-        #btns a {
-            text-decoration: none;
-            color: var(--fg1);
-            font-weight: 700;
-            padding: 0.4em 1em;
-            border-radius: var(--border-md);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 0.9em;
-            border: 1px solid transparent;
-            display: inline-block;
-            line-height: 1.2;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #btns a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        #btns a:hover::before {
-            left: 100%;
-        }
-
-        #btns a:hover {
-            background-color: var(--bg3);
-            color: var(--fg0);
-            text-decoration: none;
-            border-color: var(--bg4);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        #btns a[href="plugins.html"] {
-            color: var(--accentBlue);
-            border-color: var(--accentBlue);
-        }
-
-        #btns a[href="plugins.html"]:hover {
-            background-color: rgba(137, 180, 250, 0.15);
-            color: var(--accentSky);
-            border-color: var(--accentSky);
-        }
-
-        #btns a[href*="vencord.dev/download"] {
-            color: var(--accentPurple);
-            border-color: var(--accentPurple);
-        }
-
-        #btns a[href*="vencord.dev/download"]:hover {
-            background-color: rgba(180, 190, 254, 0.15);
-            color: var(--accentLavender);
-            border-color: var(--accentLavender);
-        }
-
-        /* المحتوى الرئيسي */
-        .main-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content-wrapper {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3em 1.5em;
-            text-align: center;
-            position: relative;
-        }
-
-        /* اللوغو مع تحسينات */
-        .logo-container {
-            width: 100%;
-            max-width: 650px;
-            height: 450px;
-            margin: 1em auto 1.5em auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            border: 1px solid var(--bg3);
-            border-radius: var(--border-lg);
-            background: linear-gradient(135deg, var(--bg1), var(--bg2));
-            backdrop-filter: blur(10px);
-            position: relative;
-            box-shadow: var(--shadow-lg);
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        .logo-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(180, 190, 254, 0.1) 50%, 
-                transparent 70%);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        #cute-logo {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            margin: 0;
-            transition: transform 0.5s ease;
-            z-index: 2;
-            position: relative;
-        }
-
-        .logo-container:hover #cute-logo {
-            transform: scale(1.05);
-        }
-
-        /* العناوين مع تأثيرات */
-       h1.main-title {
-    font-size: clamp(2.5em, 6vw, 4em);
-    line-height: 1.1 !important;
-    margin: 0 0 0.2em 0 !important;
-    text-align: center;
-    background: linear-gradient(135deg, var(--accentPurple), var(--accentTeal), var(--accentPink));
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent !important; /* تأكد من هذه */
-    background-clip: text;
-    color: transparent !important; /* وأضف هذه أيضًا للتأكد */
-    font-weight: 700;
-    animation: gradientShift 4s ease infinite;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        h2.subtitle {
-            font-size: clamp(1.2em, 3vw, 1.8em);
-            line-height: 1.3 !important;
-            margin: 0 0 1.5em 0 !important;
-            text-align: center;
-            color: var(--fg1);
-            font-weight: 400;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        /* الأزرار مع تحسينات */
-        .button-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1em;
-            margin-top: 2em;
-        }
-
-        .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            text-align: center;
-            font-weight: 700;
-            color: var(--fg0);
-            padding: 0.8em 1.8em;
-            border-radius: var(--border-md);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid transparent;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(20px) scale(0.95);
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accentPurple), var(--accentMauve));
-            color: var(--bg0);
-            border-color: var(--accentPurple);
-            box-shadow: 0 4px 15px rgba(180, 190, 254, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, var(--accentMauve), var(--accentPurple));
-            text-decoration: none;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(180, 190, 254, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, var(--bg3), var(--bg2));
-            color: var(--fg0);
-            border-color: var(--bg4);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, var(--bg4), var(--bg3));
-            text-decoration: none;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn:active {
-            transform: translateY(-1px) scale(0.98);
-        }
-
-        .btn:focus-visible {
-            outline: 2px solid var(--accentBlue);
-            outline-offset: 2px;
-        }
-
-        /* الفوتر */
-        footer {
-            margin-top: auto;
-            padding: 1.5em 1em;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: #ffffff;
-            text-align: center;
-            font-family: 'Noto Sans Arabic', sans-serif;
-            line-height: 1.6;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .source-and-disclaimer {
-            font-size: 0.85em;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1em;
-        }
-
-        .source-and-disclaimer a {
-            color: var(--accentAqua);
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
-
-        .source-and-disclaimer a:hover {
-            color: var(--accentTeal);
-        }
-
-        .divider {
-            margin: 0 0.5em;
-            opacity: 0.6;
-        }
-
-        /* تأثيرات متحركة إضافية */
-        .pulse-animation {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .bounce-animation {
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-wrapper {
-                padding: 2em 1rem;
-            }
-            
-            .button-group {
-                gap: 0.8em;
-            }
-            
-            .btn {
-                padding: 0.7em 1.5em;
-                font-size: 0.9em;
-            }
-
-            .logo-container {
-                height: 350px;
-                max-width: 500px;
-            }
-
-            nav {
-                padding: 0.5em 1em;
-            }
-
-            #btns ul {
-                gap: 0.4em;
-            }
-
-            #btns a {
-                padding: 0.3em 0.8em;
-                font-size: 0.8em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .button-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .logo-container {
-                height: 280px;
-            }
-        }
-
-        /* تأثيرات التفاعل مع الماوس */
-        .interactive-element {
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .interactive-element:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-        }
-
-        /* تأثيرات الشحن */
-        .loading-animation {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* عناصر زخرفية */
-        .decoration-dots {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            opacity: 0.1;
-        }
-
-        .decoration-dot {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--accentPurple);
-            border-radius: 50%;
-            animation: twinkle 3s ease-in-out infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.5); }
-        }
-    </style>
-</head>
-
-<body data-astro-cid-sckkx6r4="">
-    <!-- عناصر الخلفية المتحركة -->
-    <div class="floating-elements" id="floatingElements"></div>
-    
-    <!-- عناصر زخرفية -->
-    <div class="decoration-dots" id="decorationDots"></div>
-
-    <script>
-        const theme = localStorage.theme?.toLowerCase();
-        const options = ["light", "dark"];
-        const osDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (options.includes(theme)) {
-            document.documentElement.className = theme;
-        } else if (osDark) {
-            document.documentElement.className = 'dark';
-        } else {
-            document.documentElement.className = 'light';
-        }
-    </script>
-
-    <nav data-astro-cid-ymhdp2rl="">
-        <div class="nav-content interactive-element" data-astro-cid-ymhdp2rl="">
-            <div data-astro-cid-ymhdp2rl="" id="logo">
-                <a data-astro-cid-ymhdp2rl="" href="index.html" id="title">
-                    <img alt="VenSHORT Home" data-astro-cid-ymhdp2rl="" src="assets/logo-nav-oneko-padding.png"/>
-                </a>
-            </div>
-            <div class="p-label-m" data-astro-cid-ymhdp2rl="" id="btns">
-                <ul data-astro-cid-ymhdp2rl="" id="right">
-                    <li data-astro-cid-ymhdp2rl="">
-                        <a data-astro-cid-ymhdp2rl="" href="plugins.html">الإضافات ⚙️</a>
-                    </li>
-                    <li data-astro-cid-ymhdp2rl="">
-                        <a data-astro-cid-ymhdp2rl="" href="https://vencord.dev/download/">تنزيل Vencord الرسمي</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="main-container">
-        <div class="content-wrapper">
-            <header>
-                <div class="logo-container">
-                    <img alt="Vencord cute wordmark" id="cute-logo" src="assets/cute-logo.avif"/>
-                </div>
-
-                <h1 class="main-title">✨ VenSHORT | فينشورت ✨</h1>
-                <h2 class="subtitle">تخصيص Vencord الأجمل والأسهل للديسكورد - بالعربية!</h2>
-
-                <div class="button-group">
-                    <a class="btn btn-primary" href="plugins.html">
-                        استعراض وتكوين الإضافات
-                    </a>
-                    <a class="btn btn-secondary" href="https://vencord.dev/download/">
-                        تنزيل Vencord (الرسمي)
-                    </a>
-                    <a class="btn btn-primary" href="https://github.com/nvkq/VENshort">
-                        VenSHORT على GitHub
-                    </a>
-                    <a class="btn btn-secondary" href="https://github.com/Vendicated/Vencord">
-                        Vencord على GitHub
-                    </a>
-                </div>
-            </header>
-        </div>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-content">
+        <div class="loading-spinner" id="loadingSpinner"></div>
+        <div class="loading-text">جاري التحميل...</div>
+      </div>
     </div>
 
-    <footer data-astro-cid-sz7xmlte="">
-        <div class="footer-content" data-astro-cid-sz7xmlte="">
-            <div class="source-and-disclaimer" data-astro-cid-sz7xmlte="">
-                <span data-astro-cid-sz7xmlte="">
-                    <a data-astro-cid-sz7xmlte="" href="https://vencord.dev">"شكرًا لفريق Vencord على عملهم الرائع! 🙌"</a>
-                    <span class="divider" data-astro-cid-sz7xmlte="">—</span>
-                    <span data-astro-cid-sz7xmlte="">
-                        هذه الصفحة هي مشروع عربي يهدف إلى تسهيل استخدام وتخصيص Vencord، مع الحفاظ على جميع الحقوق الأصلية للمطورين الأساسيين. 
-                    </span>
-                </span>
-                <p>تم تطويره بواسطة مساهمي Vencord | تم تعريبه وتحسينه بواسطة <a href="https://x.com/jnjon0" target="_blank" rel="noopener noreferrer" style="color: var(--accentAqua);">SMSM</a></p>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="gradient-orb orb-4"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="floating-particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">
+            <img
+              src="assets/images/logo-nav-oneko-padding.png"
+              alt="VenSHORT Logo"
+              style="max-width: 64px; width: 100%; height: auto"
+            />
+          </div>
+          <span class="logo-text">VenSHORT</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="plugins.html" class="nav-link">الإضافات ⚙️</a></li>
+          <li>
+            <a
+              href="https://vencord.dev/download/"
+              class="nav-link"
+              target="_blank"
+              >تنزيل Vencord</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/nvkq/VENshort"
+              class="nav-link"
+              target="_blank"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="logo-container" id="logoContainer">
+            <div class="hero-logo">
+              <img
+                src="assets/images/logo.png"
+                alt="VenSHORT Hero Logo"
+                style="max-width: 220px; width: 100%; height: auto"
+              />
             </div>
+          </div>
+
+          <h1 class="hero-title" id="heroTitle">
+            <span class="title-line">✨ VenSHORT</span>
+            <span class="title-line">فينشورت ✨</span>
+          </h1>
+
+          <p class="hero-subtitle" id="heroSubtitle">
+            تخصيص Vencord الأجمل والأسهل للديسكورد - بالعربية!
+          </p>
+
+          <div class="button-group" id="buttonGroup">
+            <a href="plugins.html" class="btn btn-primary">
+              <span class="btn-icon">🔧</span>
+              <span>استعراض وتكوين الإضافات</span>
+            </a>
+            <a
+              href="https://vencord.dev/download/"
+              class="btn btn-secondary"
+              target="_blank"
+            >
+              <span class="btn-icon">📥</span>
+              <span>تنزيل Vencord الرسمي</span>
+            </a>
+            <a
+              href="https://github.com/nvkq/VENshort"
+              class="btn btn-accent"
+              target="_blank"
+            >
+              <span class="btn-icon">🌟</span>
+              <span>VenSHORT على GitHub</span>
+            </a>
+          </div>
         </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features-section" id="featuresSection">
+        <div class="features-container">
+          <h2 class="features-title">المميزات الرئيسية</h2>
+          <div class="features-grid">
+            <div class="feature-card" data-feature="design">
+              <div class="feature-icon">🎨</div>
+              <h3 class="feature-title">واجهة عربية جميلة</h3>
+              <p class="feature-description">
+                تصميم أنيق ومتجاوب مع دعم كامل للغة العربية وتخطيط RTL
+              </p>
+            </div>
+            <div class="feature-card" data-feature="ease">
+              <div class="feature-icon">⚡</div>
+              <h3 class="feature-title">سهولة الاستخدام</h3>
+              <p class="feature-description">
+                تكوين الإضافات وإنشاء ملفات التكوين بنقرات قليلة
+              </p>
+            </div>
+            <div class="feature-card" data-feature="custom">
+              <div class="feature-icon">🔧</div>
+              <h3 class="feature-title">تخصيص متقدم</h3>
+              <p class="feature-description">
+                إعدادات مفصلة لكل إضافة مع معاينة فورية للتغييرات
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-content">
+        <p class="footer-text">
+          تم تطويره بواسطة مساهمي Vencord | تم تعريبه وتحسينه بواسطة
+          <a href="https://x.com/jnjon0" target="_blank" class="footer-link"
+            >SMSM</a
+          >
+        </p>
+        <div class="footer-links">
+          <a href="https://vencord.dev" class="footer-link" target="_blank"
+            >شكرًا لفريق Vencord 🙌</a
+          >
+          <a
+            href="https://discord.com/invite/D9uwnFnqmd"
+            class="footer-link"
+            target="_blank"
+            >Discord</a
+          >
+          <a
+            href="https://github.com/Vendicated/Vencord"
+            class="footer-link"
+            target="_blank"
+            >المصدر</a
+          >
+        </div>
+      </div>
     </footer>
 
-    <script>
-        // إنشاء الجسيمات المتحركة في الخلفية
-        function createFloatingParticles() {
-            const container = document.getElementById('floatingElements');
-            for (let i = 0; i < 30; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'floating-particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                container.appendChild(particle);
-            }
-        }
-
-        // إنشاء النقاط الزخرفية
-        function createDecorationDots() {
-            const container = document.getElementById('decorationDots');
-            for (let i = 0; i < 20; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'decoration-dot';
-                dot.style.left = Math.random() * 100 + '%';
-                dot.style.top = Math.random() * 100 + '%';
-                dot.style.animationDelay = Math.random() * 3 + 's';
-                container.appendChild(dot);
-            }
-        }
-
-        // تحريك العناصر عند التحميل
-        function initAnimations() {
-            // تحريك اللوغو
-            anime({
-                targets: '.logo-container',
-                opacity: [0, 1],
-                translateY: [50, 0],
-                scale: [0.8, 1],
-                duration: 1000,
-                easing: 'easeOutExpo',
-                delay: 200
-            });
-
-            // تحريك العنوان الرئيسي
-            anime({
-                targets: '.main-title',
-                opacity: [0, 1],
-                translateY: [30, 0],
-                duration: 800,
-                easing: 'easeOutQuad',
-                delay: 600
-            });
-
-            // تحريك العنوان الفرعي
-            anime({
-                targets: '.subtitle',
-                opacity: [0, 1],
-                translateY: [20, 0],
-                duration: 600,
-                easing: 'easeOutQuad',
-                delay: 800
-            });
-
-            // تحريك الأزرار
-            anime({
-                targets: '.btn',
-                opacity: [0, 1],
-                translateY: [20, 0],
-                scale: [0.95, 1],
-                duration: 500,
-                easing: 'easeOutQuad',
-                delay: anime.stagger(100, {start: 1000})
-            });
-
-            // تحريك الفوتر
-            anime({
-                targets: 'footer',
-                opacity: [0, 1],
-                translateY: [30, 0],
-                duration: 600,
-                easing: 'easeOutQuad',
-                delay: 1400
-            });
-        }
-
-        // تأثيرات التفاعل مع الأزرار
-        function initButtonInteractions() {
-            const buttons = document.querySelectorAll('.btn');
-            
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', () => {
-                    anime({
-                        targets: button,
-                        scale: 1.05,
-                        duration: 200,
-                        easing: 'easeOutQuad'
-                    });
-                });
-
-                button.addEventListener('mouseleave', () => {
-                    anime({
-                        targets: button,
-                        scale: 1,
-                        duration: 200,
-                        easing: 'easeOutQuad'
-                    });
-                });
-
-                button.addEventListener('mousedown', () => {
-                    anime({
-                        targets: button,
-                        scale: 0.98,
-                        duration: 100,
-                        easing: 'easeOutQuad'
-                    });
-                });
-
-                button.addEventListener('mouseup', () => {
-                    anime({
-                        targets: button,
-                        scale: 1.05,
-                        duration: 100,
-                        easing: 'easeOutQuad'
-                    });
-                });
-            });
-        }
-
-        // تأثيرات اللوغو التفاعلية
-        function initLogoInteractions() {
-            const logoContainer = document.querySelector('.logo-container');
-            const cuteLogo = document.getElementById('cute-logo');
-
-            logoContainer.addEventListener('mouseenter', () => {
-                anime({
-                    targets: cuteLogo,
-                    scale: 1.1,
-                    rotate: '5deg',
-                    duration: 300,
-                    easing: 'easeOutQuad'
-                });
-            });
-
-            logoContainer.addEventListener('mouseleave', () => {
-                anime({
-                    targets: cuteLogo,
-                    scale: 1,
-                    rotate: '0deg',
-                    duration: 300,
-                    easing: 'easeOutQuad'
-                });
-            });
-
-            logoContainer.addEventListener('click', () => {
-                anime({
-                    targets: cuteLogo,
-                    scale: [1.1, 0.95, 1.1],
-                    rotate: ['5deg', '-5deg', '5deg'],
-                    duration: 400,
-                    easing: 'easeInOutQuad'
-                });
-            });
-        }
-
-        // تأثيرات الماوس العامة
-        function initMouseEffects() {
-            document.addEventListener('mousemove', (e) => {
-                const cursor = { x: e.clientX, y: e.clientY };
-                const particles = document.querySelectorAll('.floating-particle');
-                
-                particles.forEach((particle, index) => {
-                    const speed = (index % 3 + 1) * 0.0002;
-                    const x = (cursor.x - window.innerWidth / 2) * speed;
-                    const y = (cursor.y - window.innerHeight / 2) * speed;
-                    
-                    particle.style.transform = `translate(${x}px, ${y}px)`;
-                });
-            });
-        }
-
-        // تحريكات مستمرة للعناصر
-        function initContinuousAnimations() {
-            // تحريك النقاط الزخرفية
-            anime({
-                targets: '.decoration-dot',
-                scale: [1, 1.5, 1],
-                opacity: [0.1, 0.8, 0.1],
-                duration: 3000,
-                easing: 'easeInOutSine',
-                delay: anime.stagger(200),
-                loop: true
-            });
-
-            // تحريك خفيف للعنوان الرئيسي
-            anime({
-                targets: '.main-title',
-                translateY: [0, -5, 0],
-                duration: 4000,
-                easing: 'easeInOutSine',
-                loop: true,
-                delay: 2000
-            });
-
-            // تأثير نبضة للأزرار الأساسية
-            setInterval(() => {
-                anime({
-                    targets: '.btn-primary',
-                    boxShadow: [
-                        '0 4px 15px rgba(180, 190, 254, 0.3)',
-                        '0 8px 25px rgba(180, 190, 254, 0.5)',
-                        '0 4px 15px rgba(180, 190, 254, 0.3)'
-                    ],
-                    duration: 2000,
-                    easing: 'easeInOutQuad'
-                });
-            }, 5000);
-        }
-
-        // إضافة تأثيرات التمرير
-        function initScrollAnimations() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        
-                        // تحديد نوع الحركة بناءً على العنصر
-                        if (target.classList.contains('btn')) {
-                            anime({
-                                targets: target,
-                                opacity: [0, 1],
-                                translateY: [30, 0],
-                                scale: [0.8, 1],
-                                duration: 600,
-                                easing: 'easeOutQuad'
-                            });
-                        } else {
-                            anime({
-                                targets: target,
-                                opacity: [0, 1],
-                                translateY: [50, 0],
-                                duration: 800,
-                                easing: 'easeOutExpo'
-                            });
-                        }
-                        
-                        observer.unobserve(target);
-                    }
-                });
-            }, { 
-                threshold: 0.1,
-                rootMargin: '50px'
-            });
-
-            // مراقبة العناصر
-            document.querySelectorAll('.btn, footer').forEach(item => {
-                observer.observe(item);
-            });
-        }
-
-        // تأثيرات خاصة للنافيجيشن
-        function initNavAnimations() {
-            const navLinks = document.querySelectorAll('#btns a');
-            const logo = document.querySelector('#logo img');
-
-            // تحريك روابط النافيجيشن عند التحميل
-            anime({
-                targets: navLinks,
-                opacity: [0, 1],
-                translateX: [20, 0],
-                duration: 500,
-                easing: 'easeOutQuad',
-                delay: anime.stagger(100, {start: 300})
-            });
-
-            // تحريك اللوغو في النافيجيشن
-            anime({
-                targets: logo,
-                opacity: [0, 1],
-                scale: [0.8, 1],
-                rotate: ['-10deg', '0deg'],
-                duration: 600,
-                easing: 'easeOutBack',
-                delay: 100
-            });
-
-            // تأثيرات تفاعلية للنافيجيشن
-            navLinks.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    anime({
-                        targets: link,
-                        scale: 1.05,
-                        translateY: -2,
-                        duration: 200,
-                        easing: 'easeOutQuad'
-                    });
-                });
-
-                link.addEventListener('mouseleave', () => {
-                    anime({
-                        targets: link,
-                        scale: 1,
-                        translateY: 0,
-                        duration: 200,
-                        easing: 'easeOutQuad'
-                    });
-                });
-            });
-        }
-
-        // إضافة تأثيرات الكتابة المتحركة
-        function initTypingEffect() {
-            const subtitle = document.querySelector('.subtitle');
-            const originalText = subtitle.textContent;
-            subtitle.textContent = '';
-            subtitle.style.opacity = '1';
-
-            setTimeout(() => {
-                let i = 0;
-                const typeInterval = setInterval(() => {
-                    subtitle.textContent = originalText.slice(0, i + 1);
-                    i++;
-                    
-                    if (i >= originalText.length) {
-                        clearInterval(typeInterval);
-                        
-                        // إضافة تأثير وميض للمؤشر
-                        const cursor = document.createElement('span');
-                        cursor.textContent = '|';
-                        cursor.style.animation = 'blink 1s infinite';
-                        cursor.style.color = 'var(--accentPurple)';
-                        subtitle.appendChild(cursor);
-                        
-                        setTimeout(() => {
-                            cursor.remove();
-                        }, 3000);
-                    }
-                }, 50);
-            }, 1200);
-        }
-
-        // إضافة تأثيرات الضوء المتحرك
-        function createLightRays() {
-            const container = document.querySelector('.content-wrapper');
-            
-            for (let i = 0; i < 3; i++) {
-                const ray = document.createElement('div');
-                ray.style.cssText = `
-                    position: absolute;
-                    top: 0;
-                    left: ${Math.random() * 100}%;
-                    width: 2px;
-                    height: 100%;
-                    background: linear-gradient(to bottom, transparent, var(--accentPurple), transparent);
-                    opacity: 0.1;
-                    animation: lightRay ${8 + Math.random() * 4}s linear infinite;
-                    pointer-events: none;
-                `;
-                container.appendChild(ray);
-            }
-        }
-
-        // تأثيرات الصوت البصرية (محاكاة)
-        function initVisualSoundEffects() {
-            const buttons = document.querySelectorAll('.btn');
-            
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // إنشاء موجات دائرية عند النقر
-                    const rect = button.getBoundingClientRect();
-                    const ripple = document.createElement('div');
-                    
-                    ripple.style.cssText = `
-                        position: fixed;
-                        top: ${rect.top + rect.height / 2}px;
-                        left: ${rect.left + rect.width / 2}px;
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                        background: var(--accentPurple);
-                        opacity: 0.8;
-                        pointer-events: none;
-                        z-index: 1000;
-                        transform: translate(-50%, -50%);
-                    `;
-                    
-                    document.body.appendChild(ripple);
-                    
-                    anime({
-                        targets: ripple,
-                        scale: [0, 8],
-                        opacity: [0.8, 0],
-                        duration: 600,
-                        easing: 'easeOutQuad',
-                        complete: () => ripple.remove()
-                    });
-                });
-            });
-        }
-
-        // تشغيل جميع التأثيرات عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', () => {
-            // إنشاء العناصر التفاعلية
-            createFloatingParticles();
-            createDecorationDots();
-            createLightRays();
-            
-            // تشغيل الحركات
-            setTimeout(() => {
-                initAnimations();
-                initNavAnimations();
-                initButtonInteractions();
-                initLogoInteractions();
-                initMouseEffects();
-                initScrollAnimations();
-                initVisualSoundEffects();
-                
-                // تأثيرات متأخرة
-                setTimeout(() => {
-                    initContinuousAnimations();
-                    initTypingEffect();
-                }, 2000);
-            }, 100);
-        });
-
-        // إضافة الأنماط الإضافية للحركات
-        const additionalStyles = document.createElement('style');
-        additionalStyles.textContent = `
-            @keyframes blink {
-                0%, 50% { opacity: 1; }
-                51%, 100% { opacity: 0; }
-            }
-            
-            @keyframes lightRay {
-                0% { transform: translateX(-100px) skewX(-20deg); opacity: 0; }
-                50% { opacity: 0.1; }
-                100% { transform: translateX(calc(100vw + 100px)) skewX(-20deg); opacity: 0; }
-            }
-            
-            .btn-primary {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .btn-primary::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-                transition: left 0.6s;
-            }
-            
-            .btn-primary:hover::after {
-                left: 100%;
-            }
-            
-            /* تحسينات إضافية للمظهر */
-            .main-title::before {
-                content: '✨';
-                display: inline-block;
-                animation: sparkle 2s ease-in-out infinite;
-                margin-left: 0.5em;
-            }
-            
-            .main-title::after {
-                content: '✨';
-                display: inline-block;
-                animation: sparkle 2s ease-in-out infinite reverse;
-                margin-right: 0.5em;
-            }
-            
-            @keyframes sparkle {
-                0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
-                50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
-            }
-            
-            /* تأثيرات إضافية للخلفية */
-            body::before {
-                content: '';
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: 
-                    radial-gradient(circle at 20% 80%, rgba(180, 190, 254, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(148, 226, 213, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 40%, rgba(245, 194, 231, 0.1) 0%, transparent 50%);
-                pointer-events: none;
-                z-index: -2;
-                animation: backgroundPulse 10s ease-in-out infinite;
-            }
-            
-            @keyframes backgroundPulse {
-                0%, 100% { opacity: 0.5; }
-                50% { opacity: 0.8; }
-            }
-        `;
-        document.head.appendChild(additionalStyles);
-
-        // معالج خاص للأخطاء وتحسين الأداء
-        window.addEventListener('error', (e) => {
-            console.warn('Animation error handled:', e.error);
-        });
-
-        // تحسين الأداء عند تغيير حجم النافذة
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                // إعادة تعيين بعض القيم عند تغيير الحجم
-                const particles = document.querySelectorAll('.floating-particle');
-                particles.forEach(particle => {
-                    particle.style.left = Math.random() * 100 + '%';
-                });
-            }, 250);
-        });
-    </script>
-</body>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>

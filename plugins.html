@@ -1,763 +1,295 @@
 <!DOCTYPE html>
-<html data-astro-cid-sckkx6r4="" lang="ar" dir="rtl">
-  <!-- read if cute :3 -->
+<html lang="ar" dir="rtl">
   <head>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>الإضافات ومولد التكوين | VenSHORT</title>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="assets/favicon.png" rel="icon"/>
-    <link as="font" crossorigin="" href="fonts/Inter.var-subset.woff2" rel="preload" type="font/woff2"/>
-    <meta content="تصفح قائمة إضافات Vencord المصنفة، وقم بتخصيص الإعدادات، وأنشئ ملف التكوين الخاص بك بسهولة." name="description"/>
-    <meta content="مساهمو Vencord و VenSHORT" name="author"/>
-    <meta content="#dd7878" name="theme-color"/>
-    <meta content="website" name="og:type"/>
-    <meta content="الإضافات ومولد التكوين | VenSHORT" name="og:title"/>
-    <meta content="تصفح قائمة إضافات Vencord المصنفة، وقم بتخصيص الإعدادات، وأنشئ ملف التكوين الخاص بك بسهولة." name="og:description"/>
-    <meta content="plugins.html" name="og:url"/>
-    <meta content="assets/favicon.png" name="og:image"/>
-    <meta content="Vencord / VenSHORT" name="og:site_name"/>
-    <script type="application/ld+json"></script>
-
-    <link href="sitemap-index.xml" rel="sitemap"/>
-    <meta name="darkreader-lock"/>
-    <link href="plugins.html" rel="canonical"/>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
-
-      body {
-        font-family: 'Noto Sans Arabic', sans-serif;
-      }
-      /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-      html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
-    </style>
-
-    <link href="_astro/gdpr.61vMHWDU.css" rel="stylesheet"/>
-    <style>
-      /* CSS Variables (Catppuccin Mocha) */
-      :root {
-        --bg0: #1e1e2e; --bg1: #313244; --bg2: #45475a; --bg3: #585b70; --bg4: #6c7086;
-        --fg0: #cdd6f4; --fg1: #bac2de; --grey0: #9399b2; --grey1: #7f849c; --grey2: #6c7086;
-        --accentBlue: #89b4fa; --accentLavender: #b4befe; --accentSapphire: #74c7ec;
-        --accentSky: #89dceb; --accentTeal: #94e2d5; --accentGreen: #a6e3a1;
-        --accentYellow: #f9e2af; --accentPeach: #fab387; --accentMaroon: #eba0ac;
-        --accentRed: #f38ba8; --accentMauve: #cba6f7; --accentPink: #f5c2e7;
-        --accentFlamingo: #f2cdcd; --accentRosewater: #f5e0dc;
-        --accentPurple: #b4befe; --accentAqua: #94e2d5;
-        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        --border-sm: 0.125rem; --border-md: 0.25rem; --border-lg: 0.5rem;
-      }
-      body { display: flex; flex-direction: column; min-height: 100vh; background-color: var(--bg0); color: var(--fg0); }
-      .container, astro-island { flex: 1; max-width: 1200px; margin: 0 auto; padding: 1em 2em; }
-      footer { margin-top: auto; padding: 1em; background-color: var(--bg1); color: var(--fg1); text-align: center; font-family: 'Noto Sans Arabic', sans-serif; border-top: 1px solid var(--bg3); }
-      footer p { margin: 5px 0; }
-      h1.p-page-title { color: var(--accentBlue); font-size: 2.5em; margin-bottom: 0.2em; }
-      p.p-subtitle { font-size: 1.1em; color: var(--fg1); margin-bottom: 1.5em; }
-      .category-description { font-size: 0.95em; color: var(--fg1); margin-bottom: 1.5em; margin-top: -0.5em; line-height: 1.5; }
-      h2.category-header { font-size: 1.8em; margin-block: 2em 0.8em; color: var(--accentLavender); border-bottom: 2px solid var(--accentLavender); padding-bottom: 0.3em; }
-      h3 { margin: 0; word-wrap: break-word; line-height: 1.3; font-size: 1.1em; color: var(--fg0); font-weight: 700; }
-      .author { white-space: nowrap; font-size: 0.85em; color: var(--grey1); }
-      .author:before { content: "بواسطة "; color: var(--grey1); }
-      .description { font-size: .9em; color: var(--fg1); margin-bottom: 0.5em; line-height: 1.4; }
-      .plugin { display: flex; align-items: flex-start; gap: 15px; padding: 1.5em; border-radius: var(--border-lg); box-shadow: var(--shadow-md); transition: box-shadow 0.3s ease, transform 0.2s ease; background-color: var(--bg1); cursor: pointer; }
-      .plugin:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-      .plugin .plugin-content { flex-grow: 1; display: flex; flex-direction: column; gap: 0.3em; }
-      .plugin input[type="checkbox"].plugin-checkbox { flex-shrink: 0; margin-top: 0.2em; height: 1.3em; width: 1.3em; cursor: pointer; accent-color: var(--accentPurple); pointer-events: all !important; }
-      .plugin-settings { margin-top: 0.8em; padding-top: 0.8em; border-top: 1px solid var(--bg3); display: flex; flex-direction: column; gap: 0.6em; }
-      .plugin-setting { display: flex; align-items: center; gap: 0.8em; }
-      .plugin-setting label { font-size: 0.85em; color: var(--fg1); flex-basis: 120px; flex-shrink: 0; text-align: right; margin-right: 5px; pointer-events: all !important; cursor: default; }
-      .plugin-setting input[type="text"], .plugin-setting input[type="number"], .plugin-setting input[type="color"], .plugin-setting select { font-size: 0.85em; padding: 0.3em 0.5em; border-radius: var(--border-sm); border: 1px solid var(--bg3); background-color: var(--bg0); color: var(--fg0); flex-grow: 1; max-width: 200px; box-sizing: border-box; pointer-events: all !important; cursor: text; }
-      .plugin-setting input[type="checkbox"] { height: 1.1em; width: 1.1em; accent-color: var(--accentPurple); cursor: pointer; order: -1; margin-right: -0.4em; pointer-events: all !important; }
-      .plugin-setting input[type="color"] { padding: 0.1em; min-height: 25px; cursor: pointer; }
-      .plugin-setting select { cursor: pointer; }
-      #generation-section { margin-top: 3em; padding: 2.5em; background-color: var(--bg2); border-radius: var(--border-lg); display: flex; flex-direction: column; gap: 1.5em; border: 1px solid var(--bg3); }
-      #generation-section h2 { font-size: 1.8em; margin: 0 0 0.5em 0; padding: 0; border: none; color: var(--accentTeal); }
-      #generation-controls { display: flex; gap: 1em; flex-wrap: wrap; align-items: center; }
-      #generateConfigBtn, #copyConfigBtn, #downloadConfigBtn, #selectAllBtn, #selectSuggestedBtn, #disableAllBtn, #restartDiscordBtn { padding: 0.8em 1.6em; color: var(--bg0); border: none; border-radius: var(--border-md); cursor: pointer; font-size: 0.95em; transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease; font-family: 'Noto Sans Arabic', sans-serif; opacity: 1; font-weight: 700; }
-      #copyConfigBtn, #downloadConfigBtn { color: rgba(0,0,0, 0.6); }
-      #copyConfigBtn.enabled, #downloadConfigBtn.enabled { color: var(--bg0); }
-      #generateConfigBtn { background-color: var(--accentBlue); }
-      #copyConfigBtn, #downloadConfigBtn, #selectAllBtn, #selectSuggestedBtn, #disableAllBtn { background-color: var(--accentPurple); }
-      #restartDiscordBtn { background-color: var(--accentRed); margin-right: auto; }
-      #copyConfigBtn, #downloadConfigBtn { opacity: 0.6; cursor: not-allowed; }
-      #copyConfigBtn.enabled, #downloadConfigBtn.enabled { opacity: 1; cursor: pointer; }
-      #generateConfigBtn:hover { background-color: hsl(from var(--accentBlue) h s calc(l + 5%)); }
-      #copyConfigBtn.enabled:hover, #downloadConfigBtn.enabled:hover, #selectAllBtn:hover, #selectSuggestedBtn:hover, #disableAllBtn:hover { background-color: hsl(from var(--accentPurple) h s calc(l + 5%)); }
-      #restartDiscordBtn:hover { background-color: hsl(from var(--accentRed) h s calc(l + 5%)); }
-      #generateConfigBtn:active, #disableAllBtn:active, #copyConfigBtn.enabled:active, #downloadConfigBtn.enabled:active, #selectAllBtn:active, #selectSuggestedBtn:active, #restartDiscordBtn:active { transform: scale(0.98); }
-      #copyConfigBtn.copied { background-color: var(--accentAqua); color: var(--bg0); }
-      #copyConfigBtn.copied:hover { background-color: hsl(from var(--accentAqua) h s calc(l + 5%)); }
-      #jsonOutput { width: 100%; min-height: 350px; background-color: var(--bg0); color: var(--fg0); border: 1px solid var(--bg3); border-radius: var(--border-md); padding: 1.5em; font-family: monospace; white-space: pre; overflow: auto; box-sizing: border-box; resize: vertical; direction: ltr; text-align: left; font-size: 0.9em; line-height: 1.5; }
-      #selection-buttons { margin-bottom: 1.5em; margin-top: 1.5em; display: flex; gap: 1em; flex-wrap: wrap; }
-      #selection-buttons button { padding: 0.8em 1.6em; color: var(--bg0); border: none; border-radius: var(--border-md); cursor: pointer; font-size: 0.95em; transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease; font-family: 'Noto Sans Arabic', sans-serif; opacity: 1; font-weight: 700; background-color: var(--accentPink); }
-      #selection-buttons button:hover { background-color: hsl(from var(--accentPink) h s calc(l + 5%)); }
-      #selection-buttons button:active { transform: scale(0.98); }
-      #required-plugins-notice { margin-top: 1.5em; padding: 1em 1.5em; background-color: rgba(from var(--accentYellow) r g b / 0.1); border: 1px solid rgba(from var(--accentYellow) r g b / 0.3); border-radius: var(--border-md); font-size: 0.9em; color: var(--accentYellow); }
-      #required-plugins-notice h4 { margin-top: 0; margin-bottom: 0.5em; color: var(--accentYellow); font-size: 1.1em; font-weight: 700; }
-      #required-plugins-notice p { margin-bottom: 1em; line-height: 1.5; color: var(--fg1); }
-      .required-plugin { background-color: rgba(from var(--accentYellow) r g b / 0.05); border-radius: var(--border-sm); padding: 0.6em 1em; margin-bottom: 0.5em; color: var(--fg0); display: block; }
-      .plugin.required-core-plugin { background-color: rgba(from var(--accentYellow) r g b / 0.05); border: 1px solid rgba(from var(--accentYellow) r g b / 0.2); cursor: not-allowed; }
-      .plugin.required-core-plugin:hover { box-shadow: var(--shadow-md); transform: none; }
-      .plugin.required-core-plugin input[type="checkbox"] { opacity: 0.6; cursor: not-allowed; }
-      #theme-selection { margin-top: 1.5em; padding: 1em 1.5em; background-color: rgba(from var(--accentSky) r g b / 0.1); border: 1px solid rgba(from var(--accentSky) r g b / 0.3); border-radius: var(--border-md); font-size: 0.9em; }
-      #theme-selection h4 { margin-top: 0; margin-bottom: 0.8em; color: var(--accentSky); font-size: 1.1em; font-weight: 700; }
-      .theme-options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8em; }
-      .theme-option { display: flex; align-items: center; padding: 0.6em; border-radius: var(--border-sm); background-color: rgba(from var(--accentSky) r g b / 0.05); }
-      .theme-option input[type="checkbox"] { height: 1.2em; width: 1.2em; cursor: pointer; accent-color: var(--accentSky); flex-shrink: 0; pointer-events: all; margin-left: 0.6em; }
-      .theme-option label { display: flex; align-items: center; gap: 0.6em; flex-grow: 1; cursor: pointer; overflow: hidden; }
-      .theme-option .theme-name { font-weight: 600; color: var(--fg0); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-      .theme-option .theme-author { color: var(--accentPeach); font-size: 0.9em; margin-right: 0.5em; white-space: nowrap; flex-shrink: 0; }
-      .theme-option .theme-author::before { content: "بواسطة "; color: var(--grey1); }
-      .theme-preview-link { margin-right: auto; margin-left: 0.5em; font-size: 0.85em; color: var(--accentTeal); text-decoration: none; white-space: nowrap; flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.3em; pointer-events: all; }
-      .theme-preview-link:hover { color: hsl(from var(--accentTeal) h s calc(l + 10%)); text-decoration: underline; }
-      .theme-preview-link svg { width: 1em; height: 1em; vertical-align: middle; }
-      .plugins-container { }
-      .category-section { margin-bottom: 3em; }
-      .plugins-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 1.2em; }
-      .search { position: relative; height: auto; margin-top: 1.5em; margin-bottom: 1em; }
-      .search svg { position: absolute; right: 1em; left: auto; top: 50%; transform: translateY(-50%); z-index: 2; color: var(--grey0); height: 1.1em; pointer-events: none; }
-      .search input { position: relative; text-indent: 0; padding-right: 2.8em; padding-left: 1em; background: var(--bg2); color: var(--fg0); border: 1px solid var(--bg3); border-radius: var(--border-md); box-sizing: border-box; width: 100%; margin: 0; padding-top: 0.9em; padding-bottom: 0.9em; font-size: 1em; }
-      .search input::placeholder { color: var(--grey1); }
-      .search input:focus { outline: none; border-color: var(--accentBlue); box-shadow: 0 0 0 2px rgba(from var(--accentBlue) r g b / 0.3); }
-      #no-results-message { text-align: center; margin-top: 2em; color: var(--grey0); font-style: italic; }
-      #logo img { width: 100px; height: auto; max-width: 100%; vertical-align: middle; }
-      nav { background-color: var(--bg1); padding: 0.5em 1em; border-bottom: 1px solid var(--bg3); }
-      .nav-content { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
-      #btns ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1em; }
-      #btns a { text-decoration: none; color: var(--accentPurple); font-weight: 700; padding: 0.5em 1em; border-radius: var(--border-md); transition: background-color 0.2s ease, color 0.2s ease; display: block; }
-      #btns a:hover { background-color: rgba(from var(--accentPurple) r g b / 0.1); }
-      #btns a.active-page { background-color: rgba(from var(--accentPurple) r g b / 0.2); color: var(--accentRosewater); }
-      .ellipsis-overflow { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    </style>
-    <script>
-      // تعريف الإضافات الإجبارية
-      const requiredPlugins = ["NoTrack", "Settings", "SupportHelper", "CrashHandler"];
-
-      // --- تعريف فئات الإضافات ---
-      const categories = {
-        "api": { name: "واجهات برمجة التطبيقات (API)", description: "توفر هذه الإضافات وظائف برمجية للمطورين الآخرين لبناء إضافاتهم الخاصة أو للتفاعل مع Vencord و Discord بشكل أعمق. لا تحتاج لتفعيلها إلا إذا طُلِب منك ذلك من إضافة أخرى." },
-        "core": { name: "الإضافات الأساسية", description: "إضافات ضرورية لعمل Vencord بشكل صحيح، مثل نظام الإعدادات ومعالج الأخطاء. يتم تفعيلها دائمًا ولا يمكن تعطيلها." },
-        "appearance": { name: "المظهر والتخصيص", description: "إضافات لتغيير شكل ومظهر واجهة Discord، مثل تعديل الألوان، تحسين عرض العناصر، أو إضافة تأثيرات بصرية." },
-        "utility": { name: "الأدوات المساعدة", description: "إضافات تضيف وظائف وأدوات عملية لتحسين الإنتاجية أو إضافة ميزات مفيدة غير موجودة في Discord افتراضيًا." },
-        "fun": { name: "المرح والترفيه", description: "إضافات تضيف لمسة من المرح والتسلية، مثل استبدال صور GIF أو تخصيصات طريفة أخرى." },
-        "privacy": { name: "الخصوصية والأمان", description: "إضافات تركز على حماية خصوصيتك عن طريق منع التتبع، إخفاء المعلومات، أو تنظيف الروابط." },
-        "misc": { name: "متنوعة", description: "إضافات لا تندرج بوضوح تحت الفئات الأخرى أو تؤدي وظائف متخصصة جدًا." }
-      };
-
-      // --- بيانات الإضافات ---
-      const pluginsData = [
-        { name: "ChatInputButtonAPI", description: "للمطورين: تتيح إضافة أزرار مخصصة إلى شريط إدخال الدردشة.", author: "Vendicated", category: "api" },
-        { name: "CommandsAPI", description: "للمطورين: تسمح بإنشاء وتسجيل أوامر سلاش (/) مخصصة.", author: "Vendicated", category: "api" },
-        { name: "MemberListDecoratorsAPI", description: "للمطورين: تتيح إضافة أيقونات أو زخارف بجانب أسماء المستخدمين في قائمة الأعضاء.", author: "Vendicated", category: "api" },
-        { name: "MessageAccessoriesAPI", description: "للمطورين: تسمح بإضافة عناصر إضافية (مثل أزرار) أسفل الرسائل.", author: "Vendicated", category: "api" },
-        { name: "MessageDecorationsAPI", description: "للمطورين: تتيح إضافة عناصر مرئية (زخارف) حول أو داخل الرسائل.", author: "Vendicated", category: "api" },
-        { name: "MessageEventsAPI", description: "للمطورين: تسمح بالتفاعل مع أحداث الرسائل (الإرسال، التعديل، الحذف).", author: "Vendicated", category: "api" },
-        { name: "MessagePopoverAPI", description: "للمطورين: تتيح إضافة خيارات مخصصة لقائمة الرسالة المنبثقة.", author: "Vendicated", category: "api" },
-        { name: "MessageUpdaterAPI", description: "للمطورين: تسمح بتعديل محتوى الرسائل ديناميكيًا بعد إرسالها.", author: "Vendicated", category: "api" },
-        { name: "ServerListAPI", description: "للمطورين: تتيح التفاعل مع قائمة الخوادم وتخصيصها.", author: "Vendicated", category: "api" },
-        { name: "UserSettingsAPI", description: "للمطورين: تسمح بإضافة أقسام وإعدادات مخصصة إلى قائمة إعدادات المستخدم.", author: "Vendicated", category: "api" },
-        { name: "DynamicImageModalAPI", description: "للمطورين: تتيح عرض الصور في نافذة منبثقة ديناميكية.", author: "Vendicated", category: "api" },
-        { name: "BadgeAPI", description: "للمطورين: تسمح بإضافة شارات مخصصة إلى ملفات تعريف المستخدمين.", author: "Vendicated", category: "api" },
-        { name: "CrashHandler", description: "أساسي: يعالج الأعطال غير المتوقعة في Vencord ويساعد في تشخيص المشاكل.", author: "Vendicated", category: "core" },
-        { name: "Settings", description: "أساسي: يضيف لوحة تحكم Vencord ضمن إعدادات Discord لإدارة الإضافات والميزات.", author: "Vendicated", category: "core", settings: [ { type: "select", name: "settingsLocation", label: "موقع الإعدادات:", options: [ { value: "aboveNitro", label: "فوق Nitro" }, { value: "belowNitro", label: "تحت Nitro" }, { value: "aboveActivity", label: "فوق الأعدادات" } ], defaultValue: "aboveNitro" } ] },
-        { name: "SupportHelper", description: "أساسي: يوفر أدوات ومعلومات للمساعدة في تشخيص المشكلات وطلب الدعم.", author: "Vendicated", category: "core" },
-        { name: "NoTrack", description: "أساسي/خصوصية: يمنع Discord من جمع بيانات الاستخدام والتحليلات عنك.", author: "Vendicated", category: "privacy", settings: [ { type: "checkbox", name: "disableAnalytics", label: "تعطيل التحليلات:", defaultValue: true } ] },
-        { name: "ClearURLs", description: "خصوصية: يزيل تلقائيًا معلمات التتبع (مثل utm_source) من الروابط.", author: "Vendicated", category: "privacy" },
-        { name: "AnonymiseFileNames", description: "خصوصية: يغير أسماء الملفات التي ترفعها إلى أسماء عامة (مثل 'file.png') قبل الإرسال.", author: "fawn", category: "privacy" },
-        { name: "ClientTheme", description: "مظهر: يتيح لك تغيير لون الخلفية الرئيسي لواجهة Discord.", author: "Vendicated", category: "appearance", settings: [ { type: "color", name: "color", label: "اللون:", defaultValue: "313338" } ] },
-        { name: "BetterFolders", description: "مظهر: يحسن عرض مجلدات الخوادم مع خيار للشريط الجانبي وزر لإغلاق الكل.", author: "Juby210, AutumnVN, Nuckyz", category: "appearance", settings: [ { type: "checkbox", name: "sidebarFolders", label: "مجلدات الشريط الجانبي:", defaultValue: true }, { type: "checkbox", name: "closeAllFolders", label: "زر إغلاق الكل (في المجلدات):", defaultValue: true }, { type: "checkbox", name: "closeAllHomeButton", label: "زر إغلاق الكل (في زر الصفحة الرئيسية):", defaultValue: true } ] },
-        { name: "BetterRoleDot", description: "مظهر: يسمح بنسخ لون الدور عند النقر على النقطة، ويتيح الجمع بين النقطة والاسم الملون.", author: "Vee, AutumnVN", category: "appearance", settings: [ { type: "checkbox", name: "bothStyles", label: "عرض النقطة والاسم الملون معًا:", defaultValue: true } ] },
-        { name: "AlwaysAnimate", description: "مظهر: يجبر الصور الرمزية والبانرات والرموز التعبيرية المتحركة على التحرك دائمًا.", author: "Fiery", category: "appearance" },
-        { name: "AlwaysExpandRoles", description: "مظهر: يعرض قائمة الأدوار موسعة بالكامل دائمًا عند فتح ملف شخصي.", author: "Chloe", category: "appearance" },
-        { name: "BetterGifAltText", description: "مظهر: يجعل النص البديل لصور GIF أكثر فائدة (باستخدام علامات أو اسم الملف).", author: "Vee", category: "appearance" },
-        { name: "BetterGifPicker", description: "مظهر/أداة: يجعل نافذة اختيار GIF تفتح قسم 'المفضلة' تلقائيًا.", author: "Samwich", category: "appearance" },
-        { name: "BetterNotesBox", description: "مظهر/أداة: يتيح إخفاء صندوق الملاحظات في الملف الشخصي أو تعطيل التدقيق الإملائي فيه.", author: "Vee", category: "appearance" },
-        { name: "BetterSettings", description: "مظهر/أداء: يحسن سلاسة وسرعة فتح قائمة إعدادات Discord.", author: "Kyuuhachi", category: "appearance" },
-        { name: "BiggerStreamPreview", description: "مظهر: يكبر نافذة معاينة البث المباشر عند المرور عليها بالفأرة.", author: "phil", category: "appearance" },
-        { name: "BlurNSFW", description: "مظهر/خصوصية: يموه الصور والمرفقات في قنوات NSFW حتى تمرير الفأرة فوقها.", author: "Vee", category: "appearance" },
-        { name: "ColorSighted", description: "مظهر: يضيف تلوينًا للأزرار في مربعات الحوار لتسهيل التمييز (مفيد لعمى الألوان).", author: "Vendicated", category: "appearance" },
-        { name: "Decor", description: "مظهر: يتيح تخصيصات مرئية متنوعة (مثل إخفاء عناصر) عبر CSS مخصص.", author: "Vendicated", category: "appearance" },
-        { name: "FakeProfileThemes", description: "مظهر: يطبق سمات ملف شخصي مخصصة مرئية لمستخدمي Vencord الآخرين.", author: "Vendicated", category: "appearance" },
-        { name: "FavoriteEmojiFirst", description: "مظهر/أداة: يعرض الرموز التعبيرية المفضلة في بداية قائمة الاختيار.", author: "Vendicated", category: "appearance" },
-        { name: "FixImagesQuality", description: "مظهر: يحاول منع Discord من ضغط جودة الصور المعروضة.", author: "Vendicated", category: "appearance" },
-        { name: "NoMosaic", description: "مظهر: يمنع عرض مجموعات الصور المتعددة بشكل فسيفساء.", author: "Vendicated", category: "appearance", settings: [ { type: "checkbox", name: "noMosaicAttachments", label: "إزالة الفسيفساء من المرفقات:", defaultValue: true }, { type: "checkbox", name: "noMosaicEmbeds", label: "إزالة الفسيفساء من المضمنات:", defaultValue: true } ] },
-        { name: "NoTypingAnimation", description: "مظهر: يزيل مؤشر (...) الذي يظهر عندما يكتب شخص ما.", author: "Vendicated", category: "appearance" },
-        { name: "BetterRoleContext", description: "أداة: يضيف خيارات مفيدة (نسخ اللون، تعديل) لقائمة الأدوار في الملف الشخصي.", author: "Vee, goodbee", category: "utility" },
-        { name: "BetterUploadButton", description: "أداة: يغير سلوك زر الرفع (نقرة للاختيار، يمين للقائمة).", author: "fawn, Vee", category: "utility" },
-        { name: "AccountPanelServerProfile", description: "أداة: يتيح فتح ملفك الشخصي للخادم الحالي بالنقر اليمين على لوحة حسابك.", author: "Nuckyz, Relitrix", category: "utility" },
-        { name: "AlwaysTrust", description: "أداة/أمان: يتجاوز تلقائيًا تحذيرات الروابط والملفات 'غير الموثوقة'. (استخدم بحذر!)", author: "zt, trey", category: "utility" },
-        { name: "AppleMusicRichPresence", description: "أداة: يعرض ما تستمع إليه على Apple Music كحالة نشاط Discord.", author: "RyanCaoDev", category: "utility" },
-        { name: "BetterSessions", description: "أداة/أمان: يحسن صفحة 'الجلسات' بمعلومات دقيقة وإشعارات تسجيل الدخول.", author: "amia", category: "utility" },
-        { name: "CallTimer", description: "أداة: يعرض مؤقتًا للمدة المنقضية في المكالمة الحالية.", author: "Vendicated, Fiery", category: "utility", settings: [ { type: "select", name: "format", label: "تنسيق الوقت:", options: [ { value: "stopwatch", label: "ساعة إيقاف (00:00:00)" }, { value: "timestamp", label: "طابع زمني (HH:MM:SS)" } ], defaultValue: "stopwatch" } ] },
-        { name: "ConsoleJanitor", description: "أداة (للمطورين): ينظف وحدة التحكم من الرسائل غير المرغوب فيها.", author: "Vendicated", category: "utility" },
-        { name: "ConsoleShortcuts", description: "أداة (للمطورين): يضيف اختصارات مفيدة لوحدة تحكم المطور.", author: "Vendicated", category: "utility" },
-        { name: "CopyEmojiMarkdown", description: "أداة: يضيف خيارًا لنسخ الرمز التعبيري بتنسيق Markdown.", author: "Vendicated", category: "utility" },
-        { name: "CopyFileContents", description: "أداة: يضيف خيارًا لنسخ المحتوى النصي للملفات المرفقة.", author: "Vendicated", category: "utility" },
-        { name: "CopyUserURLs", description: "أداة: يضيف خيارًا لنسخ رابط الملف الشخصي للمستخدم أو صورته الرمزية.", author: "Vendicated", category: "utility" },
-        { name: "CtrlEnterSend", description: "أداة: يغير سلوك الإرسال (Ctrl+Enter للإرسال، Enter لسطر جديد).", author: "Vendicated", category: "utility" },
-        { name: "CustomIdle", description: "أداة/مظهر: يسمح بتعيين حالة 'خامل' مخصصة.", author: "Vendicated", category: "utility" },
-        { name: "CustomRPC", description: "أداة: يتيح إنشاء وعرض حالة نشاط مخصصة (Rich Presence).", author: "Vendicated", category: "utility" },
-        { name: "Dearrow", description: "أداة/مظهر: يحاول إزالة الأسهم المضللة من صور YouTube المصغرة.", author: "Vendicated", category: "utility" },
-        { name: "DevCompanion", description: "أداة (للمطورين): يوفر أدوات مساعدة لمطوري الإضافات.", author: "Vendicated", category: "utility" },
-        { name: "DisableCallIdle", description: "أداة: يمنع تغيير حالتك إلى 'خامل' تلقائيًا أثناء المكالمات.", author: "Vendicated", category: "utility" },
-        { name: "DontRoundMyTimestamps", description: "أداة/مظهر: يعرض الطوابع الزمنية بدقة أكبر (مع الثواني).", author: "Vendicated", category: "utility" },
-        { name: "EmoteCloner", description: "أداة: يسهل نسخ الرموز التعبيرية بين الخوادم (إذا كنت تملك الصلاحيات).", author: "Vendicated", category: "utility" },
-        { name: "Experiments", description: "أداة: يتيح الوصول إلى علامة تبويب 'Experiments' المخفية في الإعدادات.", author: "Vendicated", category: "utility", settings: [ { type: "checkbox", name: "toolbarDevMenu", label: "قائمة المطورين في شريط الأدوات:", defaultValue: false } ] },
-        { name: "F8Break", description: "أداة (للمطورين): يوقف التنفيذ عند الضغط على F8 في وحدة التحكم.", author: "Vendicated", category: "utility" },
-        { name: "FakeNitro", description: "أداة: يتيح استخدام بعض مزايا Nitro محليًا (إرسال الرموز كروابط، جودة بث أعلى، إلخ).", author: "Vendicated", category: "utility", settings: [ { type: "checkbox", name: "enableEmojiBypass", label: "تجاوز الرموز التعبيرية (إرسال كرابط):", defaultValue: true }, { type: "checkbox", name: "enableStickerBypass", label: "تجاوز الملصقات (إرسال كرابط):", defaultValue: true }, { type: "checkbox", name: "enableStreamQualityBypass", label: "تجاوز جودة البث (أعلى من 720p):", defaultValue: true }, { type: "checkbox", name: "transformEmojis", label: "تحويل الرموز (عرض الروابط كصور):", defaultValue: true }, { type: "checkbox", name: "transformStickers", label: "تحويل الملصقات (عرض الروابط كصور):", defaultValue: true }, { type: "checkbox", name: "transformCompoundSentence", label: "تحويل الجمل المركبة (متعددة):", defaultValue: false }, { type: "number", name: "emojiSize", label: "حجم الرموز (بكسل):", defaultValue: 48 }, { type: "number", name: "stickerSize", label: "حجم الملصقات (بكسل):", defaultValue: 160 }, { type: "checkbox", name: "useHyperLinks", label: "استخدام الروابط التشعبية:", defaultValue: true }, { type: "text", name: "hyperLinkText", label: "نص الرابط ({{NAME}} للاسم):", defaultValue: "{{NAME}}" }, { type: "checkbox", name: "disableEmbedPermissionCheck", label: "تعطيل فحص إذن التضمين:", defaultValue: true } ] },
-        { name: "FavoriteGifSearch", description: "أداة: يسمح بحفظ مصطلحات البحث المتكررة في منتقي GIF.", author: "Vendicated", category: "utility" },
-        { name: "FriendsSince", description: "أداة/مظهر: يعرض تاريخ إضافة المستخدم كصديق في ملفه الشخصي.", author: "Vendicated", category: "utility" },
-        { name: "GameActivityToggle", description: "أداة: يضيف زرًا لتبديل عرض/إخفاء حالة نشاط اللعبة بسرعة.", author: "Vendicated", category: "utility" },
-        { name: "MessageLinkEmbeds", description: "أداة: يضمن تضمين محتوى الرسائل عند لصق روابطها (إذا كانت متاحة).", author: "Vendicated", category: "utility" },
-        { name: "NewGuildSettings", description: "أداة/مظهر: يستبدل واجهة إعدادات الخادم القديمة بالواجهة الأحدث.", author: "Vendicated", category: "utility" },
-        { name: "NoUnblockToJump", description: "أداة: يسمح بالانتقال لرسالة من مستخدم محظور دون الحاجة لفك الحظر.", author: "Vendicated", category: "utility" },
-        { name: "OpenInApp", description: "أداة: يضيف خيارًا لفتح روابط معينة (Spotify، Steam) في تطبيقاتها الأصلية.", author: "Vendicated", category: "utility" },
-        { name: "PinDMs", description: "أداة: يسمح بتثبيت الرسائل المباشرة المهمة في أعلى القائمة.", author: "Vendicated", category: "utility" },
-        { name: "PreviewMessage", description: "أداة/مظهر: يعرض معاينة للرسالة التي ترد عليها فوق شريط الإدخال.", author: "Vendicated", category: "utility" },
-        { name: "ReadAllNotificationsButton", description: "أداة: يضيف زرًا لوضع علامة 'مقروء' على جميع إشعارات الخوادم دفعة واحدة.", author: "Vendicated", category: "utility" },
-        { name: "RelationshipNotifier", description: "أداة: يرسل إشعارًا عند تغييرات الصداقة أو الحظر (قد لا يكون دقيقًا دائمًا).", author: "Vendicated", category: "utility" },
-        { name: "ReverseImageSearch", description: "أداة: يضيف خيارًا للبحث عن الصور باستخدام محركات البحث العكسي.", author: "Vendicated", category: "utility" },
-        { name: "SendTimestamps", description: "أداة: يضيف زرًا (🔢) لإنشاء وإرسال طوابع زمنية ديناميكية.", author: "Vendicated", category: "utility" },
-        { name: "ServerInfo", description: "أداة: يضيف خيار 'معلومات الخادم' لعرض تفاصيل مثل تاريخ الإنشاء والمعرف.", author: "Vendicated", category: "utility" },
-        { name: "ShowConnections", description: "أداة/مظهر: يعرض اتصالات المستخدم (Steam، Spotify) في أماكن أكثر.", author: "Vendicated", category: "utility" },
-        { name: "Translate", description: "أداة: يضيف خيارًا لترجمة الرسائل باستخدام خدمات خارجية.", author: "Vendicated", category: "utility" },
-        { name: "UserVoiceShow", description: "أداة/مظهر: يعرض أيقونة (🔊) بجانب المستخدمين المتصلين بقنوات صوتية.", author: "Vendicated", category: "utility" },
-        { name: "ValidReply", description: "أداة: يحاول إصلاح مشكلة عدم تحميل الرسائل المقتبسة في الردود.", author: "Vendicated", category: "utility" },
-        { name: "ValidUser", description: "أداة: يتيح لصق معرف المستخدم (ID) لاسترداد معلوماته.", author: "Vendicated", category: "utility" },
-        { name: "ViewIcons", description: "أداة: يجعل الصور الرمزية والبانرات والأيقونات قابلة للنقر لعرضها كاملة.", author: "Vendicated", category: "utility" },
-        { name: "VoiceDownload", description: "أداة: يضيف زرًا لتنزيل الرسائل الصوتية المستلمة.", author: "Vendicated", category: "utility" },
-        { name: "VoiceMessages", description: "أداة: يتيح تسجيل وإرسال رسائل صوتية (إذا لم تكن متاحة رسميًا).", author: "Vendicated", category: "utility" },
-        { name: "VolumeBooster", description: "أداة: يسمح بزيادة مستوى صوت المستخدمين في المكالمات فوق 200% (حتى 400%).", author: "Vendicated", category: "utility" },
-        { name: "YoutubeAdblock", description: "أداة: يحاول منع إعلانات مقاطع YouTube المضمنة داخل Discord.", author: "Vendicated", category: "utility" },
-        { name: "YoutubeAdblock.desktop", description: "أداة: نسخة مخصصة من مانع إعلانات YouTube لتطبيق Discord لسطح المكتب.", author: "Vendicated", category: "utility" },
-        { name: "BANger", description: "مرح: يتيح استبدال صورة GIF في نافذة تأكيد الحظر بصورة من اختيارك.", author: "Xinto, Glitchy", category: "fun" },
-      ];
-
-      // --- بداية تنفيذ الكود بعد تحميل الصفحة ---
-      document.addEventListener('DOMContentLoaded', function() {
-
-        // --- إنشاء حاويات الفئات ---
-        function createCategoryContainers() {
-          const pluginsContainer = document.querySelector('.plugins-container');
-          if (!pluginsContainer) { console.error("خطأ: لم يتم العثور على حاوية الإضافات '.plugins-container'."); return; }
-          pluginsContainer.innerHTML = ''; // مسح المحتوى قبل إعادة الإنشاء
-          Object.keys(categories).forEach(categoryKey => {
-            const category = categories[categoryKey];
-            const categorySection = document.createElement('div');
-            categorySection.className = 'category-section';
-            categorySection.dataset.category = categoryKey;
-            const categoryHeader = document.createElement('h2');
-            categoryHeader.className = 'category-header';
-            categoryHeader.textContent = category.name;
-            const categoryDescription = document.createElement('p');
-            categoryDescription.className = 'category-description';
-            categoryDescription.textContent = category.description;
-            const pluginsGrid = document.createElement('div');
-            pluginsGrid.className = 'plugins-grid';
-            pluginsGrid.dataset.categoryGrid = categoryKey; // استخدام data-category-grid
-            categorySection.appendChild(categoryHeader);
-            categorySection.appendChild(categoryDescription);
-            categorySection.appendChild(pluginsGrid);
-            pluginsContainer.appendChild(categorySection);
-          });
-        }
-
-        // --- إنشاء عناصر الإضافات ---
-        function createPlugins() {
-          createCategoryContainers(); // إنشاء الحاويات أولاً
-          const pluginsContainer = document.querySelector('.plugins-container'); // الحاوية الرئيسية
-          if (!pluginsContainer) return; // الخروج إذا لم توجد الحاوية
-
-          pluginsData.forEach(plugin => {
-            const categoryKey = plugin.category || 'misc';
-            // البحث عن الشبكة الصحيحة داخل الحاوية
-            let pluginGrid = pluginsContainer.querySelector(`.plugins-grid[data-category-grid="${categoryKey}"]`);
-
-            // التأكد من وجود الشبكة وإلا استخدم الشبكة المتنوعة
-            if (!pluginGrid) {
-              console.warn(`لم يتم العثور على شبكة للفئة: ${categoryKey}. محاولة الوضع في 'متنوعة'.`);
-              pluginGrid = pluginsContainer.querySelector(`.plugins-grid[data-category-grid="misc"]`);
-              if (!pluginGrid) { console.error("خطأ فادح: لم يتم العثور على شبكة الفئة المتنوعة."); return; }
-            }
-
-            // --- باقي كود إنشاء بطاقة الإضافة (كما هو من الكود السابق) ---
-            const pluginDiv = document.createElement('div');
-            pluginDiv.className = 'plugin';
-            pluginDiv.dataset.pluginName = plugin.name;
-            const isRequired = requiredPlugins.includes(plugin.name);
-            if (isRequired) { pluginDiv.classList.add('required-core-plugin'); }
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.dataset.pluginName = plugin.name;
-            checkbox.className = 'plugin-checkbox';
-            checkbox.setAttribute('aria-label', `تفعيل/تعطيل ${plugin.name}`);
-            if (isRequired) { checkbox.checked = true; checkbox.disabled = true; }
-            const pluginContent = document.createElement('div');
-            pluginContent.className = 'plugin-content';
-            const pluginTitleContainer = document.createElement('div');
-            const pluginTitle = document.createElement('h3');
-            pluginTitle.textContent = plugin.name;
-            pluginTitle.className = 'ellipsis-overflow';
-            const authorSpan = document.createElement('span');
-            authorSpan.className = 'author ellipsis-overflow';
-            authorSpan.textContent = plugin.author || 'غير معروف';
-            pluginTitleContainer.appendChild(pluginTitle);
-            pluginTitleContainer.appendChild(authorSpan);
-            const descriptionP = document.createElement('p');
-            descriptionP.className = 'description';
-            descriptionP.textContent = plugin.description || 'لا يوجد وصف متاح.';
-            pluginContent.appendChild(pluginTitleContainer);
-            pluginContent.appendChild(descriptionP);
-            if (plugin.settings && plugin.settings.length > 0) {
-              const settingsDiv = document.createElement('div');
-              settingsDiv.className = 'plugin-settings';
-              plugin.settings.forEach(setting => {
-                const settingWrapper = document.createElement('div');
-                settingWrapper.className = 'plugin-setting';
-                const label = document.createElement('label');
-                label.textContent = setting.label;
-                const inputId = `${plugin.name}-${setting.name}-${Math.random().toString(36).substring(2, 9)}`;
-                label.htmlFor = inputId;
-                let inputElement;
-                switch (setting.type) {
-                  case 'checkbox':
-                    inputElement = document.createElement('input'); inputElement.type = 'checkbox';
-                    inputElement.checked = setting.defaultValue; inputElement.id = inputId;
-                    settingWrapper.appendChild(inputElement); settingWrapper.appendChild(label);
-                    break;
-                  case 'number':
-                    inputElement = document.createElement('input'); inputElement.type = 'number';
-                    inputElement.value = setting.defaultValue;
-                    if (setting.min !== undefined) inputElement.min = setting.min;
-                    if (setting.max !== undefined) inputElement.max = setting.max;
-                    if (setting.step !== undefined) inputElement.step = setting.step;
-                    inputElement.id = inputId;
-                    settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement);
-                    break;
-                  case 'color':
-                    inputElement = document.createElement('input'); inputElement.type = 'color';
-                    inputElement.value = String(setting.defaultValue).startsWith('#') ? setting.defaultValue : `#${setting.defaultValue}`;
-                    inputElement.id = inputId;
-                    settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement);
-                    break;
-                  case 'select':
-                    inputElement = document.createElement('select'); inputElement.id = inputId;
-                    (setting.options || []).forEach(opt => {
-                      const option = document.createElement('option'); option.value = opt.value; option.textContent = opt.label;
-                      if (opt.value === setting.defaultValue) option.selected = true;
-                      inputElement.appendChild(option);
-                    });
-                    settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement);
-                    break;
-                  default:
-                    inputElement = document.createElement('input'); inputElement.type = 'text';
-                    inputElement.value = setting.defaultValue || ''; inputElement.id = inputId;
-                    settingWrapper.appendChild(label); settingWrapper.appendChild(inputElement);
-                    break;
-                }
-                if (inputElement) {
-                  inputElement.dataset.pluginName = plugin.name; inputElement.dataset.settingName = setting.name;
-                  inputElement.addEventListener('click', (e) => e.stopPropagation());
-                  inputElement.addEventListener('change', (e) => e.stopPropagation());
-                  if (setting.type === 'checkbox') { label.addEventListener('click', (e) => e.stopPropagation()); }
-                  else { label.addEventListener('click', (e) => e.stopPropagation()); }
-                }
-                settingsDiv.appendChild(settingWrapper);
-              });
-              pluginContent.appendChild(settingsDiv);
-            }
-            pluginDiv.appendChild(checkbox);
-            pluginDiv.appendChild(pluginContent);
-            if (!isRequired) {
-                pluginDiv.addEventListener('click', function(event) {
-                    if (event.target === checkbox || event.target.closest('.plugin-setting')) { return; }
-                    checkbox.checked = !checkbox.checked;
-                    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
-                });
-            }
-            pluginGrid.appendChild(pluginDiv); // إضافة البطاقة للشبكة الصحيحة
-          });
-
-          // إزالة رسالة التحميل إذا كانت موجودة
-          const loadingMsg = pluginsContainer.querySelector('p');
-          if (loadingMsg && loadingMsg.textContent.includes('جاري تحميل')) {
-              loadingMsg.remove();
-          }
-        }
-
-        // --- تنفيذ البحث ---
-        function setupSearch() {
-          const searchInput = document.querySelector('.search input');
-          const container = document.querySelector('.plugins-container');
-          let noResultsMsg = document.getElementById('no-results-message');
-          if (searchInput && container) {
-            searchInput.addEventListener('input', function() {
-              const searchTerm = this.value.toLowerCase().trim();
-              const allPlugins = container.querySelectorAll('.plugin');
-              const allCategories = container.querySelectorAll('.category-section');
-              let visiblePluginCount = 0;
-              allPlugins.forEach(plugin => {
-                const pluginName = plugin.dataset.pluginName?.toLowerCase() || '';
-                const pluginDescription = plugin.querySelector('.description')?.textContent.toLowerCase() || '';
-                const pluginAuthor = plugin.querySelector('.author')?.textContent.toLowerCase().replace('بواسطة ', '') || '';
-                const isVisible = searchTerm === '' || pluginName.includes(searchTerm) || pluginDescription.includes(searchTerm) || pluginAuthor.includes(searchTerm);
-                plugin.style.display = isVisible ? 'flex' : 'none';
-                if (isVisible) visiblePluginCount++;
-              });
-              allCategories.forEach(categorySection => {
-                const grid = categorySection.querySelector('.plugins-grid');
-                const hasVisiblePlugins = grid && Array.from(grid.children).some(p => p.style.display !== 'none');
-                categorySection.style.display = hasVisiblePlugins ? 'block' : 'none';
-              });
-              if (visiblePluginCount === 0 && searchTerm !== '') {
-                if (!noResultsMsg) {
-                  noResultsMsg = document.createElement('p'); noResultsMsg.id = 'no-results-message';
-                  noResultsMsg.textContent = 'لم يتم العثور على إضافات مطابقة لبحثك.';
-                  container.appendChild(noResultsMsg);
-                }
-                noResultsMsg.style.display = 'block';
-              } else if (noResultsMsg) {
-                noResultsMsg.style.display = 'none';
-              }
-            });
-          }
-        }
-
-        // --- إعداد أزرار التحديد ---
-        function setupSelectionButtons() {
-          const allCheckboxesQuery = '.plugins-container .plugin:not(.required-core-plugin) input[type="checkbox"].plugin-checkbox';
-          const allCheckboxes = document.querySelectorAll('.plugins-container .plugin input[type="checkbox"].plugin-checkbox');
-          const allThemeCheckboxes = document.querySelectorAll('#theme-selection input[type="checkbox"]');
-
-          const selectAllBtn = document.getElementById('selectAllBtn');
-          if (selectAllBtn) { selectAllBtn.addEventListener('click', () => { document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (!cb.disabled) cb.checked = true; }); }); }
-
-          const selectSuggestedBtn = document.getElementById('selectSuggestedBtn');
-          if (selectSuggestedBtn) {
-            selectSuggestedBtn.addEventListener('click', () => {
-              // القائمة المقترحة المحدثة
-              const suggestedPluginNames = [
-                "CallTimer", "ClearURLs", "FriendsSince", "GameActivityToggle",
-                "MessageLinkEmbeds", "PinDMs", "PreviewMessage", "ReadAllNotificationsButton",
-                "ReverseImageSearch", "SendTimestamps", "ServerInfo", "ShowConnections",
-                "Translate", "UserVoiceShow", "ValidReply", "ValidUser", "ViewIcons",
-                "VolumeBooster", "YoutubeAdblock", "YoutubeAdblock.desktop",
-                "FakeNitro", "BetterUploadButton", "CopyUserURLs", "BetterSessions", "EmoteCloner",
-                "BetterFolders", "BetterRoleDot", "FixImagesQuality", "NoTypingAnimation",
-                "AlwaysAnimate", "FavoriteEmojiFirst",
-              ];
-              allCheckboxes.forEach(cb => {
-                const pluginName = cb.dataset.pluginName;
-                if (!cb.disabled) { cb.checked = suggestedPluginNames.includes(pluginName); }
-                else { cb.checked = true; }
-              });
-              allThemeCheckboxes.forEach(themeCb => { themeCb.checked = (themeCb.id === 'theme-ClearVision'); }); // تحديد ClearVision
-              document.querySelectorAll('.plugin-setting [data-plugin-name][data-setting-name]').forEach(input => {
-                 const pluginName = input.dataset.pluginName; const settingName = input.dataset.settingName;
-                 const pluginData = pluginsData.find(p => p.name === pluginName);
-                 const settingData = pluginData?.settings?.find(s => s.name === settingName);
-                 if (settingData) {
-                    if (input.type === 'checkbox') input.checked = settingData.defaultValue;
-                    else if (input.type === 'color') input.value = String(settingData.defaultValue).startsWith('#') ? settingData.defaultValue : `#${settingData.defaultValue}`;
-                    else input.value = settingData.defaultValue;
-                 }
-              });
-            });
-          }
-
-          const disableAllBtn = document.getElementById('disableAllBtn');
-          if (disableAllBtn) { disableAllBtn.addEventListener('click', () => { document.querySelectorAll(allCheckboxesQuery).forEach(cb => { if (!cb.disabled) cb.checked = false; }); }); }
-        }
-
-        // --- إعداد تفاعل الثيمات ---
-        function setupThemeInteraction() {
-            const themeOptionsContainer = document.querySelector('.theme-options-grid');
-            if (!themeOptionsContainer) { console.error("Error: Theme options container '.theme-options-grid' not found."); return; }
-            const themeCheckboxes = themeOptionsContainer.querySelectorAll('input[type="checkbox"]');
-
-            themeCheckboxes.forEach(checkbox => {
-                const themeOptionDiv = checkbox.closest('.theme-option');
-                if (!themeOptionDiv) { console.warn(`Could not find parent '.theme-option' for checkbox ${checkbox.id}`); return; }
-
-                // 1. إضافة رابط المعاينة
-                const previewUrl = checkbox.dataset.themeUrl; // رابط المعاينة
-                const themeName = themeOptionDiv.querySelector('.theme-name')?.textContent || checkbox.id.replace('theme-', '');
-
-                if (previewUrl && previewUrl.startsWith('http')) {
-                    let previewLink = themeOptionDiv.querySelector('.theme-preview-link'); // تحقق مما إذا كان الرابط موجودًا بالفعل
-                    if (!previewLink) {
-                         previewLink = document.createElement('a');
-                         previewLink.href = previewUrl;
-                         previewLink.target = "_blank";
-                         previewLink.rel = "noopener noreferrer";
-                         previewLink.className = "theme-preview-link";
-                         previewLink.setAttribute("aria-label", `معاينة ثيم ${themeName}`);
-                         previewLink.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="1em" height="1em" aria-hidden="true"><path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.665l3-3z"></path><path d="M8.603 17.03a4 4 0 005.656-5.656l-1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a2.5 2.5 0 01-3.536-3.536l3-3a2.5 2.5 0 013.536 3.536.75.75 0 001.138.977 4 4 0 00-5.865-.225l-3 3a4 4 0 005.656 5.656z"></path></svg> معاينة`;
-                         previewLink.addEventListener('click', e => e.stopPropagation());
-                         // الإضافة في نهاية العنصر لتجنب مشاكل الترتيب
-                         themeOptionDiv.appendChild(previewLink);
-                    }
-                }
-
-                // 2. ربط الـ Label بالمربع
-                let label = themeOptionDiv.querySelector(`label[for="${checkbox.id}"]`);
-                if (!label) {
-                    label = document.createElement('label');
-                    label.htmlFor = checkbox.id;
-                    // نقل الاسم والمؤلف والرابط (إذا وجد) إلى الـ Label
-                    const nameSpan = themeOptionDiv.querySelector('.theme-name');
-                    const authorSpan = themeOptionDiv.querySelector('.theme-author');
-                    const existingPreviewLink = themeOptionDiv.querySelector('.theme-preview-link'); // ابحث عنه مرة أخرى
-
-                    if (nameSpan) label.appendChild(nameSpan);
-                    if (authorSpan) label.appendChild(authorSpan);
-                    if (existingPreviewLink) label.appendChild(existingPreviewLink); // نقله داخل الـ Label
-
-                    checkbox.insertAdjacentElement('afterend', label);
-                    label.addEventListener('click', e => {
-                        // منع النقر على الـ Label من إلغاء تفعيل المربع إذا كان النقر على الرابط
-                        if (e.target.closest('.theme-preview-link')) {
-                            e.preventDefault(); // منع سلوك الـ Label الافتراضي
-                        }
-                        e.stopPropagation();
-                    });
-                }
-
-                // 3. منطق اختيار ثيم واحد فقط
-                checkbox.addEventListener('change', (event) => {
-                    if (event.target.checked) {
-                        themeCheckboxes.forEach(otherCheckbox => {
-                            if (otherCheckbox !== event.target) {
-                                otherCheckbox.checked = false;
-                            }
-                        });
-                    }
-                });
-            });
-        }
-
-        // --- إعداد أزرار التكوين ---
-        function setupConfigButtons() {
-          const allCheckboxesQuery = '.plugins-container .plugin input[type="checkbox"].plugin-checkbox';
-          const allSettingsInputsQuery = '.plugins-container .plugin-setting [data-plugin-name][data-setting-name]';
-          const allThemeCheckboxesQuery = '#theme-selection input[type="checkbox"]';
-
-          const generateButton = document.getElementById('generateConfigBtn');
-          const copyButton = document.getElementById('copyConfigBtn');
-          const downloadButton = document.getElementById('downloadConfigBtn');
-          const jsonOutputArea = document.getElementById('jsonOutput');
-
-          function setActionButtonsState(enabled) {
-             const buttons = [copyButton, downloadButton];
-             buttons.forEach(btn => { if (btn) { btn.classList.toggle('enabled', enabled); btn.disabled = !enabled; if (!enabled && btn.id === 'copyConfigBtn') { btn.classList.remove('copied'); btn.textContent = 'نسخ التكوين'; } } });
-          }
-          setActionButtonsState(false);
-
-          function buildBaseConfig() {
-              const baseConfig = { settings: { autoUpdate: true, autoUpdateNotification: true, useQuickCss: true, themeLinks: [], enabledThemes: [], enableReactDevtools: false, frameless: false, transparent: false, winCtrlQ: false, disableMinSize: false, winNativeTitleBar: false, plugins: {} }, notifications: { timeout: 5000, position: "bottom-right", useNative: "not-focused", logLimit: 50 }, cloud: { authenticated: false, url: "https://api.vencord.dev/", settingsSync: false, settingsSyncVersion: Date.now() }, eagerPatches: false, quickCss: "" };
-              pluginsData.forEach(plugin => { const pluginSettings = { enabled: requiredPlugins.includes(plugin.name) }; if (plugin.settings) { plugin.settings.forEach(setting => { pluginSettings[setting.name] = setting.defaultValue; }); } baseConfig.settings.plugins[plugin.name] = pluginSettings; });
-              return baseConfig;
-          }
-
-          if (generateButton && jsonOutputArea) {
-            generateButton.addEventListener('click', function() {
-              let config = buildBaseConfig();
-
-              // --- تعديل: استخدام data-download-url للروابط في التكوين ---
-              const selectedThemeDownloadUrls = [];
-              document.querySelectorAll(allThemeCheckboxesQuery).forEach(cb => {
-                // استخدام رابط التنزيل هنا
-                if (cb.checked && cb.dataset.downloadUrl) {
-                  selectedThemeDownloadUrls.push(cb.dataset.downloadUrl);
-                } else if (cb.checked && cb.dataset.themeUrl && !cb.dataset.downloadUrl) {
-                    // كحل احتياطي، استخدم themeUrl إذا لم يتوفر downloadUrl
-                    console.warn(`Theme ${cb.id} is missing data-download-url, using data-theme-url as fallback.`);
-                    selectedThemeDownloadUrls.push(cb.dataset.themeUrl);
-                }
-              });
-              config.settings.themeLinks = selectedThemeDownloadUrls; // إضافة رابط التنزيل (أو لا شيء)
-
-              document.querySelectorAll(allCheckboxesQuery).forEach(cb => { const pluginName = cb.dataset.pluginName; if (pluginName && config.settings.plugins[pluginName]) { config.settings.plugins[pluginName].enabled = cb.checked; } });
-              document.querySelectorAll(allSettingsInputsQuery).forEach(input => {
-                const pluginName = input.dataset.pluginName; const settingName = input.dataset.settingName;
-                if (config.settings.plugins[pluginName]?.enabled) {
-                  let value; const baseValue = buildBaseConfig().settings.plugins[pluginName]?.[settingName];
-                  if (input.type === 'checkbox') { value = input.checked; }
-                  else if (input.type === 'number') { value = parseFloat(input.value); if (isNaN(value)) value = typeof baseValue === 'number' ? baseValue : 0; }
-                  else if (input.type === 'color') { value = input.value.startsWith('#') ? input.value.substring(1) : input.value; }
-                  else { value = input.value; }
-                  if (config.settings.plugins[pluginName].hasOwnProperty(settingName)) {
-                     const originalType = typeof baseValue;
-                      if (originalType === 'number' && typeof value !== 'number') { value = parseFloat(value) || baseValue; }
-                      else if (originalType === 'boolean' && typeof value !== 'boolean') { value = typeof value === 'string' ? value.toLowerCase() === 'true' : Boolean(value); }
-                      else if (originalType === 'string' && typeof value !== 'string') { value = String(value); }
-                      config.settings.plugins[pluginName][settingName] = value;
-                  }
-                }
-              });
-              const quickCssValue = config.quickCss || ""; delete config.quickCss; config.quickCss = quickCssValue;
-              jsonOutputArea.value = JSON.stringify(config, null, 4);
-              setActionButtonsState(true);
-              if (copyButton) { copyButton.classList.remove('copied'); copyButton.textContent = 'نسخ التكوين'; }
-            });
-          }
-
-          if (copyButton) { copyButton.addEventListener('click', function() { if (!copyButton.disabled) { navigator.clipboard.writeText(jsonOutputArea.value).then(() => { copyButton.textContent = 'تم النسخ!'; copyButton.classList.add('copied'); setTimeout(() => { if (copyButton.classList.contains('copied')) { copyButton.textContent = 'نسخ التكوين'; copyButton.classList.remove('copied'); } }, 2000); }).catch(err => { console.error('فشل النسخ:', err); alert('فشل نسخ التكوين إلى الحافظة.'); }); } }); }
-          if (downloadButton) { downloadButton.addEventListener('click', function() { if (!downloadButton.disabled) { const blob = new Blob([jsonOutputArea.value], { type: 'application/json;charset=utf-8' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'vencord_config.json'; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); } }); }
-
-          const restartDiscordBtn = document.getElementById('restartDiscordBtn');
-          if (restartDiscordBtn) { restartDiscordBtn.addEventListener('click', () => { alert(
-                "لاستيراد إعدادات Vencord، يمكنك اتباع أحد الخيارين التاليين:\n\n" +
-                "الخيار الأول (مستحسن):\n" +
-                "1. من قائمة Vencord داخل Discord، انتقل إلى Settings.\n" +
-                "2. اختر Backup & Restore.\n" +
-                "3. اضغط على زر Import Settings.\n" +
-                "4. حدد ملف 'vencord_config.json' الذي قمت بتنزيله.\n" +
-                "5. بعد اكتمال الاستيراد بنجاح، أعد تشغيل Discord بالكامل.\n\n" +
-                "الخيار الثاني (يدوي):\n" +
-                "1. انسخ محتوى التكوين من مربع النص أعلاه.\n" +
-                "2. افتح ملفًا نصيًا جديدًا (باستخدام Notepad أو محرر نصوص آخر).\n" +
-                "3. الصق المحتوى المنسوخ في الملف النصي.\n" +
-                "4. احفظ الملف باسم 'vencord_config.txt'.\n" +
-                "5. قم بتغيير امتداد الملف من '.txt' إلى '.json' ليصبح 'vencord_config.json'.\n" +
-                "6. اتبع الآن الخطوات نفسها المذكورة في الخيار الأول (Import Settings -> إعادة تشغيل Discord)."
-              ); }); }
-        }
-
-        // --- ترتيب التنفيذ ---
-        createPlugins();           // 1. إنشاء بطاقات الإضافات
-        setupSearch();             // 2. تفعيل البحث
-        setupSelectionButtons();   // 3. تفعيل أزرار التحديد
-        setupThemeInteraction();   // 4. تفعيل منطق الثيمات
-        setupConfigButtons();      // 5. تفعيل أزرار إنشاء/نسخ/تنزيل التكوين
-
-        console.log("Vencord Configurator Initialized Successfully."); // رسالة تأكيد في الكونسول
-
-      }); // نهاية DOMContentLoaded
-    </script>
+    <meta
+      name="description"
+      content="تصفح قائمة إضافات Vencord المصنفة، وقم بتخصيص الإعدادات، وأنشئ ملف التكوين الخاص بك بسهولة."
+    />
+    <meta name="theme-color" content="#6366f1" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="css/plugins.css" />
   </head>
   <body>
-     <script> /* Theme script */ const theme = localStorage.theme?.toLowerCase(); const options = ["light", "dark"]; const osDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; if (options.includes(theme)) { document.documentElement.className = theme; } else if (osDark) { document.documentElement.className = 'dark'; } else { document.documentElement.className = 'light'; } </script>
-     <script> /* RTL script */ document.documentElement.setAttribute('dir', 'rtl'); document.documentElement.setAttribute('lang', 'ar'); </script>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-content">
+        <div class="loading-spinner" id="loadingSpinner"></div>
+        <div class="loading-text">جاري تحميل الإضافات...</div>
+      </div>
+    </div>
 
-    <nav>
-        <div class="nav-content">
-            <div id="logo"><a href="index.html" id="title" aria-label="الصفحة الرئيسية لـ Vencord"><img alt="شعار Vencord" src="assets/logo-nav-oneko-padding.png"/></a></div>
-            <div class="p-label-m" id="btns"><ul><li><a href="https://vencord.dev/download/">تنزيل Vencord</a></li><li><a href="plugins.html" class="active-page">الإضافات</a></li></ul></div>
-        </div>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="gradient-orb orb-4"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="floating-particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">
+            <img
+              src="assets/images/logo-nav-oneko-padding.png"
+              alt="VenSHORT Logo"
+              style="max-width: 64px; width: 100%; height: auto"
+            />
+          </div>
+          <span class="logo-text">VenSHORT</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+          <li>
+            <a href="plugins.html" class="nav-link active">الإضافات ⚙️</a>
+          </li>
+          <li>
+            <a
+              href="https://vencord.dev/download/"
+              class="nav-link"
+              target="_blank"
+              >تنزيل Vencord</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/nvkq/VENshort"
+              class="nav-link"
+              target="_blank"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <main> <div class="container">
-        <h1 class="p-page-title">الإضافات ومولد التكوين</h1>
-        <p class="p-subtitle">تصفح قائمة إضافات Vencord المصنفة، واختر ما يناسبك، ثم قم بإنشاء ملف التكوين الخاص بك بسهولة. يمكنك تعديل إعدادات بعض الإضافات مباشرة من هنا.</p>
-        <div class="search">
-            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-            <input placeholder="البحث عن إضافة بالاسم، الوصف، أو المؤلف..." type="search" aria-label="البحث في الإضافات"/>
-        </div>
-        <div id="required-plugins-notice">
-            <h4>الإضافات الأساسية (إجبارية)</h4>
-            <p>الإضافات التالية ضرورية لعمل Vencord وسيتم تفعيلها دائمًا في ملف التكوين:</p>
-            <span class="required-plugin">Settings - يوفر واجهة إعدادات Vencord.</span>
-            <span class="required-plugin">SupportHelper - يساعد في استكشاف الأخطاء وإصلاحها.</span>
-            <span class="required-plugin">NoTrack - يمنع تتبع بيانات Discord.</span>
-            <span class="required-plugin">CrashHandler - يعالج الأعطال غير المتوقعة.</span>
-        </div>
+        <!-- ... nav element ends here ... -->
+    </nav>
 
-        <div id="theme-selection">
-            <h4>اختيار ثيم (اختياري - حد أقصى واحد)</h4>
-            <div class="theme-options-grid">
-                <div class="theme-option">
-                    <input type="checkbox" id="theme-ClearVision"
-                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/ClearVision/ClearVision-v6/master/ClearVision_v6.theme.css"
-                           data-download-url="https://betterdiscord.app/Download?id=23"
-                           aria-label="تفعيل/تعطيل ثيم ClearVision">
-                    <!-- JS adds label + preview -->
-                    <span class="theme-name">ClearVision</span>
-                    <span class="theme-author">Nyxls</span>
-                </div>
-                <div class="theme-option">
-                    <input type="checkbox" id="theme-DiscordMatter"
-                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/Tropix126/Discord-Matter/main/Discord%20Matter.theme.css"
-                           data-download-url="https://betterdiscord.app/Download?id=174"
-                           aria-label="تفعيل/تعطيل ثيم Discord Matter">
-                    <span class="theme-name">Discord Matter</span>
-                    <span class="theme-author">TropicaI</span>
-                </div>
-                <div class="theme-option">
-                    <input type="checkbox" id="theme-Discord+"
-                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/InstaCodeClient/DiscordPlus/main/DiscordPlus.theme.css"
-                           data-download-url="https://betterdiscord.app/Download?id=209"
-                           aria-label="تفعيل/تعطيل ثيم Discord+">
-                    <span class="theme-name">Discord+</span>
-                    <span class="theme-author">Insta</span>
-                </div>
-                <div class="theme-option">
-                    <input type="checkbox" id="theme-NotAnotherAnimeTheme"
-                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/puckzxz/NotAnotherAnimeTheme/main/NotAnotherAnimeTheme.theme.css"
-                           data-download-url="https://betterdiscord.app/Download?id=286"
-                           aria-label="تفعيل/تعطيل ثيم NotAnotherAnimeTheme">
-                    <span class="theme-name">NotAnotherAnimeTheme</span>
-                    <span class="theme-author">puckzxz</span>
-                </div>
-                <div class="theme-option">
-                    <input type="checkbox" id="theme-FrostedGlass"
-                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://cdn.jsdelivr.net/gh/DiscordStyles/FrostedGlass@c87ce3498268bdb3757f20858365c1f4f505cec3/dist/FrostedGlass.theme.css"
-                           data-download-url="https://betterdiscord.app/Download?id=2"
-                           aria-label="تفعيل/تعطيل ثيم Frosted Glass">
-                    <span class="theme-name">Frosted Glass</span>
-                    <span class="theme-author">Gibbu</span>
-                </div>
-                <div class="theme-option">
-                    <input type="checkbox" id="theme-TokyoNight"
-                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/Dyzean/Tokyo-Night-Discord/main/tokyonight.theme.css"
-                           data-download-url="https://betterdiscord.app/Download?id=280"
-                           aria-label="تفعيل/تعطيل ثيم Tokyo Night">
-                    <span class="theme-name">Tokyo Night</span>
-                    <span class="theme-author">ENNUI</span>
-                </div>
-                <div class="theme-option">
-                    <input type="checkbox" id="theme-Catppuccin"
-                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/catppuccin/discord/main/themes/mocha.theme.css"
-                           data-download-url="https://betterdiscord.app/Download?id=379"
-                           aria-label="تفعيل/تعطيل ثيم Catppuccin">
-                    <span class="theme-name">Catppuccin</span>
-                    <span class="theme-author">Catppuccin</span>
-                </div>
-                <div class="theme-option">
-                    <input type="checkbox" id="theme-Fluent"
-                           data-theme-url="https://gibbu.github.io/ThemePreview/?file=https://raw.githubusercontent.com/DiscordStyles/Fluent/main/Fluent.theme.css"
-                           data-download-url="https://betterdiscord.app/Download?id=290"
-                           aria-label="تفعيل/تعطيل ثيم Fluent">
-                    <span class="theme-name">Fluent</span>
-                    <span class="theme-author">DiscordStyles</span>
-                </div>
-            </div>
-        </div>
+    <!-- Floating Navigation Pane -->
+    <aside class="nav-pane" id="navPane"></aside>
 
-        <div id="selection-buttons">
-          <button id="selectAllBtn">تحديد الكل</button>
-          <button id="selectSuggestedBtn">تحديد المقترح</button>
-          <button id="disableAllBtn">إلغاء تحديد الكل</button>
-        </div>
-        <div class="plugins-container">
-            <p style="text-align: center; padding: 2em; color: var(--grey0);">جاري تحميل الإضافات...</p>
-        </div>
-        <div id="generation-section">
-            <h2>إنشاء وتصدير التكوين</h2>
-            <div id="generation-controls">
-                <button id="generateConfigBtn">إنشاء التكوين</button>
-                <button id="copyConfigBtn" disabled>نسخ التكوين</button>
-                <button id="downloadConfigBtn" disabled>تنزيل التكوين</button>
-                <button id="restartDiscordBtn">كيفية تطبيق التكوين؟</button>
+    <!-- Main Content -->
+    <main class="main-container">
+    <!-- ... rest of main content ... -->
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <!-- Header Section -->
+      <section class="header-section">
+        <h1 class="page-title" id="pageTitle" style="color: #c7981c;">الإضافات ومولد التكوين</h1>
+        <p class="page-subtitle" id="pageSubtitle">
+          تصفح قائمة إضافات Vencord المصنفة، واختر ما يناسبك، ثم قم بإنشاء ملف
+          التكوين الخاص بك بسهولة.
+        </p>
+      </section>
+
+      <!-- Search Section -->
+      <section class="search-section" id="searchSection">
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <input
+              type="search"
+              class="search-input"
+              id="searchInput"
+              placeholder="البحث عن إضافة بالاسم، الوصف، أو المؤلف..."
+            />
+            <div class="search-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="m21 21-4.35-4.35"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
             </div>
-            <textarea id="jsonOutput" readonly placeholder="سيظهر هنا ملف التكوين بتنسيق JSON بعد النقر على زر 'إنشاء التكوين'... تأكد من تحديد الإضافات التي تريدها أولاً." aria-label="مخرج التكوين بصيغة JSON"></textarea>
+          </div>
         </div>
-      </div> </main>
-      <footer>
-      <p>تم تطويره بواسطة مساهمي Vencord | تم تعريبه وتحسينه بواسطة <a href="https://x.com/jnjon0" target="_blank" rel="noopener noreferrer" style="color: var(--accentAqua);">SMSM</a></p>
-        <p>دمتم بود❤</p>
-      </footer>
+      </section>
+
+      <!-- =========== UPDATED REQUIRED NOTICE SECTION =========== -->
+      <section class="notice-section required-notice" id="requiredNotice">
+        <h3 class="notice-title" style="color: #c7981c;">الإضافات الأساسية والإجبارية</h3>
+        <p class="notice-description">
+          الإضافات التالية ضرورية لعمل Vencord وسيتم تفعيلها دائمًا في ملف
+          التكوين:
+        </p>
+        <div class="required-plugins-grid">
+          <div class="required-plugin-card">
+            <h3 class="plugin-name">Settings</h3>
+            <p class="plugin-description">يوفر واجهة إعدادات Vencord.</p>
+          </div>
+          <div class="required-plugin-card">
+            <h3 class="plugin-name">SupportHelper</h3>
+            <p class="plugin-description">يساعد في استكشاف الأخطاء وإصلاحها.</p>
+          </div>
+          <div class="required-plugin-card">
+            <h3 class="plugin-name">NoTrack</h3>
+            <p class="plugin-description">يمنع تتبع بيانات Discord.</p>
+          </div>
+          <div class="required-plugin-card">
+            <h3 class="plugin-name">CrashHandler</h3>
+            <p class="plugin-description">يعالج الأعطال غير المتوقعة.</p>
+          </div>
+
+          <!-- API Plugins -->
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">ChatInputButtonAPI</h3>
+            <p class="plugin-description">API لإضافة أزرار إلى شريط الإدخال.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">CommandsAPI</h3>
+            <p class="plugin-description">API لإنشاء أوامر مخصصة.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">MemberListDecoratorsAPI</h3>
+            <p class="plugin-description">API لتزيين قائمة الأعضاء.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">MessageAccessoriesAPI</h3>
+            <p class="plugin-description">API لإضافة عناصر أسفل الرسائل.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">MessageDecorationsAPI</h3>
+            <p class="plugin-description">API لإضافة زخارف حول الرسائل.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">MessageEventsAPI</h3>
+            <p class="plugin-description">API للتفاعل مع أحداث الرسائل.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">MessagePopoverAPI</h3>
+            <p class="plugin-description">API لتخصيص قائمة الرسالة.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">MessageUpdaterAPI</h3>
+            <p class="plugin-description">API لتعديل محتوى الرسائل.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">ServerListAPI</h3>
+            <p class="plugin-description">API للتفاعل مع قائمة الخوادم.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">UserSettingsAPI</h3>
+            <p class="plugin-description">API لإضافة إعدادات مخصصة للمستخدم.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">DynamicImageModalAPI</h3>
+            <p class="plugin-description">API لعرض الصور في نافذة منبثقة.</p>
+          </div>
+          <div class="required-plugin-card api-plugin">
+            <h3 class="plugin-name">BadgeAPI</h3>
+            <p class="plugin-description">API لإضافة شارات مخصصة.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Theme Selection -->
+      <section class="notice-section theme-notice" id="themeSection">
+        <h3 class="notice-title">اختيار ثيم (اختياري)</h3>
+        <p class="notice-description">
+          اختر ثيمًا واحدًا لتغيير مظهر Discord. سيتم تضمين رابط التنزيل في ملف
+          التكوين.
+        </p>
+        <div class="theme-grid" id="themeGrid">
+          <!-- Themes will be populated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Selection Buttons -->
+      <section class="selection-buttons" id="selectionButtons">
+        <button class="selection-btn" id="selectAllBtn">تحديد الكل</button>
+        <button class="selection-btn btn-suggested" id="selectSuggestedBtn">
+          تحديد المقترحة
+        </button>
+        <button class="selection-btn" id="deselectAllBtn">
+          إلغاء تحديد الكل
+        </button>
+      </section>
+
+      <!-- Plugins Container -->
+      <div class="plugins-container" id="pluginsContainer">
+        <!-- Plugins will be populated by JavaScript -->
+      </div>
+
+      <!-- No Results -->
+      <div class="no-results hidden" id="noResults">
+        <div class="no-results-icon">🔍</div>
+        <h3>لم يتم العثور على إضافات</h3>
+        <p>لم يتم العثور على إضافات تطابق البحث. جرب كلمات مختلفة.</p>
+      </div>
+
+      <!-- Config Section -->
+      <section class="config-section" id="configSection">
+        <h2 class="config-title">إنشاء ملف التكوين</h2>
+        <div class="config-controls">
+          <button class="config-btn btn-generate" id="generateBtn">
+            <span class="btn-icon">🔧</span>
+            <span>إنشاء التكوين</span>
+          </button>
+          <button class="config-btn btn-copy" id="copyBtn" disabled>
+            <span class="btn-icon">📋</span>
+            <span>نسخ التكوين</span>
+          </button>
+          <button class="config-btn btn-download" id="downloadBtn" disabled>
+            <span class="btn-icon">💾</span>
+            <span>تنزيل التكوين</span>
+          </button>
+          <button class="config-btn btn-help" id="helpBtn">
+            <span class="btn-icon">❓</span>
+            <span>كيفية عمل التكوين
+          </button>
+        </div>
+        <textarea
+          class="config-output"
+          id="configOutput"
+          placeholder="سيظهر ملف التكوين هنا بعد الضغط على 'إنشاء التكوين'..."
+          readonly
+        ></textarea>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-content">
+        <p class="footer-text">
+          تم تطويره بواسطة مساهمي Vencord | تم تعريبه وتحسينه بواسطة
+          <a href="https://x.com/jnjon0" target="_blank" class="footer-link"
+            >SMSM</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/plugins.js"></script>
   </body>
 </html>
