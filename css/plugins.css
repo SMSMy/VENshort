@@ -858,3 +858,88 @@
     display: none;
   }
 }
+
+/* --- Glow Effect for Selected Plugin Cards --- */
+
+/*
+  This selector targets any .plugin-card that has a .plugin-checkbox which is :checked.
+  It's the modern "parent selector" in CSS.
+*/
+.plugin-card:has(.plugin-checkbox:checked) {
+  /* Use the theme's primary color for the glow */
+  border-color: var(--primary-500);
+
+  /* Create a multi-layered glow effect using box-shadow */
+  box-shadow: 0 0 15px rgba(124, 174, 163, 0.6),
+    /* Outer glow (from --primary-500 color) */ inset 0 0 8px
+      rgba(124, 174, 163, 0.2); /* Subtle inner glow */
+
+  /* Make the card "pop" slightly, matching the hover effect */
+  transform: translateY(-5px);
+}
+
+/* Optional: Make the glow more intense when hovering over a selected card */
+.plugin-card:has(.plugin-checkbox:checked):hover {
+  box-shadow: 0 0 25px rgba(124, 174, 163, 0.7),
+    inset 0 0 10px rgba(124, 174, 163, 0.3);
+}
+
+/* --- Colored Borders for Special Plugin Cards --- */
+
+/*
+  Style for REQUIRED plugin cards.
+  These cards have the .required class.
+*/
+.plugin-card.required {
+  /* A distinct red border to signify it's mandatory */
+  border: 1.5px solid #b37485; /* Using the theme's magenta/red color */
+
+  /* Add a very subtle glow to make it stand out */
+  box-shadow: 0 0 8px rgba(179, 116, 133, 0.3);
+}
+
+/*
+  Style for SUGGESTED plugin cards.
+  These cards have the .suggested class.
+*/
+.plugin-card.suggested {
+  /* A golden border to indicate a recommendation */
+  border: 1.5px solid #c7981c;
+}
+
+/* --- Combining with Selection Glow Effect --- */
+
+/*
+  When a SUGGESTED card is selected, we blend the golden border
+  with the selection glow effect.
+*/
+.plugin-card.suggested:has(.plugin-checkbox:checked) {
+  /* We keep the golden border */
+  border-color: #c7981c;
+
+  /* We add the primary glow on top of it */
+  box-shadow: 0 0 15px rgba(124, 174, 163, 0.6),
+    /* Primary selection glow (aqua) */ 0 0 8px rgba(199, 152, 28, 0.5),
+    /* A faint golden glow */ inset 0 0 8px rgba(124, 174, 163, 0.2);
+}
+
+/* --- Enhance REQUIRED card selection glow --- */
+.plugin-card.required:has(.plugin-checkbox:checked) {
+  /* Keep the red border */
+  border-color: #cc0c0cff;
+
+  /* Add a strong magenta/red glow */
+  box-shadow: 0 0 18px rgba(179, 116, 133, 0.7),
+    /* Strong outer red glow */ 0 0 8px rgba(179, 116, 133, 0.4),
+    /* Subtle inner red glow */ inset 0 0 8px rgba(179, 116, 133, 0.2);
+}
+
+/*
+  The REQUIRED card is always selected, so we just enhance its red glow.
+  This rule is already strong enough from the `.plugin-card.required` selector above,
+  but you could make it even stronger if needed.
+*/
+.plugin-card.required:hover {
+  /* Enhance the red glow on hover */
+  box-shadow: 0 0 15px rgba(179, 116, 133, 0.5);
+}
