@@ -102,7 +102,7 @@ function renderPlugins(pluginsData, categoriesData) {
         .map((p) => createPluginCardHTML(p))
         .join("");
       // Add an ID to each section for the nav pane to link to
-      return `<div class="category-section" id="category-${catKey}" data-category="${catKey}"><h2 class="category-header">${catInfo.name}</h2><p class="category-description">${catInfo.description}</p>[...]
+      return `<div class="category-section" id="category-${catKey}" data-category="${catKey}"><h2 class="category-header">${catInfo.name}</h2><p class="category-description">${catInfo.description}</p><div class="plugins-grid">${cardsHTML}</div></div>`;
     })
     .join("");
 }
@@ -206,7 +206,6 @@ function setupSelectionButtons(allCheckboxes) {
   document
     .getElementById("selectSuggestedBtn")
     .addEventListener("click", () => {
-      // 1. تحديد الإضافات المقترحة
       allCheckboxes.forEach((cb) => {
         if (!cb.disabled) {
           cb.checked = window.VenShortData.SUGGESTED_PLUGINS.includes(
@@ -214,17 +213,6 @@ function setupSelectionButtons(allCheckboxes) {
           );
         }
       });
-
-      // 2. تحديد ثيم ClearVision تلقائيًا
-      // نبحث عن الراديو الخاص بالثيم الذي يحتوي على رابط تحميل ClearVision
-      const clearVisionTheme = document.querySelector(
-        'input.theme-radio[data-download-url*="id=23"]'
-      );
-      if (clearVisionTheme) {
-        clearVisionTheme.checked = true;
-      }
-
-      // 3. تحديث ملف التكوين
       updateConfig();
     });
 }
@@ -423,7 +411,7 @@ function showHelpModal() {
         <li>احذف كل المحتوى الموجود في الملف والصق التكوين الذي نسخته.</li>
         <li>احفظ الملف وأغلقه، ثم أعد تشغيل Discord (Ctrl+R).</li>
       </ol>
-  <p>للحصول على شرح مرئي، شاهد <a href="https://youtu.be/_GjGLfaqWa0" target="_blank" style="color:#fbbf24;font-weight:bold;text-decoration:underline;">مقطع الفيديو ا�[...]
+  <p>للحصول على شرح مرئي، شاهد <a href="https://youtu.be/_GjGLfaqWa0" target="_blank" style="color:#fbbf24;font-weight:bold;text-decoration:underline;">مقطع الفيديو التوضيحي</a>.</p>
 
   `
   );
